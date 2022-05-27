@@ -11,6 +11,7 @@ import alidoran.android_fundamental.databinding.ActivityAndroidFundamentalBindin
 import alidoran.android_fundamental.lifecycle.LifeCycleActivity
 import alidoran.android_fundamental.mvvm_livedata.view.MvvmMainActivity
 import alidoran.android_fundamental.recycler_view.RecyclerActivity
+import alidoran.android_fundamental.room.activity.RoomActivity
 import alidoran.android_fundamental.services.ServicesActivity
 import alidoran.android_fundamental.shared_preference.SharedPreferenceActivity
 
@@ -66,6 +67,11 @@ class AndroidFundamentalActivity : AppCompatActivity() {
 
         binding.btnMvvmLiveData.setOnClickListener{
             val intent = Intent(this, MvvmMainActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnRoom.setOnClickListener{
+            val intent = Intent(this, RoomActivity::class.java)
             startActivity(intent)
         }
 

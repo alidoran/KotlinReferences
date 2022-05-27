@@ -32,4 +32,11 @@
     <string name="stop_transparent_service">Stop transparent Service</string>
     <string name="read_data">Read Data</string>
     <string name="write_data">Write Data</string>
+    <string name="room">Room</string>
+    <string name="password">password</string>
+    <string name="load_from_database">load From DataBase</string>
+    <string name="save_to_database">Save To DataBase</string>
+    <string name="username">UserName</string>
+    <string name="lastname">LastName</string>
+    <string name="phonenumber">PhoneNumber</string>
 </resources>

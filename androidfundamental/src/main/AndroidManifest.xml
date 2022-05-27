@@ -19,6 +19,15 @@
             android:name="alidoran.android_fundamental.binding.DataBindingActivity"
             android:exported="false" />
         <activity
+            android:name=".room.activity.RoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".room.activity.LoadDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".room.activity.SaveDataActivity"
+            android:exported="false" />
+        <activity
             android:name="alidoran.android_fundamental.mvvm_livedata.view.MvvmMainActivity"
             android:exported="false" />
         <activity
