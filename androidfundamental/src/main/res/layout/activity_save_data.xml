@@ -58,7 +58,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
-                    android:hint="@string/phonenumber">
+                    android:hint="@string/phone_number">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_phone"

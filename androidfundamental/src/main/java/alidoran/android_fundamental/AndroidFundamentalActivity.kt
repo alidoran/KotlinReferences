@@ -13,6 +13,7 @@ import alidoran.android_fundamental.mvvm_livedata.view.MvvmMainActivity
 import alidoran.android_fundamental.recycler_view.RecyclerActivity
 import alidoran.android_fundamental.room.activity.RoomActivity
 import alidoran.android_fundamental.services.ServicesActivity
+import alidoran.android_fundamental.view_to_model.ViewToModelActivity
 import alidoran.android_fundamental.shared_preference.SharedPreferenceActivity
 
 class AndroidFundamentalActivity : AppCompatActivity() {
@@ -72,6 +73,11 @@ class AndroidFundamentalActivity : AppCompatActivity() {
 
         binding.btnRoom.setOnClickListener{
             val intent = Intent(this, RoomActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnViewToModel.setOnClickListener{
+            val intent = Intent(this, ViewToModelActivity::class.java)
             startActivity(intent)
         }
 

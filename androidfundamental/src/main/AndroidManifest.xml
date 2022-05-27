@@ -31,6 +31,9 @@
             android:name="alidoran.android_fundamental.mvvm_livedata.view.MvvmMainActivity"
             android:exported="false" />
         <activity
+            android:name=".view_to_model.ViewToModelActivity"
+            android:exported="false" />
+        <activity
             android:name="alidoran.android_fundamental.shared_preference.SharedPreferenceActivity"
             android:exported="false" /> <!-- Services -->
         <service android:name="alidoran.android_fundamental.services.BackgroundServiceSample" />

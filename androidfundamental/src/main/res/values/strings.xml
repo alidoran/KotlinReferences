@@ -38,5 +38,9 @@
     <string name="save_to_database">Save To DataBase</string>
     <string name="username">UserName</string>
     <string name="lastname">LastName</string>
-    <string name="phonenumber">PhoneNumber</string>
+    <string name="phone_number">PhoneNumber</string>
+    <string name="view_to_model_model_to_view">View to Model- Model to View</string>
+    <string name="view_tag_id">View tag id</string>
+    <string name="set_view_to_model">Set View To Model</string>
+    <string name="set_model_to_view">Set Model To View</string>
 </resources>

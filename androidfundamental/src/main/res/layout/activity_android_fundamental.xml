@@ -73,4 +73,10 @@
         android:layout_height="wrap_content"
         android:text="@string/room"/>
 
+    <Button
+        android:id="@+id/btn_view_to_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_to_model_model_to_view"/>
+
 </LinearLayout>
