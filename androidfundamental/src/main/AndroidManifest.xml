@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="alidoran.android_fundamental">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Android_fundamental">
+        <activity
+            android:name="alidoran.android_fundamental.binding.ViewBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name="alidoran.android_fundamental.binding.DataBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name="alidoran.android_fundamental.mvvm_livedata.view.MvvmMainActivity"
+            android:exported="false" />
+        <activity
+            android:name="alidoran.android_fundamental.shared_preference.SharedPreferenceActivity"
+            android:exported="false" /> <!-- Services -->
+        <service android:name="alidoran.android_fundamental.services.BackgroundServiceSample" />
+        <service android:name="alidoran.android_fundamental.services.ForegroundServiceSample" />
+        <service android:name="alidoran.android_fundamental.services.ScreenOnOffService" />
+        <service android:name="alidoran.android_fundamental.services.TrampolineService" /> <!-- Broadcasts -->
+        <receiver android:name="alidoran.android_fundamental.broadcast.BroadcastOnOffReceiver" />
+        <receiver
+            android:name="alidoran.android_fundamental.broadcast.BroadcastReceiverSample"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver> <!-- Activities -->
+        <activity
+            android:name="alidoran.android_fundamental.AndroidFundamentalActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="alidoran.android_fundamental.services.ServicesActivity"
+            android:exported="false" />
+        <activity
+            android:name="alidoran.android_fundamental.bottom_sheet.BottomSheetActivity"
+            android:exported="false" />
+        <activity
+            android:name="alidoran.android_fundamental.Backlight_light_change.BackLightChangeActivity"
+            android:exported="false" />
+        <activity
+            android:name="alidoran.android_fundamental.lifecycle.LifeCycleActivity"
+            android:exported="false" />
+        <activity
+            android:name="alidoran.android_fundamental.recycler_view.RecyclerActivity"
+            android:exported="false" />
+        <activity android:name="alidoran.android_fundamental.recycler_view.simple.SimpleRecyclerActivity" />
+    </application>
+
+</manifest>

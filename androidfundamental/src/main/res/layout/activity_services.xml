@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".services.ServicesActivity">
+
+    <TextView
+        android:id="@+id/txt_background_services_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/background_service_status"/>
+
+    <TextView
+        android:id="@+id/txt_foreground_service_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/foreground_service_status"/>
+
+    <TextView
+        android:id="@+id/txt_On_Off_screen_service_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/on_off_screen_status"/>
+
+    <TextView
+        android:id="@+id/txt_transparent_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/transparent_status"/>
+
+    <Button
+        android:id="@+id/btn_start_background_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_background_service"/>
+
+    <Button
+        android:id="@+id/btn_stop_background_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_background_service"/>
+
+    <Button
+        android:id="@+id/btn_start_foreground_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_foreground_service"/>
+
+    <Button
+        android:id="@+id/btn_stop_foreground_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_foreground_service"/>
+
+    <Button
+        android:id="@+id/btn_start_On_Off_Screen_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_on_off_screen_service"/>
+
+    <Button
+        android:id="@+id/btn_stop_On_Off_Screen_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_on_off_screen_service"/>
+
+    <Button
+        android:id="@+id/btn_start_transparent_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_transparent_service"/>
+
+    <Button
+        android:id="@+id/btn_stop_transparent_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_transparent_service"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

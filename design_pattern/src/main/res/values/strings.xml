@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DesignPattern</string>
+    <string name="simple_factory">Simple Factory</string>
+    <string name="singleton">Singleton</string>
+    <string name="answer">Answer</string>
+    <string name="builder">Builder</string>
+    <string name="ali_info">Ali Info</string>
+    <string name="roya_info">Roya Info</string>
+    <string name="Prototype">prototype</string>
+    <string name="adapter">Adapter</string>
+    <string name="memento">memento</string>
+    <string name="state">State</string>
+    <string name="java">java</string>
+    <string name="kotlin">kotlin</string>
+    <string name="java_no_pattern">java no pattern</string>
+    <string name="kotlin_no_pattern">kotlin no pattern</string>
+</resources>

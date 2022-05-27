@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="alidoran.design_pattern.java.factory_method.MainFactoryMethodActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/factory_pattern_btn_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button One"/>
+
+    <Button
+        android:id="@+id/factory_pattern_btn_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button Two"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
