@@ -40,3 +40,46 @@ class TubelessTireInterfaceInjectionModule{
         return tubelessTireInterfaceInjection
     }
 }
+
+
+/*
+multi input
+----------------------------------------------
+ */
+@Component(modules = [TubelessTireInterfaceInjectionModule::class , ElectricInterfaceInjectionModule::class])
+interface MultiInterfaceInjectionComponent{
+    fun inject(interfaceInjectionActivity: InterfaceInjectionActivity)
+}
+
+class CarInterfaceInjectMulti @Inject constructor(private val tire: TireInterfaceInject, private val engine:PetrolInterfaceInjection) {
+    fun start() {
+        println("Interface injection tire started by ${tire.getTireType()} and ${engine.getEngineType()}")
+    }
+}
+
+
+interface EngineInterfaceInject{
+    fun getEngineType(): String
+}
+
+class PetrolInterfaceInjection @Inject constructor(): EngineInterfaceInject {
+    override fun getEngineType(): String {
+        return "Petrol interface injection engine"
+    }
+}
+
+class ElectricInterfaceInjection @Inject constructor(): EngineInterfaceInject{
+    override fun getEngineType(): String {
+        return "Electric interface injection engine"
+    }
+}
+
+@Module
+class ElectricInterfaceInjectionModule{
+    @Provides
+    fun providePetrolInterfaceInjection(petrolInterfaceInjection: PetrolInterfaceInjection): EngineInterfaceInject{
+        return petrolInterfaceInjection
+    }
+}
+
+

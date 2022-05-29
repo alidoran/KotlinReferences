@@ -9,6 +9,8 @@ class InterfaceInjectionActivity : AppCompatActivity() {
 
     @Inject
     lateinit var car: CarInterfaceInject
+    @Inject
+    lateinit var carMulti: CarInterfaceInjectMulti
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -19,5 +21,15 @@ class InterfaceInjectionActivity : AppCompatActivity() {
         carInterfaceInject.inject(this)
 
         car.start()
+
+
+        /*
+        multi input
+         */
+
+        val carInterfaceInjectMulti = DaggerMultiInterfaceInjectionComponent.create()
+        carInterfaceInjectMulti.inject(this)
+
+        carMulti.start()
     }
 }
