@@ -33,12 +33,12 @@ object Recursion {
     }
 
     private fun decimalToBinaryTwoInput(myNumber: Int, result: String): String {
-        var result = result
+        var myResult = result
         if (myNumber == 0) {
-            return result
+            return myResult
         }
-        result = myNumber.rem(2).toString() + result
-        return decimalToBinaryTwoInput(myNumber / 2, result)
+        myResult = myNumber.rem(2).toString() + myResult
+        return decimalToBinaryTwoInput(myNumber / 2, myResult)
     }
 
     private fun sumNaturalNum(myNum:Int):Int{

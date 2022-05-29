@@ -1,12 +1,14 @@
 package alidoran.di
 
-import alidoran.di.retrofit.DaggerActivity
+import alidoran.di.retrofit.constructor.ConstructorInjectActivity
+import alidoran.di.retrofit.field.FieldInjectionActivity
+import alidoran.di.retrofit.interface_injection.InterfaceInjectionActivity
+import alidoran.di.simple_di.SimpleDiActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.alidoran.thirdpartylibrarydependencies.R
 import com.alidoran.thirdpartylibrarydependencies.databinding.ActivityDiBinding
-import com.alidoran.thirdpartylibrarydependencies.di.retrofit.AirConditionFactory
-
 
 class DiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,23 +16,24 @@ class DiActivity : AppCompatActivity() {
         val binding = ActivityDiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnDagger.setOnClickListener{
-            val intent = Intent(this, DaggerActivity::class.java)
+        binding.btnSimple.setOnClickListener {
+            val intent = Intent(this, SimpleDiActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnWithDi.setOnClickListener{
-            val engine = EngineSimple()
-            WithDISimple(engine).drive()
+        binding.btnConstructor.setOnClickListener {
+            val intent = Intent(this, ConstructorInjectActivity::class.java)
+            startActivity(intent)
         }
 
-        binding.btnWithoutDi.setOnClickListener{
-            WithoutDISimple().drive()
+        binding.btnField.setOnClickListener {
+            val intent = Intent(this, FieldInjectionActivity::class.java)
+            startActivity(intent)
         }
 
-        binding.btnAirConditionSample.setOnClickListener{
-            val airCondition = AirConditionFactory().get()
-            airCondition.start()
+        binding.btnInterface.setOnClickListener {
+            val intent = Intent(this, InterfaceInjectionActivity::class.java)
+            startActivity(intent)
         }
     }
 }

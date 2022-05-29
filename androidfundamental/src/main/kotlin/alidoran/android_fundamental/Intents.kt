@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Intent
 
 class Intents: Activity() {
-    public fun sendEMail(subject: String, to: String, email: String?) {
+    fun sendEMail(subject: String, to: String, email: String?) {
         val address = arrayOf(to)
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_SUBJECT, subject)

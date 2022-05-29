@@ -14,7 +14,16 @@
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
         tools:targetApi="31">
         <activity
+            android:name="alidoran.di.retrofit.interface_injection.InterfaceInjectionActivity"
+            android:exported="false" />
+        <activity
             android:name="alidoran.di.DiActivity"
+            android:exported="false" />
+        <activity
+            android:name="alidoran.di.retrofit.field.FieldInjectionActivity"
+            android:exported="false" />
+        <activity
+            android:name="alidoran.di.simple_di.SimpleDiActivity"
             android:exported="false" />
         <activity
             android:name="alidoran.coroutines.CoroutineActivity"
@@ -23,7 +32,7 @@
             android:name="alidoran.coroutines.CoroutineFakeApiActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.retrofit.DaggerActivity"
+            android:name="alidoran.di.retrofit.constructor.ConstructorInjectActivity"
             android:exported="false" />
         <activity
             android:name="alidoran.coroutines.CoroutineProgressBarActivity"
@@ -33,6 +42,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

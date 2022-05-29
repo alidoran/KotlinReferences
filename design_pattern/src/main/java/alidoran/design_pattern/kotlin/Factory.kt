@@ -27,6 +27,7 @@ object DialogFactory {
 fun callDialog() {
     val mDialog: Dialog = createDialog(DialogType.DIALOG_ACCEPT)
     val m2Dialog: Dialog = createDialog(DialogType.DIALOG_CANCEL)
+
 }
 
 fun main() {

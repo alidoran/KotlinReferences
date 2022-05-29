@@ -1,4 +1,4 @@
-package com.alidoran.thirdpartylibrarydependencies.di.retrofit
+package alidoran.di.simple_di
 
 const val cheapAirCondition = true
 

@@ -21,7 +21,7 @@ class LoadDataActivity : AppCompatActivity() {
 
 
     private fun initEvent() {
-        binding.txtName.onFocusChangeListener = OnFocusChangeListener { view: View?, b: Boolean ->
+        binding.txtName.onFocusChangeListener = OnFocusChangeListener { _: View?, _: Boolean ->
             val phoneNumber = binding.edtPhomeNumber.text.toString()
             val contactList: List<Contact>?  = getDatabase(this)
                 .contactDao()

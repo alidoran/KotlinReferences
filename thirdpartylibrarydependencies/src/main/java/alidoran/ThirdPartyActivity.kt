@@ -2,6 +2,7 @@ package alidoran
 
 import alidoran.coroutines.CoroutineActivity
 import alidoran.di.DiActivity
+import alidoran.di.simple_di.SimpleDiActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

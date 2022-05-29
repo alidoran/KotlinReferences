@@ -27,7 +27,10 @@ class SimpleRecyclerActivity : AppCompatActivity() {
 
     private fun simpleJavaList(isHorizontal: Boolean) {
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_simple_recycler)
-        val adapter = SimpleJavaLearnAdapter(createModelList())
+        val adapter =
+            SimpleJavaLearnAdapter(
+                createModelList()
+            )
 
         recyclerView.layoutManager =
             if (isHorizontal){
@@ -42,7 +45,11 @@ class SimpleRecyclerActivity : AppCompatActivity() {
     private fun createModelList(): List<SimpleRecyclerModel> {
         val simpleRecyclerModelList: MutableList<SimpleRecyclerModel> = ArrayList()
         for (i in 0..299) {
-            val simpleRecyclerModel = SimpleRecyclerModel(i, "num$i=")
+            val simpleRecyclerModel =
+                SimpleRecyclerModel(
+                    i,
+                    "num$i="
+                )
             simpleRecyclerModelList.add(simpleRecyclerModel)
         }
         return simpleRecyclerModelList

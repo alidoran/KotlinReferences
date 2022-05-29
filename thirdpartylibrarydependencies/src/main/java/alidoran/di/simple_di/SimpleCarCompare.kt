@@ -1,4 +1,4 @@
-package alidoran.di
+package alidoran.di.simple_di
 
 class WithoutDISimple {
     fun drive() {
