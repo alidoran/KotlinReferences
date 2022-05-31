@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 
 class EngineMethodInjection @Inject()constructor(){
-    val type = "mtType"
+    val type = "My type"
 }
 
 class CarMethodInjection @Inject constructor(private val engineMethodInjection: EngineMethodInjection) {

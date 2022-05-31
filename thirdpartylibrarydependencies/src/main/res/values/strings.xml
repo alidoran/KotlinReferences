@@ -16,4 +16,6 @@
     <string name="constructor_injection">Constructor Injection</string>
     <string name="interface_injection">Interface Injection</string>
     <string name="method_injection">Method Injection</string>
+    <string name="car_field_injected_class">Car Field Injected Class</string>
+    <string name="abstract_injection">Abstract Injection</string>
 </resources>

@@ -1,6 +1,8 @@
 package alidoran.di
 
+import alidoran.di.retrofit.abstract_injection.AbstractInjectionActivity
 import alidoran.di.retrofit.constructor.ConstructorInjectActivity
+import alidoran.di.retrofit.feild_injected_class.FieldInjectedClassActivity
 import alidoran.di.retrofit.field.FieldInjectionActivity
 import alidoran.di.retrofit.interface_injection.InterfaceInjectionActivity
 import alidoran.di.retrofit.method_injection.MethodInjectionActivity
@@ -39,6 +41,21 @@ class DiActivity : AppCompatActivity() {
 
         binding.btnMethod.setOnClickListener {
             val intent = Intent(this, MethodInjectionActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnFieldInjectedClass.setOnClickListener {
+            val intent = Intent(this, FieldInjectedClassActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnFieldInjectedClass.setOnClickListener {
+            val intent = Intent(this, FieldInjectedClassActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnAbstract.setOnClickListener {
+            val intent = Intent(this, AbstractInjectionActivity::class.java)
             startActivity(intent)
         }
     }
