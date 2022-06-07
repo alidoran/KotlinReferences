@@ -18,4 +18,6 @@
     <string name="method_injection">Method Injection</string>
     <string name="car_field_injected_class">Car Field Injected Class</string>
     <string name="abstract_injection">Abstract Injection</string>
+    <string name="singleton">Singleton</string>
+    <string name="retrofit">Retrofit</string>
 </resources>

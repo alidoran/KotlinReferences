@@ -3,24 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.alidoran.thirdpartylibrarydependencies">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
-        tools:targetApi="31">
+        tools:targetApi="32">
         <activity
-            android:name="alidoran.di.retrofit.singlton_injection.SingletonActivity"
+            android:name="alidoran.di.retrofit.singleton_injection.SingletonActivity"
             android:exported="false" />
         <activity
             android:name="alidoran.di.retrofit.abstract_injection.AbstractInjectionActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.retrofit.feild_injected_class.FieldInjectedClassActivity"
+            android:name="alidoran.di.retrofit.field_injected_class.FieldInjectedClassActivity"
             android:exported="false" />
         <activity
             android:name="alidoran.di.retrofit.method_injection.MethodInjectionActivity"

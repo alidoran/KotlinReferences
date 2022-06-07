@@ -1,4 +1,4 @@
-package alidoran.di.retrofit.singlton_injection
+package alidoran.di.retrofit.singleton_injection
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

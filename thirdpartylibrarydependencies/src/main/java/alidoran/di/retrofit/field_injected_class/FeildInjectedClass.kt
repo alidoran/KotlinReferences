@@ -1,4 +1,4 @@
-package alidoran.di.retrofit.feild_injected_class
+package alidoran.di.retrofit.field_injected_class
 
 import dagger.Component
 import javax.inject.Inject

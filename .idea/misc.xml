@@ -20,6 +20,8 @@
         <entry key="..\:/Android/AndroidStudioProjects/KotlinReferences/thirdpartylibrarydependencies/src/main/res/layout/activity_main.xml" value="0.10733695652173914" />
         <entry key="..\:/Android/AndroidStudioProjects/KotlinReferences/thirdpartylibrarydependencies/src/main/res/layout/activity_method_injection.xml" value="0.27445652173913043" />
         <entry key="..\:/Android/AndroidStudioProjects/KotlinReferences/thirdpartylibrarydependencies/src/main/res/layout/activity_simple_di.xml" value="0.2171875" />
+        <entry key="..\:/Android/AndroidStudioProjects/KotlinReferences/thirdpartylibrarydependencies/src/main/res/layout/activity_singleton.xml" value="0.175" />
+        <entry key="..\:/Android/AndroidStudioProjects/KotlinReferences/thirdpartylibrarydependencies/src/main/res/layout/activity_thirdparty.xml" value="0.175" />
       </map>
     </option>
   </component>
