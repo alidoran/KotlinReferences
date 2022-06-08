@@ -1,4 +1,5 @@
-package alidoran.di.retrofit.app_level_injection
+package alidoran.di.app_level_injection
+
 
 import android.app.Application
 import dagger.Component

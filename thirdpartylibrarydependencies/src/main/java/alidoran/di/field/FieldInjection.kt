@@ -1,4 +1,4 @@
-package alidoran.di.retrofit.field
+package alidoran.di.field
 
 import android.widget.Toast
 import dagger.Component

@@ -11,6 +11,7 @@ import com.example.retrofitteach.models.Current
 import com.example.retrofitteach.models.Location
 import alidoran.retrofit.retro.WeatherApi
 import alidoran.retrofit.retro.WeatherService
+import com.example.retrofitteach.models.WeatherModel
 
 class ThirdPartyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

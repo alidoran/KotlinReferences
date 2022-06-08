@@ -3,6 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="alidoran.di.retrofit.field_injected_class.FieldInjectedClassActivity">
+    tools:context="alidoran.di.field_injected_class.FieldInjectedClassActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

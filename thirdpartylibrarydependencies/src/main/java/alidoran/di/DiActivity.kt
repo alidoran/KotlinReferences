@@ -1,12 +1,12 @@
 package alidoran.di
 
-import alidoran.di.retrofit.abstract_injection.AbstractInjectionActivity
-import alidoran.di.retrofit.constructor.ConstructorInjectActivity
-import alidoran.di.retrofit.field_injected_class.FieldInjectedClassActivity
-import alidoran.di.retrofit.field.FieldInjectionActivity
-import alidoran.di.retrofit.interface_injection.InterfaceInjectionActivity
-import alidoran.di.retrofit.method_injection.MethodInjectionActivity
-import alidoran.di.retrofit.singleton_injection.SingletonActivity
+import alidoran.di.abstract_injection.AbstractInjectionActivity
+import alidoran.di.constructor.ConstructorInjectActivity
+import alidoran.di.field_injected_class.FieldInjectedClassActivity
+import alidoran.di.field.FieldInjectionActivity
+import alidoran.di.interface_injection.InterfaceInjectionActivity
+import alidoran.di.method_injection.MethodInjectionActivity
+import alidoran.di.singleton_injection.SingletonActivity
 import alidoran.di.simple_di.SimpleDiActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

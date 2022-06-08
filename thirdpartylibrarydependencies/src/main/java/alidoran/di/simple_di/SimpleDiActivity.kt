@@ -1,6 +1,6 @@
 package alidoran.di.simple_di
 
-import alidoran.di.retrofit.constructor.ConstructorInjectActivity
+import alidoran.di.constructor.ConstructorInjectActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,6 +1,5 @@
-package alidoran.di.retrofit.constructor
+package alidoran.di.constructor
 
-import alidoran.di.retrofit.constructor.DaggerAirConditionDagFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.alidoran.thirdpartylibrarydependencies.databinding.ActivityDaggerBinding

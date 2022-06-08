@@ -1,4 +1,4 @@
-package alidoran.di.retrofit.interface_injection
+package alidoran.di.interface_injection
 
 import dagger.Component
 import dagger.Module
@@ -36,9 +36,14 @@ class CarInterfaceInject @Inject constructor(private val tire: TireInterfaceInje
 @Module
 class TubelessTireInterfaceInjectionModule{
     @Provides
-    fun provideTubelessTireInterfaceInjection(tubelessTireInterfaceInjection: TubelessTireInterfaceInjection) : TireInterfaceInject{
+    fun provideTubelessTireInterfaceInjection(tubelessTireInterfaceInjection: TubelessTireInterfaceInjection) : TireInterfaceInject {
         return tubelessTireInterfaceInjection
     }
+
+//    @Provides
+//    fun provideTubeTireInterfaceInjection(tubeTireInterfaceInjection: TubeTireInterfaceInjection) : TireInterfaceInject {
+//        return tubeTireInterfaceInjection
+//    }
 }
 
 
@@ -51,7 +56,7 @@ interface MultiInterfaceInjectionComponent{
     fun inject(interfaceInjectionActivity: InterfaceInjectionActivity)
 }
 
-class CarInterfaceInjectMulti @Inject constructor(private val tire: TireInterfaceInject, private val engine:PetrolInterfaceInjection) {
+class CarInterfaceInjectMulti @Inject constructor(private val tire: TireInterfaceInject, private val engine: PetrolInterfaceInjection) {
     fun start() {
         println("Interface injection tire started by ${tire.getTireType()} and ${engine.getEngineType()}")
     }
@@ -68,7 +73,7 @@ class PetrolInterfaceInjection @Inject constructor(): EngineInterfaceInject {
     }
 }
 
-class ElectricInterfaceInjection @Inject constructor(): EngineInterfaceInject{
+class ElectricInterfaceInjection @Inject constructor(): EngineInterfaceInject {
     override fun getEngineType(): String {
         return "Electric interface injection engine"
     }
@@ -77,9 +82,7 @@ class ElectricInterfaceInjection @Inject constructor(): EngineInterfaceInject{
 @Module
 class ElectricInterfaceInjectionModule{
     @Provides
-    fun providePetrolInterfaceInjection(petrolInterfaceInjection: PetrolInterfaceInjection): EngineInterfaceInject{
+    fun providePetrolInterfaceInjection(petrolInterfaceInjection: PetrolInterfaceInjection): EngineInterfaceInject {
         return petrolInterfaceInjection
     }
 }
-
-

@@ -1,4 +1,4 @@
-package alidoran.di.retrofit.field_injected_class
+package alidoran.di.field_injected_class
 
 import dagger.Component
 import javax.inject.Inject
@@ -14,7 +14,7 @@ class CarFieldInjectedClass @Inject constructor(){
     We don't need add anything for engineFieldInjectedClass filling
      */
     @Inject
-    lateinit var engineFieldInjectedClass:EngineFieldInjectedClass
+    lateinit var engineFieldInjectedClass: EngineFieldInjectedClass
 
     fun start(){
         println("Car started by ${engineFieldInjectedClass.engineType}")
@@ -23,5 +23,5 @@ class CarFieldInjectedClass @Inject constructor(){
 
 @Component
 interface CarFieldInjectedClassComponent{
-    fun inject():CarFieldInjectedClass
+    fun inject(): CarFieldInjectedClass
 }

@@ -1,4 +1,4 @@
-package alidoran.di.retrofit.abstract_injection
+package alidoran.di.abstract_injection
 
 import dagger.Binds
 import dagger.Component

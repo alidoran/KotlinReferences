@@ -1,4 +1,5 @@
-package alidoran.di.retrofit.field_injected_class
+package alidoran.di.field_injected_class
+
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

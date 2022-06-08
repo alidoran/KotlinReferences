@@ -1,4 +1,5 @@
-package alidoran.di.retrofit.field
+package alidoran.di.field
+
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,10 +9,10 @@ import javax.inject.Inject
 class FieldInjectionActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var car:CarField
+    lateinit var car: CarField
 
     @Inject
-    lateinit var car2:CarField
+    lateinit var car2: CarField
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,8 +1,8 @@
 package alidoran.retrofit.retro
 
-interface ApiEnqueueListener {
-    fun onBefore()
-    fun <T> onSuccess(result: T)
-    fun onFailure(errorMessage: String?)
-    fun onAfter()
+abstract class ApiEnqueueListener {
+    open fun onBefore(){}
+    abstract fun <T> onSuccess(result: T)
+    open fun onFailure(errorMessage: String?){}
+    open fun onAfter(){}
 }

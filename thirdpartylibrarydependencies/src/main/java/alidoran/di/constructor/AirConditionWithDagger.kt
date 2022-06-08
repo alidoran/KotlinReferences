@@ -1,4 +1,5 @@
-package alidoran.di.retrofit.constructor
+package alidoran.di.constructor
+
 
 import dagger.Component
 import javax.inject.Inject

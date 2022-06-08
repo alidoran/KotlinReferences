@@ -3,6 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="alidoran.di.retrofit.interface_injection.InterfaceInjectionActivity">
+    tools:context="alidoran.di.interface_injection.InterfaceInjectionActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

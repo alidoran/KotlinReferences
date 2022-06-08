@@ -1,4 +1,4 @@
-package alidoran.di.retrofit.interface_injection
+package alidoran.di.interface_injection
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package alidoran.di.retrofit.singleton_injection
+package alidoran.di.singleton_injection
 
 import dagger.Component
 import javax.inject.Inject
