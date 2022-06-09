@@ -13,7 +13,7 @@ fun main() {
     threadExecutor()
 }
 
-fun threadExecutor(){
+fun threadExecutor() {
     Thread().run {
         println("Hello Ali")
     }
@@ -36,11 +36,16 @@ fun executorDelay() {
     }, 5, TimeUnit.SECONDS)
 }
 
-fun uiThread(){
+fun uiThread() {
     android.os.Handler(Looper.getMainLooper()).post {
         TimeUnit.SECONDS.sleep(2)
         //Your code
     }
+}
+
+object VolatileZone {
+    @Volatile  //This annotation help to the this field to be visible for other threads
+    private var volatileObject = true
 }
 
 
