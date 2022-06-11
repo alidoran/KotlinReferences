@@ -43,4 +43,5 @@
     <string name="view_tag_id">View tag id</string>
     <string name="set_view_to_model">Set View To Model</string>
     <string name="set_model_to_view">Set Model To View</string>
+    <string name="title_activity_compose">ComposeActivity</string>
 </resources>
