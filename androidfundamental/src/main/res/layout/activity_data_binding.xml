@@ -4,7 +4,7 @@
     <data>
         <variable
             name="model"
-            type="alidoran.android_fundamental.binding.DataBindingModel" />
+            type="project.binding.DataBindingModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
