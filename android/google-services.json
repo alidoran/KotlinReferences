@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "982015028415",
+    "project_id": "android-fundamental-doran",
+    "storage_bucket": "android-fundamental-doran.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982015028415:android:9901dd2282e594f7b4aa0a",
+        "android_client_info": {
+          "package_name": "android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982015028415-tupsjcstukief4s2bbnbvvf2d6jmo7m6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmq5pyW7ftElTZa4vLwp6Uu9gHcunK_IM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982015028415-tupsjcstukief4s2bbnbvvf2d6jmo7m6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

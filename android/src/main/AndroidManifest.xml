@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Android">
+        <activity
+            android:name="android.mvp.view.MvpActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.socket.SocketActivity"
+            android:exported="false" />
+<!--        <activity-->
+<!--            android:name="android.compose.ComposeActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_compose"-->
+<!--            android:theme="@style/Theme.Android" />-->
+        <activity
+            android:name="android.binding.ViewBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.binding.DataBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.room.activity.RoomActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.room.activity.LoadDataActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.room.activity.SaveDataActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.mvvm_livedata.view.MvvmMainActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.view_to_model.ViewToModelActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.shared_preference.SharedPreferenceActivity"
+            android:exported="false" /> <!-- Services -->
+        <service android:name="android.services.BackgroundServiceSample" />
+        <service android:name="android.services.ForegroundServiceSample" />
+        <service android:name="android.services.ScreenOnOffService" />
+        <service android:name="android.services.TrampolineService" /> <!-- Broadcasts -->
+        <receiver android:name="android.broadcast.BroadcastOnOffReceiver" />
+        <receiver
+            android:name="android.broadcast.BroadcastReceiverSample"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver> <!-- Activities -->
+        <activity
+            android:name="android.AndroidActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="android.services.ServicesActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.bottom_sheet.BottomSheetActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.Backlight_light_change.BackLightChangeActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.lifecycle.LifeCycleActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.recycler_view.RecyclerActivity"
+            android:exported="false" />
+        <activity android:name="android.recycler_view.simple.SimpleRecyclerActivity" />
+    </application>
+
+</manifest>

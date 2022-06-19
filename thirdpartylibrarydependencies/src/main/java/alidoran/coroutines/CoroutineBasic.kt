@@ -6,12 +6,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.util.concurrent.TimeUnit
 
-class CoroutineBasic {
-    suspend fun main() {
-        firstSimpleCoroutine()
-        firstSimpleCoroutine()
-    }
-
+fun main() {
+    suspendCoroutine()
+}
     private fun firstSimpleCoroutine() =
         runBlocking { // this: CoroutineScope
             launch { // launch a new coroutine and continue
@@ -26,7 +23,9 @@ class CoroutineBasic {
     //region suspend
     fun suspendCoroutine() {
         runBlocking { // this: CoroutineScope
-            launch { printWorld() }
+            launch {
+                printWorld()
+            }
             println("Hello")
         }
     }
@@ -52,5 +51,4 @@ class CoroutineBasic {
             }
             println("Hello")
         }
-}
 //endregion

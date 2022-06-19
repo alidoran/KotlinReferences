@@ -14,7 +14,7 @@ dependencyResolutionManagement {
 }
 include ':kotlin_base'
 include ':fundamental'
-include ':androidfundamental'
+include ':android'
 include ':thirdpartylibrarydependencies'
 include ':design_pattern'
 
