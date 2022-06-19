@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="end">
+    android:orientation="horizontal"
+    android:gravity="end"
+    >
 
     <TextView
         android:id="@+id/news_details"
@@ -11,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:text="News details"
+        android:text="@string/news_details"
         android:textSize="20sp"
 
         />
@@ -21,6 +24,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="10dp"
-        android:background="@drawable/ic_launcher_background" />
+        android:background="@drawable/ic_launcher_background"
+        android:contentDescription="@string/image" />
 
 </LinearLayout>
