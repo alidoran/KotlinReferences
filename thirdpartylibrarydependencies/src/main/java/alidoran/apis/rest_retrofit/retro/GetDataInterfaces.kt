@@ -1,4 +1,4 @@
-package alidoran.retrofit.retro
+package alidoran.apis.rest_retrofit.retro
 
 import android.net.Uri
 import com.example.retrofitteach.models.WeatherModel

@@ -20,4 +20,5 @@
     <string name="abstract_injection">Abstract Injection</string>
     <string name="singleton">Singleton</string>
     <string name="retrofit">Retrofit</string>
+    <string name="graphql">GraphQl</string>
 </resources>

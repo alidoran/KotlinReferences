@@ -1,4 +1,4 @@
-package alidoran.retrofit.retro
+package alidoran.apis.rest_retrofit.retro
 
 import com.example.retrofitteach.models.ErrorModel
 import com.example.retrofitteach.tools.mapperModel

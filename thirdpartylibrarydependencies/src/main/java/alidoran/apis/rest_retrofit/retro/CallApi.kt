@@ -1,7 +1,6 @@
-package alidoran.retrofit.retro
+package alidoran.apis.rest_retrofit.retro
 
 import android.net.Uri
-import android.widget.Toast
 import com.example.retrofitteach.models.WeatherModel
 import retrofit2.Call
 

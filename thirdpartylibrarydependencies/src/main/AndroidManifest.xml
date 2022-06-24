@@ -50,6 +50,9 @@
             android:name="alidoran.coroutines.CoroutineProgressBarActivity"
             android:exported="false" />
         <activity
+            android:name="alidoran.apis.graphql_retrofit.GraphQLActivity"
+            android:exported="false" />
+        <activity
             android:name="alidoran.ThirdPartyActivity"
             android:exported="true">
             <intent-filter>

@@ -1,4 +1,4 @@
-package alidoran.retrofit.retro
+package alidoran.apis.rest_retrofit.retro
 
 abstract class ApiEnqueueListener {
     open fun onBefore(){}

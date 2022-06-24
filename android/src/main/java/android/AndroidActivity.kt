@@ -92,9 +92,5 @@ class AndroidActivity : AppCompatActivity() {
             val intent = Intent(this, MvpActivity::class.java)
             startActivity(intent)
         }
-
     }
-
-
-
 }
