@@ -11,7 +11,7 @@ import org.json.JSONObject
 class GraphQLActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityGraphqlBinding
-    var cityModel: CityModel? = null
+    var cityModel: a.CityModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +27,7 @@ class GraphQLActivity : AppCompatActivity() {
             "query",
             "query {getCityByName(name: \"$city\") {id,name,country,coord {lon,lat}}}"
         )
+
         GlobalScope.launch {
             try {
                 val response = retrofit.postDynamicQuery(paramObject.toString())

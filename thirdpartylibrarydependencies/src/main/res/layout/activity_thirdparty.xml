@@ -31,4 +31,10 @@
         android:layout_height="wrap_content"
         android:text="@string/graphql"/>
 
+    <Button
+        android:id="@+id/btn_apollo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/apollo"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

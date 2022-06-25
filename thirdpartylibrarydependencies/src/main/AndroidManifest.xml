@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
         tools:targetApi="32">
         <activity
+            android:name="alidoran.apis.graphql_apollo.ApolloActivity"
+            android:exported="false" />
+        <activity
             android:name="alidoran.di.singleton_injection.SingletonActivity"
             android:exported="false" />
         <activity

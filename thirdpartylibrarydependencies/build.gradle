@@ -5,9 +5,7 @@ plugins {
     id 'kotlin-android'
     id("com.apollographql.apollo3").version("3.3.2")
 }
-apollo {
-    packageName.set("com.alidoran.thirdpartylibrarydependencies")
-}
+
 android {
     compileSdk 32
 
@@ -74,4 +72,8 @@ dependencies {
 
     //Apollo
     implementation("com.apollographql.apollo3:apollo-runtime:3.3.2")
+}
+
+apollo {
+    packageName.set("com.alidoran.thirdpartylibrarydependencies")
 }

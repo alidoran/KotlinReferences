@@ -1,5 +1,6 @@
 package alidoran
 
+import alidoran.apis.graphql_apollo.ApolloActivity
 import alidoran.apis.graphql_retrofit.GraphQLActivity
 import alidoran.coroutines.CoroutineActivity
 import alidoran.di.DiActivity
@@ -44,6 +45,11 @@ class ThirdPartyActivity : AppCompatActivity() {
 
         binding.btnGraphql.setOnClickListener {
             val intent = Intent(this, GraphQLActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnApollo.setOnClickListener {
+            val intent = Intent(this, ApolloActivity::class.java)
             startActivity(intent)
         }
 
