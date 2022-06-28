@@ -53,4 +53,5 @@
     <string name="id">ID</string>
     <string name="graphql">GraphQL</string>
     <string name="paging">Paging</string>
+    <string name="viewpager_slider">ViewPager slider</string>
 </resources>

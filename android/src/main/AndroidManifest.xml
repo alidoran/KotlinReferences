@@ -13,9 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
-            android:name=".PagingActivity"
-            android:exported="false" />
-        <activity
             android:name="android.mvp.view.MvpActivity"
             android:exported="false" />
         <activity
@@ -87,6 +84,9 @@
             android:exported="false" />
         <activity
             android:name="android.paging_view.PagingRecyclerActivity"
+            android:exported="false" />
+        <activity
+            android:name="android.viewpager.ViewPagerSliderActivity"
             android:exported="false" />
         <activity android:name="android.recycler_view.simple.SimpleRecyclerActivity" />
     </application>

@@ -17,6 +17,7 @@ import android.services.ServicesActivity
 import android.shared_preference.SharedPreferenceActivity
 import android.socket.SocketActivity
 import android.view_to_model.ViewToModelActivity
+import android.viewpager.ViewPagerSliderActivity
 import com.example.android.databinding.ActivityAndroidBinding
 
 class AndroidActivity : AppCompatActivity() {
@@ -96,6 +97,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnPaging.setOnClickListener{
             val intent = Intent(this, PagingRecyclerActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnViewpagerSlider.setOnClickListener{
+            val intent = Intent(this, ViewPagerSliderActivity::class.java)
             startActivity(intent)
         }
     }

@@ -20,8 +20,6 @@ class PagingRecyclerActivity : AppCompatActivity() {
 
         initRecyclerView()
         initViewModel()
-
-
     }
 
     private fun initRecyclerView() {
@@ -31,7 +29,6 @@ class PagingRecyclerActivity : AppCompatActivity() {
             addItemDecoration(decoration)
             recyclerViewAdapter = RecyclerViewAdapter()
             adapter = recyclerViewAdapter
-
         }
     }
 

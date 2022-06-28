@@ -98,7 +98,13 @@
                 android:id="@+id/btn_paging"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/paging"/>
+                android:text="@string/viewpager_slider"/>
+
+            <Button
+                android:id="@+id/btn_viewpager_slider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/viewpager_slider"/>
 
         </LinearLayout>
     </ScrollView>

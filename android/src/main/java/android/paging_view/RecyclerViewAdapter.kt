@@ -12,26 +12,26 @@ import android.paging_view.network.CharacterData
 import com.bumptech.glide.Glide
 import com.example.android.R
 
-class RecyclerViewAdapter(): PagingDataAdapter<CharacterData, RecyclerViewAdapter.MyViewHolder>(
-    DiffUtilCallBack()
-) {
-
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
-        holder.bind(getItem(position)!!)
-    }
+class RecyclerViewAdapter
+    : PagingDataAdapter<CharacterData, RecyclerViewAdapter.MyViewHolder>(DiffUtilCallBack()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val inflater = LayoutInflater.from(parent.context).inflate(R.layout.paging_recycler_item, parent, false)
-
+        val inflater = LayoutInflater.from(parent.context)
+            .inflate(R.layout.paging_recycler_item, parent, false)
         return MyViewHolder(inflater)
     }
 
-    class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
-       val imageView: ImageView = view.findViewById(R.id.imageView)
-        val tvName: TextView = view.findViewById(R.id.tvName)
-        val tvDesc: TextView = view.findViewById(R.id.tvDesc)
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.bind(getItem(position)!!)
+    }
+
+
+
+    class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val imageView: ImageView = view.findViewById(R.id.imageView)
+        private val tvName: TextView = view.findViewById(R.id.tvName)
+        private val tvDesc: TextView = view.findViewById(R.id.tvDesc)
 
         fun bind(data: CharacterData) {
             tvName.text = data.name
@@ -45,9 +45,9 @@ class RecyclerViewAdapter(): PagingDataAdapter<CharacterData, RecyclerViewAdapte
         }
     }
 
-    class DiffUtilCallBack: DiffUtil.ItemCallback<CharacterData>() {
+    class DiffUtilCallBack : DiffUtil.ItemCallback<CharacterData>() {
         override fun areItemsTheSame(oldItem: CharacterData, newItem: CharacterData): Boolean {
-           return oldItem.name == newItem.name
+            return oldItem.name == newItem.name
         }
 
         override fun areContentsTheSame(oldItem: CharacterData, newItem: CharacterData): Boolean {

@@ -33,14 +33,18 @@
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_shared_preference.xml" value="0.175" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_simple_recycler.xml" value="0.27445652173913043" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_view_binding.xml" value="0.175" />
+        <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_view_pager.xml" value="0.15462962962962962" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/adapter_custom_list.xml" value="0.175" />
+        <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/fragment_first.xml" value="0.15462962962962962" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/fragment_life_cycle.xml" value="0.1503623188405797" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/paging_recycler_item.xml" value="0.375" />
+        <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/viewpager_item.xml" value="0.15462962962962962" />
         <entry key="..\:/Android/Projects/KotlinReferences/androidfundamental/src/main/res/layout/activity_android_fundamental.xml" value="0.30344202898550726" />
         <entry key="..\:/Android/Projects/KotlinReferences/androidfundamental/src/main/res/layout/activity_data_binding.xml" value="0.175" />
         <entry key="..\:/Android/Projects/KotlinReferences/androidfundamental/src/main/res/layout/activity_mvp.xml" value="0.20199275362318841" />
         <entry key="..\:/Android/Projects/KotlinReferences/androidfundamental/src/main/res/layout/activity_mvvm_main.xml" value="0.175" />
         <entry key="..\:/Android/Projects/KotlinReferences/androidfundamental/src/main/res/layout/activity_socket.xml" value="0.346875" />
+        <entry key="..\:/Android/Projects/KotlinReferences/design_pattern/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.125" />
         <entry key="..\:/Android/Projects/KotlinReferences/thirdpartylibrarydependencies/src/main/res/layout/activity_apollo.xml" value="0.1" />
         <entry key="..\:/Android/Projects/KotlinReferences/thirdpartylibrarydependencies/src/main/res/layout/activity_graphql.xml" value="0.2" />
         <entry key="..\:/Android/Projects/KotlinReferences/thirdpartylibrarydependencies/src/main/res/layout/activity_thirdparty.xml" value="0.175" />
