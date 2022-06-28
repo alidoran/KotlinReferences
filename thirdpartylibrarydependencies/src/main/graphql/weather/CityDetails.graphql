@@ -1,0 +1,10 @@
+query CityDetails($cityName:String!,$country: String, $config: ConfigInput ){
+ getCityByName(name: $cityName, country: $country, config:$config ){
+                id
+                name
+                country
+                coord {
+                    lon
+                    lat}
+                }
+ }

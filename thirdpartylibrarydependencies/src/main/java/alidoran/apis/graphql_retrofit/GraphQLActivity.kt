@@ -11,7 +11,7 @@ import org.json.JSONObject
 class GraphQLActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityGraphqlBinding
-    var cityModel: a.CityModel? = null
+    var cityModel: CityModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

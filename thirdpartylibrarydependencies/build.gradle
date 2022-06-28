@@ -75,5 +75,12 @@ dependencies {
 }
 
 apollo {
-    packageName.set("com.alidoran.thirdpartylibrarydependencies")
+    service("weather") {
+        sourceFolder.set("weather")
+        packageName.set("weather")
+    }
+    service("rocketreserver") {
+        sourceFolder.set("com/example/rocketreserver")
+        packageName.set("com.example.rocketreserver")
+    }
 }

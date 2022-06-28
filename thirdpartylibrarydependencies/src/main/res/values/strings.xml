@@ -22,4 +22,6 @@
     <string name="retrofit">Retrofit</string>
     <string name="graphql">GraphQl</string>
     <string name="apollo">Apollo</string>
+    <string name="apollo_site_sample">Apollo site sample</string>
+    <string name="weather_sample">Weather sample</string>
 </resources>

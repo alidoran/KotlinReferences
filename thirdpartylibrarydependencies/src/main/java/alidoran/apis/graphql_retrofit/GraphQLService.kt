@@ -9,5 +9,5 @@ interface GraphQLService {
 
     @Headers("Content-Type: application/json")
     @POST("/")
-    suspend fun postDynamicQuery(@Body body: String): Response<a.CityModel>
+    suspend fun postDynamicQuery(@Body body: String): Response<CityModel>
 }

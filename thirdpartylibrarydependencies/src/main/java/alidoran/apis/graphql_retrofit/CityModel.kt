@@ -1,6 +1,6 @@
 package alidoran.apis.graphql_retrofit
 
-class a {
+
     data class CityModel(
         val data: Data
     )
@@ -20,4 +20,3 @@ class a {
         val lon: Double,
         val lat: Double
     )
-}

@@ -10,6 +10,7 @@ import android.bottom_sheet.BottomSheetActivity
 import android.lifecycle.LifeCycleActivity
 import android.mvp.view.MvpActivity
 import android.mvvm_livedata.view.MvvmMainActivity
+import android.paging_view.PagingRecyclerActivity
 import android.recycler_view.RecyclerActivity
 import android.room.activity.RoomActivity
 import android.services.ServicesActivity
@@ -90,6 +91,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnMvp.setOnClickListener{
             val intent = Intent(this, MvpActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnPaging.setOnClickListener{
+            val intent = Intent(this, PagingRecyclerActivity::class.java)
             startActivity(intent)
         }
     }
