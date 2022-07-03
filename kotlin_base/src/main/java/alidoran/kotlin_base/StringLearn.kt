@@ -1,7 +1,4 @@
-package ir.alidoran.teach_kotlin
-
-import android.widget.Switch
-import androidx.core.text.isDigitsOnly
+package alidoran.kotlin_base
 
 object StringLearn {
     @JvmStatic
@@ -51,7 +48,7 @@ object StringLearn {
 
     fun zipExtension() = println("BCDF".zip("ABCD")) //[(B, A), (C, B), (D, C), (F, D)]
 
-    fun stringMethods(changeType:TextChangeType): String{
+    fun stringMethods(changeType: TextChangeType): String{
         var text = "alidoran@gmail.com"
 
         when(changeType){

@@ -6,7 +6,8 @@ import androidx.annotation.NonNull;
 import java.util.Arrays;
 import java.util.List;
 
-import ir.alidoran.teach_kotlin.ExtensionsKotlin;import ir.alidoran.teach_kotlin.InterfaceLearn;import ir.alidoran.teach_kotlin.MethodTypeManualName;import ir.alidoran.teach_kotlin.ObjectLearn;import ir.alidoran.teach_kotlin.TwoSameNameExtension;import kotlin.jvm.functions.Function0;
+import ir.alidoran.teach_kotlin.ExtensionsKotlin;
+import ir.alidoran.teach_kotlin.MethodTypeManualName;import ir.alidoran.teach_kotlin.ObjectLearn;import ir.alidoran.teach_kotlin.TwoSameNameExtension;import kotlin.jvm.functions.Function0;
 
 
 public class AccessKotlinFromJava {

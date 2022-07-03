@@ -1,7 +1,5 @@
-package ir.alidoran.teach_kotlin
+package alidoran.kotlin_base
 
-import android.util.Log
-import android.widget.Toast
 import java.lang.StringBuilder
 
 object LambdaWithReceiver {

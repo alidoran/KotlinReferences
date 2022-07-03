@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="@string/apollo"/>
 
+    <Button
+        android:id="@+id/btn_rest_retro_java"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rest_retro_java"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

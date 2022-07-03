@@ -13,6 +13,7 @@ import com.example.retrofitteach.models.Current
 import com.example.retrofitteach.models.Location
 import alidoran.apis.rest_retrofit.retro.WeatherApi
 import alidoran.apis.rest_retrofit.retro.WeatherService
+import alidoran.apis.rest_retrofit_java.RestRetroJavaActivity
 
 class ThirdPartyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +51,11 @@ class ThirdPartyActivity : AppCompatActivity() {
 
         binding.btnApollo.setOnClickListener {
             val intent = Intent(this, ApolloActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnRestRetroJava.setOnClickListener {
+            val intent = Intent(this, RestRetroJavaActivity::class.java)
             startActivity(intent)
         }
 

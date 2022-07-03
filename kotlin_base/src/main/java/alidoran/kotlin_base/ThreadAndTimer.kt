@@ -1,12 +1,9 @@
-package ir.alidoran.teach_kotlin
+package alidoran.kotlin_base
 
-import android.os.HandlerThread
 import android.os.Looper
-import androidx.annotation.UiThread
 import java.util.*
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
-import java.util.logging.Handler
 import kotlin.concurrent.schedule
 
 fun main() {

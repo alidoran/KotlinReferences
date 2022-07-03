@@ -1,4 +1,6 @@
-package ir.alidoran.teach_kotlin
+package alidoran.kotlin_base
+
+import ir.alidoran.teach_kotlin.lastChar
 
 object Variable {
     var counter = 0

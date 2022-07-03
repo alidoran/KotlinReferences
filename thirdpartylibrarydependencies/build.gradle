@@ -72,6 +72,8 @@ dependencies {
 
     //Apollo
     implementation("com.apollographql.apollo3:apollo-runtime:3.3.2")
+
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.0'
 }
 
 apollo {

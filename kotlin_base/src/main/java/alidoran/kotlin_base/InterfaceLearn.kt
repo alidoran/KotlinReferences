@@ -1,4 +1,4 @@
-package ir.alidoran.teach_kotlin
+package alidoran.kotlin_base
 
 class InterfaceLearn{
     interface InterfaceTwoFun{
@@ -11,7 +11,7 @@ class InterfaceLearn{
     }
 
     interface SecondInterface{
-        val simpleInterface:SimpleInterface
+        val simpleInterface: SimpleInterface
     }
 
     class UseSimpleInterface(nameId: Int) : SimpleInterface {

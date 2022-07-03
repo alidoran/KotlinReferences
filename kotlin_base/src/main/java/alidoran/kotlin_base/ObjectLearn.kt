@@ -1,5 +1,6 @@
 package ir.alidoran.teach_kotlin
 
+import alidoran.kotlin_base.InterfaceLearn
 import android.content.ContentValues.TAG
 import android.util.Log
 import ir.alidoran.teach_kotlin.CompanionLearn.CompanionExtension.fromJSON

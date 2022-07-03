@@ -1,4 +1,4 @@
-package ir.alidoran.teach_kotlin
+package alidoran.kotlin_base
 
 
 //Old way for initial input var
