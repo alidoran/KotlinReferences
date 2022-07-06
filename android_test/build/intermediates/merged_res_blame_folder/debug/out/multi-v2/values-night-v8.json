@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "doran.ali.android_test-mergeDebugResources-3:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Android\\Projects\\KotlinReferences\\android_test\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "451"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "687",
+                        "endLines": "15",
+                        "endColumns": "12",
+                        "endOffsets": "966"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ali\\.gradle\\caches\\transforms-3\\434017a029d4d80e3e96890a63b66d4f\\transformed\\appcompat-1.4.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,16",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,971",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,1055"
+                    }
+                }
+            ]
+        }
+    ]
+}
