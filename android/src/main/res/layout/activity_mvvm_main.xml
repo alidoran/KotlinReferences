@@ -3,7 +3,7 @@
     <data>
         <variable
             name="model"
-            type="android.mvvm_livedata.model.MvvmModel" />
+            type="alidoran.android.mvvm_livedata.model.MvvmModel" />
     </data>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"

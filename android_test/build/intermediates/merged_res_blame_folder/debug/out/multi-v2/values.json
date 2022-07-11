@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "doran.ali.android_test-mergeDebugResources-3:/values/values.xml",
+            "outputFile": "android.test.android_test-mergeDebugResources-3:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Ali\\.gradle\\caches\\transforms-3\\7903991c7dfa69303028884421f57cff\\transformed\\appcompat-resources-1.4.1\\res\\values\\values.xml",
@@ -101,10 +101,10 @@
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "102",
+                        "startOffsets": "56",
                         "endLines": "8",
                         "endColumns": "12",
-                        "endOffsets": "451"
+                        "endOffsets": "405"
                     },
                     "to": {
                         "startLines": "2071",

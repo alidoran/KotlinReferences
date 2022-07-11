@@ -21,7 +21,7 @@
             android:id="@+id/btn_factory_method"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Factory Method" />
+            android:text="@string/factory_method" />
 
         <Button
             android:id="@+id/btn_singleton"

@@ -41,7 +41,7 @@ INJECTED from C:\Android\Projects\KotlinReferences\android_test\src\main\Android
 INJECTED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:2:1-34:12
 INJECTED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:2:1-34:12
 	package
-		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:3:5-24
+		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:3:5-27
 		INJECTED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml
 		INJECTED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml
 	android:versionName
@@ -84,12 +84,12 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Ali\.gradle\caches
 		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:11:9-42
-activity#doran.ali.TestMainActivity
+activity#android.test.TestMainActivity
 ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:12:9-20:20
 	android:exported
 		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:14:13-36
 	android:name
-		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:13:13-45
+		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:13:13-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
@@ -105,7 +105,7 @@ ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidMan
 	android:grantUriPermissions
 		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:26:13-47
 	android:authorities
-		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:24:13-65
+		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:24:13-60
 	android:exported
 		ADDED from C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:25:13-37
 	android:name

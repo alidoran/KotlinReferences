@@ -1,5 +1,6 @@
 package alidoran
 
+import alidoran.design_pattern.databinding.ActivityDesignPatternBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
@@ -11,11 +12,10 @@ import alidoran.design_pattern.java.prototype.MainPrototype
 import alidoran.design_pattern.java.adapter.AdapterMain
 import alidoran.design_pattern.java.memento.MementoActivity
 import alidoran.design_pattern.java.state.StateActivity
-import com.example.design_pattern_java_kotlin.databinding.ActivityDesignPatternBinding
 
 
 class DesignPatternActivity : AppCompatActivity() {
-    lateinit var binding:ActivityDesignPatternBinding
+    lateinit var binding: ActivityDesignPatternBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDesignPatternBinding.inflate(layoutInflater)

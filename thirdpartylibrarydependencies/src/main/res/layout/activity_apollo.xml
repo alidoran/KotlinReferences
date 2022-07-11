@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="alidoran.apis.graphql_apollo.ApolloActivity">
+    tools:context="alidoran.third_party.apis.graphql_apollo.ApolloActivity">
 
     <Button
         android:id="@+id/btn_apollo_sample"

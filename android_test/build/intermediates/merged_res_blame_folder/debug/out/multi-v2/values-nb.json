@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "doran.ali.android_test-mergeDebugResources-3:/values-nb/values-nb.xml",
+            "outputFile": "android.test.android_test-mergeDebugResources-3:/values-nb/values-nb.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Ali\\.gradle\\caches\\transforms-3\\b98a99393d271d855a0da17dda51e696\\transformed\\core-1.7.0\\res\\values-nb\\values-nb.xml",

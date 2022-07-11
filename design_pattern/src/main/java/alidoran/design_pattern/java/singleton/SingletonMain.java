@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.example.design_pattern_java_kotlin.R;
+import alidoran.design_pattern.R;
 
 
 public class SingletonMain extends AppCompatActivity {

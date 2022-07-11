@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.design_pattern_java_kotlin.R;
+import alidoran.design_pattern.R;
 
 public class Main_SimpleFactory extends AppCompatActivity {
 

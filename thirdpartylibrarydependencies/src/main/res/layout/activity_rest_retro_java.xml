@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="alidoran.apis.rest_retrofit_java.RestRetroJavaActivity">
+    tools:context="alidoran.third_party.apis.rest.retrofit_java.RestRetroJavaActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"

@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "doran.ali.android_test-mergeDebugResources-3:/values-night-v8/values-night-v8.xml",
+            "outputFile": "android.test.android_test-mergeDebugResources-3:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Android\\Projects\\KotlinReferences\\android_test\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "102",
+                        "startOffsets": "56",
                         "endLines": "8",
                         "endColumns": "12",
-                        "endOffsets": "451"
+                        "endOffsets": "405"
                     },
                     "to": {
                         "startLines": "9",

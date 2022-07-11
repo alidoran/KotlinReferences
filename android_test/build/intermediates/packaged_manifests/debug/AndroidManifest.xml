@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="doran.ali"
+    package="android.test"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="24"
+        android:minSdkVersion="25"
         android:targetSdkVersion="32" />
 
     <uses-permission android:name="android.permission.REORDER_TASKS" />
@@ -19,10 +19,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.Test" >
         <activity
-            android:name="doran.ali.TestMainActivity"
+            android:name="android.test.TestMainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +32,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.YOUR_PACKAGE_NAME.provider"
+            android:authorities="com.android.test.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -68,7 +67,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="doran.ali.androidx-startup"
+            android:authorities="android.test.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

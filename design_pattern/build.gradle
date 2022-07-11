@@ -2,13 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    compileSdkVersion 32
-    buildToolsVersion '32.1.0 rc1'
+    compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.design_pattern_java_kotlin"
+        applicationId "alidoran.design_pattern"
         minSdk 21
-        targetSdkVersion 32
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -25,7 +24,7 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.material:material:1.6.1'
     testImplementation 'junit:junit:4.13.2'

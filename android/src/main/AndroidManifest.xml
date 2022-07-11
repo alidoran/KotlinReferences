@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android">
+    package="alidoran.android">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -13,53 +13,53 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
-            android:name="android.mvp.view.MvpActivity"
+            android:name=".mvp.view.MvpActivity"
             android:exported="false" />
         <activity
-            android:name="android.socket.SocketActivity"
+            android:name=".socket.SocketActivity"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name="android.compose.ComposeActivity" -->
         <!-- android:exported="false" -->
         <!-- android:label="@string/title_activity_compose" -->
         <!-- android:theme="@style/Theme.Android" /> -->
         <activity
-            android:name="android.binding.ViewBindingActivity"
+            android:name=".binding.ViewBindingActivity"
             android:exported="false" />
         <activity
-            android:name="android.binding.DataBindingActivity"
+            android:name=".binding.DataBindingActivity"
             android:exported="false" />
         <activity
-            android:name="android.room.activity.RoomActivity"
+            android:name=".room.activity.RoomActivity"
             android:exported="false" />
         <activity
-            android:name="android.room.activity.LoadDataActivity"
+            android:name=".room.activity.LoadDataActivity"
             android:exported="false" />
         <activity
-            android:name="android.room.activity.SaveDataActivity"
+            android:name=".room.activity.SaveDataActivity"
             android:exported="false" />
         <activity
-            android:name="android.mvvm_livedata.view.MvvmMainActivity"
+            android:name=".mvvm_livedata.view.MvvmMainActivity"
             android:exported="false" />
         <activity
-            android:name="android.view_to_model.ViewToModelActivity"
+            android:name=".view_to_model.ViewToModelActivity"
             android:exported="false" />
         <activity
-            android:name="android.shared_preference.SharedPreferenceActivity"
+            android:name=".shared_preference.SharedPreferenceActivity"
             android:exported="false" /> <!-- Services -->
-        <service android:name="android.services.BackgroundServiceSample" />
-        <service android:name="android.services.ForegroundServiceSample" />
-        <service android:name="android.services.ScreenOnOffService" />
-        <service android:name="android.services.TrampolineService" /> <!-- Broadcasts -->
-        <receiver android:name="android.broadcast.BroadcastOnOffReceiver" />
+        <service android:name=".services.BackgroundServiceSample" />
+        <service android:name=".services.ForegroundServiceSample" />
+        <service android:name=".services.ScreenOnOffService" />
+        <service android:name=".services.TrampolineService" /> <!-- Broadcasts -->
+        <receiver android:name=".broadcast.BroadcastOnOffReceiver" />
         <receiver
-            android:name="android.broadcast.BroadcastReceiverSample"
+            android:name=".broadcast.BroadcastReceiverSample"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver> <!-- Activities -->
         <activity
-            android:name="android.AndroidActivity"
+            android:name=".AndroidActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,27 +68,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="android.services.ServicesActivity"
+            android:name=".services.ServicesActivity"
             android:exported="false" />
         <activity
-            android:name="android.bottom_sheet.BottomSheetActivity"
+            android:name=".bottom_sheet.BottomSheetActivity"
             android:exported="false" />
         <activity
-            android:name="android.Backlight_light_change.BackLightChangeActivity"
+            android:name=".Backlight_light_change.BackLightChangeActivity"
             android:exported="false" />
         <activity
-            android:name="android.lifecycle.LifeCycleActivity"
+            android:name=".lifecycle.LifeCycleActivity"
             android:exported="false" />
         <activity
-            android:name="android.recycler_view.RecyclerActivity"
+            android:name=".recycler_view.RecyclerActivity"
             android:exported="false" />
         <activity
-            android:name="android.paging_view.PagingRecyclerActivity"
+            android:name=".paging_view.PagingRecyclerActivity"
             android:exported="false" />
         <activity
-            android:name="android.viewpager.ViewPagerSliderActivity"
+            android:name=".viewpager.ViewPagerSliderActivity"
             android:exported="false" />
-        <activity android:name="android.recycler_view.simple.SimpleRecyclerActivity" />
+        <activity android:name=".recycler_view.simple.SimpleRecyclerActivity" />
     </application>
 
 </manifest>

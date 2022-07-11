@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.design_pattern_java_kotlin">
+    package="alidoran.design_pattern">
 
     <application
         android:allowBackup="true"

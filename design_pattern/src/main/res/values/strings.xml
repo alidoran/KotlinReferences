@@ -14,4 +14,5 @@
     <string name="kotlin">kotlin</string>
     <string name="java_no_pattern">java no pattern</string>
     <string name="kotlin_no_pattern">kotlin no pattern</string>
+    <string name="factory_method">Factory Method</string>
 </resources>

@@ -1,12 +1,12 @@
 package alidoran.design_pattern.java.state
 
+import alidoran.design_pattern.databinding.ActivityStateBinding
 import alidoran.design_pattern.java.state.java.CanvasState
 import alidoran.design_pattern.java.state.java.CanvasWithoutPattern
 import alidoran.design_pattern.java.state.java.SelectionToolJavaState
 import alidoran.design_pattern.java.state.java.ToolEnumWithoutPatternState
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.design_pattern_java_kotlin.databinding.ActivityStateBinding
+import androidx.appcompat.app.AppCompatActivity
 
 class StateActivity : AppCompatActivity() {
 

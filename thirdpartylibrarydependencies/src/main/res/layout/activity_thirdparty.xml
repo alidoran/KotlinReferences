@@ -43,4 +43,16 @@
         android:layout_height="wrap_content"
         android:text="@string/rest_retro_java"/>
 
+    <Button
+        android:id="@+id/btn_rest_retro_standard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rest_retro_standard"/>
+
+    <Button
+        android:id="@+id/btn_rest_retro_dagger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rest_retro_dagger"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

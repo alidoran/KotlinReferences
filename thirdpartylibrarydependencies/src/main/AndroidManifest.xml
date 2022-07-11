@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.alidoran.thirdpartylibrarydependencies">
+    package="alidoran.third_party">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,52 +14,52 @@
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
         tools:targetApi="32">
         <activity
-            android:name="alidoran.apis.rest_retrofit_java.RestRetroJavaActivity"
+            android:name=".apis.rest.retrofit_java.RestRetroJavaActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.apis.graphql_apollo.ApolloActivity"
+            android:name=".apis.graphql_apollo.ApolloActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.singleton_injection.SingletonActivity"
+            android:name=".di.singleton_injection.SingletonActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.abstract_injection.AbstractInjectionActivity"
+            android:name=".di.abstract_injection.AbstractInjectionActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.field_injected_class.FieldInjectedClassActivity"
+            android:name=".di.field_injected_class.FieldInjectedClassActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.method_injection.MethodInjectionActivity"
+            android:name=".di.method_injection.MethodInjectionActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.interface_injection.InterfaceInjectionActivity"
+            android:name=".di.interface_injection.InterfaceInjectionActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.DiActivity"
+            android:name=".di.DiActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.field.FieldInjectionActivity"
+            android:name=".di.field.FieldInjectionActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.simple_di.SimpleDiActivity"
+            android:name=".di.simple_di.SimpleDiActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.coroutines.CoroutineActivity"
+            android:name=".coroutines.CoroutineActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.coroutines.CoroutineFakeApiActivity"
+            android:name=".coroutines.CoroutineFakeApiActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.di.constructor.ConstructorInjectActivity"
+            android:name=".di.constructor.ConstructorInjectActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.coroutines.CoroutineProgressBarActivity"
+            android:name=".coroutines.CoroutineProgressBarActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.apis.graphql_retrofit.GraphQLActivity"
+            android:name=".apis.graphql_retrofit.GraphQLActivity"
             android:exported="false" />
         <activity
-            android:name="alidoran.ThirdPartyActivity"
+            android:name=".ThirdPartyActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -25,4 +25,6 @@
     <string name="apollo_site_sample">Apollo site sample</string>
     <string name="weather_sample">Weather sample</string>
     <string name="rest_retro_java">Rest Retro Java</string>
+    <string name="rest_retro_standard">Rest retro standard</string>
+    <string name="rest_retro_dagger">Rest Retro Dagger</string>
 </resources>
