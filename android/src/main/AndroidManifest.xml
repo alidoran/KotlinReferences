@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".navigation.NavigationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fragment.FragmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".mvp.view.MvpActivity"
             android:exported="false" />
         <activity

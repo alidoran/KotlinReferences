@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/navFragment01">
+    <fragment
+        android:id="@+id/navFragment02"
+        android:name="alidoran.android.navigation.NavFragment02"
+        android:label="fragment_nav02"
+        tools:layout="@layout/fragment_nav02" >
+        <action
+            android:id="@+id/action_navFragment02_to_navFragment01"
+            app:destination="@id/navFragment01" />
+    </fragment>
+    <fragment
+        android:id="@+id/navFragment01"
+        android:name="alidoran.android.navigation.NavFragment01"
+        android:label="fragment_nav01"
+        tools:layout="@layout/fragment_nav01" >
+        <action
+            android:id="@+id/action_navFragment01_to_navFragment02"
+            app:destination="@id/navFragment02" />
+    </fragment>
+</navigation>

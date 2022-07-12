@@ -5,9 +5,11 @@ import alidoran.android.binding.DataBindingActivity
 import alidoran.android.binding.ViewBindingActivity
 import alidoran.android.bottom_sheet.BottomSheetActivity
 import alidoran.android.databinding.ActivityAndroidBinding
+import alidoran.android.fragment.FragmentActivity
 import alidoran.android.lifecycle.LifeCycleActivity
 import alidoran.android.mvp.view.MvpActivity
 import alidoran.android.mvvm_livedata.view.MvvmMainActivity
+import alidoran.android.navigation.NavigationActivity
 import alidoran.android.paging_view.PagingRecyclerActivity
 import alidoran.android.recycler_view.RecyclerActivity
 import alidoran.android.room.activity.RoomActivity
@@ -47,7 +49,7 @@ class AndroidActivity : AppCompatActivity() {
         }
 
         binding.btnSendEmail.setOnClickListener {
-            alidoran.android.Intents().sendEMail("Hello", "alidoran@gmail.com", "Hello World")
+            Intents().sendEMail("Hello", "alidoran@gmail.com", "Hello World")
         }
 
         binding.btnServices.setOnClickListener{
@@ -102,6 +104,16 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnViewpagerSlider.setOnClickListener{
             val intent = Intent(this, ViewPagerSliderActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnFragment.setOnClickListener {
+            val intent = Intent(this, FragmentActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnNavigation.setOnClickListener {
+            val intent = Intent(this, NavigationActivity::class.java)
             startActivity(intent)
         }
     }

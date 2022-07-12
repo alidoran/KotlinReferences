@@ -106,5 +106,17 @@
                 android:layout_height="wrap_content"
                 android:text="@string/viewpager_slider"/>
 
+            <Button
+                android:id="@+id/btnFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fragment"/>
+
+            <Button
+                android:id="@+id/btnNavigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/navigation"/>
+
         </LinearLayout>
     </ScrollView>

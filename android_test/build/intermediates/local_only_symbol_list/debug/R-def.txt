@@ -9,9 +9,17 @@ color teal_700
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+id edit_text_amount
+id fragment_container
+id textView
+id text_input_layout_amount
+layout activity_fragment
 layout activity_test_main
+layout fragment_my
 mipmap ic_launcher
 mipmap ic_launcher_round
+string amount
 string app_name
+string hello_blank_fragment
 style Theme.Test
 xml provider_paths

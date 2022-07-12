@@ -54,4 +54,8 @@
     <string name="graphql">GraphQL</string>
     <string name="paging">Paging</string>
     <string name="viewpager_slider">ViewPager slider</string>
+    <string name="fragment">Fragment</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="navigation">Navigation</string>
 </resources>
