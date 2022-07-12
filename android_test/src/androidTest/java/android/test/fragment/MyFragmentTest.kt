@@ -1,6 +1,6 @@
 package android.test.fragment
 
-import alidoran.android.fragment.MyFragment
+import android.test.fragment_test.MyFragment
 import android.test.R
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer

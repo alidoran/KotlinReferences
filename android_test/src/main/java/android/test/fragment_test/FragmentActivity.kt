@@ -1,7 +1,6 @@
 package android.test.fragment_test
 
 
-import alidoran.android.fragment.MyFragment
 import android.os.Bundle
 import android.test.databinding.ActivityFragmentBinding
 import androidx.appcompat.app.AppCompatActivity

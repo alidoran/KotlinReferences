@@ -92,12 +92,14 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2"
 
     //Dagger - Hilt
-    implementation "com.google.dagger:hilt-android:$hilt_android"
-    kapt "com.google.dagger:hilt-android-compiler:$hilt_android_compiler"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_viewmodel"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt"
     kapt "androidx.hilt:hilt-compiler:$hilt_compiler"
-    androidTestImplementation "com.google.dagger:hilt-android-testing:2$hilt_android_testing"
-    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_android_compiler"
+    implementation "com.google.dagger:hilt-android:$hilt_android"
+
+
     androidTestImplementation "androidx.arch.core:core-testing:$core_testing"
 
 //espresso

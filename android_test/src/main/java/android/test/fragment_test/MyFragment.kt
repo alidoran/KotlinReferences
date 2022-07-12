@@ -1,4 +1,4 @@
-package alidoran.android.fragment
+package android.test.fragment_test
 
 import android.os.Bundle
 import android.test.R
