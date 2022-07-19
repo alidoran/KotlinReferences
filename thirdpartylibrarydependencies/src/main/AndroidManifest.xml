@@ -20,28 +20,28 @@
             android:name=".apis.graphql_apollo.ApolloActivity"
             android:exported="false" />
         <activity
-            android:name=".di.singleton_injection.SingletonActivity"
+            android:name=".di.dagger.singleton_injection.SingletonActivity"
             android:exported="false" />
         <activity
-            android:name=".di.abstract_injection.AbstractInjectionActivity"
+            android:name=".di.dagger.abstract_injection.AbstractInjectionActivity"
             android:exported="false" />
         <activity
-            android:name=".di.field_injected_class.FieldInjectedClassActivity"
+            android:name=".di.dagger.field_injected_class.FieldInjectedClassActivity"
             android:exported="false" />
         <activity
-            android:name=".di.method_injection.MethodInjectionActivity"
+            android:name=".di.dagger.method_injection.MethodInjectionActivity"
             android:exported="false" />
         <activity
-            android:name=".di.interface_injection.InterfaceInjectionActivity"
+            android:name=".di.dagger.interface_injection.InterfaceInjectionActivity"
             android:exported="false" />
         <activity
             android:name=".di.DiActivity"
             android:exported="false" />
         <activity
-            android:name=".di.field.FieldInjectionActivity"
+            android:name=".di.dagger.field.FieldInjectionActivity"
             android:exported="false" />
         <activity
-            android:name=".di.simple_di.SimpleDiActivity"
+            android:name=".di.dagger.simple_di.SimpleDiActivity"
             android:exported="false" />
         <activity
             android:name=".coroutines.CoroutineActivity"
@@ -50,7 +50,7 @@
             android:name=".coroutines.CoroutineFakeApiActivity"
             android:exported="false" />
         <activity
-            android:name=".di.constructor.ConstructorInjectActivity"
+            android:name=".di.dagger.constructor.ConstructorInjectActivity"
             android:exported="false" />
         <activity
             android:name=".coroutines.CoroutineProgressBarActivity"

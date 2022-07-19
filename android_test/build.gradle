@@ -78,7 +78,7 @@ dependencies {
     //Mock
     testImplementation "org.mockito:mockito-core:$mockito_core"
     testImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin"
-    testImplementation "io.mockk:mockk:$mockk"
+    testImplementation "io.mockk:mockk:1.12.4"
 
     //Dagger
     kapt "com.google.dagger:dagger-compiler:$dagger"
@@ -92,12 +92,12 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2"
 
     //Dagger - Hilt
-    kapt "com.google.dagger:hilt-android-compiler:$hilt"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt"
-    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt"
-    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt"
+    kapt "com.google.dagger:hilt-android-compiler:2.42"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:2.42"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:2.42"
     kapt "androidx.hilt:hilt-compiler:$hilt_compiler"
-    implementation "com.google.dagger:hilt-android:$hilt_android"
+    implementation "com.google.dagger:hilt-android:2.42"
 
 
     androidTestImplementation "androidx.arch.core:core-testing:$core_testing"
@@ -107,6 +107,6 @@ dependencies {
 
 
     implementation "com.google.android.material:material:$material"
-    implementation "androidx.navigation:navigation-fragment-ktx:$fragment_ktx"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.0"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
 }

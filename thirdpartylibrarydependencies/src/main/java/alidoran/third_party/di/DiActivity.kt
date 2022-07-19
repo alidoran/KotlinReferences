@@ -1,17 +1,17 @@
 package alidoran.third_party.di
 
 import alidoran.third_party.databinding.ActivityDiBinding
-import alidoran.third_party.di.abstract_injection.AbstractInjectionActivity
-import alidoran.third_party.di.constructor.ConstructorInjectActivity
-import alidoran.third_party.di.field_injected_class.FieldInjectedClassActivity
-import alidoran.third_party.di.field.FieldInjectionActivity
-import alidoran.third_party.di.interface_injection.InterfaceInjectionActivity
-import alidoran.third_party.di.method_injection.MethodInjectionActivity
-import alidoran.third_party.di.singleton_injection.SingletonActivity
-import alidoran.third_party.di.simple_di.SimpleDiActivity
+import alidoran.third_party.di.dagger.abstract_injection.AbstractInjectionActivity
+import alidoran.third_party.di.dagger.constructor.ConstructorInjectActivity
+import alidoran.third_party.di.dagger.field.FieldInjectionActivity
+import alidoran.third_party.di.dagger.field_injected_class.FieldInjectedClassActivity
+import alidoran.third_party.di.dagger.interface_injection.InterfaceInjectionActivity
+import alidoran.third_party.di.dagger.method_injection.MethodInjectionActivity
+import alidoran.third_party.di.dagger.simple_di.SimpleDiActivity
+import alidoran.third_party.di.dagger.singleton_injection.SingletonActivity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 class DiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

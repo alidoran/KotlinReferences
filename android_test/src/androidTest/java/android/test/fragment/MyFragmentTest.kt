@@ -27,7 +27,7 @@ internal class MyFragmentTest: TestCase(){
 
     @Test
     fun testAddingSpend(){
-        onView(withId(R.id.edit_text_amount)).perform(typeText("Ali"))
+        onView(withId(R.id.edt_input_txt)).perform(typeText("Ali"))
 
     }
 }

@@ -4,6 +4,23 @@
             "outputFile": "android.test.android_test-mergeDebugResources-3:/values-pt/values-pt.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Ali\\.gradle\\caches\\transforms-3\\97dcc8b7b4944ca4187e8d52f40825fd\\transformed\\navigation-ui-2.5.0\\res\\values-pt\\values-pt.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,119",
+                        "endOffsets": "162,282"
+                    },
+                    "to": {
+                        "startLines": "29,30",
+                        "startColumns": "4,4",
+                        "startOffsets": "2843,2955",
+                        "endColumns": "111,119",
+                        "endOffsets": "2950,3070"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Ali\\.gradle\\caches\\transforms-3\\6c22a2b26401c7da8dfe4f0eeeb2e867\\transformed\\appcompat-1.4.2\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -35,23 +52,6 @@
                         "startOffsets": "3161",
                         "endColumns": "100",
                         "endOffsets": "3257"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ali\\.gradle\\caches\\transforms-3\\5cdd238a1e7e0fa11ec41d7344364f68\\transformed\\navigation-ui-2.3.3\\res\\values-pt\\values-pt.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,167",
-                        "endColumns": "111,119",
-                        "endOffsets": "162,282"
-                    },
-                    "to": {
-                        "startLines": "29,30",
-                        "startColumns": "4,4",
-                        "startOffsets": "2843,2955",
-                        "endColumns": "111,119",
-                        "endOffsets": "2950,3070"
                     }
                 }
             ]

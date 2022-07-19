@@ -9,10 +9,10 @@ color teal_700
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-id edit_text_amount
+id edt_input_txt
 id fragment_container
+id lay_edt_input_text
 id textView
-id text_input_layout_amount
 layout activity_fragment
 layout activity_test_main
 layout fragment_my

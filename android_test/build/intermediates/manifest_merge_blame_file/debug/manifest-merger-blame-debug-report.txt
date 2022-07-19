@@ -43,131 +43,144 @@
 26-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:9:9-54
 27        android:supportsRtl="true"
 27-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:10:9-35
-28        android:testOnly="true"
-29        android:theme="@style/Theme.Test" >
-29-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:11:9-42
-30        <activity
-30-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:12:9-20:20
-31            android:name="android.test.TestMainActivity"
-31-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:13:13-57
-32            android:exported="true" >
-32-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:14:13-36
-33            <intent-filter>
-33-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:15:13-19:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
-34-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:18:17-77
-36-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:18:27-74
-37            </intent-filter>
-38        </activity>
-39
-40        <provider
-40-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:22:9-30:20
-41            android:name="androidx.core.content.FileProvider"
-41-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:23:13-62
-42            android:authorities="com.android.test.provider"
-42-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:24:13-60
-43            android:exported="false"
-43-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:25:13-37
-44            android:grantUriPermissions="true" >
-44-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:26:13-47
-45            <meta-data
-45-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:27:13-29:58
-46                android:name="android.support.FILE_PROVIDER_PATHS"
-46-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:28:17-67
-47                android:resource="@xml/provider_paths" />
-47-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:29:17-55
-48        </provider>
-49
-50        <activity
-50-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:28:9-37:20
-51            android:name="androidx.fragment.app.testing.FragmentScenario$EmptyFragmentActivity"
-51-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:29:13-96
-52            android:exported="true"
-52-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:30:13-36
-53            android:multiprocess="true"
-53-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:31:13-40
-54            android:taskAffinity=""
-54-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:32:13-36
-55            android:theme="@style/FragmentScenarioEmptyFragmentActivityTheme" >
-55-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:33:13-78
-56            <intent-filter>
-56-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:34:13-36:29
-57                <action android:name="android.intent.action.MAIN" />
-57-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
-57-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
-58            </intent-filter>
-59        </activity>
-60        <activity
-60-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:27:9-34:20
-61            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
-61-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:28:13-99
-62            android:exported="true"
-62-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:29:13-36
-63            android:theme="@android:style/Theme" >
-63-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:30:13-49
-64            <intent-filter>
-64-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:34:13-36:29
-65                <action android:name="android.intent.action.MAIN" />
-65-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
-65-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
-66            </intent-filter>
-67        </activity>
-68        <activity
-68-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:35:9-42:20
-69            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
-69-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:36:13-95
-70            android:exported="true"
-70-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:37:13-36
-71            android:theme="@android:style/Theme" >
-71-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:38:13-49
-72            <intent-filter>
-72-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:34:13-36:29
-73                <action android:name="android.intent.action.MAIN" />
-73-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
-73-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
-74            </intent-filter>
-75        </activity>
-76        <activity
-76-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:43:9-50:20
-77            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
-77-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:44:13-103
-78            android:exported="true"
-78-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:45:13-36
-79            android:theme="@android:style/Theme.Dialog" >
-79-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:46:13-56
-80            <intent-filter>
-80-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:34:13-36:29
-81                <action android:name="android.intent.action.MAIN" />
-81-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
-81-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
-82            </intent-filter>
-83        </activity>
-84
-85        <provider
-85-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-86            android:name="androidx.startup.InitializationProvider"
-86-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
-87            android:authorities="android.test.androidx-startup"
-87-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
-88            android:exported="false" >
-88-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
-89            <meta-data
-89-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-90                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-90-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
-91                android:value="androidx.startup" />
-91-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
-92            <meta-data
-92-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Ali\.gradle\caches\transforms-3\1710342208e497019bcf57ee65e780d6\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-93                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-93-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Ali\.gradle\caches\transforms-3\1710342208e497019bcf57ee65e780d6\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-94                android:value="androidx.startup" />
-94-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Ali\.gradle\caches\transforms-3\1710342208e497019bcf57ee65e780d6\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-95        </provider>
-96    </application>
-97
-98</manifest>
+28        android:theme="@style/Theme.Test" >
+28-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:11:9-42
+29        <activity
+29-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:12:9-20:20
+30            android:name="android.test.TestMainActivity"
+30-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:13:13-57
+31            android:exported="true" >
+31-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:14:13-36
+32            <intent-filter>
+32-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:15:13-19:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
+33-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:18:17-77
+35-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:18:27-74
+36            </intent-filter>
+37        </activity>
+38
+39        <provider
+39-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:22:9-30:20
+40            android:name="androidx.core.content.FileProvider"
+40-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:23:13-62
+41            android:authorities="com.android.test.provider"
+41-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:24:13-60
+42            android:exported="false"
+42-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:25:13-37
+43            android:grantUriPermissions="true" >
+43-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:26:13-47
+44            <meta-data
+44-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:27:13-29:58
+45                android:name="android.support.FILE_PROVIDER_PATHS"
+45-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:28:17-67
+46                android:resource="@xml/provider_paths" />
+46-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:29:17-55
+47        </provider>
+48
+49        <activity
+49-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:28:9-37:20
+50            android:name="androidx.fragment.app.testing.FragmentScenario$EmptyFragmentActivity"
+50-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:29:13-96
+51            android:exported="true"
+51-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:30:13-36
+52            android:multiprocess="true"
+52-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:31:13-40
+53            android:taskAffinity=""
+53-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:32:13-36
+54            android:theme="@style/FragmentScenarioEmptyFragmentActivityTheme" >
+54-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:33:13-78
+55            <intent-filter>
+55-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:34:13-36:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
+56-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
+57            </intent-filter>
+58        </activity>
+59
+60        <uses-library
+60-->[androidx.window:window:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\7e752904062f3d5bdf0760f5b65ee245\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+61            android:name="androidx.window.extensions"
+61-->[androidx.window:window:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\7e752904062f3d5bdf0760f5b65ee245\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+62            android:required="false" />
+62-->[androidx.window:window:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\7e752904062f3d5bdf0760f5b65ee245\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+63        <uses-library
+63-->[androidx.window:window:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\7e752904062f3d5bdf0760f5b65ee245\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+64            android:name="androidx.window.sidecar"
+64-->[androidx.window:window:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\7e752904062f3d5bdf0760f5b65ee245\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+65            android:required="false" />
+65-->[androidx.window:window:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\7e752904062f3d5bdf0760f5b65ee245\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+66
+67        <activity
+67-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:27:9-34:20
+68            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+68-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:28:13-99
+69            android:exported="true"
+69-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:29:13-36
+70            android:theme="@android:style/Theme" >
+70-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:30:13-49
+71            <intent-filter>
+71-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:34:13-36:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
+72-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
+73            </intent-filter>
+74        </activity>
+75        <activity
+75-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:35:9-42:20
+76            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+76-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:36:13-95
+77            android:exported="true"
+77-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:37:13-36
+78            android:theme="@android:style/Theme" >
+78-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:38:13-49
+79            <intent-filter>
+79-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:34:13-36:29
+80                <action android:name="android.intent.action.MAIN" />
+80-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
+80-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
+81            </intent-filter>
+82        </activity>
+83        <activity
+83-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:43:9-50:20
+84            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+84-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:44:13-103
+85            android:exported="true"
+85-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:45:13-36
+86            android:theme="@android:style/Theme.Dialog" >
+86-->[androidx.test:core:1.4.0] C:\Users\Ali\.gradle\caches\transforms-3\0e88406ef5dd72f2ba1f9a7fa6ad033c\transformed\core-1.4.0\AndroidManifest.xml:46:13-56
+87            <intent-filter>
+87-->[androidx.fragment:fragment-testing:1.5.0] C:\Users\Ali\.gradle\caches\transforms-3\7e7687abd8410bcb4f92e75ce22c6ffb\transformed\fragment-testing-1.5.0\AndroidManifest.xml:34:13-36:29
+88                <action android:name="android.intent.action.MAIN" />
+88-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:17-69
+88-->C:\Android\Projects\KotlinReferences\android_test\src\main\AndroidManifest.xml:16:25-66
+89            </intent-filter>
+90        </activity>
+91
+92        <provider
+92-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+93            android:name="androidx.startup.InitializationProvider"
+93-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+94            android:authorities="android.test.androidx-startup"
+94-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+95            android:exported="false" >
+95-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+96            <meta-data
+96-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+97                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+97-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+98                android:value="androidx.startup" />
+98-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ali\.gradle\caches\transforms-3\42dfda3c1529bff2ba3083ee59d432c4\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+99            <meta-data
+99-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Ali\.gradle\caches\transforms-3\1710342208e497019bcf57ee65e780d6\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+100                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+100-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Ali\.gradle\caches\transforms-3\1710342208e497019bcf57ee65e780d6\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+101                android:value="androidx.startup" />
+101-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Ali\.gradle\caches\transforms-3\1710342208e497019bcf57ee65e780d6\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+102        </provider>
+103    </application>
+104
+105</manifest>
