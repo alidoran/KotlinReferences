@@ -1,7 +1,6 @@
 package alidoran.third_party.di.dagger.constructor
 
 import alidoran.third_party.databinding.ActivityDaggerBinding
-import alidoran.third_party.di.constructor.DaggerAirConditionDagFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 

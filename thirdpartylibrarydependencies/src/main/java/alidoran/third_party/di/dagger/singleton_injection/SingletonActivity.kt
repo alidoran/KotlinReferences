@@ -1,7 +1,6 @@
 package alidoran.third_party.di.dagger.singleton_injection
 
 import alidoran.third_party.R
-import alidoran.third_party.di.singleton_injection.DaggerCarSingletonComponent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import javax.inject.Inject

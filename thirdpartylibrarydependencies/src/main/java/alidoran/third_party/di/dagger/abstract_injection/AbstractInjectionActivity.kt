@@ -1,7 +1,6 @@
 package alidoran.third_party.di.dagger.abstract_injection
 
 import alidoran.third_party.R
-import alidoran.third_party.di.abstract_injection.DaggerCarAbstractInjectionComponent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import javax.inject.Inject

@@ -1,7 +1,6 @@
 package alidoran.third_party.di.dagger.app_level_injection
 
 
-import alidoran.third_party.di.app_level_injection.DaggerAppLevelInjectionApplication_CarAppLevelComponent
 import android.app.Application
 import dagger.Component
 import javax.inject.Inject

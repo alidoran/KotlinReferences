@@ -1,7 +1,5 @@
 package alidoran.third_party.di.dagger.constructor
 
-
-import alidoran.third_party.di.constructor.DaggerAirConditionDagFactory
 import dagger.Component
 import javax.inject.Inject
 

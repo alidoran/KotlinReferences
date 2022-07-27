@@ -1,8 +1,6 @@
 package alidoran.third_party.di.dagger.interface_injection
 
 import alidoran.third_party.R
-import alidoran.third_party.di.interface_injection.DaggerCarInterfaceInjectionComponent
-import alidoran.third_party.di.interface_injection.DaggerMultiInterfaceInjectionComponent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import javax.inject.Inject

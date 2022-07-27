@@ -2,7 +2,6 @@ package alidoran.third_party.di.dagger.field
 
 
 import alidoran.third_party.databinding.ActivityFieldInjectionBinding
-import alidoran.third_party.di.field.DaggerCarComponentField
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import javax.inject.Inject
