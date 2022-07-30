@@ -5,11 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="android.viewpager.ViewPagerSliderActivity">
+    tools:context=".viewpager.ViewPagerSliderActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

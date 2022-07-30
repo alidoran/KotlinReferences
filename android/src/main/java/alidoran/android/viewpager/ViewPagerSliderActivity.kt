@@ -2,13 +2,14 @@ package alidoran.android.viewpager
 
 import alidoran.android.R
 import alidoran.android.databinding.ActivityViewPagerSliderBinding
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlin.math.abs
 
 class ViewPagerSliderActivity : AppCompatActivity() {
@@ -43,6 +44,11 @@ class ViewPagerSliderActivity : AppCompatActivity() {
         binding.viewpager.offscreenPageLimit = 3
         binding.viewpager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
+        TabLayoutMediator(binding.tabLayout, binding.viewpager) { tab, position ->
+            tab.setIcon(getTabIcon(position))
+            tab.text = getTabTitle(position)
+        }.attach()
+
         val comPosPageTarn = CompositePageTransformer()
         comPosPageTarn.addTransformer(MarginPageTransformer(40))
         comPosPageTarn.addTransformer { page, position ->
@@ -63,6 +69,26 @@ class ViewPagerSliderActivity : AppCompatActivity() {
                 }
             }
         )
+    }
+
+    private fun getTabIcon(position: Int): Int {
+        return when (position) {
+            0 -> R.drawable.baseline_thumb_up_black_24dp
+            1 -> R.drawable.baseline_thumb_down_black_24dp
+            2 -> R.drawable.baseline_thumb_up_black_24dp
+            3 -> R.drawable.baseline_thumb_down_black_24dp
+            else -> R.drawable.baseline_thumb_up_black_24dp
+        }
+    }
+
+    private fun getTabTitle(position: Int): String? {
+        return when (position) {
+            0 -> "First one"
+            1 -> "Second one"
+            2 -> "third one"
+            3 -> "fourth one"
+            else -> "other one"
+        }
     }
 
     override fun onPause() {
