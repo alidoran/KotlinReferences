@@ -8,25 +8,24 @@ import android.os.Looper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import kotlinx.coroutines.delay
 import java.util.concurrent.TimeUnit
 
 class MvvmViewModel : ViewModel() {
     private val mvvmData = MutableLiveData<MvvmModel>()
     private val mvvmModelList = MvvmModelDataProvider().getMvvmModelList()
     private var currentIndex = 0
-    private val delay = TimeUnit.SECONDS.toMillis(2)
+    private val delayTime = TimeUnit.SECONDS.toMillis(2)
 
     init {
         loop()
     }
 
-    private fun updateMvvmModels() {
+    private fun updateMvvmModels(): MvvmModel {
         currentIndex++
         currentIndex %= mvvmModelList.size
-        println("Before")
-        mvvmData.value = mvvmModelList[currentIndex]
-        println("After")
-        loop()
+        return mvvmModelList[currentIndex]
     }
 
 
@@ -37,5 +36,10 @@ class MvvmViewModel : ViewModel() {
         }
     }
 
-    fun getLiveMvvmData(): LiveData<MvvmModel> = mvvmData
+    fun getLiveMvvmData(): LiveData<MvvmModel> = liveData {
+        while (true) {
+            emit(updateMvvmModels())
+            delay(delayTime)
+        }
+    }
 }
