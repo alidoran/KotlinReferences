@@ -1,7 +1,6 @@
 package alidoran.android.mvvm_livedata.view
 
 import alidoran.android.databinding.ActivityMvvmMainBinding
-import alidoran.android.mvvm_livedata.model.MvvmModel
 import alidoran.android.mvvm_livedata.view_model.MvvmViewModel
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -19,8 +18,8 @@ class MvvmMainActivity : AppCompatActivity() {
 
         binding.lifecycleOwner = this
 
-        viewModel.getLiveMvvmData().observe(this) { mvvmModel: MvvmModel ->
-            binding.model = mvvmModel
+        viewModel.mvvmData.observe(this){
+            mvvmModel -> binding.model = mvvmModel
         }
     }
 

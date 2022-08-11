@@ -58,4 +58,6 @@
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="navigation">Navigation</string>
+    <string name="next_page">Next Page</string>
+    <string name="back_to_last_activity">Back to last activity</string>
 </resources>

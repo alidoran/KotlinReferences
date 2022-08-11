@@ -27,7 +27,7 @@ class SimpleRecyclerActivity : AppCompatActivity() {
     private fun simpleJavaList(isHorizontal: Boolean) {
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_simple_recycler)
         val adapter =
-            alidoran.android.recycler_view.simple.SimpleJavaLearnAdapter(
+            SimpleJavaLearnAdapter(
                 createModelList()
             )
 
@@ -39,6 +39,7 @@ class SimpleRecyclerActivity : AppCompatActivity() {
             }
 
         recyclerView.adapter = adapter
+
     }
 
     private fun createModelList(): List<alidoran.android.recycler_view.simple.SimpleRecyclerModel> {

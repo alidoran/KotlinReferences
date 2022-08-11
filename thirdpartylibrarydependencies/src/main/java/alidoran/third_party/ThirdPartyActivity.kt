@@ -2,12 +2,6 @@ package alidoran.third_party
 
 import alidoran.third_party.apis.graphql_apollo.ApolloActivity
 import alidoran.third_party.apis.graphql_retrofit.GraphQLActivity
-import alidoran.third_party.coroutines.CoroutineActivity
-import alidoran.third_party.di.DiActivity
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Toast
 import alidoran.third_party.apis.rest.models.Current
 import alidoran.third_party.apis.rest.models.Location
 import alidoran.third_party.apis.rest.retro_dagger.CallWeatherDagger
@@ -15,7 +9,14 @@ import alidoran.third_party.apis.rest.retro_standard.CallWeatherApi2
 import alidoran.third_party.apis.rest.retrofit_center_run.WeatherApi
 import alidoran.third_party.apis.rest.retrofit_center_run.WeatherService
 import alidoran.third_party.apis.rest.retrofit_java.RestRetroJavaActivity
+import alidoran.third_party.coroutines.CoroutineActivity
 import alidoran.third_party.databinding.ActivityThirdpartyBinding
+import alidoran.third_party.di.DiActivity
+import alidoran.third_party.firebase.FirebaseAuthenticate
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class ThirdPartyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,6 +68,11 @@ class ThirdPartyActivity : AppCompatActivity() {
 
         binding.btnRestRetroDagger.setOnClickListener {
             CallWeatherDagger()
+        }
+
+        binding.btnFirebaseAuthenticate.setOnClickListener {
+            val intent = Intent(this, FirebaseAuthenticate::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -1,6 +1,7 @@
 package alidoran.android
 
 import alidoran.android.Backlight_light_change.BackLightChangeActivity
+import alidoran.android.activity_result_launcher.ActivityResultLauncherSource
 import alidoran.android.binding.DataBindingActivity
 import alidoran.android.binding.ViewBindingActivity
 import alidoran.android.bottom_sheet.BottomSheetActivity
@@ -114,6 +115,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnNavigation.setOnClickListener {
             val intent = Intent(this, NavigationActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnActivityResultLauncher.setOnClickListener {
+            val intent = Intent(this, ActivityResultLauncherSource::class.java)
             startActivity(intent)
         }
     }

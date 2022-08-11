@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".activity_result_launcher.ActivityResultLauncherDest"
+            android:exported="false" />
+        <activity
+            android:name=".activity_result_launcher.ActivityResultLauncherSource"
+            android:exported="false" />
+        <activity
             android:name=".navigation.NavigationActivity"
             android:exported="false" />
         <activity

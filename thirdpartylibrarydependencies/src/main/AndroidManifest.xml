@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
         tools:targetApi="32">
         <activity
+            android:name=".firebase.FirebaseAuthenticate"
+            android:exported="false" />
+        <activity
             android:name=".apis.rest.retrofit_java.RestRetroJavaActivity"
             android:exported="false" />
         <activity

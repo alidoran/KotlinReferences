@@ -27,4 +27,8 @@
     <string name="rest_retro_java">Rest Retro Java</string>
     <string name="rest_retro_standard">Rest retro standard</string>
     <string name="rest_retro_dagger">Rest Retro Dagger</string>
+    <string name="your_web_client_id">771210793489-vqnqh6rjomijialjk6lbqi3l67ndbnvo.apps.googleusercontent.com</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="firebase_authenticate">Firebase authenticate</string>
 </resources>
