@@ -4,15 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_200"
-    tools:context="alidoran.android.navigation.NavFragment02">
+    tools:context="alidoran.android.navigation_safe_args.NavFragment02">
 
-    <TextView
-        android:id="@+id/txt_whole_02"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="85sp"
-        android:text="@string/two" />
+        android:orientation="vertical"
+        android:gravity="center">
 
+        <TextView
+            android:id="@+id/txt_whole_02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/two"
+            android:textColor="@color/white"
+            android:textSize="85sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </FrameLayout>

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_result_launcher.ActivityResultLauncherSource"
+    tools:context=".activity_result_launcher.ResultLauncherSourceActivity"
     android:gravity="center">
 
     <Button

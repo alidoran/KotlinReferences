@@ -11,10 +11,11 @@ import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 class MvvmViewModel : ViewModel() {
-    private val _mvvmData = MutableLiveData<MvvmModel>()
+
     private val mvvmModelList = MvvmModelDataProvider().getMvvmModelList()
     private var currentIndex = 0
     private val delayTime = TimeUnit.SECONDS.toMillis(2)
+    private val _mvvmData = MutableLiveData<MvvmModel>()
     val mvvmData
         get() = _mvvmData
 

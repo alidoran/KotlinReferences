@@ -25,12 +25,12 @@ class FragmentActivity : AppCompatActivity() {
         bundle.putBoolean("Pass data", true)
         bundle.putString("pass string", "My String")
         fragment.arguments = bundle
-        supportFragmentManager.beginTransaction().replace(binding.fragmentContainer.id, fragment)
+        supportFragmentManager.beginTransaction().replace(binding.fragmentNavigationContainer.id, fragment)
             .commit()
     }
 
     private fun closeFragment() {
-        supportFragmentManager.beginTransaction().remove(binding.fragmentContainer.getFragment())
+        supportFragmentManager.beginTransaction().remove(binding.fragmentNavigationContainer.getFragment())
             .commit()
         fragment = MyFragment()
     }

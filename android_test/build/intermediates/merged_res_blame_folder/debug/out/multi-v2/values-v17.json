@@ -4,7 +4,7 @@
             "outputFile": "android.test.android_test-mergeDebugResources-3:/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ali\\.gradle\\caches\\transforms-3\\0bf3d0b122b8bb1a6012102498243225\\transformed\\appcompat-1.4.1\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\Ali\\.gradle\\caches\\transforms-3\\d8c000893f86da698c79c82cae57b3ae\\transformed\\appcompat-1.4.1\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

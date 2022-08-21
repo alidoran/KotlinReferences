@@ -1,4 +1,4 @@
-package alidoran.android.navigation
+package alidoran.android.navigation_safe_args
 
 import alidoran.android.R
 import android.os.Bundle
@@ -6,8 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 
 /*
 dependencies
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:x.x.x'
+    implementation 'androidx.navigation:navigation-ui-ktx:x.x.x'
+    implementation "com.google.android.material:material:x.x"
 
 1- Resource manager -> navigation tab -> Add bottom + ->  create by lowercase name
 2- Add -> create new destination -> uncheck factory methods -> finish

@@ -13,13 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".save_state_handle.SavedStateHandleActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity_result_launcher.ActivityResultLauncherDest"
             android:exported="false" />
         <activity
-            android:name=".activity_result_launcher.ActivityResultLauncherSource"
+            android:name=".activity_result_launcher.ResultLauncherSourceActivity"
             android:exported="false" />
         <activity
-            android:name=".navigation.NavigationActivity"
+            android:name=".navigation_safe_args.NavigationActivity"
             android:exported="false" />
         <activity
             android:name=".fragment.FragmentActivity"

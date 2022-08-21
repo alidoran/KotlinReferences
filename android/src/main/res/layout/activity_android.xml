@@ -119,10 +119,16 @@
                 android:text="@string/navigation"/>
 
             <Button
-                android:id="@+id/btn_activity_result_launcher"
+                android:id="@+id/btn_result_launcher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Activity result launcher"/>
+                android:text="@string/activity_result_launcher"/>
+
+            <Button
+                android:id="@+id/btn_saved_state_handle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/saved_state_handle"/>
 
         </LinearLayout>
     </ScrollView>

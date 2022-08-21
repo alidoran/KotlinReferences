@@ -60,4 +60,8 @@
     <string name="navigation">Navigation</string>
     <string name="next_page">Next Page</string>
     <string name="back_to_last_activity">Back to last activity</string>
+    <string name="passing_argument">Passing Argument</string>
+    <string name="back">Back</string>
+    <string name="activity_result_launcher">Activity result launcher</string>
+    <string name="saved_state_handle">Saved state handle</string>
 </resources>

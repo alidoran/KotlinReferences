@@ -1,7 +1,7 @@
 package alidoran.android
 
 import alidoran.android.Backlight_light_change.BackLightChangeActivity
-import alidoran.android.activity_result_launcher.ActivityResultLauncherSource
+import alidoran.android.activity_result_launcher.ResultLauncherSourceActivity
 import alidoran.android.binding.DataBindingActivity
 import alidoran.android.binding.ViewBindingActivity
 import alidoran.android.bottom_sheet.BottomSheetActivity
@@ -10,10 +10,11 @@ import alidoran.android.fragment.FragmentActivity
 import alidoran.android.lifecycle.LifeCycleActivity
 import alidoran.android.mvp.view.MvpActivity
 import alidoran.android.mvvm_livedata.view.MvvmMainActivity
-import alidoran.android.navigation.NavigationActivity
+import alidoran.android.navigation_safe_args.NavigationActivity
 import alidoran.android.paging_view.PagingRecyclerActivity
 import alidoran.android.recycler_view.RecyclerActivity
 import alidoran.android.room.activity.RoomActivity
+import alidoran.android.save_state_handle.SavedStateHandleActivity
 import alidoran.android.services.ServicesActivity
 import alidoran.android.shared_preference.SharedPreferenceActivity
 import alidoran.android.socket.SocketActivity
@@ -118,8 +119,13 @@ class AndroidActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnActivityResultLauncher.setOnClickListener {
-            val intent = Intent(this, ActivityResultLauncherSource::class.java)
+        binding.btnResultLauncher.setOnClickListener {
+            val intent = Intent(this, ResultLauncherSourceActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnSavedStateHandle.setOnClickListener {
+            val intent = Intent(this, SavedStateHandleActivity::class.java)
             startActivity(intent)
         }
     }
