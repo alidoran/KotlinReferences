@@ -5,9 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".fragment.MyFragment">
 
-    <TextView
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_alert_dialog_builder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_builder"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </FrameLayout>
