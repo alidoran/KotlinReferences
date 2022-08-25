@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".file_picker.FilePickerActivity"
+            android:exported="false" />
+        <activity
             android:name=".save_state_handle.SavedStateHandleActivity"
             android:exported="false" />
         <activity
@@ -95,15 +98,12 @@
             android:name=".lifecycle.LifeCycleActivity"
             android:exported="false" />
         <activity
-            android:name=".recycler_view.RecyclerActivity"
-            android:exported="false" />
-        <activity
             android:name=".paging_view.PagingRecyclerActivity"
             android:exported="false" />
         <activity
             android:name=".viewpager.ViewPagerSliderActivity"
             android:exported="false" />
-        <activity android:name=".recycler_view.simple.SimpleRecyclerActivity" />
+        <activity android:name=".recycler_view.RecyclerActivity" />
     </application>
 
 </manifest>

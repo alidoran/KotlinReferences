@@ -9,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 
 class ResultLauncherSourceActivity : AppCompatActivity() {
 
-    var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+    var resultLauncher = registerForActivityResult(ActivityResultContracts
+        .StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             // There are no request codes
             println(result.data?.getStringExtra("ali"))

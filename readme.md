@@ -18,7 +18,7 @@ You have some implementation samples for below libraries and abilities
 13) Navigation: safe args: How to transfer data between fragment with type_safety
 14) Navigation: BackstackEntry LiveData
 15) PagingView: Using PagingView instead of Recyclerview for dynamic benefits
-16) RecyclerView: A traditional way for showing a list
+16) RecyclerView: Simple-horizontal-binding-ListAdapter-AsyncListDiffer
 17) Room: The most famous library for android database
 18) SafeStateHandle: Three type of saving state including jetpack method
 19) SecureKey: The bast way for secure your keys in your program

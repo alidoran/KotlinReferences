@@ -64,4 +64,7 @@
     <string name="back">Back</string>
     <string name="activity_result_launcher">Activity result launcher</string>
     <string name="saved_state_handle">Saved state handle</string>
+    <string name="file_picker">File Picker</string>
+    <string name="list_differ">List Differ</string>
+    <string name="list_adapter">List Adapter</string>
 </resources>

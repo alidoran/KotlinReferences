@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 
 
@@ -45,12 +44,15 @@ class NavFragment01 : Fragment() {
         binding.btnNextPage.setOnClickListener{
             val amount = binding.edtMyArgumentView.text.toString()
             val action = NavFragment01Directions.actionNavFragment01ToNavFragment02(amount)
-            Navigation.findNavController(binding.root).navigate(action)
+            findNavController().navigate(action)
         }
 
         //region livedata back result
-        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<String>("key")?.observe(viewLifecycleOwner) {result ->
-            val result = result
+        findNavController().currentBackStackEntry
+            ?.savedStateHandle
+            ?.getLiveData<String>("key")
+            ?.observe(viewLifecycleOwner) {
+            val result = it
         }
         //endregion
     }

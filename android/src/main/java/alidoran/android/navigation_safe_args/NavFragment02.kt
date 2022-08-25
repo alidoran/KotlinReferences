@@ -36,10 +36,10 @@ class NavFragment02() : Fragment() {
         val result = args.myArg + "Result"
 
 //        setFragmentResult("requestKey", bundleOf("bundleKey" to result)) // Bundle back result
-        findNavController().previousBackStackEntry?.savedStateHandle?.set("key", result) //live data back result
+        findNavController()
+            .previousBackStackEntry
+            ?.savedStateHandle?.set("key", result) //live data back result
     }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()

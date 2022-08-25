@@ -1,16 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context="android.recycler_view.RecyclerActivity">
+    tools:context="alidoran.android.AndroidActivity">
 
-    <Button
-        android:id="@+id/btn_simple_recycler_java"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/simple_recycler"/>
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_simple_recycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/simple"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/btn_simple_horizontal_recycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/horizontal"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/btn_recycler_view_binding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/view_binding"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/btn_recycler_list_adapter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/list_adapter"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/btn_recycler_differ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/list_differ"
+                android:layout_marginStart="4dp"
+                tools:ignore="ButtonStyle"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_simple_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/simple_item_recycler">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
