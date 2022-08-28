@@ -6,6 +6,7 @@ import alidoran.android.binding.DataBindingActivity
 import alidoran.android.binding.ViewBindingActivity
 import alidoran.android.bottom_sheet.BottomSheetActivity
 import alidoran.android.databinding.ActivityAndroidBinding
+import alidoran.android.dialog.DialogActivity
 import alidoran.android.fragment.FragmentActivity
 import alidoran.android.lifecycle.LifeCycleActivity
 import alidoran.android.mvp.view.MvpActivity
@@ -126,6 +127,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnSavedStateHandle.setOnClickListener {
             val intent = Intent(this, SavedStateHandleActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnDialogs.setOnClickListener {
+            val intent = Intent(this, DialogActivity::class.java)
             startActivity(intent)
         }
     }

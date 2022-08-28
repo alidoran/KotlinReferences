@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".dialog.DialogActivity"
+            android:exported="false" />
+        <activity
             android:name=".file_picker.FilePickerActivity"
             android:exported="false" />
         <activity

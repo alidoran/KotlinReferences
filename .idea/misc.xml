@@ -27,6 +27,7 @@
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_back_light_change.xml" value="0.16641337386018237" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_bottom_sheet.xml" value="0.16286727456940223" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_data_binding.xml" value="0.16354166666666667" />
+        <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_dialog.xml" value="0.2726449275362319" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_file_picker.xml" value="0.32083333333333336" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_fragment.xml" value="0.16795865633074936" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_graphql.xml" value="0.23143115942028986" />
@@ -47,6 +48,7 @@
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_view_pager.xml" value="0.15462962962962962" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/activity_view_pager_slider.xml" value="0.2848731884057971" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/adapter_custom_list.xml" value="0.175" />
+        <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/fragment_custom_dialog.xml" value="0.32155797101449274" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/fragment_first.xml" value="0.15462962962962962" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/fragment_life_cycle.xml" value="0.1503623188405797" />
         <entry key="..\:/Android/Projects/KotlinReferences/android/src/main/res/layout/fragment_my.xml" value="0.24365942028985507" />

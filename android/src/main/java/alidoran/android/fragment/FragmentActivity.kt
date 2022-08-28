@@ -17,7 +17,7 @@ class FragmentActivity : AppCompatActivity() {
         loadFragment()
     }
 
-    fun loadFragment() {
+    private fun loadFragment() {
         if (fragment.isResumed)
             closeFragment()
 

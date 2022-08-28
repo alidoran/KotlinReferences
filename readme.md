@@ -1,5 +1,10 @@
-This project included some subproject. all of them are combined in multi-project structure.
-You can run each of them separately by choosing in your select run/debug configuration menu.   
+This project included some subprojects. All of them are combined in a multi-project structure. 
+You can run each separately by choosing your select run/debug configuration menu.
+
+                                ***Attention*** 
+There isn't a standard project with a acceptable structure. I have written it in a simple form for 
+having less dependency on the different types of knowledge. Each concept is implemented separately 
+and is implementable with any level of programming knowledge.
 
 android project:
 You have some implementation samples for below libraries and abilities
@@ -10,23 +15,24 @@ You have some implementation samples for below libraries and abilities
 5) Broadcast: You can learn how broadcast is worked and how implement it.
 6) CI/CD: An simple implementation of CI/CD by github ability
 7) Compose: How work with compose and simple sample of it.
-8) Fragment: How to deal with fragment
-9) Lifecycle: You have a practical sample for Activity lifecycle and fragment lifecycle
-10) MVP: You learn how to implement MVP structure
-11) MVVM: You learn how to implement MVVM structure by livedata
-12) Navigation: How to deal with navigation and create a map navigation
-13) Navigation: safe args: How to transfer data between fragment with type_safety
-14) Navigation: BackstackEntry LiveData
-15) PagingView: Using PagingView instead of Recyclerview for dynamic benefits
-16) RecyclerView: Simple-horizontal-binding-ListAdapter-AsyncListDiffer
-17) Room: The most famous library for android database
-18) SafeStateHandle: Three type of saving state including jetpack method
-19) SecureKey: The bast way for secure your keys in your program
-20) Service: You cal learn about Background and foreground services and methods for calling theme
-21) SharedPreference: A quick way for storing low size data in our program
-22) Socket: How create Socket and call it
-23) ViewToModel: A deprecated way for reading view by reflection method
-24) ViewPager: A dynamic viewPager included TabLayout
+8) DialogBuilder: Alert - Simple - Confirmation - Full-Screen/Custom
+9) Fragment: Simple fragment-Material alert dialog- 
+10) Lifecycle: You have a practical sample for Activity lifecycle and fragment lifecycle
+11) MVP: You learn how to implement MVP structure
+12) MVVM: You learn how to implement MVVM structure by livedata
+13) Navigation: How to deal with navigation and create a map navigation
+14) Navigation: safe args: How to transfer data between fragment with type_safety
+15) Navigation: BackstackEntry LiveData
+16) PagingView: Using PagingView instead of Recyclerview for dynamic benefits
+17) RecyclerView: Simple-horizontal-binding-ListAdapter-AsyncListDiffer
+18) Room: The most famous library for android database
+19) SafeStateHandle: Three type of saving state including jetpack method
+20) SecureKey: The bast way for secure your keys in your program
+21) Service: You cal learn about Background and foreground services and methods for calling theme
+22) SharedPreference: A quick way for storing low size data in our program
+23) Socket: How create Socket and call it
+24) ViewToModel: A deprecated way for reading view by reflection method
+25) ViewPager: A dynamic viewPager included TabLayout
 
 android_test project:
 1) Junit5
