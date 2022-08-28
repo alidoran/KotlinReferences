@@ -21,7 +21,7 @@ class RecyclerActivity : AppCompatActivity() {
     private val liveData
         get() = _liveData
 
-    private val listAdapter = ListAdapterRecycler()
+    private val listAdapter = ListRecyclerAdapter()
     private val asyncAdapter = AsyncListDifferAdapter()
     private lateinit var job: Job
 

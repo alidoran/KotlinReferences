@@ -61,36 +61,37 @@ kotlin_base
 4) Arrays
 5) Kotlin types
 6) Bounding references
-7) Class and DataClass
-8) Collection versus Sequences
-9) Conditions
-10) Constant
-11) Data and Time
-12) Enum
-13) Exception
-14) Function Type
-15) Generic
-16) Anonymous class
-17) Interface
-18) Class
-19) Lambda
-20) Lambda with receiver
-21) Lazy
-22) Loops
-23) Map
-24) Methods
-25) Models
-26) Normalization
-27) Objects
-28) Overload
-29) Passing functions
-30) Properties
-31) Reflections
-32) Returns
-33) Strings
-34) Synchronous
-35) Thread and Timer
-36) Variable
+7) Callback/Listener
+8) Class and DataClass
+9) Collection versus Sequences
+10) Conditions
+11) Constant
+12) Data and Time
+13) Enum
+14) Exception
+15) Function Type
+16) Generic
+17) Anonymous class
+18) Interface
+19) Class
+20) Lambda
+21) Lambda with receiver
+22) Lazy
+23) Loops
+24) Map
+25) Methods
+26) Models
+27) Normalization
+28) Objects
+29) Overload
+30) Passing functions
+31) Properties
+32) Reflections
+33) Returns
+34) Strings
+35) Synchronous
+36) Thread and Timer
+37) Variable
 
 third_party_library_dependencies project
 1) Apollo (GraphQL)
