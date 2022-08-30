@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "alidoran.android"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 2
         versionName "2.0"
 
@@ -19,17 +19,6 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
-    }
-
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    buildFeatures {
-        viewBinding true
-        dataBinding true
-//        compose true
     }
     buildscript {
 
@@ -40,28 +29,40 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
 
-        //suppressKotlinVersionCompatibilityCheck for compose
-        freeCompilerArgs += [
-                "-P",
-                "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=false"
-        ]
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion compose_version
 
     }
+
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.3.0"
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+
+
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
     implementation "androidx.core:core-ktx:$core_ktx"
     implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
-    implementation "androidx.appcompat:appcompat:1.4.2"
     implementation "com.google.android.material:material:$material"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
@@ -69,11 +70,13 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
     implementation"com.google.firebase:firebase-analytics-ktx:21.0.0"
     implementation"com.google.firebase:firebase-messaging:$firebase_messaging"
-    implementation"androidx.compose.material3:material3:1.0.0-alpha14"
-    implementation "androidx.compose.material:material:$compose_version"
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    implementation "androidx.compose.ui:ui:1.2.1"
+    implementation "androidx.compose.ui:ui-tooling-preview:1.2.1"
+    implementation 'androidx.activity:activity-compose:1.5.1'
     //test
     testImplementation "androidx.test.ext:junit-ktx:$junitktx"
     implementation "androidx.test:core-ktx:$test_core"
@@ -81,17 +84,10 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:3.4.0"
     //Room
     implementation 'androidx.room:room-ktx:2.4.2'
-    kapt "androidx.room:room-compiler:2.4.2"
     androidTestImplementation 'androidx.room:room-testing:2.4.2'
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.3'
-    //Compose
-    implementation "androidx.activity:activity-compose:$compose"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation "androidx.compose.ui:ui:$compose_version"
     //paging
     implementation 'androidx.paging:paging-runtime-ktx:3.1.1'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
@@ -107,5 +103,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:2.5.1"
     implementation "androidx.lifecycle:lifecycle-process:2.5.1"
     //endregion
-
+    //compose
+    implementation "androidx.compose.material3:material3:1.0.0-beta01"
+    implementation "androidx.compose.material3:material3-window-size-class:1.0.0-beta01"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.2.1"
+    debugImplementation "androidx.compose.ui:ui-tooling:1.2.1"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:1.2.1"
 }

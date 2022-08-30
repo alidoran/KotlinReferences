@@ -80,4 +80,7 @@
     <string name="enter_your_name">Enter your name</string>
     <string name="enter_your_password">Enter your password</string>
     <string name="cancel">Cancel</string>
+    <string name="title_activity_compos">ComposActivity</string>
+    <string name="title_activity_function">FunctionActivity</string>
+    <string name="title_activity_components">ComponentsActivity</string>
 </resources>
