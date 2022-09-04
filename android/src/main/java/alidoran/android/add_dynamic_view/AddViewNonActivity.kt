@@ -4,7 +4,7 @@ import alidoran.android.R
 import android.view.Gravity.CENTER
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.RelativeLayout
 import androidx.core.view.iterator
 import androidx.lifecycle.LifecycleOwner
@@ -19,7 +19,7 @@ class AddViewNonActivity(
         val relativeLayout =
             RelativeLayout(viewGroup.context)
         val relativeParams =
-            RelativeLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT)
+            RelativeLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
         val lottieParams =
             RelativeLayout.LayoutParams(600, 600)
         relativeLayout.setBackgroundColor(
