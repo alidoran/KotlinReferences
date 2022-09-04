@@ -13,6 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".add_dynamic_view.DynamicViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".compose.MultipleViewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_multiple_view"
+            android:theme="@style/Theme.Android" />
+        <activity
             android:name=".compose.ComponentsActivity"
             android:exported="false"
             android:label="@string/title_activity_components"

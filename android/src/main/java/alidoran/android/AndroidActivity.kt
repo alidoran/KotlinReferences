@@ -2,6 +2,7 @@ package alidoran.android
 
 import alidoran.android.Backlight_light_change.BackLightChangeActivity
 import alidoran.android.activity_result_launcher.ResultLauncherSourceActivity
+import alidoran.android.add_dynamic_view.DynamicViewActivity
 import alidoran.android.binding.DataBindingActivity
 import alidoran.android.binding.ViewBindingActivity
 import alidoran.android.bottom_sheet.BottomSheetActivity
@@ -132,6 +133,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnDialogs.setOnClickListener {
             val intent = Intent(this, DialogActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnDynamicView.setOnClickListener {
+            val intent = Intent(this, DynamicViewActivity::class.java)
             startActivity(intent)
         }
     }

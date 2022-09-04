@@ -41,10 +41,12 @@ fun Components(name: String) {
 }
 
 @Composable
-fun ButtonComponent() {0
+fun ButtonComponent() {
     Column {
         Button(
-            onClick = {}
+            onClick = {
+
+            }
         ){
             Text("Button Key")
         }
@@ -53,7 +55,9 @@ fun ButtonComponent() {0
             Text("Outline button key")
         }
 
-        TextButton(onClick = {}) {
+        TextButton(onClick = {
+        }) {
+            Text("TextButton")
         }
     }
 }

@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -52,7 +53,7 @@ fun layoutType() {
 @Composable
 fun column(type: String) {
     Surface(color = MaterialTheme.colorScheme.error) {
-        Column() {
+        Column {
             Text(text = "This is a ")
             Text(text = type)
         }
@@ -83,9 +84,13 @@ fun box(type: String) {
 fun sizableView() {
     Surface(
         color = MaterialTheme.colorScheme.error,
-        modifier = Modifier.fillMaxWidth().padding(4.dp, 4.dp)
+
     ) {
-        Column {
+        Column(
+            modifier = Modifier.fillMaxWidth().padding(4.dp, 4.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
             Text("sizable modifier")
         }
     }
