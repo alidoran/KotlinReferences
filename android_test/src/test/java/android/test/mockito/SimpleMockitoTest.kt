@@ -24,7 +24,4 @@ class SimpleMockitoTest {
         val userName = userClient.callUserName(userMockInterface)
         Assert.assertEquals(userName,"Ali")
     }
-
-
-
 }
