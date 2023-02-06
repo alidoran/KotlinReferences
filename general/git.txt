@@ -1,0 +1,79 @@
+git init						            => Git initialize
+git status                                  => State of the Git
+git remote add {origin} {Web Address}		=> Create Origin on the remote
+git clone {gitProjectAddress}               => clone a project to local
+git commit -m “message”	            		=> A snapshot of code
+git log					            	    => List of commits
+git reset {FileName}                        => Remove file from staging
+git revert {hash number}	            	=> Revert to chosen commit
+git pull {origin} {master}                  => pull codes
+git merge {branchName}                      => merge branch to current branch
+git rm {fileName}                           => remove from git and file system
+
+Git Config
+-------------
+git config --global user.name               => show git user name
+git config --global user.name "{userName}"  => set a user name on git
+git config --global user.email              => show email address
+git config --global user.email "{email}"    => set email address
+git config --global user.signingkey         => show the signing key
+
+Git Branch
+-------------
+git branch “{branch name}”	        		=> create a new branch
+git branch -a 				            	=> show the branch list
+git branch -d {branchName}                  => delete a branch
+git branch -m {oldName} {newName}           => rename branch
+
+Git Push
+------------
+git push origin {tagName}                   => push a tag on the origin
+git push origin --tags                      => push a tag on the origin
+
+Git Checkout
+--------------
+git checkout {hash number}	            	=> Back to a specific commit
+git checkout {branch name}	        		=> switch to the branch
+git checkout --{FileName}                   => Back the file to last commit
+git checkout {tagName}                      => checkout a git tag
+
+Git Add
+------------
+git add {filename}			               	=> Add specific file(Staging)
+git add .				            		=> Backup all, except of the Gitignore list(Staging)
+
+Git Diff
+-----------
+git diff Head                               => Show different with current state
+git diff --staged                           => Show different with stage
+
+
+Git Tag
+------------------
+git tag                                     => show the tag list
+git tag -a {tagName} -m '{message}'         => set tag (usually version name)
+git tag -a {tagName} {commitHashString}     => tagging to a special commit
+git tag -l "{searchWord}"                   => show the searchWord on the tag list ex:"v*"
+git tag show {versionName}                  => show tag details
+
+
+Git Stash Command
+-----------------
+git stash
+git stash -u
+git stash list
+git stash apply {index}
+git stash show {index}
+git stash show -p {index}
+git stash push -m “git message”
+git stash branch {branch name} {index}: create a branch from Stash
+git stash pop: last put stash remove from the list and apply to the working directory
+git stash clear
+
+
+
+Android Git
+-------------
+Android
+Revert commit => Choose that commit we want to remove
+

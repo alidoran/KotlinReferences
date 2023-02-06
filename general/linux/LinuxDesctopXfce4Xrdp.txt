@@ -1,0 +1,25 @@
+XFCE4
+---------------
+$ sudo apt update
+$ sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
+
+XRDP
+---------------
+$ sudo apt install xrdp
+$ sudo adduser xrdp ssl-cert
+$ sudo systemctl start xrdp
+
+Config
+---------------
+Open Remote Desktop Port(3389) For Specific IP
+$ sudo ufw allow from 192.168.1.0/24 to any port 3389
+
+Open Remote Desktop Port(3389) For All IP
+$ sudo ufw allow 3389
+
+System Control
+---------------
+$ sudo systemctl status xrdp
+$ sudo systemctl restart xrdp
+$ sudo systemctl start xrdp
+$ sudo systemctl stop xrdp

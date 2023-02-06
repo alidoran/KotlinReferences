@@ -1,0 +1,71 @@
+INSTALLING
+01- apt-get update -y
+02- apt-get install build-essential gnupg2 gcc make -y
+03- copy first link from following address
+https://www.softether-download.com/en.aspx?product=softether
+04- sudo wget {link}
+05- tar xvf softether-vp => use tab after soft for autocomplete
+06- cd vpnserver
+07- make
+08- cd ..
+09- mv vpnserver /usr/local/
+10- cd /usr/local/vpnserver/
+11- chmod 600 *
+12- chmod 700 vpnserver
+13- chmod 700 vpncmd
+-------------
+MANAGMENT
+01- nano /etc/init.d/vpnserver
+02-
+#!/bin/sh
+# chkconfig: 2345 99 01
+# description: SoftEther VPN Server
+DAEMON=/usr/local/vpnserver/vpnserver
+LOCK=/var/lock/subsys/vpnserver
+test -x $DAEMON || exit 0
+case "$1" in
+start)
+$DAEMON start
+touch $LOCK
+;;
+stop)
+$DAEMON stop
+rm $LOCK
+;;
+restart)
+$DAEMON stop
+sleep 3
+$DAEMON start
+;;
+*)
+echo "Usage: $0 {start|stop|restart}"
+exit 1
+esac
+exit 0
+03- mkdir /var/lock/subsys
+04- chmod 755 /etc/init.d/vpnserver
+05- /etc/init.d/vpnserver start
+06- update-rc.d vpnserver defaults
+07- cd /usr/local/vpnserver
+08- ./vpncmd
+09- 1
+10- enter
+11- enter
+12- serverPasswordSet
+13- ctrl + c
+14- HubCreate {myhub}
+15- Hub {myhub}
+16- SecureNatEnable
+17- UserCreate {vpnuser}
+18- complete all
+19- UserPasswordSet vpnuser
+20- exit
+21- ufw allow 443/tcp
+22- ufw allow 5555/tcp
+23- ufw allow 992/tcp
+24 ufw allow 1194/udp
+25- ufw reload
+----------------------
+UI MANAGMENT
+1- download mangment
+https://www.softether-download.com/en.aspx?product=softether

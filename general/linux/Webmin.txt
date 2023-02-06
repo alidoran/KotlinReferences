@@ -1,0 +1,6 @@
+Download
+wget http://prdownloads.sourceforge.net/webadmin/webmin_2.010_all.deb
+Install
+dpkg --install webmin_2.010_all.deb
+Address
+https://{ServerPort}:10000/

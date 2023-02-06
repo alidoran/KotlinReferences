@@ -1,0 +1,44 @@
+Video Link
+https://youtu.be/yoeCPO3qep8
+
+Create Server (200$ reward)
+https://m.do.co/c/0fb522deafa4
+
+IRAN Server SECTION
+----------------------
+Update Server
+apt-get update -y && apt-get upgrade -y
+If Not Work
+apt update && apt upgrade -y
+
+Forward The Port
+sysctl net.ipv4.ip_forward=1
+
+iptables -t nat -A PREROUTING -p tcp --dport 22 -j DNAT --to-destination {IranIp}
+
+iptables -t nat -A PREROUTING -j DNAT --to-destination {OtherIp}
+
+iptables -t nat -A POSTROUTING -j MASQUERADE
+
+If Your Speed Is Low
+wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+
+Other Server Section
+---------------------
+Update Server
+apt-get update -y && apt-get upgrade -y
+If Not Work
+apt update && apt upgrade -y
+
+apt install curl -y
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+Choose "No" in chinese message
+
+V2ray Ip Address
+OtherServer-IP:54321
+
+Change V2ray Password
+admin, admin
+
+If Your Speed Is Low
+wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
