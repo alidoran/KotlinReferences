@@ -1,7 +1,5 @@
 package alidoran.design_pattern.java
 
-import android.widget.Toast
-
 class Hamburger(
     onion: Boolean,
     beef: Boolean,

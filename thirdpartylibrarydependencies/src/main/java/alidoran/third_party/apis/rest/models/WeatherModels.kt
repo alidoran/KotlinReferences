@@ -2,18 +2,18 @@ package alidoran.third_party.apis.rest.models
 
 
 data class WeatherModel(
-    var location: Location,
-    var current: Current
+    val location: Location,
+    val current: Current
 )
 
 data class Location(
-    var name: String,
-    var region: String,
-    var lat: Float,
-    var lon: Float,
-    var tz_id: String,
-    var localtime_epoch: String,
-    var localtime: String
+    val name: String,
+    val region: String,
+    val lat: Float,
+    val lon: Float,
+    val tz_id: String,
+    val localtime_epoch: String,
+    val localtime: String
 )
 
 data class Condition(
@@ -23,29 +23,27 @@ data class Condition(
 )
 
 data class Current(
-    var last_updated_epoch: Double,
-    var last_updated: String,
-    var temp_c: Float,
-    var temp_f: Float,
-    var is_day: Int,
-    var condition: Condition,
-    var wind_mph: Float,
-    var wind_kph: Float,
-    var wind_degree: Int,
-    var wind_dir: String,
-    var pressure_mb: Float,
-    var pressure_in: Float,
-    var precip_mm: Float,
-    var precip_in: Float,
-    var humidity: Int,
-    var cloud: Int,
-    var feelslike_c: Float,
-    var feelslike_f: Float,
-    var vis_km: Float,
-    var vis_miles: Float,
-    var uv: Float,
-    var gust_mph: Float,
-    var gust_kph: Float,
-
-
+    val last_updated_epoch: Double,
+    val last_updated: String,
+    val temp_c: Float,
+    val temp_f: Float,
+    val is_day: Int,
+    val condition: Condition,
+    val wind_mph: Float,
+    val wind_kph: Float,
+    val wind_degree: Int,
+    val wind_dir: String,
+    val pressure_mb: Float,
+    val pressure_in: Float,
+    val precip_mm: Float,
+    val precip_in: Float,
+    val humidity: Int,
+    val cloud: Int,
+    val feelslike_c: Float,
+    val feelslike_f: Float,
+    val vis_km: Float,
+    val vis_miles: Float,
+    val uv: Float,
+    val gust_mph: Float,
+    val gust_kph: Float,
     )

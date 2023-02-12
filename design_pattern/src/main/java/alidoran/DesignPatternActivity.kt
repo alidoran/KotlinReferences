@@ -1,17 +1,16 @@
 package alidoran
 
 import alidoran.design_pattern.databinding.ActivityDesignPatternBinding
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.content.Intent
-import alidoran.design_pattern.java.simple_factory.Main_SimpleFactory
-import alidoran.design_pattern.java.factory_method.MainFactoryMethodActivity
-import alidoran.design_pattern.java.singleton.SingletonMain
-import alidoran.design_pattern.java.builder.MainBuilderActivity
-import alidoran.design_pattern.java.prototype.MainPrototype
 import alidoran.design_pattern.java.adapter.AdapterMain
+import alidoran.design_pattern.java.builder.MainBuilderActivity
+import alidoran.design_pattern.java.factory_method.MainFactoryMethodActivity
 import alidoran.design_pattern.java.memento.MementoActivity
+import alidoran.design_pattern.java.prototype.MainPrototype
+import alidoran.design_pattern.java.simple_factory.Main_SimpleFactory
 import alidoran.design_pattern.java.state.StateActivity
+import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 
 class DesignPatternActivity : AppCompatActivity() {
@@ -32,10 +31,6 @@ class DesignPatternActivity : AppCompatActivity() {
 
         binding.btnFactoryMethod.setOnClickListener {
             startActivity(Intent(this, MainFactoryMethodActivity::class.java))
-        }
-
-        binding.btnSingleton.setOnClickListener {
-            startActivity(Intent(this, SingletonMain::class.java))
         }
 
         binding.btnBuilder.setOnClickListener {

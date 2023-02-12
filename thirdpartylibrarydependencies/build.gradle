@@ -3,19 +3,21 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-android'
-    //Apollo
+    //
     id("com.apollographql.apollo3").version("3.3.2")
     //FireBase
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
-    compileSdk 32
+    compileSdk rootProject.compile_target_sdk
 
     defaultConfig {
         applicationId "alidoran.third_party"
         minSdk 24
-        targetSdk 32
+        targetSdk rootProject.compile_target_sdk
         versionCode 1
         versionName "1.0"
 
@@ -42,6 +44,11 @@ android {
         viewBinding true
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.2"
+        kotlinCompilerVersion = "$kotlin_android"
+    }
+
     testOptions {
         unitTests.all {
             useJUnitPlatform()
@@ -50,63 +57,79 @@ android {
             systemProperty "junit.jupiter.execution.parallel.enabled", "true"
         }
     }
+    namespace 'alidoran.third_party'
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.6'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.work:work-runtime-ktx:$runtime_ktx"
+    implementation "androidx.constraintlayout:constraintlayout-core:1.0.4"
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+
+    implementation "com.google.android.gms:play-services-maps:$services_maps"
+
+
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$junitktx"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$junit_vintage"
     testImplementation "org.junit.jupiter:junit-jupiter:$junit_jupiter"
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.7.10"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$reflect"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
     //Dagger
-    kapt "com.google.dagger:dagger-compiler:2.42"
-    implementation "com.google.dagger:dagger:2.42"
-    annotationProcessor "com.google.dagger:dagger-compiler:2.42"
-    annotationProcessor "com.google.dagger:dagger-android-processor:2.42"
-    annotationProcessor "com.google.dagger:dagger-compiler:2.42"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+    implementation "com.google.dagger:dagger:$dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
     //Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.3'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
     // Room components
-    implementation "androidx.room:room-runtime:2.4.2"
-    annotationProcessor "androidx.room:room-compiler:2.4.2"
-    androidTestImplementation "androidx.room:room-testing:2.4.2"
+    implementation "androidx.room:room-runtime:$room"
+    annotationProcessor "androidx.room:room-compiler:$room"
+    androidTestImplementation "androidx.room:room-testing:$room"
     //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2"
     //graphql converter
-    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit2"
     //Apollo
     implementation("com.apollographql.apollo3:apollo-runtime:3.3.2")
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.0'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
     //Mockito
     testImplementation "org.mockito:mockito-core:$mockito_core"
     testImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin"
-    testImplementation "io.mockk:mockk:1.12.4"
+    testImplementation "io.mockk:mockk:$mockk"
     //Firebase
-    implementation 'com.google.firebase:firebase-auth:21.0.4'
-    implementation 'com.google.android.gms:play-services-auth:20.2.0'
-    // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:30.3.1')
-
-    // Declare the dependency for the Firebase Authentication library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation platform("com.google.firebase:firebase-bom:$firebase_bom")
+    implementation "com.google.android.gms:play-services-auth:$play_services_auth"
     implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation "com.google.firebase:firebase-analytics-ktx:$analytics_ktx"
 
-    // Also declare the dependency for the Google Play services library and specify its version
-    implementation 'com.google.android.gms:play-services-auth:20.2.0'
-    implementation 'com.google.firebase:firebase-storage:20.0.1'
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions"
+
 
     //lottie player
-    implementation('com.airbnb.android:lottie:3.4.0') {
+    implementation("com.airbnb.android:lottie:$lottie") {
         exclude group: "com.android.support"
     }
+
+    //RX-Java
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid"
+
+    //Pendo
+//    implementation group:'sdk.pendo.io' , name:'pendoIO', version:"2.17.0.4509", changing:true
+
+    //Segment
+    implementation "com.segment.analytics.android:analytics:$analytics"
+    implementation "com.segment.analytics.kotlin:android:1.10.0"
 }
 
 apollo {

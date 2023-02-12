@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="alidoran.android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -21,8 +22,48 @@
             android:label="@string/title_activity_multiple_view"
             android:theme="@style/Theme.Android" />
         <activity
-            android:name=".compose.ComponentsActivity"
+            android:name=".compose.Compose01Activity"
             android:exported="false"
+            android:label="@string/title_activity_compose"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.Compose02Modifier"
+            android:exported="true"
+            android:label="@string/title_activity_components"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.Compose03Button"
+            android:exported="false"
+            android:label="@string/title_activity_components"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.Compose04IMageView"
+            android:exported="true"
+            android:label="@string/title_activity_components"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.Compose05StylingText"
+            android:exported="true"
+            android:label="@string/title_activity_components"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.Compose06ColorBox"
+            android:exported="true"
+            android:label="@string/title_activity_components"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.Compose07TextButtonSnackBars"
+            android:exported="true"
+            android:label="@string/title_activity_components"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.Compose08List"
+            android:exported="true"
+            android:label="@string/title_activity_components"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.Compose09ConstraintLayout"
+            android:exported="true"
             android:label="@string/title_activity_components"
             android:theme="@style/Theme.Android" />
         <activity
@@ -30,11 +71,7 @@
             android:exported="false"
             android:label="@string/title_activity_function"
             android:theme="@style/Theme.Android" />
-        <activity
-            android:name=".compose.ComposeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_compose"
-            android:theme="@style/Theme.Android" />
+
         <activity
             android:name=".dialog.DialogActivity"
             android:exported="false" />
@@ -46,7 +83,9 @@
             android:exported="false" />
         <activity
             android:name=".activity_result_launcher.ActivityResultLauncherDest"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTop"
+            />
         <activity
             android:name=".activity_result_launcher.ResultLauncherSourceActivity"
             android:exported="false" />
@@ -95,13 +134,13 @@
         <service android:name=".services.ScreenOnOffService" />
         <service android:name=".services.TrampolineService" /> <!-- Broadcasts -->
         <receiver android:name=".broadcast.BroadcastOnOffReceiver" />
-        <receiver
-            android:name=".broadcast.BroadcastReceiverSample"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver> <!-- Activities -->
+<!--        <receiver-->
+<!--            android:name=".broadcast.BroadcastReceiverSample"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+<!--            </intent-filter>-->
+<!--        </receiver> &lt;!&ndash; Activities &ndash;&gt;-->
         <activity
             android:name=".AndroidActivity"
             android:exported="true">
@@ -129,7 +168,10 @@
         <activity
             android:name=".viewpager.ViewPagerSliderActivity"
             android:exported="false" />
-        <activity android:name=".recycler_view.RecyclerActivity" />
+        <activity android:name=".recycler_view.RecyclerActivity"
+            android:theme="@android:style/Theme.Dialog"
+            android:excludeFromRecents="true">
+        </activity>
     </application>
 
 </manifest>

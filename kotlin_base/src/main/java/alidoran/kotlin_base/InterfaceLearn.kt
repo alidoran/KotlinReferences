@@ -17,12 +17,12 @@ class InterfaceLearn{
     class UseSimpleInterface(nameId: Int) : SimpleInterface {
         override val interfaceName = getName(nameId)
 
-        fun getName(nameId : Int): String{
-            var result:String
-            when(nameId) {
-                1 -> result= "FirstName"
-                2 -> result= "SecondName"
-                else-> result= "ThirdName"
+        private fun getName(nameId : Int): String{
+            val result:String =
+                when(nameId) {
+                1 -> "FirstName"
+                2 -> "SecondName"
+                else-> "ThirdName"
             }
             return result
         }

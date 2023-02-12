@@ -56,9 +56,21 @@
         android:text="@string/rest_retro_dagger"/>
 
     <Button
-        android:id="@+id/btn_firebase_authenticate"
+        android:id="@+id/btn_rx_java"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/firebase_authenticate"/>
+        android:text="@string/rx_java"/>
+
+    <Button
+        android:id="@+id/btn_firebase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/firebase"/>
+
+    <Button
+        android:id="@+id/btn_google_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/google_map"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

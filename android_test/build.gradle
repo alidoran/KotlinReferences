@@ -2,25 +2,27 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+//    id 'org.springframework.boot' version '2.7.4'
 }
 
 android {
-    compileSdk 32
+    compileSdk rootProject.compile_target_sdk
 
     defaultConfig {
         applicationId "android.test"
         minSdk 25
-        targetSdk 32
+        targetSdk rootProject.compile_target_sdk
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
-
     packagingOptions {
-        exclude("META-INF/LICENSE.md")
-        exclude("META-INF/LICENSE-notice.md")
+        resources {
+            excludes += ['META-INF/LICENSE.md', 'META-INF/LICENSE-notice.md']
+        }
     }
+
 
     buildTypes {
         release {
@@ -38,10 +40,6 @@ android {
         jvmTarget = '1.8'
     }
 
-    defaultConfig {
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
     testOptions {
         unitTests.all {
             useJUnitPlatform()
@@ -54,23 +52,23 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'android.test'
 }
 
 dependencies {
 
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "com.google.android.material:material:$material"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
     implementation "androidx.test.ext:junit-ktx:$junitktx"
+    implementation "androidx.constraintlayout:constraintlayout-core:1.0.4"
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
     implementation "androidx.test:monitor:$test_monitor"
 
     implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
-    implementation 'androidx.test:runner:1.4.0'
-    implementation 'androidx.databinding:databinding-runtime:7.2.1'
-    debugImplementation 'androidx.fragment:fragment-testing:1.5.0'
+    implementation "androidx.test:runner:$test_runner"
+    implementation "androidx.databinding:databinding-runtime:$databinding_runtime"
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_ktx"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
-
-
 
     testImplementation "org.amshove.kluent:kluent:$kluent"
     testImplementation "junit:junit:$junit"
@@ -91,4 +89,10 @@ dependencies {
 //espresso
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.4'
+    testImplementation "org.mockito:mockito-inline:3.11.2"
+
+//    //log
+//    implementation('org.springframework.boot:spring-boot-starter-web')
+//    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 }

@@ -12,7 +12,16 @@
           "package_name": "alidoran.third_party"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "771210793489-vqnqh6rjomijialjk6lbqi3l67ndbnvo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "alidoran.third_party",
+            "certificate_hash": "8cc732f1e715432bafbb2824e2e9c4709bc813b2"
+          }
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC3qCyrMukQTDd3UWrSRYV8yDZTDebfsT0"

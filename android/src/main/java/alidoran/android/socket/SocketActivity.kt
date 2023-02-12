@@ -2,8 +2,11 @@ package alidoran.android.socket
 
 
 import alidoran.android.databinding.ActivitySocketBinding
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 
 class SocketActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,12 +14,16 @@ class SocketActivity : AppCompatActivity() {
         val binding = ActivitySocketBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Server().run()
         binding.btnSendDataToServer.setOnClickListener {
-            Client().run()
+            runClient()
         }
 
 
-    }
 
+    }
+    private fun runClient(){
+        CoroutineScope(IO).launch {
+            Client().run()
+        }
+    }
 }

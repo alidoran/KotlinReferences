@@ -3,9 +3,6 @@
 
 package ir.alidoran.teach_kotlin
 
-import java.util.concurrent.locks.Lock
-import kotlin.concurrent.withLock
-
 fun outOfClassMethod() {
 
 }
@@ -62,11 +59,22 @@ class MethodType {
         val name = "AliDoran"
         fun passedMethod() {
             acceptMethod { println("passedMethod, $name") }
+
+            acceptTwoMethod(
+                { println("passedMethod, $name") },
+                { println("passedMethod, $name") })
+
             acceptMethodInline { println("passedMethod, $name") }
         }
 
         private fun acceptMethod(f: () -> Unit) {
             f()
+            println("Without inline pass the object and run")
+        }
+
+        private fun acceptTwoMethod(f1: () -> Unit, f2: () -> Unit) {
+            f1()
+            f2()
             println("Without inline pass the object and run")
         }
 

@@ -9,12 +9,12 @@ class Compose09ConstraintLayout :ComponentActivity(){
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         setContent{
-            ConstraintLayout()
+            MyConstraintLayout()
         }
     }
 
     @Composable
-    fun ConstraintLayout(){
+    fun MyConstraintLayout(){
         //todo https://www.youtube.com/watch?v=FBpiOAiseD0&list=PLQkwcJG4YTCSpJ2NLhDTHhi6XBNfk9WiC&index=9
     }
 }

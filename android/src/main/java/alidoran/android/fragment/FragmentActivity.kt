@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class FragmentActivity : AppCompatActivity() {
 
-    private var fragment = MyFragment()
+    private var fragment = GoogleMapSampleFragment()
     private lateinit var binding: ActivityFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,12 +14,12 @@ class FragmentActivity : AppCompatActivity() {
         binding = ActivityFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loadFragment()
+        loadFragmentNavigationMethod()
     }
 
-    private fun loadFragment() {
+    private fun loadFragmentNavigationMethod() {
         if (fragment.isResumed)
-            closeFragment()
+            closeFragmentNavigationMethod()
 
         val bundle = Bundle()
         bundle.putBoolean("Pass data", true)
@@ -29,9 +29,9 @@ class FragmentActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun closeFragment() {
+    private fun closeFragmentNavigationMethod() {
         supportFragmentManager.beginTransaction().remove(binding.fragmentNavigationContainer.getFragment())
             .commit()
-        fragment = MyFragment()
+        fragment = GoogleMapSampleFragment()
     }
 }

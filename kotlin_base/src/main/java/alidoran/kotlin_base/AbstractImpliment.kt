@@ -6,20 +6,16 @@ import java.util.concurrent.TimeUnit
 
 fun main() {
     ApiWaiterSimulator(object : ApiWaiterSimulatorAbstract() {
-        // Implementing this method is optional
+
         override fun before(){
-            // Calling abstract method first
             super.before()
             println("Progress Start main")
         }
 
-        // Implementing this method is force
         override fun finish() {
             println("OnFinishCallRun")
         }
     }).start()
-
-
 }
 
 class ApiWaiterSimulator(var apiWaiterSimulatorInterface: ApiWaiterSimulatorAbstract) {

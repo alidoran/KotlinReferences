@@ -3,6 +3,7 @@ package alidoran.third_party.segment
 import alidoran.third_party.databinding.ActivitySegmentBinding
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.segment.analytics.kotlin.android.Analytics
 
 class SegmentActivity : AppCompatActivity() {
 

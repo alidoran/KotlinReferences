@@ -35,5 +35,7 @@ class SliderAdapter(
         notifyDataSetChanged()
     }
 
+
+
     override fun getItemCount(): Int = imgList.size
 }

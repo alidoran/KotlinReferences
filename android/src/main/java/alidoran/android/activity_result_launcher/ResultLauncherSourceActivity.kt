@@ -26,6 +26,8 @@ class ResultLauncherSourceActivity : AppCompatActivity() {
 
         binding.btnNextPage.setOnClickListener {
             val intent = Intent(this, ActivityResultLauncherDest::class.java)
+                .setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            resultLauncher.launch(intent)
             resultLauncher.launch(intent)
         }
     }

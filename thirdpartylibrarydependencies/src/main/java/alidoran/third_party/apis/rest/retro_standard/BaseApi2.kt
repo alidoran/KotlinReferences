@@ -1,5 +1,6 @@
 package alidoran.third_party.apis.rest.retro_standard
 
+import alidoran.third_party.rx_java.WeatherServiceRx
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,6 +19,10 @@ private fun createBuilder(): Retrofit {
         .build()
 }
 
-fun getWeatherService2(): WeatherService2 {
-    return createBuilder().create(WeatherService2::class.java)
+fun getWeatherServiceLiveData(): WeatherServiceLivedata {
+    return createBuilder().create(WeatherServiceLivedata::class.java)
+}
+
+fun getWeatherServiceRx(): WeatherServiceRx {
+    return createBuilder().create(WeatherServiceRx::class.java)
 }

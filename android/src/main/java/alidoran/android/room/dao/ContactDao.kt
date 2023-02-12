@@ -18,7 +18,7 @@ interface ContactDao {
     fun findByName(first: String?, last: String?): Contact?
 
     @Query("SELECT * FROM contact WHERE phone_number LIKE :phoneNumber LIMIT 1")
-    fun findByPhone(phoneNumber: String?): Contact?
+    fun findByPhone(phoneNumber: String?): List<Contact>?
 
     @Insert
     fun insertAll(vararg contacts: Contact?): List<Long?>?

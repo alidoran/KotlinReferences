@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="alidoran.design_pattern">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -17,7 +16,6 @@
         <activity android:name="alidoran.design_pattern.java.builder.MainBuilderActivity" />
         <activity android:name="alidoran.design_pattern.java.factory_method.MainFactoryMethodActivity" />
         <activity android:name="alidoran.design_pattern.java.simple_factory.Main_SimpleFactory" />
-        <activity android:name="alidoran.design_pattern.java.singleton.SingletonMain" />
         <activity
             android:name="alidoran.DesignPatternActivity"
             android:exported="true">

@@ -9,10 +9,13 @@ import alidoran.third_party.apis.rest.retro_standard.CallWeatherApi2
 import alidoran.third_party.apis.rest.retrofit_center_run.WeatherApi
 import alidoran.third_party.apis.rest.retrofit_center_run.WeatherService
 import alidoran.third_party.apis.rest.retrofit_java.RestRetroJavaActivity
+import alidoran.third_party.app_status.AppStatusHelp
 import alidoran.third_party.coroutines.CoroutineActivity
 import alidoran.third_party.databinding.ActivityThirdpartyBinding
 import alidoran.third_party.di.DiActivity
-import alidoran.third_party.firebase.FirebaseAuthenticate
+import alidoran.third_party.firebase.FirebaseActivity
+import alidoran.third_party.google_map.GoogleMapActivity
+import alidoran.third_party.rx_java.RxJavaActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -23,6 +26,8 @@ class ThirdPartyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityThirdpartyBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        AppStatusHelp(this).getIsAppInBackground()
 
         binding.btnDi.setOnClickListener {
             val intent = Intent(this, DiActivity::class.java)
@@ -70,8 +75,18 @@ class ThirdPartyActivity : AppCompatActivity() {
             CallWeatherDagger()
         }
 
-        binding.btnFirebaseAuthenticate.setOnClickListener {
-            val intent = Intent(this, FirebaseAuthenticate::class.java)
+        binding.btnRxJava.setOnClickListener {
+            val intent = Intent(this, RxJavaActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnFirebase.setOnClickListener {
+            val intent = Intent(this, FirebaseActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnGoogleMap.setOnClickListener {
+            val intent = Intent(this, GoogleMapActivity::class.java)
             startActivity(intent)
         }
     }

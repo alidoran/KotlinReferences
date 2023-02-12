@@ -6,6 +6,7 @@ import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class CallWeatherDagger {
     var mService = DaggerWeatherComponent.create().getWeatherApi()
@@ -15,8 +16,8 @@ class CallWeatherDagger {
     }
 
 
-    private fun makeApiCall(){
-        GlobalScope.launch(Dispatchers.IO) {
+    private fun makeApiCall() {
+        runBlocking {
             val response = mService.getWeatherApi3(q = "Tehran")
             if (response.isSuccessful)
                 Log.d(TAG, "makeApiCall: ${response.body()!!.current}")

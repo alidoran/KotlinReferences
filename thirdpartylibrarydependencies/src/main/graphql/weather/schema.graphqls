@@ -68,7 +68,6 @@ input ConfigInput {
 
 type Query {
   getCityByName(name: String!, country: String, config: ConfigInput): City
-
   getCityById(id: [String!], config: ConfigInput): [City]
 }
 

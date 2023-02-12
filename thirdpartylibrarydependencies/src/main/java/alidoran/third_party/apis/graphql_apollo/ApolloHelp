@@ -1,6 +1,3 @@
-package alidoran.third_party.apis.graphql_apollo
-
-/*
 1- project build.gradle
                 plugins {
                     id("com.android.application")
@@ -9,7 +6,7 @@ package alidoran.third_party.apis.graphql_apollo
 
 2- project build.gradle
                 apollo {
-                    packageName.set("com.example.rocketreserver")
+                    ("com.example.rocketreserver")
                 }
 
 3- project build.gradle
@@ -71,9 +68,6 @@ To this code
                                             }
                         }
 
-4-
-./gradlew :thirdpartylibrarydependencies:downloadApolloSchema --endpoint='https://graphql-weather-api.herokuapp.com/' --schema=thirdpartylibrarydependencies/src/main/graphql/weather/schema.graphqls
-
+4-./gradlew :thirdpartylibrarydependencies:downloadApolloSchema --endpoint='https://graphql-weather-api.herokuapp.com/' --schema=thirdpartylibrarydependencies/src/main/graphql/weather/schema.graphqls
 5-query {getCityByName(name: "Tehran"){id,name,country,coord {lon,lat}}}
 
-*/

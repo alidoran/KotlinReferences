@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.json.JSONObject
 
 class GraphQLActivity : AppCompatActivity() {
@@ -28,7 +29,7 @@ class GraphQLActivity : AppCompatActivity() {
             "query {getCityByName(name: \"$city\") {id,name,country,coord {lon,lat}}}"
         )
 
-        GlobalScope.launch {
+        runBlocking {
             try {
                 val response = retrofit.postDynamicQuery(paramObject.toString())
                 if (response.isSuccessful) {
