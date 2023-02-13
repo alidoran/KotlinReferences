@@ -18,6 +18,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".ThirdPartyApp"
@@ -27,7 +28,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
+        android:largeHeap="true"
         tools:targetApi="32">
+        <activity
+            android:name=".multithreading.MultiThreading"
+            android:exported="false" />
         <activity
             android:name=".camera_x.CameraXActivity"
             android:exported="false" />
