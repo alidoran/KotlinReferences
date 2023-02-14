@@ -9,39 +9,20 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/lay_txt_start"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/lay_txt_end"
-        android:hint="@string/start_number_million"
+        android:hint="@string/start_number_k"
         android:layout_marginEnd="8dp"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lay_txt_end"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/lay_txt_start"
-        android:hint="@string/end_number_million"
-        android:layout_marginStart="8dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_end"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="number"/>
-
+            android:inputType="number"
+            android:text="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -60,22 +41,51 @@
         tools:layout_editor_absoluteX="16dp" />
 
     <TextView
+        android:id="@+id/txt_sleep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/txt_async_thread"
         android:layout_marginVertical="8dp"/>
 
     <TextView
+        android:id="@+id/txt_delay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/lay_txt_start"
+        app:layout_constraintTop_toBottomOf="@id/txt_sleep"
+        android:layout_marginVertical="8dp"/>
+
+    <TextView
+        android:id="@+id/txt_luanch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_delay"
         android:layout_marginVertical="8dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/lay_txt_start"
+        app:layout_constraintTop_toBottomOf="@id/txt_luanch"
         android:layout_marginVertical="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_delay"
+        android:layout_marginVertical="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_delay" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_calculate"
+        app:layout_constraintEnd_toStartOf="@+id/btn_calculate"
+        app:layout_constraintTop_toTopOf="@+id/btn_calculate"
+        android:layout_marginEnd="16dp"/>
 
     <Button
         android:id="@+id/btn_calculate"
