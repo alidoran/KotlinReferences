@@ -116,16 +116,16 @@
             android:name=".di.dagger.simple_di.SimpleDiActivity"
             android:exported="false" />
         <activity
-            android:name=".coroutines.CoroutineActivity"
+            android:name=".multithreading.coroutines.CoroutineActivity"
             android:exported="false" />
         <activity
-            android:name=".coroutines.CoroutineFakeApiActivity"
+            android:name=".multithreading.coroutines.CoroutineFakeApiActivity"
             android:exported="false" />
         <activity
             android:name=".di.dagger.constructor.ConstructorInjectActivity"
             android:exported="false" />
         <activity
-            android:name=".coroutines.CoroutineProgressBarActivity"
+            android:name=".multithreading.coroutines.CoroutineProgressBarActivity"
             android:exported="false" />
         <activity
             android:name=".apis.graphql_retrofit.GraphQLActivity"

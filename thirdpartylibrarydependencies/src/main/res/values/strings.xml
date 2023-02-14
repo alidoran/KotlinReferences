@@ -68,7 +68,7 @@
     <string name="loaded">loaded</string>
     <string name="single_thread">Single thread</string>
     <string name="calculate">Calculate</string>
-    <string name="start_number_million">Start Number Million</string>
+    <string name="start_number_k">Start Number K(*1000)</string>
     <string name="multi_thread">Multi Thread</string>
     <string name="end_number_million">End Number Million</string>
 </resources>
