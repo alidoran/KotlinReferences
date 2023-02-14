@@ -1,4 +1,4 @@
-package alidoran.third_party.coroutines
+package alidoran.third_party.multithreading.coroutines
 
 import alidoran.third_party.databinding.ActivityCoroutineBinding
 import android.content.Intent

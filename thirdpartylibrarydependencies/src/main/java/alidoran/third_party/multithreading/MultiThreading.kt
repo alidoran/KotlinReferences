@@ -8,6 +8,10 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlin.system.measureTimeMillis
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
+import java.lang.Thread.sleep
+import java.sql.Time
+import java.util.concurrent.TimeUnit
+import kotlin.concurrent.thread
 
 class MultiThreading : AppCompatActivity() {
 
@@ -24,12 +28,13 @@ class MultiThreading : AppCompatActivity() {
             val arrayList = createArray()
             singleThread(arrayList)
             coroutineThread(arrayList)
+            helloWorldSleep()
+            helloWorldDelay()
+            helloWorldLaunch()
         }
     }
 
-    private fun startNum() = binding.txtStart.text.toString().toInt() * 1_000_000
-
-    private fun endNum() = binding.txtEnd.text.toString().toInt() * 1_000_000
+    private fun startNum() = binding.txtStart.text.toString().toInt() * 1_000
 
     private fun createArray(): IntArray {
         val result = mutableListOf<Int>()
@@ -85,5 +90,33 @@ class MultiThreading : AppCompatActivity() {
             val right = computeCoroutine(array, mid, high)
             return left.await() + right
         }
+    }
+
+    private fun helloWorldSleep() = with(binding.txtSleep){
+        text =""
+        thread {
+            sleep(TimeUnit.SECONDS.toMillis(3))
+            text = "$text world"
+        }
+        text = "$text Hello"
+    }
+
+    private fun helloWorldDelay()= with(binding.txtDelay){
+        text =""
+        thread {
+            sleep(TimeUnit.SECONDS.toMillis(3))
+            text = "$text world"
+        }
+        text = "$text Hello"
+    }
+
+    private fun helloWorldLaunch()= with(binding.txtLuanch){
+        text =""
+        thread {
+            sleep(TimeUnit.SECONDS.toMillis(3))
+            text = "$text world"
+        }
+
+        text = "$text Hello"
     }
 }
