@@ -1,35 +1,32 @@
 package alidoran.third_party.multithreading
 
-import alidoran.third_party.databinding.ActivityMultiThreadingBinding
+import alidoran.third_party.databinding.ActivityCounterMultiThreadBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlin.system.measureTimeMillis
 import java.lang.Thread.sleep
-import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.concurrent.thread
 
-class MultiThreading : AppCompatActivity() {
+class CounterMultiThread : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMultiThreadingBinding
-    private val seq = 5000
+    private lateinit var binding: ActivityCounterMultiThreadBinding
+    private val seq = 5
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMultiThreadingBinding.inflate(layoutInflater)
+        binding = ActivityCounterMultiThreadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnCalculate.setOnClickListener {
-            val arrayList = createArray()
-            singleThread(arrayList)
-            coroutineThread(arrayList)
-            helloWorldSleep()
-            helloWorldDelay()
-            helloWorldMultipleThread()
-        }
+        var arrayList = createArray()
+
+        binding.btnChangeInput.setOnClickListener { arrayList = createArray() }
+        binding.btnSingleThread.setOnClickListener { singleThread(arrayList) }
+        binding.btnAsyncCoroutine.setOnClickListener { coroutineThread(arrayList) }
+        binding.btnMultipleThread.setOnClickListener { multipleThread() }
     }
 
     private fun startNum() = binding.txtStart.text.toString().toInt() * 1_000
@@ -45,24 +42,24 @@ class MultiThreading : AppCompatActivity() {
     }
 
     private fun singleThread(array: IntArray) {
-        val printResult = StringBuilder().append("The SingleThread result is ")
+        val printResult = StringBuilder()
         var result: Long
         val time = measureTimeMillis {
             result = computeSingle(array, 0, array.size)
         }
-        printResult.append("$result and calculate time is $time")
+        printResult.append("result:$result time:$time")
         binding.txtSingleThread.text = printResult
     }
 
     private fun coroutineThread(array: IntArray) {
-        val printResult = StringBuilder().append("The coroutineThread result is ")
+        val printResult = StringBuilder()
         var result: Long
         val time = measureTimeMillis {
         runBlocking {
                 result = computeCoroutine(array, 0, array.size)
             }
         }
-        printResult.append("$result and calculate time is $time")
+        printResult.append("result:$result time:$time")
         binding.txtAsyncThread.text = printResult
     }
 
@@ -90,29 +87,10 @@ class MultiThreading : AppCompatActivity() {
         }
     }
 
-    private fun helloWorldSleep() = with(binding.txtSleep){
-        //Sleep blocked the thread
-        text ="Thread/sleep: "
-        thread {
-            sleep(TimeUnit.SECONDS.toMillis(3))
-            text = "$text world"
-        }
-        text = "$text Hello"
-    }
-
-    private fun helloWorldDelay()= with(binding.txtDelay){
-        // Opposite of sleep, delay not blocked the thread
-        text ="Launch/Delay: "
-        CoroutineScope(IO).launch {
-            delay(TimeUnit.SECONDS.toMillis(3))
-            text = "$text world"
-        }
-        text = "$text Hello"
-    }
-
-    private fun helloWorldMultipleThread()= with(binding.txtMultipleThread){
+    private fun multipleThread()= with(binding.txtMultipleThread){
+        //million thread will create
         val result = AtomicInteger()
-        for (i in 1..1_500_500){
+        for (i in 1..1_500_000){
             thread(start = true) {
                 result.getAndIncrement()
             }
