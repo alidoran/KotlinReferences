@@ -21,6 +21,7 @@ import alidoran.third_party.multithreading.MultiThreading
 import alidoran.third_party.rx_java.RxJavaActivity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -102,5 +103,13 @@ class ThirdPartyActivity : AppCompatActivity() {
             val intent = Intent(this, MultiThreading::class.java)
             startActivity(intent)
         }
+    }
+}
+
+fun main() {
+    var a: Int? = null
+    a.let { Log.d("TAG", "main: $a+2") } ?: run {
+        a=3
+        Log.d("TAG", "main: a")
     }
 }

@@ -3,14 +3,12 @@ package alidoran.third_party.multithreading
 import alidoran.third_party.databinding.ActivityMultiThreadingBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlin.system.measureTimeMillis
-import kotlinx.coroutines.async
-import kotlinx.coroutines.runBlocking
 import java.lang.Thread.sleep
-import java.sql.Time
 import java.util.concurrent.TimeUnit
+import java.util.concurrent.atomic.AtomicInteger
 import kotlin.concurrent.thread
 
 class MultiThreading : AppCompatActivity() {
@@ -30,7 +28,7 @@ class MultiThreading : AppCompatActivity() {
             coroutineThread(arrayList)
             helloWorldSleep()
             helloWorldDelay()
-            helloWorldLaunch()
+            helloWorldMultipleThread()
         }
     }
 
@@ -93,7 +91,8 @@ class MultiThreading : AppCompatActivity() {
     }
 
     private fun helloWorldSleep() = with(binding.txtSleep){
-        text =""
+        //Sleep blocked the thread
+        text ="Thread/sleep: "
         thread {
             sleep(TimeUnit.SECONDS.toMillis(3))
             text = "$text world"
@@ -102,21 +101,23 @@ class MultiThreading : AppCompatActivity() {
     }
 
     private fun helloWorldDelay()= with(binding.txtDelay){
-        text =""
-        thread {
-            sleep(TimeUnit.SECONDS.toMillis(3))
+        // Opposite of sleep, delay not blocked the thread
+        text ="Launch/Delay: "
+        CoroutineScope(IO).launch {
+            delay(TimeUnit.SECONDS.toMillis(3))
             text = "$text world"
         }
         text = "$text Hello"
     }
 
-    private fun helloWorldLaunch()= with(binding.txtLuanch){
-        text =""
-        thread {
-            sleep(TimeUnit.SECONDS.toMillis(3))
-            text = "$text world"
+    private fun helloWorldMultipleThread()= with(binding.txtMultipleThread){
+        val result = AtomicInteger()
+        for (i in 1..1_500_500){
+            thread(start = true) {
+                result.getAndIncrement()
+            }
         }
-
-        text = "$text Hello"
+        sleep(1000) //just for waiting for all result
+        print(result)
     }
 }

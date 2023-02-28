@@ -1,8 +1,13 @@
 package alidoran.kotlin_base
 
 import ir.alidoran.teach_kotlin.lastChar
+import java.sql.DriverManager.println
+import java.util.concurrent.atomic.AtomicInteger
 
 object Variable {
+    private val atomicInteger = AtomicInteger() //It only manipulated by one thread
+
+
     var counter = 0
     private val valValue: Int
         get() = counter++
@@ -13,9 +18,9 @@ object Variable {
     }
 
     private fun changeValGet() {
-        println(valValue)
-        println(valValue)
-        println(valValue)
+        println(valValue.toString())
+        println(valValue.toString())
+        println(valValue.toString())
     }
 
     private fun varType() {
@@ -85,15 +90,15 @@ object Variable {
 
     class Equal {
         init {
-            println(equals1(Value("abc"), Value("abc")))
-            println(equals1(Value("abc"), null))
-            println(equals1(null, Value("abc")))
-            println(equals1(null, null))
+            println(equals1(Value("abc"), Value("abc")).toString())
+            println(equals1(Value("abc"), null).toString())
+            println(equals1(null, Value("abc")).toString())
+            println(equals1(null, null).toString())
             println("\n")
-            println(equals2(Value("abc"), Value("abc")))
-            println(equals2(Value("abc"), null))
-            println(equals2(null, Value("abc")))
-            println(equals2(null, null))
+            println(equals2(Value("abc"), Value("abc")).toString())
+            println(equals2(Value("abc"), null).toString())
+            println(equals2(null, Value("abc")).toString())
+            println(equals2(null, null).toString())
         }
 
         data class Value(val s: String)
