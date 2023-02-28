@@ -15,7 +15,8 @@ import alidoran.third_party.databinding.ActivityThirdpartyBinding
 import alidoran.third_party.di.DiActivity
 import alidoran.third_party.firebase.FirebaseActivity
 import alidoran.third_party.google_map.GoogleMapActivity
-import alidoran.third_party.multithreading.MultiThreading
+import alidoran.third_party.multithreading.CounterMultiThread
+import alidoran.third_party.multithreading.MultiThread
 import alidoran.third_party.rx_java.RxJavaActivity
 import android.content.Intent
 import android.os.Bundle
@@ -93,16 +94,8 @@ class ThirdPartyActivity : AppCompatActivity() {
         }
 
         binding.btnMultiThread.setOnClickListener{
-            val intent = Intent(this, MultiThreading::class.java)
+            val intent = Intent(this, MultiThread::class.java)
             startActivity(intent)
         }
-    }
-}
-
-fun main() {
-    var a: Int? = null
-    a.let { Log.d("TAG", "main: $a+2") } ?: run {
-        a=3
-        Log.d("TAG", "main: a")
     }
 }
