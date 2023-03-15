@@ -1,0 +1,4 @@
+<paths>
+    <external-path name="my_images" path="Documents/My-Folder/"/>
+    <cache-path name="cache" path="/"/>
+</paths>
