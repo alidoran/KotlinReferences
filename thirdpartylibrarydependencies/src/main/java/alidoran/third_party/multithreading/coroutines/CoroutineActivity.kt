@@ -21,5 +21,10 @@ class CoroutineActivity : AppCompatActivity() {
             val intent = Intent(this, CoroutineProgressBarActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnRunBlocking.setOnClickListener {
+            val intent = Intent(this, RunBlockingActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

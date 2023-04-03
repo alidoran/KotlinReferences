@@ -5,25 +5,18 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".multithreading.coroutines.CoroutineActivity">
+    tools:context=".multithreading.coroutines.RunBlockingActivity">
 
     <Button
-        android:id="@+id/btn_fake_api"
+        android:id="@+id/btn_run_block"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fake_api"/>
+        android:text="@string/run_blocking"/>
 
     <Button
-        android:id="@+id/btn_progressbar"
+        android:id="@+id/btn_run_blockEntire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/progressbar"/>
-
-    <Button
-        android:id="@+id/btn_run_blocking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/runblocking"/>
-
+        android:text="@string/run_blocking_entire_fun"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
