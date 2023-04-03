@@ -12,10 +12,6 @@ import alidoran.third_party.apis.rest.retrofit_java.RestRetroJavaActivity
 import alidoran.third_party.app_status.AppStatusHelp
 import alidoran.third_party.multithreading.coroutines.CoroutineActivity
 import alidoran.third_party.camera_x.CameraXActivity
-import alidoran.third_party.coroutines.CoroutineActivity
-import alidoran.third_party.multithreading.coroutines.CoroutineActivity
-import alidoran.third_party.camera_x.CameraXActivity
-import alidoran.third_party.coroutines.CoroutineActivity
 import alidoran.third_party.databinding.ActivityThirdpartyBinding
 import alidoran.third_party.di.DiActivity
 import alidoran.third_party.firebase.FirebaseActivity
