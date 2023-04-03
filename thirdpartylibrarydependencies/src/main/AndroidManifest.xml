@@ -10,7 +10,8 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- Pendo -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <!--    camera-x-->
     <uses-feature android:name="android.hardware.camera.any" />
@@ -18,16 +19,30 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".ThirdPartyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
         tools:targetApi="32">
+        <activity
+            android:name=".multithreading.coroutines.RunBlockingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".multithreading.MultiThread"
+            android:exported="false" />
+        <activity
+            android:name=".multithreading.HelloWorldMultiThread"
+            android:exported="false" />
+        <activity
+            android:name=".multithreading.CounterMultiThread"
+            android:exported="false" />
         <activity
             android:name=".camera_x.CameraXActivity"
             android:exported="false" />
@@ -121,16 +136,16 @@
             android:name=".di.dagger.simple_di.SimpleDiActivity"
             android:exported="false" />
         <activity
-            android:name=".coroutines.CoroutineActivity"
+            android:name=".multithreading.coroutines.CoroutineActivity"
             android:exported="false" />
         <activity
-            android:name=".coroutines.CoroutineFakeApiActivity"
+            android:name=".multithreading.coroutines.CoroutineFakeApiActivity"
             android:exported="false" />
         <activity
             android:name=".di.dagger.constructor.ConstructorInjectActivity"
             android:exported="false" />
         <activity
-            android:name=".coroutines.CoroutineProgressBarActivity"
+            android:name=".multithreading.coroutines.CoroutineProgressBarActivity"
             android:exported="false" />
         <activity
             android:name=".apis.graphql_retrofit.GraphQLActivity"

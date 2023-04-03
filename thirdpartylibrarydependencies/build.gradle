@@ -84,10 +84,11 @@ dependencies {
     implementation "com.google.dagger:dagger:$dagger"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger"
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
+//    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:$dagger"
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
     // Room components
     implementation "androidx.room:room-runtime:$room"
     annotationProcessor "androidx.room:room-compiler:$room"
@@ -112,8 +113,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-ktx'
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation "com.google.firebase:firebase-analytics-ktx:$analytics_ktx"
-
+    //Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
 
 
     //lottie player

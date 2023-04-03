@@ -1,4 +1,4 @@
-package alidoran.third_party.coroutines
+package alidoran.third_party.multithreading.coroutines
 
 import alidoran.third_party.databinding.ActivityCoroutineBinding
 import android.content.Intent
@@ -19,6 +19,11 @@ class CoroutineActivity : AppCompatActivity() {
 
         binding.btnProgressbar.setOnClickListener{
             val intent = Intent(this, CoroutineProgressBarActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnRunBlocking.setOnClickListener {
+            val intent = Intent(this, RunBlockingActivity::class.java)
             startActivity(intent)
         }
     }

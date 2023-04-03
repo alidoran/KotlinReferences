@@ -1,4 +1,4 @@
-package alidoran.third_party.coroutines
+package alidoran.third_party.multithreading.coroutines
 
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay

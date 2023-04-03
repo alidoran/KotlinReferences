@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".multithreading.coroutines.CoroutineFakeApiActivity">
+    tools:context=".multithreading.coroutines.RunBlockingActivity">
 
     <Button
-        android:id="@+id/btn_coroutine_scope"
+        android:id="@+id/btn_run_block"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/coroutine_scope"/>
+        android:text="@string/run_blocking"/>
 
-    <TextView
-        android:id="@+id/txt_coroutine_scope"
+    <Button
+        android:id="@+id/btn_run_blockEntire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/coroutine_scope"/>
+        android:text="@string/run_blocking_entire_fun"/>
 
-
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

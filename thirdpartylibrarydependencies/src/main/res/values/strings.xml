@@ -66,5 +66,13 @@
     <string name="action">Action</string>
     <string name="google_map">Google Map</string>
     <string name="loaded">loaded</string>
+    <string name="single_thread">Single thread</string>
+    <string name="calculate">Calculate</string>
+    <string name="start_number_k">Start Number K(*1000)</string>
+    <string name="multi_thread">Multi Thread</string>
+    <string name="end_number_million">End Number Million</string>
     <string name="camera_x">Camera X</string>
+    <string name="run_blocking">Run Blocking</string>
+    <string name="run_blocking_entire_fun">Run Blocking entire fun</string>
+    <string name="runblocking">RunBlocking</string>
 </resources>
