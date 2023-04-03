@@ -18,6 +18,12 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
+<!--    camera-x-->
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -25,7 +31,6 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
@@ -40,6 +45,7 @@
             android:name=".multithreading.CounterMultiThread"
             android:exported="false" />
         <activity
+            android:name=".camera_x.CameraXActivity"
             android:name=".camera_x.CameraXActivity"
             android:exported="false" />
         <activity
@@ -132,16 +138,16 @@
             android:name=".di.dagger.simple_di.SimpleDiActivity"
             android:exported="false" />
         <activity
-            android:name=".multithreading.coroutines.CoroutineActivity"
+            android:name=".coroutines.CoroutineActivity"
             android:exported="false" />
         <activity
-            android:name=".multithreading.coroutines.CoroutineFakeApiActivity"
+            android:name=".coroutines.CoroutineFakeApiActivity"
             android:exported="false" />
         <activity
             android:name=".di.dagger.constructor.ConstructorInjectActivity"
             android:exported="false" />
         <activity
-            android:name=".multithreading.coroutines.CoroutineProgressBarActivity"
+            android:name=".coroutines.CoroutineProgressBarActivity"
             android:exported="false" />
         <activity
             android:name=".apis.graphql_retrofit.GraphQLActivity"

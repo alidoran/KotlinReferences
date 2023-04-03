@@ -10,6 +10,8 @@ import alidoran.third_party.apis.rest.retrofit_center_run.WeatherApi
 import alidoran.third_party.apis.rest.retrofit_center_run.WeatherService
 import alidoran.third_party.apis.rest.retrofit_java.RestRetroJavaActivity
 import alidoran.third_party.app_status.AppStatusHelp
+import alidoran.third_party.camera_x.CameraXActivity
+import alidoran.third_party.coroutines.CoroutineActivity
 import alidoran.third_party.multithreading.coroutines.CoroutineActivity
 import alidoran.third_party.camera_x.CameraXActivity
 import alidoran.third_party.coroutines.CoroutineActivity
@@ -17,12 +19,9 @@ import alidoran.third_party.databinding.ActivityThirdpartyBinding
 import alidoran.third_party.di.DiActivity
 import alidoran.third_party.firebase.FirebaseActivity
 import alidoran.third_party.google_map.GoogleMapActivity
-import alidoran.third_party.multithreading.CounterMultiThread
-import alidoran.third_party.multithreading.MultiThread
 import alidoran.third_party.rx_java.RxJavaActivity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -100,8 +99,8 @@ class ThirdPartyActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnMultiThread.setOnClickListener{
-            val intent = Intent(this, MultiThread::class.java)
+        binding.btnCameraX.setOnClickListener {
+            val intent = Intent(this, CameraXActivity::class.java)
             startActivity(intent)
         }
     }

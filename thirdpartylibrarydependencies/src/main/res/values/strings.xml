@@ -66,6 +66,7 @@
     <string name="action">Action</string>
     <string name="google_map">Google Map</string>
     <string name="loaded">loaded</string>
+    <string name="camera_x">Camera X</string>
     <string name="single_thread">Single thread</string>
     <string name="calculate">Calculate</string>
     <string name="start_number_k">Start Number K(*1000)</string>
