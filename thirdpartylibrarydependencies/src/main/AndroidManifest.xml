@@ -11,20 +11,13 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- Pendo -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/><!-- Segment -->
-<!--    <activity-->
-<!--        android:name="sdk.pendo.io.activities.PendoGateActivity"-->
-<!--        android:exported="true"-->
-<!--        android:launchMode="singleInstance">-->
-<!--        <intent-filter>-->
-<!--            <action android:name="android.intent.action.VIEW" />-->
-
-<!--            <category android:name="android.intent.category.DEFAULT" />-->
-<!--            <category android:name="android.intent.category.BROWSABLE" />-->
-
-<!--            <data android:scheme="pendo-33b77cea" />-->
-<!--        </intent-filter>-->
-<!--    </activity>-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<!--    camera-x-->
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:name=".ThirdPartyApp"
@@ -35,6 +28,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
         tools:targetApi="32">
+        <activity
+            android:name=".camera_x.CameraXActivity"
+            android:exported="false" />
         <activity
             android:name=".segment.SegmentActivity"
             android:exported="false">
