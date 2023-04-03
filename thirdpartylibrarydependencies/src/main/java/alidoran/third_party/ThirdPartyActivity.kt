@@ -10,6 +10,7 @@ import alidoran.third_party.apis.rest.retrofit_center_run.WeatherApi
 import alidoran.third_party.apis.rest.retrofit_center_run.WeatherService
 import alidoran.third_party.apis.rest.retrofit_java.RestRetroJavaActivity
 import alidoran.third_party.app_status.AppStatusHelp
+import alidoran.third_party.camera_x.CameraXActivity
 import alidoran.third_party.coroutines.CoroutineActivity
 import alidoran.third_party.databinding.ActivityThirdpartyBinding
 import alidoran.third_party.di.DiActivity
@@ -87,6 +88,11 @@ class ThirdPartyActivity : AppCompatActivity() {
 
         binding.btnGoogleMap.setOnClickListener {
             val intent = Intent(this, GoogleMapActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnCameraX.setOnClickListener {
+            val intent = Intent(this, CameraXActivity::class.java)
             startActivity(intent)
         }
     }
