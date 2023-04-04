@@ -75,4 +75,11 @@
     <string name="run_blocking">Run Blocking</string>
     <string name="run_blocking_entire_fun">Run Blocking entire fun</string>
     <string name="runblocking">RunBlocking</string>
+    <string name="job">Job</string>
+    <string name="simple_job">Simple Job</string>
+    <string name="cancel_job">Cancel Job</string>
+    <string name="cancel_block_scope_issue">Cancel Block Scope Issue</string>
+    <string name="cancel_block_scope">Cancel Block Scope</string>
+    <string name="cancel_exception_message">Cancel Exception Message</string>
+    <string name="cancel_time_out_custom_exception">Cancel Time Out Custom Exception</string>
 </resources>

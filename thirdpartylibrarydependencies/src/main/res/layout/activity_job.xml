@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".multithreading.coroutines.JobActivity"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_simple_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/simple_job"/>
+
+    <Button
+        android:id="@+id/btn_cancel_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_job"/>
+
+    <Button
+        android:id="@+id/btn_cancel_block_scope_issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_block_scope_issue"/>
+
+    <Button
+        android:id="@+id/btn_cancel_block_scope"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_block_scope"/>
+
+    <Button
+        android:id="@+id/btn_cancel_exception_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_exception_message"/>
+
+    <Button
+        android:id="@+id/btn_cancel_time_out_exception"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_exception_message"/>
+
+    <Button
+        android:id="@+id/btn_cancel_time_out_custom_exception"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_time_out_custom_exception"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

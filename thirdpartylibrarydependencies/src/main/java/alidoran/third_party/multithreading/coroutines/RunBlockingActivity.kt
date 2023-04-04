@@ -39,16 +39,18 @@ class RunBlockingActivity : AppCompatActivity() {
         print("Hello, ")
         runBlocking {
             delay(1500)
+            println("!")
         }
     }
 
     private fun runBlockingEntireFun() = runBlocking {
         lifecycleScope.launch {
             delay(1000)
-            println("World")
+            print("World")
         }
 
         print("Hello, ")
         delay(1500)
+        println("!")
     }
 }
