@@ -26,5 +26,10 @@ class CoroutineActivity : AppCompatActivity() {
             val intent = Intent(this, RunBlockingActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnJob.setOnClickListener {
+            val intent = Intent(this, JobActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
