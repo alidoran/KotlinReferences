@@ -4,5 +4,5 @@ interface ISimpleMvpView {
     fun onClear()
     fun onShowProgress()
     fun onHideProgress()
-    fun onUpdateLoginResultUserInfo(name: String, age: Int)
+    fun onUpdateNameCountResultInfo(name: String, nameCount: Int)
 }

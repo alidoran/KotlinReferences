@@ -22,7 +22,7 @@ class SimpleMvpPresenter(var ISimpleMvpView: ISimpleMvpView) : ISimpleMvpPresent
         ISimpleMvpView.onHideProgress()
     }
 
-    override fun login(name: String) {
+    override fun calculateNameCount(name: String) {
         showProgress()
         CoroutineScope(IO).launch {
             ApiSimulation.requestLogin(
@@ -30,7 +30,7 @@ class SimpleMvpPresenter(var ISimpleMvpView: ISimpleMvpView) : ISimpleMvpPresent
                 object : ApiSimulation.LoginControllerDelegate {
                     override suspend fun onSuccess(response: UserInfoModel) {
                         withContext(Main) {
-                            ISimpleMvpView.onUpdateLoginResultUserInfo(response.name, response.nameCount)
+                            ISimpleMvpView.onUpdateNameCountResultInfo(response.name, response.nameCount)
                             hideProgress()
                         }
                     }
