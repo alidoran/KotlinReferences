@@ -1,6 +1,4 @@
-package alidoran.android.mvp.view
-
-import android.content.Context
+package alidoran.android.mvp.simple.view
 
 interface ILoginView {
     fun onClear()

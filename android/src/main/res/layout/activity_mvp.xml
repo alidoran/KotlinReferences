@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="android.mvp.view.MvpActivity">
+    tools:context=".mvp.simple.view.MvpActivity">
 
     <TextView
         android:id="@+id/txt_title"
@@ -14,19 +13,11 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/txt_id"
+        android:id="@+id/txt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/id"
+        android:hint="@string/name"
         tools:ignore="Autofill,TextFields" />
-
-    <EditText
-        android:id="@+id/txt_pass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/password"
-        tools:ignore="Autofill,TextFields"
-        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_ok"
@@ -45,7 +36,4 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         />
-
-
-
 </androidx.appcompat.widget.LinearLayoutCompat>
