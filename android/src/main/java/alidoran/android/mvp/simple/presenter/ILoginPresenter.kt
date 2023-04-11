@@ -1,8 +1,8 @@
-package alidoran.android.mvp.presenter
+package alidoran.android.mvp.simple.presenter
 
 interface ILoginPresenter {
     fun clear()
     fun showProgress()
     fun hideProgress()
-    fun login(name: String, password: String)
+    fun login(name: String)
 }

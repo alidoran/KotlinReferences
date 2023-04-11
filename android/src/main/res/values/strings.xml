@@ -84,4 +84,5 @@
     <string name="title_activity_function">FunctionActivity</string>
     <string name="title_activity_components">ComponentsActivity</string>
     <string name="title_activity_multiple_view">MultipleViewActivity</string>
+    <string name="name">Name</string>
 </resources>

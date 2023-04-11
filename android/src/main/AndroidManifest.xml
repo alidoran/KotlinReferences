@@ -96,7 +96,7 @@
             android:name=".fragment.FragmentActivity"
             android:exported="false" />
         <activity
-            android:name=".mvp.view.MvpActivity"
+            android:name=".mvp.simple.view.MvpActivity"
             android:exported="false" />
         <activity
             android:name=".socket.SocketActivity"

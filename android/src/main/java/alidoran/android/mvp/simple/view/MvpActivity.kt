@@ -1,15 +1,15 @@
-package alidoran.android.mvp.view
+package alidoran.android.mvp.simple.view
 
 import alidoran.android.databinding.ActivityMvpBinding
-import alidoran.android.mvp.presenter.ILoginPresenter
-import alidoran.android.mvp.presenter.LoginPresenter
+import alidoran.android.mvp.simple.presenter.ILoginPresenter
+import alidoran.android.mvp.simple.presenter.LoginPresenter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View.*
 
 class MvpActivity : AppCompatActivity(), ILoginView {
-    lateinit var binding: ActivityMvpBinding
-    lateinit var iLoginPresenter: ILoginPresenter
+    private lateinit var binding: ActivityMvpBinding
+    private lateinit var iLoginPresenter: ILoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +23,7 @@ class MvpActivity : AppCompatActivity(), ILoginView {
     private fun initListener() {
         binding.btnOk.setOnClickListener {
             iLoginPresenter.login(
-                binding.txtId.text.toString(),
-                binding.txtPass.text.toString()
+                binding.txtName.text.toString()
             )
         }
     }
@@ -34,8 +33,7 @@ class MvpActivity : AppCompatActivity(), ILoginView {
     }
 
     override fun onClear() {
-        binding.txtId.text.clear()
-        binding.txtPass.text.clear()
+        binding.txtName.text.clear()
     }
 
     override fun onShowProgress() {
@@ -47,7 +45,8 @@ class MvpActivity : AppCompatActivity(), ILoginView {
     }
 
     override fun onUpdateLoginResultUserInfo(name: String, age: Int) {
-        binding.txtResult.text = "name = $name , age = $age"
+        val result = "name = $name , Name Count = $age"
+        binding.txtResult.text = result
     }
 
 }
