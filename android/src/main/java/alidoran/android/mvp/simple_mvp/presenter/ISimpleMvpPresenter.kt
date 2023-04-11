@@ -1,6 +1,6 @@
-package alidoran.android.mvp.simple.presenter
+package alidoran.android.mvp.simple_mvp.presenter
 
-interface ILoginPresenter {
+interface ISimpleMvpPresenter {
     fun clear()
     fun showProgress()
     fun hideProgress()

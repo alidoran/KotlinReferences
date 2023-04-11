@@ -1,25 +1,25 @@
-package alidoran.android.mvp.simple.presenter
+package alidoran.android.mvp.simple_mvp.presenter
 
-import alidoran.android.mvp.simple.model.UserInfoModel
-import alidoran.android.mvp.controller.ApiSimulation
-import alidoran.android.mvp.simple.view.ILoginView
+import alidoran.android.mvp.common_mvp.model.UserInfoModel
+import alidoran.android.mvp.common_mvp.controller.ApiSimulation
+import alidoran.android.mvp.simple_mvp.view.ISimpleMvpView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class LoginPresenter(var iLoginView: ILoginView) : ILoginPresenter {
+class SimpleMvpPresenter(var ISimpleMvpView: ISimpleMvpView) : ISimpleMvpPresenter {
     override fun clear() {
-        iLoginView.onClear()
+        ISimpleMvpView.onClear()
     }
 
     override fun showProgress() {
-        iLoginView.onShowProgress()
+        ISimpleMvpView.onShowProgress()
     }
 
     override fun hideProgress() {
-        iLoginView.onHideProgress()
+        ISimpleMvpView.onHideProgress()
     }
 
     override fun login(name: String) {
@@ -30,7 +30,7 @@ class LoginPresenter(var iLoginView: ILoginView) : ILoginPresenter {
                 object : ApiSimulation.LoginControllerDelegate {
                     override suspend fun onSuccess(response: UserInfoModel) {
                         withContext(Main) {
-                            iLoginView.onUpdateLoginResultUserInfo(response.name, response.nameCount)
+                            ISimpleMvpView.onUpdateLoginResultUserInfo(response.name, response.nameCount)
                             hideProgress()
                         }
                     }

@@ -1,6 +1,6 @@
-package alidoran.android.mvp.controller
+package alidoran.android.mvp.common_mvp.controller
 
-import alidoran.android.mvp.simple.model.UserInfoModel
+import alidoran.android.mvp.common_mvp.model.UserInfoModel
 import kotlinx.coroutines.delay
 
 object ApiSimulation {

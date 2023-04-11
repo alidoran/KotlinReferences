@@ -1,6 +1,6 @@
-package alidoran.android.mvp.simple.view
+package alidoran.android.mvp.simple_mvp.view
 
-interface ILoginView {
+interface ISimpleMvpView {
     fun onClear()
     fun onShowProgress()
     fun onHideProgress()

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".mvp.simple_mvp.view.ISimpleMvpActivity">
+    tools:context=".mvp.base_mvp.view.MvpByBaseActivity">
 
     <TextView
         android:id="@+id/txt_title"
