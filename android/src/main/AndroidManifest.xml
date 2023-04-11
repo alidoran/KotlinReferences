@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".mvp.MvpActivity"
+            android:exported="false" />
+        <activity
             android:name=".mvp.base_mvp.view.MvpByBaseActivity"
             android:exported="false" />
         <activity
@@ -97,7 +100,7 @@
             android:name=".fragment.FragmentActivity"
             android:exported="false" />
         <activity
-            android:name=".mvp.simple_mvp.view.ISimpleMvpActivity"
+            android:name=".mvp.simple_mvp.view.SimpleMvpActivity"
             android:exported="false" />
         <activity
             android:name=".socket.SocketActivity"

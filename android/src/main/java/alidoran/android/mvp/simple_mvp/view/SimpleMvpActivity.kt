@@ -1,19 +1,19 @@
 package alidoran.android.mvp.simple_mvp.view
 
-import alidoran.android.databinding.ActivityMvpBinding
+import alidoran.android.databinding.ActivitySimpleMvpBinding
 import alidoran.android.mvp.simple_mvp.presenter.ISimpleMvpPresenter
 import alidoran.android.mvp.simple_mvp.presenter.SimpleMvpPresenter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View.*
 
-class ISimpleMvpActivity : AppCompatActivity(), ISimpleMvpView {
-    private lateinit var binding: ActivityMvpBinding
+class SimpleMvpActivity : AppCompatActivity(), ISimpleMvpView {
+    private lateinit var binding: ActivitySimpleMvpBinding
     private lateinit var iSimpleMvpPresenter: ISimpleMvpPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMvpBinding.inflate(layoutInflater)
+        binding = ActivitySimpleMvpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initPresenter()
@@ -22,7 +22,7 @@ class ISimpleMvpActivity : AppCompatActivity(), ISimpleMvpView {
 
     private fun initListener() {
         binding.btnOk.setOnClickListener {
-            iSimpleMvpPresenter.login(
+            iSimpleMvpPresenter.calculateNameCount(
                 binding.txtName.text.toString()
             )
         }
@@ -44,8 +44,8 @@ class ISimpleMvpActivity : AppCompatActivity(), ISimpleMvpView {
         binding.progressWait.visibility = INVISIBLE
     }
 
-    override fun onUpdateLoginResultUserInfo(name: String, age: Int) {
-        val result = "name = $name , Name Count = $age"
+    override fun onUpdateNameCountResultInfo(name: String, nameCount: Int) {
+        val result = "name = $name , Name Count = $nameCount"
         binding.txtResult.text = result
     }
 

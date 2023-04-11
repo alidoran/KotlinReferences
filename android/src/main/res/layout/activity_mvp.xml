@@ -1,39 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".mvp.simple_mvp.view.ISimpleMvpActivity">
+    android:gravity="center"
+    tools:context=".mvp.MvpActivity">
 
-    <TextView
-        android:id="@+id/txt_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/txt_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/name"
-        tools:ignore="Autofill,TextFields" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_ok"
+    <Button
+        android:id="@+id/btn_simple_mvp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ok" />
+        android:text="@string/simple_mvp"/>
 
-    <TextView
-        android:id="@+id/txt_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <ProgressBar
-        android:id="@+id/progress_wait"
+    <Button
+        android:id="@+id/btn_base_mvp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        />
+        android:text="@string/base_mvp"/>
 </androidx.appcompat.widget.LinearLayoutCompat>

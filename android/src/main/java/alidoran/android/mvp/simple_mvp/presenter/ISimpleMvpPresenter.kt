@@ -4,5 +4,5 @@ interface ISimpleMvpPresenter {
     fun clear()
     fun showProgress()
     fun hideProgress()
-    fun login(name: String)
+    fun calculateNameCount(name: String)
 }

@@ -85,4 +85,6 @@
     <string name="title_activity_components">ComponentsActivity</string>
     <string name="title_activity_multiple_view">MultipleViewActivity</string>
     <string name="name">Name</string>
+    <string name="simple_mvp">Simple MVP</string>
+    <string name="base_mvp">Base Mvp</string>
 </resources>
