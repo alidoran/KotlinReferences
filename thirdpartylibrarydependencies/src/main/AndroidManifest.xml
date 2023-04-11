@@ -33,6 +33,9 @@
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
         tools:targetApi="32">
         <activity
+            android:name=".multithreading.coroutines.CoroutinesContextActivity"
+            android:exported="false" />
+        <activity
             android:name=".multithreading.coroutines.JobActivity"
             android:exported="false" />
         <activity

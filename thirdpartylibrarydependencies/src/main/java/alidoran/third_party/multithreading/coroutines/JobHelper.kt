@@ -92,7 +92,3 @@ object JobHelper {
         if (job == null) println("timeOut")
     }
 }
-
-fun main() {
-    JobHelper.cancelWithCustomTimeOutException()
-}

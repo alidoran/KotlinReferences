@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".multithreading.coroutines.CoroutinesContextActivity">
+
+    <Button
+        android:id="@+id/btn_thread_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/read_thread_name"/>
+
+    <Button
+        android:id="@+id/btn_unconfined_dispatcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unconfined_dispatcher"/>
+
+    <Button
+        android:id="@+id/btn_access_job_in_itself"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/access_job_in_itself"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
