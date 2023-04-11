@@ -10,7 +10,7 @@ import alidoran.android.databinding.ActivityAndroidBinding
 import alidoran.android.dialog.DialogActivity
 import alidoran.android.fragment.FragmentActivity
 import alidoran.android.lifecycle.LifeCycleActivity
-import alidoran.android.mvp.simple.view.MvpActivity
+import alidoran.android.mvp.simple_mvp.view.ISimpleMvpActivity
 import alidoran.android.mvvm_livedata.view.MvvmMainActivity
 import alidoran.android.navigation_safe_args.NavigationActivity
 import alidoran.android.paging_view.PagingRecyclerActivity
@@ -97,7 +97,7 @@ class AndroidActivity : AppCompatActivity() {
         }
 
         binding.btnMvp.setOnClickListener{
-            val intent = Intent(this, MvpActivity::class.java)
+            val intent = Intent(this, ISimpleMvpActivity::class.java)
             startActivity(intent)
         }
 

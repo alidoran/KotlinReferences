@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".mvp.base_mvp.view.MvpByBaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".add_dynamic_view.DynamicViewActivity"
             android:exported="false" />
         <activity
@@ -71,7 +74,6 @@
             android:exported="false"
             android:label="@string/title_activity_function"
             android:theme="@style/Theme.Android" />
-
         <activity
             android:name=".dialog.DialogActivity"
             android:exported="false" />
@@ -84,8 +86,7 @@
         <activity
             android:name=".activity_result_launcher.ActivityResultLauncherDest"
             android:exported="false"
-            android:launchMode="singleTop"
-            />
+            android:launchMode="singleTop" />
         <activity
             android:name=".activity_result_launcher.ResultLauncherSourceActivity"
             android:exported="false" />
@@ -96,7 +97,7 @@
             android:name=".fragment.FragmentActivity"
             android:exported="false" />
         <activity
-            android:name=".mvp.simple.view.MvpActivity"
+            android:name=".mvp.simple_mvp.view.ISimpleMvpActivity"
             android:exported="false" />
         <activity
             android:name=".socket.SocketActivity"
@@ -133,14 +134,13 @@
         <service android:name=".services.ForegroundServiceSample" />
         <service android:name=".services.ScreenOnOffService" />
         <service android:name=".services.TrampolineService" /> <!-- Broadcasts -->
-        <receiver android:name=".broadcast.BroadcastOnOffReceiver" />
-<!--        <receiver-->
-<!--            android:name=".broadcast.BroadcastReceiverSample"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
-<!--            </intent-filter>-->
-<!--        </receiver> &lt;!&ndash; Activities &ndash;&gt;-->
+        <receiver android:name=".broadcast.BroadcastOnOffReceiver" /> <!-- <receiver -->
+        <!-- android:name=".broadcast.BroadcastReceiverSample" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> &lt;!&ndash; Activities &ndash;&gt; -->
         <activity
             android:name=".AndroidActivity"
             android:exported="true">
@@ -168,10 +168,10 @@
         <activity
             android:name=".viewpager.ViewPagerSliderActivity"
             android:exported="false" />
-        <activity android:name=".recycler_view.RecyclerActivity"
-            android:theme="@android:style/Theme.Dialog"
-            android:excludeFromRecents="true">
-        </activity>
+        <activity
+            android:name=".recycler_view.RecyclerActivity"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.Dialog" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

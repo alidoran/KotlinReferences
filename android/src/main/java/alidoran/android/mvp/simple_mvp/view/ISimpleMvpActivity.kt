@@ -1,15 +1,15 @@
-package alidoran.android.mvp.simple.view
+package alidoran.android.mvp.simple_mvp.view
 
 import alidoran.android.databinding.ActivityMvpBinding
-import alidoran.android.mvp.simple.presenter.ILoginPresenter
-import alidoran.android.mvp.simple.presenter.LoginPresenter
+import alidoran.android.mvp.simple_mvp.presenter.ISimpleMvpPresenter
+import alidoran.android.mvp.simple_mvp.presenter.SimpleMvpPresenter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View.*
 
-class MvpActivity : AppCompatActivity(), ILoginView {
+class ISimpleMvpActivity : AppCompatActivity(), ISimpleMvpView {
     private lateinit var binding: ActivityMvpBinding
-    private lateinit var iLoginPresenter: ILoginPresenter
+    private lateinit var iSimpleMvpPresenter: ISimpleMvpPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +22,14 @@ class MvpActivity : AppCompatActivity(), ILoginView {
 
     private fun initListener() {
         binding.btnOk.setOnClickListener {
-            iLoginPresenter.login(
+            iSimpleMvpPresenter.login(
                 binding.txtName.text.toString()
             )
         }
     }
 
     private fun initPresenter() {
-        iLoginPresenter = LoginPresenter(this)
+        iSimpleMvpPresenter = SimpleMvpPresenter(this)
     }
 
     override fun onClear() {

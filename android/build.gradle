@@ -84,6 +84,7 @@ dependencies {
     implementation "androidx.activity:activity-compose:$activity_compose"
     implementation "androidx.compose.material:material:$compose_material"
     implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     //test
     testImplementation "androidx.test.ext:junit-ktx:$junitktx"
     implementation "androidx.test:core-ktx:$test_core"
