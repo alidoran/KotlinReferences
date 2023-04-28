@@ -19,6 +19,8 @@ VPS Config
 09- apt-get install curl -y
 10- curl https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/shell/cf.sh -o cf.sh && chmod +x cf.sh && ./cf.sh
 choose 1->speed->10
+11- curl -O https://raw.githubusercontent.com/jinwyp/one_click_script/master/install_kernel.sh && chmod +x ./install_kernel.sh && ./install_kernel.sh
+choose 2-12-y-y-1
 ----------------
 1- chrome->full_address:54321
 2- panel_setting->Panel_certificate_public_key_file_path=/root/cert.crt
