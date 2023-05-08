@@ -35,12 +35,6 @@
                 android:text="@string/show_bottom_sheet"/>
 
             <Button
-                android:id="@+id/btn_send_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/send_email"/>
-
-            <Button
                 android:id="@+id/btn_services"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,7 +134,13 @@
                 android:id="@+id/btn_dynamic_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dynamic View"/>
+                android:text="@string/dynamic_view"/>
+
+            <Button
+                android:id="@+id/btn_intents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/intents"/>
 
         </LinearLayout>
     </ScrollView>

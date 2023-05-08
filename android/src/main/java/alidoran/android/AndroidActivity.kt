@@ -9,6 +9,7 @@ import alidoran.android.bottom_sheet.BottomSheetActivity
 import alidoran.android.databinding.ActivityAndroidBinding
 import alidoran.android.dialog.DialogActivity
 import alidoran.android.fragment.FragmentActivity
+import alidoran.android.intents.IntentsActivity
 import alidoran.android.lifecycle.LifeCycleActivity
 import alidoran.android.mvp.MvpActivity
 import alidoran.android.mvvm_livedata.view.MvvmMainActivity
@@ -50,10 +51,6 @@ class AndroidActivity : AppCompatActivity() {
         binding.btnBottomSheetMain.setOnClickListener {
             val intent = Intent(this, BottomSheetActivity::class.java)
             startActivity(intent)
-        }
-
-        binding.btnSendEmail.setOnClickListener {
-            Intents().sendEMail("Hello", "alidoran@gmail.com", "Hello World")
         }
 
         binding.btnServices.setOnClickListener{
@@ -138,6 +135,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnDynamicView.setOnClickListener {
             val intent = Intent(this, DynamicViewActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnIntents.setOnClickListener {
+            val intent = Intent(this, IntentsActivity::class.java)
             startActivity(intent)
         }
     }
