@@ -85,4 +85,5 @@
     <string name="read_thread_name">Read thread name</string>
     <string name="unconfined_dispatcher">Unconfined Dispatcher</string>
     <string name="access_job_in_itself">Access job in itself</string>
+    <string name="stop_service">stop service</string>
 </resources>

@@ -3,6 +3,7 @@ package alidoran.third_party.firebase.fcm_push_notification
 import alidoran.third_party.R
 import alidoran.third_party.app_status.AppStatusHelp
 import alidoran.third_party.databinding.ActivityFcmPushNotificationBinding
+import alidoran.third_party.firebase.fcm_push_notification.second_service.BackgroundSecondService
 import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -92,6 +93,8 @@ class FcmPushNotificationActivity : AppCompatActivity() {
         val binding = ActivityFcmPushNotificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initEvent(binding)
+
 //        checkPermission()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -141,6 +144,12 @@ class FcmPushNotificationActivity : AppCompatActivity() {
             Log.d(TAG, msg)
             Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
         })
+    }
+
+    private fun initEvent(binding: ActivityFcmPushNotificationBinding) {
+        binding.btnStopService.setOnClickListener {
+            BackgroundSecondService().stopService(Intent(this, BackgroundSecondService::class.java))
+        }
     }
 
     //region overlay permission

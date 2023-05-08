@@ -31,6 +31,10 @@ class BackgroundSecondService : Service() {
         return super.onStartCommand(intent, flags, startId)
     }
 
+    override fun stopService(name: Intent?): Boolean {
+        return super.stopService(name)
+    }
+
     private fun printTimeSecondly() {
         if (!stopTimer) {
             Timer().schedule(TimeUnit.SECONDS.toMillis(1)) {
