@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="11">
+      <module name="Projects.KotlinReferences.android" target="17" />
+      <module name="Projects.KotlinReferences.android_test" target="17" />
+      <module name="Projects.KotlinReferences.design_pattern" target="17" />
+      <module name="Projects.KotlinReferences.fundamental" target="17" />
+      <module name="Projects.KotlinReferences.kotlin_base" target="17" />
+      <module name="Projects.KotlinReferences.thirdpartylibrarydependencies" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -87,4 +87,7 @@
     <string name="name">Name</string>
     <string name="simple_mvp">Simple MVP</string>
     <string name="base_mvp">Base Mvp</string>
+    <string name="os_update">OS update</string>
+    <string name="dynamic_view">Dynamic View</string>
+    <string name="intents">Intents</string>
 </resources>
