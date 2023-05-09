@@ -86,4 +86,7 @@
     <string name="unconfined_dispatcher">Unconfined Dispatcher</string>
     <string name="access_job_in_itself">Access job in itself</string>
     <string name="stop_service">stop service</string>
+    <string name="service_status">service status</string>
+    <string name="start_service">start service</string>
+    <string name="start_foreground">start foreground</string>
 </resources>

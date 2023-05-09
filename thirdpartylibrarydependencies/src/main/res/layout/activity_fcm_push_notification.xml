@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".firebase.fcm_push_notification.FcmPushNotificationActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -15,7 +13,22 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:gravity="center"
         tools:context="com.google.firebase.quickstart.fcm.java.MainActivity">
+
+        <Button
+            android:id="@+id/btn_start_service"
+            android:layout_width="@dimen/standard_field_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/start_service" />
+
+        <Button
+            android:id="@+id/btn_start_foreground"
+            android:layout_width="@dimen/standard_field_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/start_foreground" />
 
         <Button
             android:id="@+id/btn_stop_service"
@@ -23,6 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/stop_service" />
+
+        <Button
+            android:id="@+id/btn_service_status"
+            android:layout_width="@dimen/standard_field_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/service_status" />
 
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

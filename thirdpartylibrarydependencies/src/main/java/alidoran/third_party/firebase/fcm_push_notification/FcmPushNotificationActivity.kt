@@ -4,7 +4,11 @@ import alidoran.third_party.R
 import alidoran.third_party.app_status.AppStatusHelp
 import alidoran.third_party.databinding.ActivityFcmPushNotificationBinding
 import alidoran.third_party.firebase.fcm_push_notification.second_service.BackgroundSecondService
+import alidoran.third_party.firebase.fcm_push_notification.second_service.BackgroundSecondService.ActionType.START_FOREGROUND
+import alidoran.third_party.firebase.fcm_push_notification.second_service.BackgroundSecondService.ActionType.START_SERVICE
+import alidoran.third_party.firebase.fcm_push_notification.second_service.BackgroundSecondService.ActionType.STOP_SERVICE
 import android.Manifest
+import android.app.ActivityManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.ContentValues.TAG
@@ -18,6 +22,7 @@ import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.gms.tasks.OnCompleteListener
@@ -146,9 +151,34 @@ class FcmPushNotificationActivity : AppCompatActivity() {
         })
     }
 
-    private fun initEvent(binding: ActivityFcmPushNotificationBinding) {
-        binding.btnStopService.setOnClickListener {
-            BackgroundSecondService().stopService(Intent(this, BackgroundSecondService::class.java))
+
+    private fun initEvent(binding: ActivityFcmPushNotificationBinding) = with(binding) {
+        val intent = Intent(this@FcmPushNotificationActivity, BackgroundSecondService::class.java)
+
+        btnStopService.setOnClickListener {
+            intent.putExtra("ActionType" , STOP_SERVICE)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(intent)
+            }
+        }
+
+        btnServiceStatus.setOnClickListener {
+            val serviceRunning = isServiceRunning(false)
+            Toast.makeText(this@FcmPushNotificationActivity, "Service running is: $serviceRunning", Toast.LENGTH_LONG).show()
+        }
+
+        btnStartService.setOnClickListener {
+            intent.putExtra("ActionType" , START_SERVICE)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(intent)
+            }
+        }
+
+        btnStartForeground.setOnClickListener {
+            intent.putExtra("ActionType" , START_FOREGROUND)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(intent)
+            }
         }
     }
 
@@ -166,4 +196,14 @@ class FcmPushNotificationActivity : AppCompatActivity() {
         }
     }
     //endregion
+
+    private fun isServiceRunning(isForeground: Boolean): Boolean {
+        val manager = getSystemService(ACTIVITY_SERVICE) as ActivityManager
+        for (service in manager.getRunningServices(Int.MAX_VALUE)) {
+            if (BackgroundSecondService::class.java.name == service.service.className) {
+                return isForeground == service.foreground
+            }
+        }
+        return false
+    }
 }

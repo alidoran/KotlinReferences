@@ -50,10 +50,14 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // [END_EXCLUDE]
         android.os.Debug.waitForDebugger()
         val i = Intent(this, BackgroundSecondService::class.java)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Log.d("TAG", "startServiceType: startForegroundService")
+            i.putExtra("NeedStart" , true)
             startForegroundService(i)
-        else
+        } else {
+            Log.d("TAG", "startServiceType: startService")
             startService(i)
+        }
 
 
         val a = checkBackgroundLocationPermission()
@@ -164,6 +168,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             .setAutoCancel(true)
             .setSound(defaultSoundUri)
             .setContentIntent(pendingIntent)
+            .setOngoing(true)
 
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -177,8 +182,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             )
             notificationManager.createNotificationChannel(channel)
         }
-
-        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build())
+        val notification = notificationBuilder.build()
+        notificationManager.notify(0 /* ID of notification */, notification)
     }
 
     private fun checkBackgroundLocationPermission(): Boolean {
@@ -190,7 +195,11 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
 
     /* Postman
-    Body
+    URL:
+    Post
+    https://fcm.googleapis.com/fcm/send
+
+    Body:
     {
     "to": "dP2L-ooBQF6B6wzkHqFgRx:APA91bEXCgSncNIPtzCJYkOruWwbjPHpkJW1kUhLJ3OkcqHsQKMj_RjdBu5DTasQ5bXOGV_dO47JcLKqpMMq3y6N4PCF6o5x5KOp4YP8k-d1vFvK3TKgeftr8JO1joQUbi5kttHOC6Xx",
     "collapse_key": "type_a",
@@ -204,11 +213,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 }
 
-header
-
+Headers:
 Authorization = key=AAAAs4--0hE:APA91bHtoxIbJHHGFzN5xGCuB_4IvukoU-bGvRsm67dO0WwZpMVS1UupOA5vWY4cOxKsjJaOB9X3hEPX4fEpkCJ7VrXr-_RWahgSolQgx0NvzvwjkJdxiS64zjFHMhHxfydcaMzntF68
-
-
-
     */
 }
