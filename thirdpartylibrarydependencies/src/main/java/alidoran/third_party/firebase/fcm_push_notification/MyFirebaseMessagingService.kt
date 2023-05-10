@@ -7,6 +7,7 @@ import alidoran.third_party.app_status.AppStatusHelp
 import alidoran.third_party.databinding.ActivityFcmPushNotificationBinding
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower26
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.START_BG_FG_SERVICE_26
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_BG_SERVICE_26
 import android.Manifest
 import android.app.NotificationChannel
@@ -24,16 +25,10 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
-
-    private val job = SupervisorJob()
-    private val scope = CoroutineScope(Dispatchers.IO + job)
-
     // region START receive_message
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         Log.d("AliDoran", "onDoranMessageReceived")
@@ -51,7 +46,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         remoteMessage.data.values.let {
             if (it.isNotEmpty()) {
                 handleDataMessage(remoteMessage)
-                startServiceByDataMessage()
             }
             Log.d("Ali Doran", "onDoranDataReceived: $it")
         }
@@ -80,19 +74,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
     // endregion
 
-    private fun startServiceByDataMessage() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val i = Intent(this, ServiceUpper26::class.java)
-            Log.d("TAG", "startServiceType: startForegroundService")
-            i.putExtra("ActionType", STOP_BG_SERVICE_26)
-            startForegroundService(i)
-        } else {
-            val i = Intent(this, ServiceLower26::class.java)
-            Log.d("TAG", "startServiceType: startService")
-            startService(i)
-        }
-    }
-
     private suspend fun callApiOnFcm() {
         val response = getWeatherServiceLiveData().getWeatherApi2(q = "Tehran")
         val toastText = if (response.isSuccessful)
@@ -110,7 +91,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     private fun handleDataMessage(remoteMessage: RemoteMessage) {
         if (remoteMessage.data["autoCallApi"] == true.toString()) {
             checkBackgroundLocationPermission()
-            scope.launch {
+            MainScope().launch {
                 callApiOnFcm()
             }
         }
@@ -119,12 +100,49 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                 .addFlags(FLAG_ACTIVITY_NEW_TASK)
                 .putExtra("TestExtra", "Test extra")
             startActivity(intent)
+            Log.d("Ali Doran", "onDoranAutoStartActivityReceived")
         }
         if (remoteMessage.data["showNotification"] == true.toString()) {
             val title = remoteMessage.data["notificationTitle"] ?: ""
             val body = remoteMessage.data["notificationBody"] ?: ""
             showNotification(title, body)
-            Log.d("Ali Doran", "onDoranNotificationReceived: $title $body")
+            Log.d("Ali Doran", "onDoranShowNotificationReceived: $title $body")
+        }
+        if (remoteMessage.data["startService"] == true.toString()) {
+            startServiceByDataMessage()
+            Log.d("Ali Doran", "onDoranStartServiceReceived")
+        }
+        if (remoteMessage.data["stopService"] == true.toString()) {
+            stopServiceByDataMessage()
+            Log.d("Ali Doran", "onDoranStopServiceReceived")
+        }
+    }
+
+    private fun startServiceByDataMessage() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val i = Intent(this, ServiceUpper26::class.java)
+            Log.d("TAG", "startServiceType: startForegroundService")
+            i.putExtra("ActionType", START_BG_FG_SERVICE_26)
+            startForegroundService(i)
+        } else {
+            val i = Intent(this, ServiceLower26::class.java)
+            i.putExtra("ActionType", START_BG_FG_SERVICE_26)
+            Log.d("TAG", "startServiceType: startService")
+            startService(i)
+        }
+    }
+
+    private fun stopServiceByDataMessage() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val i = Intent(this, ServiceUpper26::class.java)
+            Log.d("TAG", "startServiceType: startForegroundService")
+            i.putExtra("ActionType", STOP_BG_SERVICE_26)
+            stopService(i)
+        } else {
+            val i = Intent(this, ServiceLower26::class.java)
+            i.putExtra("ActionType", STOP_BG_SERVICE_26)
+            Log.d("TAG", "startServiceType: startService")
+            startService(i)
         }
     }
 
@@ -169,13 +187,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             Manifest.permission.ACCESS_BACKGROUND_LOCATION
         ) == PackageManager.PERMISSION_GRANTED
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        job.cancel()
-        super.onDestroy()
-    }
-
 
     /* Postman data message
     URL:

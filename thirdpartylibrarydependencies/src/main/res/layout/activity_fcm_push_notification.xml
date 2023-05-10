@@ -17,11 +17,25 @@
         tools:context="com.google.firebase.quickstart.fcm.java.MainActivity">
 
         <Button
+            android:id="@+id/btn_start_bg_service_bg_legal"
+            android:layout_width="@dimen/standard_field_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/start_bg_service_bg_legal" />
+
+        <Button
             android:id="@+id/btn_start_bg_service_bg"
             android:layout_width="@dimen/standard_field_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/start_bg_service_bg" />
+
+        <Button
+            android:id="@+id/btn_stop_bg_service_bg"
+            android:layout_width="@dimen/standard_field_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/stop_bg_service_bg" />
 
         <Button
             android:id="@+id/btn_start_bg_service_fg"

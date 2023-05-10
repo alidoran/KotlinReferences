@@ -9,9 +9,11 @@ import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower26.ActionType.STOP_BG_SERVICE
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower26.ActionType.STOP_FG_SERVICE
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.START_BG_FG_SERVICE_26
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.START_BG_SERVICE_26
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.START_FG_SERVICE_26
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_BG_SERVICE_26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_BG_SERVICE_IN_BG_26
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_FG_SERVICE_26
 import android.Manifest
 import android.app.ActivityManager
@@ -220,6 +222,16 @@ class FcmPushNotificationActivity : AppCompatActivity() {
             startForegroundService(intent)
         }
 
+        btnStartBgServiceBgLegal.setOnClickListener {
+            intent.putExtra("ActionType", START_BG_FG_SERVICE_26)
+            startForegroundService(intent)
+        }
+
+        btnStopBgServiceBg.setOnClickListener {
+            intent.putExtra("ActionType", STOP_BG_SERVICE_IN_BG_26)
+            startForegroundService(intent)
+        }
+
         btnStartBgServiceFg.setOnClickListener {
             intent.putExtra("ActionType", START_BG_SERVICE_26)
             startService(intent)
@@ -227,7 +239,7 @@ class FcmPushNotificationActivity : AppCompatActivity() {
 
         btnStopBgService.setOnClickListener {
             intent.putExtra("ActionType", STOP_BG_SERVICE_26)
-            startForegroundService(intent)
+            stopService(intent)
         }
 
         btnStartFgService.setOnClickListener {
