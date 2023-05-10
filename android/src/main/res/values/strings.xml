@@ -90,4 +90,5 @@
     <string name="os_update">OS update</string>
     <string name="dynamic_view">Dynamic View</string>
     <string name="intents">Intents</string>
+    <string name="overlay_permission">Overlay Permission</string>
 </resources>

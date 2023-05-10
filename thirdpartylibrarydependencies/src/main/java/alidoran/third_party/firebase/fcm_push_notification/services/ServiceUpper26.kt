@@ -1,10 +1,11 @@
-package alidoran.third_party.firebase.fcm_push_notification.second_service
+package alidoran.third_party.firebase.fcm_push_notification.services
 
 import alidoran.third_party.R
 import alidoran.third_party.databinding.ActivityFcmPushNotificationBinding
-import alidoran.third_party.firebase.fcm_push_notification.second_service.BackgroundSecondService.ActionType.START_FOREGROUND
-import alidoran.third_party.firebase.fcm_push_notification.second_service.BackgroundSecondService.ActionType.START_SERVICE
-import alidoran.third_party.firebase.fcm_push_notification.second_service.BackgroundSecondService.ActionType.STOP_SERVICE
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.START_BG_SERVICE_26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.START_FG_SERVICE_26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_BG_SERVICE_26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_FG_SERVICE_26
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -14,12 +15,10 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
 import android.os.IBinder
-import android.util.Log
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import java.util.*
-import java.util.concurrent.TimeUnit
-import kotlin.concurrent.schedule
 
 
 /*
@@ -27,13 +26,14 @@ Manifest
 <service android:name=".services.BackgroundServiceSample"/>
  */
 
-class BackgroundSecondService : Service() {
+class ServiceUpper26 : Service() {
     private var stopTimer = false
 
     object ActionType{
-        const val START_SERVICE = "startService"
-        const val STOP_SERVICE = "stopService"
-        const val START_FOREGROUND = "startForeground"
+        const val START_BG_SERVICE_26 = "startBgService26"
+        const val START_FG_SERVICE_26 = "startFgService26"
+        const val STOP_BG_SERVICE_26= "stopBgService26"
+        const val STOP_FG_SERVICE_26= "stopFgService26"
     }
 
     override fun onBind(p0: Intent?): IBinder? {
@@ -48,26 +48,25 @@ class BackgroundSecondService : Service() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val action = intent!!.getStringExtra("ActionType")
-        if (action == START_SERVICE){
-            printTimeSecondly()
-        }
-        else if (action == STOP_SERVICE) {
-            stopForeground(true)
-            stopSelf()
-        }
-        else if (action == START_FOREGROUND){
-            startForeground()
-        }
-            return super.onStartCommand(intent, flags, startId)
-    }
+        Toast.makeText(applicationContext, "The service is :$action", Toast.LENGTH_LONG).show()
+        when (action) {
+            START_BG_SERVICE_26 -> {
 
-    private fun printTimeSecondly() {
-        if (!stopTimer) {
-            Timer().schedule(TimeUnit.SECONDS.toMillis(1)) {
-                Log.d("Background service", ("AliDoranTime = ${Calendar.getInstance().time}"))
-                printTimeSecondly()
+            }
+            STOP_FG_SERVICE_26 -> {
+                stopForeground(STOP_FOREGROUND_REMOVE)
+                stopSelf()
+            }
+            START_FG_SERVICE_26 -> {
+                startForeground()
+            }
+            STOP_BG_SERVICE_26 -> {
+                startForeground()
+                stopSelf()
             }
         }
+
+            return super.onStartCommand(intent, flags, startId)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

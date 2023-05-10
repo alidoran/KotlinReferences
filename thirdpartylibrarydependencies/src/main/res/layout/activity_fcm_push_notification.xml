@@ -17,25 +17,39 @@
         tools:context="com.google.firebase.quickstart.fcm.java.MainActivity">
 
         <Button
-            android:id="@+id/btn_start_service"
+            android:id="@+id/btn_start_bg_service_bg"
             android:layout_width="@dimen/standard_field_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/start_service" />
+            android:text="@string/start_bg_service_bg" />
 
         <Button
-            android:id="@+id/btn_start_foreground"
+            android:id="@+id/btn_start_bg_service_fg"
+            android:layout_width="@dimen/standard_field_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/start_bg_service_fg" />
+
+        <Button
+            android:id="@+id/btn_stop_bg_service"
+            android:layout_width="@dimen/standard_field_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/stop_bg_service" />
+
+        <Button
+            android:id="@+id/btn_start_fg_service"
             android:layout_width="@dimen/standard_field_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/start_foreground" />
 
         <Button
-            android:id="@+id/btn_stop_service"
+            android:id="@+id/btn_stop_fg_service"
             android:layout_width="@dimen/standard_field_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/stop_service" />
+            android:text="@string/stop_fg_service" />
 
         <Button
             android:id="@+id/btn_service_status"

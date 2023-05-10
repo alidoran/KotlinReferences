@@ -5,12 +5,13 @@ import alidoran.third_party.ThirdPartyActivity
 import alidoran.third_party.apis.rest.retro_standard.getWeatherServiceLiveData
 import alidoran.third_party.app_status.AppStatusHelp
 import alidoran.third_party.databinding.ActivityFcmPushNotificationBinding
-import alidoran.third_party.firebase.fcm_push_notification.second_service.BackgroundSecondService
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_BG_SERVICE_26
 import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
@@ -18,24 +19,22 @@ import android.content.pm.PackageManager
 import android.media.RingtoneManager
 import android.os.Build
 import android.util.Log
+import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
-import androidx.work.OneTimeWorkRequest
-import androidx.work.WorkManager
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
-    /**
-     * Called when message is received.
-     *
-     * @param remoteMessage Object representing the message received from Firebase Cloud Messaging.
-     */
-    // [START receive_message]
+    private val job = SupervisorJob()
+    private val scope = CoroutineScope(Dispatchers.IO + job)
+
+    // region START receive_message
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         Log.d("AliDoran", "onDoranMessageReceived")
         AppStatusHelp(applicationContext).getIsAppInBackground()
@@ -48,59 +47,20 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // and data payloads are treated as notification messages. The Firebase console always sends notification
         // messages. For more see: https://firebase.google.com/docs/cloud-messaging/concept-options
         // [END_EXCLUDE]
-        android.os.Debug.waitForDebugger()
-        val i = Intent(this, BackgroundSecondService::class.java)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            Log.d("TAG", "startServiceType: startForegroundService")
-            i.putExtra("NeedStart" , true)
-            startForegroundService(i)
-        } else {
-            Log.d("TAG", "startServiceType: startService")
-            startService(i)
-        }
-
-
-        val a = checkBackgroundLocationPermission()
-        Log.d("TAG", "onMessageReceivedDoran:$a")
-
-
-
-        checkBackgroundLocationPermission()
-
-        //region call API on service
-        GlobalScope.launch(Dispatchers.IO) {
-            val isProgramOnBackground = ForegroundCheckTask().execute(applicationContext).get()
-            val response = getWeatherServiceLiveData().getWeatherApi2(q = "Tehran")
-            if (response.isSuccessful)
-                Log.d(ContentValues.TAG, "onDoranMakeApiCall: ${response.body()!!.location}")
-            else
-                Log.d(ContentValues.TAG, "onDoranMakeApiCall: ${response.errorBody()}")
-        }
-        //endregion
-
-        //region startActivity on service automatically
-        val intent = Intent(this, ThirdPartyActivity::class.java)
-            .addFlags(FLAG_ACTIVITY_NEW_TASK)
-            .putExtra("TestExtra", "Test extra")
-//        startActivity(intent)
-        //endregion
-
-        remoteMessage.notification?.body?.let {
-            sendNotification(it)
-            Log.d("Ali Doran", "onDoranNotificationReceived: $it")
-        }
 
         remoteMessage.data.values.let {
-            if (it.isNotEmpty())
-                sendNotification(it.toString())
+            if (it.isNotEmpty()) {
+                handleDataMessage(remoteMessage)
+                startServiceByDataMessage()
+            }
             Log.d("Ali Doran", "onDoranDataReceived: $it")
         }
         // Also if you intend on generating your own notifications as a result of a received FCM
         // message, here is where that should be initiated. See sendNotification method below.
     }
-// [END receive_message]
+    // endregion
 
-// [START on_new_token]
+    // region START on_new_token
     /**
      * Called if the FCM registration token is updated. This may occur if the security of
      * the previous token had been compromised. Note that this is called when the
@@ -114,44 +74,61 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // FCM registration token to your app server.
         sendRegistrationToServer(token)
     }
-// [END on_new_token]
-
-    /**
-     * Schedule async work using WorkManager.
-     */
-    private fun scheduleJob() {
-        // [START dispatch_job]
-        val work = OneTimeWorkRequest.Builder(MyWorker::class.java).build()
-        WorkManager.getInstance(this).beginWith(work).enqueue()
-        // [END dispatch_job]
-    }
-
-    /**
-     * Handle time allotted to BroadcastReceivers.
-     */
-    private fun handleNow() {
-        Log.d("TAG", "Short lived task is done.")
-    }
-
-    /**
-     * Persist token to third-party servers.
-     *
-     * Modify this method to associate the user's FCM registration token with any server-side account
-     * maintained by your application.
-     *
-     * @param token The new token.
-     */
     private fun sendRegistrationToServer(token: String?) {
         // TODO: Implement this method to send token to your app server.
         Log.d("TAG", "sendRegistrationTokenToServer($token)")
     }
+    // endregion
 
-    /**
-     * Create and show a simple notification containing the received FCM message.
-     *
-     * @param messageBody FCM message body received.
-     */
-    private fun sendNotification(messageBody: String) {
+    private fun startServiceByDataMessage() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val i = Intent(this, ServiceUpper26::class.java)
+            Log.d("TAG", "startServiceType: startForegroundService")
+            i.putExtra("ActionType", STOP_BG_SERVICE_26)
+            startForegroundService(i)
+        } else {
+            val i = Intent(this, ServiceLower26::class.java)
+            Log.d("TAG", "startServiceType: startService")
+            startService(i)
+        }
+    }
+
+    private suspend fun callApiOnFcm() {
+        val response = getWeatherServiceLiveData().getWeatherApi2(q = "Tehran")
+        val toastText = if (response.isSuccessful)
+            "onDoranMakeApiCall: ${response.body()!!.location}"
+        else
+            "onDoranMakeApiCall: ${response.errorBody()}"
+        Log.d("callApiOnFcm:", toastText)
+        Toast.makeText(
+            applicationContext,
+            toastText,
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
+    private fun handleDataMessage(remoteMessage: RemoteMessage) {
+        if (remoteMessage.data["autoCallApi"] == true.toString()) {
+            checkBackgroundLocationPermission()
+            scope.launch {
+                callApiOnFcm()
+            }
+        }
+        if (remoteMessage.data["AutoStartActivity"] == true.toString()) {
+            val intent = Intent(this, ThirdPartyActivity::class.java)
+                .addFlags(FLAG_ACTIVITY_NEW_TASK)
+                .putExtra("TestExtra", "Test extra")
+            startActivity(intent)
+        }
+        if (remoteMessage.data["showNotification"] == true.toString()) {
+            val title = remoteMessage.data["notificationTitle"] ?: ""
+            val body = remoteMessage.data["notificationBody"] ?: ""
+            showNotification(title, body)
+            Log.d("Ali Doran", "onDoranNotificationReceived: $title $body")
+        }
+    }
+
+    private fun showNotification(title: String, message: String) {
         val intent = Intent(this, ActivityFcmPushNotificationBinding::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(
@@ -163,8 +140,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(R.drawable.ic_launcher_background)
-            .setContentTitle("My Title")
-            .setContentText(messageBody)
+            .setContentTitle(title)
+            .setContentText(message)
             .setAutoCancel(true)
             .setSound(defaultSoundUri)
             .setContentIntent(pendingIntent)
@@ -193,24 +170,30 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         ) == PackageManager.PERMISSION_GRANTED
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        job.cancel()
+        super.onDestroy()
+    }
 
-    /* Postman
+
+    /* Postman data message
     URL:
     Post
     https://fcm.googleapis.com/fcm/send
 
     Body:
-    {
-    "to": "dP2L-ooBQF6B6wzkHqFgRx:APA91bEXCgSncNIPtzCJYkOruWwbjPHpkJW1kUhLJ3OkcqHsQKMj_RjdBu5DTasQ5bXOGV_dO47JcLKqpMMq3y6N4PCF6o5x5KOp4YP8k-d1vFvK3TKgeftr8JO1joQUbi5kttHOC6Xx",
+{
+    "to": "cVALtG-aRUeWeyhbgDn3wk:APA91bEW8aeWh43d8FK50j722hJioVQReIvIv2wAUfdKn5sesZd53ZmcYiMzyxGgCeO1H9J3sbbQ85KjtNbsVi4dLsS-wXIk3UJFicFfvRLDAoUvUoYRt9ZwUEQ0NVKFymti8e8CYgRZ",
     "collapse_key": "type_a",
     "data": {
-                "body": "New announcement assigned",
-        "OrganizationId": "2",
-        "priority": "high",
-        "content_available": true,
-        "bodyText": "New Announcement assigned",
-        "organization": "Elementary school"
-    }
+        "notificationTitle": "title",
+        "notificationBody": "body",
+        "autoCallApi": false,
+        "AutoStartActivity": true,
+        "showNotification": false
+    },
+    "priority":"high"
 }
 
 Headers:
