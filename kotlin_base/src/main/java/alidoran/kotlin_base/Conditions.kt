@@ -59,4 +59,3 @@ class Dog : Pet() {
 open class Pet {
 
 }
-

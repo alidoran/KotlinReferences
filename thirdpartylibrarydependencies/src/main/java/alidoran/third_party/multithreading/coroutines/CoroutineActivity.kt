@@ -31,5 +31,15 @@ class CoroutineActivity : AppCompatActivity() {
             val intent = Intent(this, JobActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnJob.setOnClickListener {
+            val intent = Intent(this, JobActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnChannel.setOnClickListener {
+            val intent = Intent(this, CoroutinesChannelActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -30,6 +30,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "com.google.android.material:material:$material"
     implementation 'androidx.core:core-ktx:+'
+    implementation 'androidx.core:core-ktx:+'
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test.ext:junit:$junitktx"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"

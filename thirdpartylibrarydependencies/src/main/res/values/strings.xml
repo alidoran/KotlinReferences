@@ -93,4 +93,8 @@
     <string name="start_bg_service_fg">start BG service in foreground</string>
     <string name="start_foreground">start foreground</string>
     <string name="stop_fg_service">stop fg service</string>
+    <string name="send">Send</string>
+    <string name="channel">Channel</string>
+    <string name="send_receive">Send/Receive</string>
+    <string name="send_as_flow">Send/As Flow</string>
 </resources>

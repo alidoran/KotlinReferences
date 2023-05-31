@@ -85,6 +85,7 @@ dependencies {
     implementation "androidx.compose.material:material:$compose_material"
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:+'
     //test
     testImplementation "androidx.test.ext:junit-ktx:$junitktx"
     implementation "androidx.test:core-ktx:$test_core"
@@ -121,4 +122,6 @@ dependencies {
     implementation("com.airbnb.android:lottie:$lottie") {
         exclude group: "com.android.support"
     }
+
+
 }

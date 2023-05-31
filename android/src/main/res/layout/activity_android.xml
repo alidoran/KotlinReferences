@@ -142,5 +142,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/intents"/>
 
+            <Button
+                android:id="@+id/btn_mvi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mvi"/>
+
         </LinearLayout>
     </ScrollView>
