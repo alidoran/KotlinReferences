@@ -30,4 +30,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/job"/>
+
+    <Button
+        android:id="@+id/btn_channel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/channel"/>
 </androidx.appcompat.widget.LinearLayoutCompat>

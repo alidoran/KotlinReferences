@@ -67,6 +67,7 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
     implementation "androidx.test:runner:$test_runner"
     implementation "androidx.databinding:databinding-runtime:$databinding_runtime"
+    implementation 'androidx.core:core-ktx:+'
     debugImplementation "androidx.fragment:fragment-testing:$fragment_ktx"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
 

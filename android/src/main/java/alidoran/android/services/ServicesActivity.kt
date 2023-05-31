@@ -9,7 +9,7 @@ import android.graphics.Color.RED
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-
+            /* For Running Service in background goto thirdPartyLibraryDependencies-> firebase -> FcmPushNotificationActivity*/
 class ServicesActivity : AppCompatActivity() {
     lateinit var binding: ActivityServicesBinding
     override fun onCreate(savedInstanceState: Bundle?) {

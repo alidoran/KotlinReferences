@@ -85,4 +85,16 @@
     <string name="read_thread_name">Read thread name</string>
     <string name="unconfined_dispatcher">Unconfined Dispatcher</string>
     <string name="access_job_in_itself">Access job in itself</string>
+    <string name="stop_bg_service">stop bg service</string>
+    <string name="service_status">service status</string>
+    <string name="start_bg_service_bg">start BG service in background</string>
+    <string name="start_bg_service_bg_legal">start BG service in background legal</string>
+    <string name="stop_bg_service_bg">stop BG service in background</string>
+    <string name="start_bg_service_fg">start BG service in foreground</string>
+    <string name="start_foreground">start foreground</string>
+    <string name="stop_fg_service">stop fg service</string>
+    <string name="send">Send</string>
+    <string name="channel">Channel</string>
+    <string name="send_receive">Send/Receive</string>
+    <string name="send_as_flow">Send/As Flow</string>
 </resources>

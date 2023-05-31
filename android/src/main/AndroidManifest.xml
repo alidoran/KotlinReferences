@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".mvi.basic_mvi.view.MviActivity"
+            android:exported="false" />
+        <activity
+            android:name=".permissions.PermissionsActivity"
+            android:exported="false" />
+        <activity
             android:name=".intents.IntentsActivity"
             android:exported="false" />
         <activity

@@ -3,20 +3,32 @@ package alidoran.third_party.firebase.fcm_push_notification
 import alidoran.third_party.R
 import alidoran.third_party.app_status.AppStatusHelp
 import alidoran.third_party.databinding.ActivityFcmPushNotificationBinding
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower26.ActionType.START_BG_SERVICE
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower26.ActionType.START_FG_SERVICE
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower26.ActionType.STOP_BG_SERVICE
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceLower26.ActionType.STOP_FG_SERVICE
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.START_BG_FG_SERVICE_26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.START_BG_SERVICE_26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.START_FG_SERVICE_26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_BG_SERVICE_26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_BG_SERVICE_IN_BG_26
+import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_FG_SERVICE_26
 import android.Manifest
+import android.app.ActivityManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.gms.tasks.OnCompleteListener
@@ -49,7 +61,7 @@ id 'com.google.gms.google-services'
 ...
 }
 
-4- manifest:
+3- manifest:
 <service
 android:name=".java.MyFirebaseMessagingService"
 android:exported="false">
@@ -73,6 +85,13 @@ android:value="@string/default_notification_channel_id" />
  */
 
 class FcmPushNotificationActivity : AppCompatActivity() {
+
+    enum class ServiceStatus{
+        Background,
+        Foreground,
+        NotRunning
+    }
+
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted: Boolean ->
@@ -91,6 +110,11 @@ class FcmPushNotificationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityFcmPushNotificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            initEventUpper26(binding)
+        } else
+            initEventLower26(binding)
 
 //        checkPermission()
 
@@ -143,18 +167,116 @@ class FcmPushNotificationActivity : AppCompatActivity() {
         })
     }
 
-    //region overlay permission
-    //this permission is need for automatic starting FM
-    private fun checkOverlayPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (!Settings.canDrawOverlays(this)) {
-                val intent = Intent(
-                    Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    Uri.parse("package:$packageName")
-                )
-                startActivity(intent)
+    private fun initEventLower26(binding: ActivityFcmPushNotificationBinding) = with(binding) {
+        val intent = Intent(this@FcmPushNotificationActivity, ServiceLower26::class.java)
+
+        btnStartBgServiceBg.setOnClickListener {
+            intent.putExtra("ActionType", START_BG_SERVICE)
+            startService(intent)
+        }
+
+        btnStartBgServiceFg.setOnClickListener {
+            intent.putExtra("ActionType", START_BG_SERVICE)
+            startService(intent)
+        }
+
+        btnStopBgService.setOnClickListener {
+            intent.putExtra("ActionType", STOP_BG_SERVICE)
+            startService(intent)
+        }
+
+        btnStartFgService.setOnClickListener {
+            intent.putExtra("ActionType", START_FG_SERVICE)
+            startService(intent)
+        }
+
+        btnStopFgService.setOnClickListener {
+            intent.putExtra("ActionType", STOP_FG_SERVICE)
+            startService(intent)
+        }
+
+        btnServiceStatus.setOnClickListener {
+            val serviceToastMessage = when (isServiceRunning()) {
+                ServiceStatus.Foreground ->
+                    "Service is running on foreground"
+                ServiceStatus.Background ->
+                    "Service is running on Background"
+                ServiceStatus.NotRunning ->
+                    "Service isn't running"
             }
+            Toast.makeText(
+                this@FcmPushNotificationActivity,
+                serviceToastMessage,
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
-    //endregion
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun initEventUpper26(binding: ActivityFcmPushNotificationBinding) = with(binding) {
+        val intent = Intent(this@FcmPushNotificationActivity, ServiceUpper26::class.java)
+
+        btnStartBgServiceBg.setOnClickListener {
+            intent.putExtra("ActionType", START_BG_SERVICE_26)
+            startForegroundService(intent)
+        }
+
+        btnStartBgServiceBgLegal.setOnClickListener {
+            intent.putExtra("ActionType", START_BG_FG_SERVICE_26)
+            startForegroundService(intent)
+        }
+
+        btnStopBgServiceBg.setOnClickListener {
+            intent.putExtra("ActionType", STOP_BG_SERVICE_IN_BG_26)
+            startForegroundService(intent)
+        }
+
+        btnStartBgServiceFg.setOnClickListener {
+            intent.putExtra("ActionType", START_BG_SERVICE_26)
+            startService(intent)
+        }
+
+        btnStopBgService.setOnClickListener {
+            intent.putExtra("ActionType", STOP_BG_SERVICE_26)
+            stopService(intent)
+        }
+
+        btnStartFgService.setOnClickListener {
+            intent.putExtra("ActionType", START_FG_SERVICE_26)
+            startService(intent)
+        }
+
+        btnStopFgService.setOnClickListener {
+            intent.putExtra("ActionType", STOP_FG_SERVICE_26)
+            startForegroundService(intent)
+        }
+
+        btnServiceStatus.setOnClickListener {
+            val serviceToastMessage = when (isServiceRunning()) {
+                ServiceStatus.Foreground ->
+                    "Service is running on foreground"
+                ServiceStatus.Background ->
+                    "Service is running on Background"
+                ServiceStatus.NotRunning ->
+                    "Service isn't running"
+            }
+            Toast.makeText(
+                this@FcmPushNotificationActivity,
+                serviceToastMessage,
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
+    private fun isServiceRunning(): ServiceStatus {
+        val manager = getSystemService(ACTIVITY_SERVICE) as ActivityManager
+        for (service in manager.getRunningServices(Int.MAX_VALUE)) {
+            if (ServiceUpper26::class.java.name == service.service.className) {
+                return if  (service.foreground) ServiceStatus.Foreground
+                else ServiceStatus.Background
+            }
+        }
+        return ServiceStatus.NotRunning
+    }
 }

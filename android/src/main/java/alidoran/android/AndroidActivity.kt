@@ -9,8 +9,8 @@ import alidoran.android.bottom_sheet.BottomSheetActivity
 import alidoran.android.databinding.ActivityAndroidBinding
 import alidoran.android.dialog.DialogActivity
 import alidoran.android.fragment.FragmentActivity
-import alidoran.android.intents.IntentsActivity
 import alidoran.android.lifecycle.LifeCycleActivity
+import alidoran.android.mvi.basic_mvi.view.MviActivity
 import alidoran.android.mvp.MvpActivity
 import alidoran.android.mvvm_livedata.view.MvvmMainActivity
 import alidoran.android.navigation_safe_args.NavigationActivity
@@ -138,8 +138,8 @@ class AndroidActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnIntents.setOnClickListener {
-            val intent = Intent(this, IntentsActivity::class.java)
+        binding.btnMvi.setOnClickListener {
+            val intent = Intent(this, MviActivity::class.java)
             startActivity(intent)
         }
     }
