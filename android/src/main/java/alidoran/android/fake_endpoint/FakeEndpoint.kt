@@ -4,6 +4,8 @@ import alidoran.android.mvi.basic_mvi.model.UserMviModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.flow
+import java.time.LocalDateTime
 import java.util.concurrent.TimeUnit
 
 object FakeEndpoint {
@@ -32,6 +34,19 @@ object FakeEndpoint {
             result.add(UserMviModel(s))
         }
         return MutableStateFlow(result)
+    }
+
+    fun fakeRepeatCallApi(): Flow<LocalDateTime> {
+        val time: Flow<LocalDateTime> = flow {
+            //region Producer block
+            repeat(5) {
+                val timeString = LocalDateTime.now()
+                emit(timeString)
+                delay(2000)
+            }
+            //endregion
+        }
+        return time
     }
 }
 

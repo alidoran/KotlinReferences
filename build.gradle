@@ -4,7 +4,7 @@ buildscript {
         compile_target_sdk = 33
 
         //Core
-        core_ktx = '1.9.0'
+        core_ktx = '1.10.1'
         fragment_ktx = '1.5.5'
         runtime_ktx = '2.7.1'
         reflect = '1.7.20'
@@ -82,7 +82,7 @@ buildscript {
         classpath "com.google.gms:google-services:$google_services"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.4'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0-Beta"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21"
     }
     repositories {
         mavenCentral()
