@@ -94,4 +94,16 @@
     <string name="mvi">MVI</string>
     <string name="call_api">Call API</string>
     <string name="call_api_flow">Call API flow</string>
+    <string name="kotlin_flow">Kotlin Flow</string>
+    <string name="create_flow">Create Flow</string>
+    <string name="launch_flow">Launch flow (leak) X</string>
+    <string name="map">map</string>
+    <string name="flow_map">Flow Map</string>
+    <string name="flow_filter">Flow Filter</string>
+    <string name="flow_catch">Flow Catch</string>
+    <string name="flow_as_livedata">Flow as livedata</string>
+    <string name="flow_with_lifecycle">Flow With Lifecycle</string>
+    <string name="repeat_on_lifecycle_started">Repeat on lifecycle started</string>
+    <string name="repeat_on_lifecycle_created">Repeat on lifecycle created</string>
+    <string name="state_flow">State Flow</string>
 </resources>

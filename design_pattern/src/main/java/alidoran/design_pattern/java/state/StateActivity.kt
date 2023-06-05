@@ -37,8 +37,6 @@ class StateActivity : AppCompatActivity() {
             CanvasState(
                 SelectionToolJavaState()
             ).mouseDown()
-
-
         }
 
         binding.btnStateJavaSelection.setOnLongClickListener {

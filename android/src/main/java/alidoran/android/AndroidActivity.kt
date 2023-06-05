@@ -9,6 +9,7 @@ import alidoran.android.bottom_sheet.BottomSheetActivity
 import alidoran.android.databinding.ActivityAndroidBinding
 import alidoran.android.dialog.DialogActivity
 import alidoran.android.fragment.FragmentActivity
+import alidoran.android.kotlin_flow.KotlinFlowActivity
 import alidoran.android.lifecycle.LifeCycleActivity
 import alidoran.android.mvi.basic_mvi.view.MviActivity
 import alidoran.android.mvp.MvpActivity
@@ -140,6 +141,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnMvi.setOnClickListener {
             val intent = Intent(this, MviActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnKotlinFlow.setOnClickListener {
+            val intent = Intent(this, KotlinFlowActivity::class.java)
             startActivity(intent)
         }
     }
