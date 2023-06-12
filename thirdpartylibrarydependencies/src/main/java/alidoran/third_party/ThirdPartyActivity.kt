@@ -12,6 +12,7 @@ import alidoran.third_party.apis.rest.retrofit_java.RestRetroJavaActivity
 import alidoran.third_party.app_status.AppStatusHelp
 import alidoran.third_party.multithreading.coroutines.CoroutineActivity
 import alidoran.third_party.camera_x.CameraXActivity
+import alidoran.third_party.courier.CourierSampleActivity
 import alidoran.third_party.databinding.ActivityThirdpartyBinding
 import alidoran.third_party.di.DiActivity
 import alidoran.third_party.firebase.FirebaseActivity
@@ -104,6 +105,11 @@ class ThirdPartyActivity : AppCompatActivity() {
 
         binding.btnMultiThread.setOnClickListener{
             val intent = Intent(this, MultiThread::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnCourier.setOnClickListener{
+            val intent = Intent(this, CourierSampleActivity::class.java)
             startActivity(intent)
         }
     }

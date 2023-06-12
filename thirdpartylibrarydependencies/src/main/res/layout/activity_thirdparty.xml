@@ -84,4 +84,10 @@
         android:layout_height="wrap_content"
         android:text="@string/multi_thread"/>
 
+    <Button
+        android:id="@+id/btn_courier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/courier"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

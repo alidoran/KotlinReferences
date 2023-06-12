@@ -3,6 +3,7 @@ package alidoran.third_party
 import alidoran.third_party.app_status.DefaultLifecycleObserver
 import android.app.Application
 import androidx.lifecycle.ProcessLifecycleOwner
+import com.courier.android.Courier
 
 class ThirdPartyApp: Application() {
     override fun onCreate() {
@@ -21,5 +22,8 @@ class ThirdPartyApp: Application() {
 //            null,
 //            null
 //        )
+
+        //Courier
+        Courier.initialize(this)
     }
 }

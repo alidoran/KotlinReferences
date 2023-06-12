@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         applicationId "alidoran.third_party"
-        minSdk 21
+        minSdk 23
         targetSdk rootProject.compile_target_sdk
         versionCode 1
         versionName "1.0"
@@ -143,6 +143,9 @@ dependencies {
     implementation "androidx.camera:camera-video:${camerax_version}"
     implementation "androidx.camera:camera-view:${camerax_version}"
     implementation "androidx.camera:camera-extensions:${camerax_version}"
+
+    //courier
+    implementation 'com.github.trycourier:courier-android:2.0.2'
 }
 
 apollo {

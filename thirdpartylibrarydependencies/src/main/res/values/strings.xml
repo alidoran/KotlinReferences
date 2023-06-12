@@ -97,4 +97,9 @@
     <string name="channel">Channel</string>
     <string name="send_receive">Send/Receive</string>
     <string name="send_as_flow">Send/As Flow</string>
+    <string name="courier">Courier</string>
+    <string name="send_message">send message</string>
+    <string name="signout">SignOut</string>
+    <string name="signin">SignIn</string>
+    <string name="message_text">Message text</string>
 </resources>

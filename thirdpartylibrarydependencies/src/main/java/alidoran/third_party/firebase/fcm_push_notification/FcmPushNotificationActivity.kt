@@ -84,6 +84,27 @@ android:name="com.google.firebase.messaging.default_notification_channel_id"
 android:value="@string/default_notification_channel_id" />
  */
 
+/*
+Change manifest in this way
+
+<!--        <service-->
+<!--            android:name=".firebase.fcm_push_notification.MyFirebaseMessagingService"-->
+<!--            android:directBootAware="true"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
+        <service
+            android:name=".courier.CourierNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+ */
+
 class FcmPushNotificationActivity : AppCompatActivity() {
 
     enum class ServiceStatus{

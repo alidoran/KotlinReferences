@@ -28,6 +28,29 @@ import com.google.firebase.messaging.RemoteMessage
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
+/* Postman data message
+URL:
+Post
+https://fcm.googleapis.com/fcm/send
+
+Body:
+{
+"to": "cVALtG-aRUeWeyhbgDn3wk:APA91bEW8aeWh43d8FK50j722hJioVQReIvIv2wAUfdKn5sesZd53ZmcYiMzyxGgCeO1H9J3sbbQ85KjtNbsVi4dLsS-wXIk3UJFicFfvRLDAoUvUoYRt9ZwUEQ0NVKFymti8e8CYgRZ",
+"collapse_key": "type_a",
+"data": {
+    "notificationTitle": "title",
+    "notificationBody": "body",
+    "autoCallApi": false,
+    "AutoStartActivity": true,
+    "showNotification": false
+},
+"priority":"high"
+}
+
+Headers:
+Authorization = key=AAAAs4--0hE:APA91bHtoxIbJHHGFzN5xGCuB_4IvukoU-bGvRsm67dO0WwZpMVS1UupOA5vWY4cOxKsjJaOB9X3hEPX4fEpkCJ7VrXr-_RWahgSolQgx0NvzvwjkJdxiS64zjFHMhHxfydcaMzntF68
+*/
+
 class MyFirebaseMessagingService : FirebaseMessagingService() {
     // region START receive_message
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
@@ -187,27 +210,4 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             Manifest.permission.ACCESS_BACKGROUND_LOCATION
         ) == PackageManager.PERMISSION_GRANTED
     }
-
-    /* Postman data message
-    URL:
-    Post
-    https://fcm.googleapis.com/fcm/send
-
-    Body:
-{
-    "to": "cVALtG-aRUeWeyhbgDn3wk:APA91bEW8aeWh43d8FK50j722hJioVQReIvIv2wAUfdKn5sesZd53ZmcYiMzyxGgCeO1H9J3sbbQ85KjtNbsVi4dLsS-wXIk3UJFicFfvRLDAoUvUoYRt9ZwUEQ0NVKFymti8e8CYgRZ",
-    "collapse_key": "type_a",
-    "data": {
-        "notificationTitle": "title",
-        "notificationBody": "body",
-        "autoCallApi": false,
-        "AutoStartActivity": true,
-        "showNotification": false
-    },
-    "priority":"high"
-}
-
-Headers:
-Authorization = key=AAAAs4--0hE:APA91bHtoxIbJHHGFzN5xGCuB_4IvukoU-bGvRsm67dO0WwZpMVS1UupOA5vWY4cOxKsjJaOB9X3hEPX4fEpkCJ7VrXr-_RWahgSolQgx0NvzvwjkJdxiS64zjFHMhHxfydcaMzntF68
-    */
 }
