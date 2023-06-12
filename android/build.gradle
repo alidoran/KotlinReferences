@@ -121,6 +121,4 @@ dependencies {
     implementation("com.airbnb.android:lottie:$lottie") {
         exclude group: "com.android.support"
     }
-
-
 }
