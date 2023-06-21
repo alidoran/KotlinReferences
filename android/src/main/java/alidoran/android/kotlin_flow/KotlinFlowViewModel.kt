@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
@@ -18,7 +19,7 @@ class KotlinFlowViewModel: ViewModel() {
         }
     }
 
-    fun simpleLaunchFlow(){
+    fun simpleLaunchFlow() {
         val time = FakeEndpoint.fakeRepeatCallApi()
         launchFlow("simpleLaunchFlow", time)
     }
@@ -44,5 +45,10 @@ class KotlinFlowViewModel: ViewModel() {
                 emit("")
             }
         launchFlow("flowCatch", time)
+    }
+
+    fun mapLearn(): Flow<FlowModelName> {
+        val model = FlowModelName("Ali Doran")
+        return flow { emit(model) }
     }
 }
