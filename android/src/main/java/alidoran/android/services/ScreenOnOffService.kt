@@ -14,6 +14,7 @@ import java.time.LocalDateTime
 
 class ScreenOnOffService : Service() {
     private var broadcastOnOffReceiver: BroadcastOnOffReceiver? = null
+    
 
     override fun onBind(p0: Intent?): IBinder? {
         return null
@@ -73,7 +74,7 @@ class ScreenOnOffService : Service() {
             if (broadcastOnOffReceiver != null) {
                 unregisterReceiver(broadcastOnOffReceiver)
             }
-        } catch (e: IllegalArgumentException) {
+        } catch (_: IllegalArgumentException) {
         }
     }
 }

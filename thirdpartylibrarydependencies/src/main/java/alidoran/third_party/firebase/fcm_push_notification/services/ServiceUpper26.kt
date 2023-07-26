@@ -8,6 +8,7 @@ import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_BG_SERVICE_26
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_BG_SERVICE_IN_BG_26
 import alidoran.third_party.firebase.fcm_push_notification.services.ServiceUpper26.ActionType.STOP_FG_SERVICE_26
+import android.app.ActivityManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -76,12 +77,15 @@ class ServiceUpper26 : Service() {
             START_FG_SERVICE_26 -> {
                 startForeground()
             }
-            STOP_BG_SERVICE_IN_BG_26 ->{
+
+            STOP_BG_SERVICE_IN_BG_26 -> {
                 startForeground()
                 stopSelf()
             }
-            STOP_BG_SERVICE_26 -> {
 
+            STOP_BG_SERVICE_26 -> {
+                startForeground()
+                stopSelf()
             }
         }
 
@@ -129,6 +133,22 @@ class ServiceUpper26 : Service() {
     override fun stopService(name: Intent?): Boolean {
         Toast.makeText(applicationContext, "The service is :stopped", Toast.LENGTH_SHORT).show()
         return super.stopService(name)
+    }
+
+    enum class ServiceStatus {
+        Background,
+        Foreground,
+        NotRunning
+    }
+    private fun isServiceRunning(): ServiceStatus {
+        val manager = getSystemService(ACTIVITY_SERVICE) as ActivityManager
+        for (service in manager.getRunningServices(Int.MAX_VALUE)) {
+            if (this::class.java.name == service.service.className) {
+                return if (service.foreground) ServiceStatus.Foreground
+                else ServiceStatus.Background
+            }
+        }
+        return ServiceStatus.NotRunning
     }
 }
 

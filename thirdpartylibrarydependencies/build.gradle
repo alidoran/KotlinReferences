@@ -3,7 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-android'
-    //
     id("com.apollographql.apollo3").version("3.3.2")
     //FireBase
     id 'com.google.gms.google-services'
@@ -32,11 +31,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
 
@@ -45,7 +44,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerExtensionVersion = "1.4.6"
         kotlinCompilerVersion = "$kotlin_android"
     }
 
@@ -62,16 +61,19 @@ android {
 
 dependencies {
     implementation "androidx.core:core-ktx:$core_ktx"
-    implementation "androidx.appcompat:appcompat:$appcompat"
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
     implementation "com.google.android.material:material:$material"
     implementation "androidx.work:work-runtime-ktx:$runtime_ktx"
-    implementation "androidx.constraintlayout:constraintlayout-core:1.0.4"
-    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+//    implementation "androidx.constraintlayout:constraintlayout-core:1.0.4"
+//    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
 
     implementation "com.google.android.gms:play-services-maps:$services_maps"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
 
     testImplementation "junit:junit:$junit"
@@ -147,6 +149,11 @@ dependencies {
 
     //courier
     implementation 'com.github.trycourier:courier-android:2.0.2'
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:2.2.21"
+
+    implementation "androidx.activity:activity-ktx:1.7.2"
 }
 
 apollo {

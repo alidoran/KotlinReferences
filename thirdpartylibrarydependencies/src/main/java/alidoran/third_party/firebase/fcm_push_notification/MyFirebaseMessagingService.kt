@@ -147,6 +147,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             Log.d("TAG", "startServiceType: startForegroundService")
             i.putExtra("ActionType", START_BG_FG_SERVICE_26)
             startForegroundService(i)
+//            showNotification("A", "B")
         } else {
             val i = Intent(this, ServiceLower26::class.java)
             i.putExtra("ActionType", START_BG_FG_SERVICE_26)
@@ -160,7 +161,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             val i = Intent(this, ServiceUpper26::class.java)
             Log.d("TAG", "startServiceType: startForegroundService")
             i.putExtra("ActionType", STOP_BG_SERVICE_26)
-            stopService(i)
+            startForegroundService(i)
         } else {
             val i = Intent(this, ServiceLower26::class.java)
             i.putExtra("ActionType", STOP_BG_SERVICE_26)

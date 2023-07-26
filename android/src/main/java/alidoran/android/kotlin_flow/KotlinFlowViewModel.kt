@@ -9,9 +9,11 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.transform
+import kotlinx.coroutines.flow.transformWhile
 import kotlinx.coroutines.launch
 
-class KotlinFlowViewModel: ViewModel() {
+class KotlinFlowViewModel : ViewModel() {
 
     fun launchFlow(methodName: String, flow: Flow<*>) {
         viewModelScope.launch {
@@ -20,31 +22,51 @@ class KotlinFlowViewModel: ViewModel() {
     }
 
     fun simpleLaunchFlow() {
-        val time = FakeEndpoint.fakeRepeatCallApi()
-        launchFlow("simpleLaunchFlow", time)
+        val intFlow = FakeEndpoint.fakeCallOneToThreeApi()
+        launchFlow("simpleLaunchFlow", intFlow)
     }
 
     fun flowMap() {
-        val time = FakeEndpoint.fakeRepeatCallApi()
+        val intFlow = FakeEndpoint.fakeCallOneToThreeApi()
             .map { it.toString() }
-        launchFlow("flowMap", time)
+        launchFlow("flowMap", intFlow)
     }
 
     fun flowFilter() {
-        val time = FakeEndpoint.fakeRepeatCallApi()
+        val intFlow = FakeEndpoint.fakeCallOneToThreeApi()
             .map { it.toString() }
             .filter { it.endsWith("0") }
-        launchFlow("flowFilter", time)
+        launchFlow("flowFilter", intFlow)
     }
 
     fun flowCatch() {
-        val time = FakeEndpoint.fakeRepeatCallApi()
+        val intFlow = FakeEndpoint.fakeCallOneToThreeApi()
             .map { it.toString() }
             .catch {
                 Log.d("flowCatch", "flowCatchError")
                 emit("")
             }
-        launchFlow("flowCatch", time)
+        launchFlow("flowCatch", intFlow)
+    }
+
+    suspend fun transform(): Flow<String> {
+        return FakeEndpoint.fakeIntReapeatRequest().transform<Int, String> {
+            emit(it.toString())
+        }
+    }
+
+    suspend fun transformWhile() {
+        FakeEndpoint.fakeIntReapeatRequest().transformWhile<Int, String> {
+            //Do something and return true
+            val a = it + 1 //save a on BG
+            true
+        }
+    }
+
+    suspend fun multiEmit(){
+        FakeEndpoint.fakeIntReapeatRequest().collect{
+
+        }
     }
 
     fun mapLearn(): Flow<FlowModelName> {

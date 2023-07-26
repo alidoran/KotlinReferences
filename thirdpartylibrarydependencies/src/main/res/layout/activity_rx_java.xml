@@ -28,6 +28,12 @@
         android:layout_height="wrap_content"
         android:text="@string/retrofit_rx_java"/>
 
+        <Button
+            android:id="@+id/btn_rx_java_simple_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rxjava_simple_activity"/>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.fragment.app.FragmentContainerView
