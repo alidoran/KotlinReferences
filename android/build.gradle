@@ -32,7 +32,7 @@ android {
         }
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
 
 
     }
@@ -43,25 +43,24 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_9
-        targetCompatibility JavaVersion.VERSION_1_9
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     buildFeatures {
+        buildConfig = true
         viewBinding true
         dataBinding true
         compose true
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerExtensionVersion = "1.4.6"
     }
     namespace 'alidoran.android'
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
-
-
 }
 
 dependencies {
@@ -85,6 +84,7 @@ dependencies {
     implementation "androidx.compose.material:material:$compose_material"
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     //test
     testImplementation "androidx.test.ext:junit-ktx:$junitktx"
     implementation "androidx.test:core-ktx:$test_core"

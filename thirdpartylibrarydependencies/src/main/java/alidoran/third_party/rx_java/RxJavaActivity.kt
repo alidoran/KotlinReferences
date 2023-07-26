@@ -1,6 +1,7 @@
 package alidoran.third_party.rx_java
 
 import alidoran.third_party.databinding.ActivityRxJavaBinding
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import io.reactivex.Observable
@@ -29,6 +30,10 @@ class RxJavaActivity : AppCompatActivity() {
                 .beginTransaction()
                 .add(binding.fragmentContainer.id, retrofitRxJavaFragment)
                 .commit()
+        }
+
+        binding.btnRxJavaSimpleActivity.setOnClickListener {
+            startActivity(Intent(this, RxJavaSimpleActivity::class.java))
         }
     }
 

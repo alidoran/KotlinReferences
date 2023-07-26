@@ -25,6 +25,7 @@ class CoroutinesContextActivity : AppCompatActivity() {
         btnThreadName.setOnClickListener { readThreadName() }
         btnUnconfinedDispatcher.setOnClickListener { unconfined() }
         btnAccessJobInItself.setOnClickListener { accessJobInItself() }
+
     }
 
     private fun readThreadName() = runBlocking {

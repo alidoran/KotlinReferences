@@ -102,4 +102,11 @@
     <string name="signout">SignOut</string>
     <string name="signin">SignIn</string>
     <string name="message_text">Message text</string>
+    <string name="rxjava_simple_activity">RxJava Simple Activity</string>
+    <string name="subscribe">subscribe</string>
+    <string name="map">map</string>
+    <string name="flat_map">Flat map</string>
+    <string name="do_on_next">Do on next</string>
+    <string name="compose_learn">Compose learn</string>
+    <string name="single_transform">Single transform</string>
 </resources>

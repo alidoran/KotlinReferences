@@ -3,7 +3,7 @@ package alidoran.android.kotlin_flow
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import alidoran.android.databinding.ActivityKotlinFlowBinding
-import alidoran.android.fake_endpoint.FakeEndpoint.fakeRepeatCallApi
+import alidoran.android.fake_endpoint.FakeEndpoint.fakeCallOneToThreeApi
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
@@ -52,7 +52,7 @@ class KotlinFlowActivity : AppCompatActivity() {
     private fun repeatOnLifecycleStarted() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                fakeRepeatCallApi().collect {
+                fakeCallOneToThreeApi().collect {
                     Log.d("repeatOnLifecycleStarted", it.toString())
                 }
             }
@@ -60,7 +60,7 @@ class KotlinFlowActivity : AppCompatActivity() {
     }
 
     private fun asLiveData() {
-        val time = fakeRepeatCallApi().asLiveData()
+        val time = fakeCallOneToThreeApi().asLiveData()
         time.observe(this) {
             lifecycleScope.launch {
                 Log.d("flowCatch", it.toString())
@@ -69,14 +69,14 @@ class KotlinFlowActivity : AppCompatActivity() {
     }
 
     private fun flowWithLifecycle() {
-        val timeFlow = fakeRepeatCallApi().flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
+        val timeFlow = fakeCallOneToThreeApi().flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
         vm.launchFlow("flowCatch", timeFlow)
     }
 
     private fun repeatOnLifecycleCreated() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.CREATED) {
-                fakeRepeatCallApi().collect {
+                fakeCallOneToThreeApi().collect {
                     Log.d("repeatOnLifecycleCreated", it.toString())
                 }
             }
@@ -84,7 +84,7 @@ class KotlinFlowActivity : AppCompatActivity() {
     }
 
     private fun stateFlow() {
-        state = fakeRepeatCallApi().stateIn(
+        state = fakeCallOneToThreeApi().stateIn(
             initialValue = Log.d("", "Loading"),
             scope = lifecycleScope,
             started = SharingStarted.WhileSubscribed(5000)
@@ -121,4 +121,22 @@ class KotlinFlowActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun multiEmit(){
+
+    }
+
+
+
+//    private fun transform() {
+//        lifecycleScope.launch {
+//            Log.d("KotlinFlow", "transform: ${vm.transform()}")
+//        }
+//    }
+//
+//    private fun transformWhile() {
+//        lifecycleScope.launch {
+//            Log.d("KotlinFlow", "transformWhile: ${vm.transformWhile()}")
+//        }
+//    }
 }

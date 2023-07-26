@@ -1,6 +1,7 @@
 package alidoran.third_party.multithreading.coroutines
 
 import kotlinx.coroutines.*
+import java.util.concurrent.TimeUnit
 
 object CoroutinesContextHelper {
     @OptIn(DelicateCoroutinesApi::class)
@@ -35,6 +36,17 @@ object CoroutinesContextHelper {
             println("isActive = ${coroutineContext[Job]!!.isActive}")
         }
         job.join()
+    }
+
+    suspend fun coroutineScopeListenerSample(seconds: Long, unit: () -> Unit)
+    {
+        coroutineScope {
+            launch {
+                delay(TimeUnit.SECONDS.toMillis(seconds))
+                unit.invoke()
+            }
+            println("Hello")
+        }
     }
 }
 

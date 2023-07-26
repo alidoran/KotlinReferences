@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".rx_java.RxJavaSimpleActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_just"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/just_observable"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_subscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subscribe"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/map"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_flat_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/flat_map"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_do_on_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/do_on_next"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_compose_learn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/compose_learn"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_single_transform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/single_transform"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

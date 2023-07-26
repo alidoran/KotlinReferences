@@ -32,12 +32,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
     testOptions {
@@ -67,6 +67,8 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
     implementation "androidx.test:runner:$test_runner"
     implementation "androidx.databinding:databinding-runtime:$databinding_runtime"
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_ktx"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
 

@@ -19,5 +19,11 @@
         android:layout_height="wrap_content"
         android:text="@string/coroutine_scope"/>
 
+    <Button
+        android:id="@+id/btn_kill_coroutines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kill coroutines"/>
+
 
 </LinearLayout>
