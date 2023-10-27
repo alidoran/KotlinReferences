@@ -62,6 +62,12 @@
         android:text="@string/state_flow"/>
 
     <Button
+        android:id="@+id/btn_shared_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shared_flow"/>
+
+    <Button
         android:id="@+id/btn_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,5 +78,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/map"/>
+
+    <Button
+        android:id="@+id/btn_call_priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/call_priority"/>
+
+    <Button
+        android:id="@+id/btn_call_inner_api"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/call_inner_api"/>
+
+    <Button
+        android:id="@+id/btn_responseAfterDestroy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/api_response_after_ondestroyed"/>
+
+    <Button
+        android:id="@+id/btn_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first"/>
+
+    <Button
+        android:id="@+id/btn_first_catch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_catch"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

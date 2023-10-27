@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    tools:context=".multithreading.coroutines.eventbus.EventBusActivity">
+
+    <Button
+        android:id="@+id/btnSimpleEventBus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/simple_event_bus"/>
+
+    <Button
+        android:id="@+id/btnComplexEventBus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/complex_event_bus"/>
+
+    <Button
+        android:id="@+id/btnComplexEventGetValues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/complex_event_bus_count_values"/>
+
+    <Button
+        android:id="@+id/btnComplexEventResetValues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/complex_event_bus_reset_count_values"/>
+
+    <Button
+        android:id="@+id/btnComplexEventResetVmScope"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/complex_event_bus_cancel_view_model_scope"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

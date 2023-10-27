@@ -1,6 +1,7 @@
 package alidoran.third_party.multithreading.coroutines
 
 import alidoran.third_party.databinding.ActivityCoroutineBinding
+import alidoran.third_party.multithreading.coroutines.eventbus.EventBusActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -39,6 +40,16 @@ class CoroutineActivity : AppCompatActivity() {
 
         binding.btnChannel.setOnClickListener {
             val intent = Intent(this, CoroutinesChannelActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnDispatchers.setOnClickListener {
+            val intent = Intent(this, CoroutineDispatcherActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnEventBus.setOnClickListener {
+            val intent = Intent(this, EventBusActivity::class.java)
             startActivity(intent)
         }
     }

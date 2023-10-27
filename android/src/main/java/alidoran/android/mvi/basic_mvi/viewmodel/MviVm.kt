@@ -1,6 +1,6 @@
 package alidoran.android.mvi.basic_mvi.viewmodel
 
-import alidoran.android.fake_endpoint.FakeEndpoint
+import com.example.commonlibrary.fake_endpoint.FakeEndpoint
 import alidoran.android.mvi.basic_mvi.intent.MviIntent
 import alidoran.android.mvi.basic_mvi.MviModel
 import alidoran.android.mvi.basic_mvi.viewstate.UserState

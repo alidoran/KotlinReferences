@@ -1,10 +1,10 @@
 package alidoran.android.mvi.basic_mvi.viewstate
 
-import alidoran.android.mvi.basic_mvi.model.UserMviModel
+import com.example.commonlibrary.fake_endpoint.NameModel
 
 sealed interface UserState {
-    data class CallApi(val list: List<UserMviModel>) : UserState
-    data class CallFlowApi(val list: List<UserMviModel>) : UserState
+    data class CallApi(val list: List<NameModel>) : UserState
+    data class CallFlowApi(val list: List<NameModel>) : UserState
     object IsIdle: UserState
     object ShowLoading: UserState
     object HideLoading: UserState

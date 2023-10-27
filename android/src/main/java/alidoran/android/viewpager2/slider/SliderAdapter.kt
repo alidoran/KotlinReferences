@@ -1,4 +1,4 @@
-package alidoran.android.viewpager
+package alidoran.android.viewpager2.slider
 
 import alidoran.android.R
 import android.view.LayoutInflater

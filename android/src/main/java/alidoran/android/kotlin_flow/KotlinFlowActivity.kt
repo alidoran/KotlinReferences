@@ -3,7 +3,9 @@ package alidoran.android.kotlin_flow
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import alidoran.android.databinding.ActivityKotlinFlowBinding
-import alidoran.android.fake_endpoint.FakeEndpoint.fakeCallOneToThreeApi
+import com.example.commonlibrary.fake_endpoint.FakeEndpoint
+import com.example.commonlibrary.fake_endpoint.FakeEndpoint.fakeCallOneToThreeApi
+import com.example.commonlibrary.fake_endpoint.FakeEndpoint.fakeStringListRequest
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
@@ -11,20 +13,26 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.example.commonlibrary.fake_endpoint.FakeEndpoint.fakeMviModelListRequest
+import com.example.commonlibrary.fake_endpoint.NameModel
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapMerge
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.zip
 import kotlinx.coroutines.launch
 
 class KotlinFlowActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityKotlinFlowBinding
     private val vm by viewModels<KotlinFlowViewModel>()
-    private lateinit var state: StateFlow<*>
 
     @FlowPreview
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +54,13 @@ class KotlinFlowActivity : AppCompatActivity() {
         btnRepeatLifecycleStarted.setOnClickListener { repeatOnLifecycleStarted() }
         btnRepeatLifecycleCreated.setOnClickListener { repeatOnLifecycleCreated() }
         btnStateFlow.setOnClickListener { stateFlow() }
+        btnSharedFlow.setOnClickListener { sharedFlow() }
         btnMap.setOnClickListener { mapLearn() }
+        btnCallPriority.setOnClickListener { callPriority() }
+        btnCallInnerApi.setOnClickListener { callInnerApi() }
+        btnResponseAfterDestroy.setOnClickListener { apiResponseAfterOnDestroyed() }
+        btnFirst.setOnClickListener { lifecycleScope.launch { first() } }
+        btnFirstCatch.setOnClickListener { lifecycleScope.launch { firstCatch() } }
     }
 
     private fun repeatOnLifecycleStarted() {
@@ -84,11 +98,25 @@ class KotlinFlowActivity : AppCompatActivity() {
     }
 
     private fun stateFlow() {
-        state = fakeCallOneToThreeApi().stateIn(
+        lifecycleScope.launch {
+            fakeCallOneToThreeApi().collect {
+                Log.d("stateFlow", "stateFlow: ${it.toString()} ")
+            }
+        }
+    }
+
+    private fun sharedFlow() {
+        val state: SharedFlow<Int> = fakeCallOneToThreeApi().stateIn(
             initialValue = Log.d("", "Loading"),
             scope = lifecycleScope,
             started = SharingStarted.WhileSubscribed(5000)
         )
+
+        lifecycleScope.launch {
+            state.collect {
+                Log.d("stateFlow", "stateFlow: ${it.toString()} ")
+            }
+        }
     }
 
     @FlowPreview
@@ -122,21 +150,53 @@ class KotlinFlowActivity : AppCompatActivity() {
         }
     }
 
-    private fun multiEmit(){
+    fun callPriority() {
+        lifecycleScope.launch {
+            FakeEndpoint.fakeStringRequest()
+                .onEach { Log.d("callPriority", "onEach") }
+                .onCompletion { Log.d("callPriority", "onCompletion") }
+                .onStart { Log.d("callPriority", "onStart") }
+                .collect { Log.d("callPriority", "collect") }
+        }
+    }
 
+    private fun a() {
+        lifecycleScope.launch {
+            fakeStringListRequest().zip(fakeStringListRequest()) { i, s ->
+            }
+        }
     }
 
 
+    private fun callInnerApi() {
+        var secondApiOnEachResult = ArrayList<NameModel>()
+        var secondApiFlatMapResult = ArrayList<NameModel>()
+        lifecycleScope.launch {
+            FakeEndpoint.fakeStringRequest()
+                .onEach {
+                    secondApiOnEachResult = fakeMviModelListRequest()
+                }
+                .map {
+                    secondApiFlatMapResult = fakeMviModelListRequest()
+                    it
+                }.collect {}
+            Log.d("TAG", "secondApiOnEachResult: ${secondApiOnEachResult[0].name}")
+            Log.d("TAG", "secondApiFlatMapResult: ${secondApiFlatMapResult[0].name}")
+        }
+    }
 
-//    private fun transform() {
-//        lifecycleScope.launch {
-//            Log.d("KotlinFlow", "transform: ${vm.transform()}")
-//        }
-//    }
-//
-//    private fun transformWhile() {
-//        lifecycleScope.launch {
-//            Log.d("KotlinFlow", "transformWhile: ${vm.transformWhile()}")
-//        }
-//    }
+    private fun apiResponseAfterOnDestroyed() {
+        vm.longDelay()
+        finish()
+    }
+
+    private suspend fun first() {
+        val a = FakeEndpoint.fakeIntReapeatRequest().first()
+        Log.d("single", "single: $a")
+    }
+
+    private suspend fun firstCatch() {
+        val a = FakeEndpoint.fakeCatchRequest().first()
+        Log.d("single", "single: $a")
+    }
 }

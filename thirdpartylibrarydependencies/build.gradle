@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId "alidoran.third_party"
-        minSdk 23
+        minSdk 26
         targetSdk rootProject.compile_target_sdk
         versionCode 1
         versionName "1.0"
@@ -45,7 +45,6 @@ android {
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.6"
-        kotlinCompilerVersion = "$kotlin_android"
     }
 
     testOptions {
@@ -60,6 +59,7 @@ android {
 }
 
 dependencies {
+    implementation project(":commonlibrary")
     implementation "androidx.core:core-ktx:$core_ktx"
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
     implementation "com.google.android.material:material:$material"

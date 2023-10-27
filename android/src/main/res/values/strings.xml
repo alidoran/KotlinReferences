@@ -106,4 +106,13 @@
     <string name="repeat_on_lifecycle_started">Repeat on lifecycle started</string>
     <string name="repeat_on_lifecycle_created">Repeat on lifecycle created</string>
     <string name="state_flow">State Flow</string>
+    <string name="shared_flow">Shared Flow</string>
+    <string name="worker">worker</string>
+    <string name="long_process_without_worker">Long Process without worker</string>
+    <string name="long_process_with_worker">Long Process with worker</string>
+    <string name="call_priority">CAll Priority</string>
+    <string name="call_inner_api">CAll Inner API</string>
+    <string name="api_response_after_ondestroyed">Api Response After OnDestroyed</string>
+    <string name="first">first</string>
+    <string name="first_catch">first/catch</string>
 </resources>

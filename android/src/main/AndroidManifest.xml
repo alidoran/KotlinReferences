@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".worker.WorkerActivity"
+            android:exported="false" />
+        <activity
             android:name=".kotlin_flow.KotlinFlowActivity"
             android:exported="false" />
         <activity
@@ -181,7 +184,7 @@
             android:name=".paging_view.PagingRecyclerActivity"
             android:exported="false" />
         <activity
-            android:name=".viewpager.ViewPagerSliderActivity"
+            android:name=".viewpager2.slider.ViewPagerSliderActivity"
             android:exported="false" />
         <activity
             android:name=".recycler_view.RecyclerActivity"

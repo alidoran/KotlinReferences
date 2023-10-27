@@ -18,7 +18,7 @@ Body:
       "body": "mB2"
     },
     "to": {
-      "user_id": "Z307"
+      "user_id": "Z312"
     }
   }
 }
@@ -43,5 +43,9 @@ class CourierNotificationService : CourierService(){
             handlingClass = CourierSampleActivity::class.java,
             icon = android.R.drawable.ic_dialog_info
         )
+    }
+
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
     }
 }

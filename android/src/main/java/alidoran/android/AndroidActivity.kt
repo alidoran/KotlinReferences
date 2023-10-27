@@ -23,7 +23,8 @@ import alidoran.android.services.ServicesActivity
 import alidoran.android.shared_preference.SharedPreferenceActivity
 import alidoran.android.socket.SocketActivity
 import alidoran.android.view_to_model.ViewToModelActivity
-import alidoran.android.viewpager.ViewPagerSliderActivity
+import alidoran.android.viewpager2.slider.ViewPagerSliderActivity
+import alidoran.android.worker.WorkerActivity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -146,6 +147,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnKotlinFlow.setOnClickListener {
             val intent = Intent(this, KotlinFlowActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnWorker.setOnClickListener {
+            val intent = Intent(this, WorkerActivity::class.java)
             startActivity(intent)
         }
     }

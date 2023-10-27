@@ -109,4 +109,14 @@
     <string name="do_on_next">Do on next</string>
     <string name="compose_learn">Compose learn</string>
     <string name="single_transform">Single transform</string>
+    <string name="event_bus">Event_Bus</string>
+    <string name="io_dispatcher_life_test">IO Dispatcher life test</string>
+    <string name="simple_event_bus">Simple Event Bus</string>
+    <string name="complex_event_bus">Complex Event Bus</string>
+    <string name="complex_event_bus_count_values">Complex Event Bus count values</string>
+    <string name="complex_event_bus_reset_count_values">Complex Event Bus reset count values</string>
+    <string name="complex_event_bus_cancel_view_model_scope">Complex Event Bus cancel view model scope</string>
+    <string name="completable_blocking_await">completable blocking await</string>
+    <string name="rxjava_zip">RxJava zip</string>
+    <string name="rxjava_next">RxJava Next</string>
 </resources>

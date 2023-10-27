@@ -36,4 +36,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/channel"/>
+
+    <Button
+        android:id="@+id/btn_dispatchers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/channel"/>
+
+    <Button
+        android:id="@+id/btn_event_bus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_bus"/>
 </androidx.appcompat.widget.LinearLayoutCompat>

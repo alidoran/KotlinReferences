@@ -154,5 +154,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/kotlin_flow"/>
 
+            <Button
+                android:id="@+id/btn_worker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/worker"/>
+
         </LinearLayout>
     </ScrollView>

@@ -4,6 +4,7 @@ import alidoran.third_party.databinding.ActivityRunBlockingBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -52,5 +53,39 @@ class RunBlockingActivity : AppCompatActivity() {
         print("Hello, ")
         delay(1500)
         println("!")
+    }
+
+    fun runRandomNumber(){
+        runBlocking {
+            launch {
+                println("1")
+            }
+
+            coroutineScope {
+                launch {
+                    println("2")
+                }
+
+                println("3")
+            }
+
+            coroutineScope {
+                launch {
+                    println("4")
+                }
+
+                println("5")
+            }
+
+            launch {
+                println("6")
+            }
+
+            for (i in 7..100) {
+                println(i.toString())
+            }
+
+            println("101")
+        }
     }
 }
