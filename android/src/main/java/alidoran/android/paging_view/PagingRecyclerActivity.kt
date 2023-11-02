@@ -10,13 +10,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collectLatest
 
 class PagingRecyclerActivity : AppCompatActivity() {
-    lateinit var recyclerViewAdapter: RecyclerViewAdapter
-    lateinit var binding : ActivityPagingRecyclerBinding
+    private lateinit var recyclerViewAdapter: RecyclerViewAdapter
+    private lateinit var binding : ActivityPagingRecyclerBinding
+    private lateinit var viewModel: PagingRecyclerActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPagingRecyclerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewModel  = ViewModelProvider(this)[PagingRecyclerActivityViewModel::class.java]
 
         initRecyclerView()
         initViewModel()
@@ -33,12 +36,10 @@ class PagingRecyclerActivity : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-        val viewModel  = ViewModelProvider(this).get(PagingRecyclerActivityViewModel::class.java)
         lifecycleScope.launchWhenCreated {
             viewModel.getListData().collectLatest {
                 recyclerViewAdapter.submitData(it)
             }
         }
     }
-
 }

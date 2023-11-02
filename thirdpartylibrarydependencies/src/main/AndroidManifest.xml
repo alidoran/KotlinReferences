@@ -34,6 +34,9 @@
         android:theme="@style/Theme.ThirdPartyLibraryDependencies"
         tools:targetApi="32">
         <activity
+            android:name=".apis.rest.retro_standard.RetrofitActivity"
+            android:exported="false" />
+        <activity
             android:name=".multithreading.coroutines.eventbus.EventBusActivity"
             android:exported="false" />
         <activity

@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.Flow
 
 class PagingRecyclerActivityViewModel: ViewModel() {
 
-    var retroService: RetroService = RetroInstance.getRetroInstance().create(RetroService::class.java)
+    private var retroService: RetroService = RetroInstance.getRetroInstance().create(RetroService::class.java)
 
     fun getListData(): Flow<PagingData<CharacterData>> {
         return Pager (config = PagingConfig(pageSize = 20, maxSize = 200),

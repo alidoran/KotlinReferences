@@ -2,12 +2,9 @@ package alidoran.third_party
 
 import alidoran.third_party.apis.graphql_apollo.ApolloActivity
 import alidoran.third_party.apis.graphql_retrofit.GraphQLActivity
-import alidoran.third_party.apis.rest.models.Current
-import alidoran.third_party.apis.rest.models.Location
 import alidoran.third_party.apis.rest.retro_dagger.CallWeatherDagger
 import alidoran.third_party.apis.rest.retro_standard.CallWeatherApi2
-import alidoran.third_party.apis.rest.retrofit_center_run.WeatherApi
-import alidoran.third_party.apis.rest.retrofit_center_run.WeatherService
+import alidoran.third_party.apis.rest.retro_standard.RetrofitActivity
 import alidoran.third_party.apis.rest.retrofit_java.RestRetroJavaActivity
 import alidoran.third_party.app_status.AppStatusHelp
 import alidoran.third_party.multithreading.coroutines.CoroutineActivity
@@ -21,7 +18,6 @@ import alidoran.third_party.multithreading.MultiThread
 import alidoran.third_party.rx_java.RxJavaActivity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class ThirdPartyActivity : AppCompatActivity() {
@@ -43,16 +39,8 @@ class ThirdPartyActivity : AppCompatActivity() {
         }
 
         binding.btnRetrofit.setOnClickListener {
-            WeatherApi.instance.weatherNow("Tehran", object : WeatherService {
-                override fun location(location: Location) {
-                    val txt = "Location = $location.name || localTime = ${location.localtime}"
-                    Toast.makeText(baseContext, txt, Toast.LENGTH_LONG).show()
-                }
-
-                override fun current(current: Current) {
-
-                }
-            })
+            val intent = Intent(this, RetrofitActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnGraphql.setOnClickListener {

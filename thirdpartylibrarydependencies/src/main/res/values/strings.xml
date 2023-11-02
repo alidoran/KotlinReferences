@@ -119,4 +119,7 @@
     <string name="completable_blocking_await">completable blocking await</string>
     <string name="rxjava_zip">RxJava zip</string>
     <string name="rxjava_next">RxJava Next</string>
+    <string name="basic_auth_call">BasicAuth Call</string>
+    <string name="no_auth">No Auth</string>
+    <string name="retro_callback">Retro CallBack</string>
 </resources>

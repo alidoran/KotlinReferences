@@ -4,8 +4,8 @@ import alidoran.third_party.apis.rest.models.Current
 import alidoran.third_party.apis.rest.models.Location
 
 
-interface WeatherService{
-        fun location(location: Location)
-        fun current(current: Current)
+interface WeatherService {
+    fun location(location: Location)
+    fun current(current: Current)
 }
 

@@ -13,7 +13,7 @@ buildscript {
         material = '1.9.0'
         compose = '1.5.0'
         lifecycle = '2.6.1'
-        navigation = '2.6.0'
+        navigation = '2.7.4'
         lifecycle_extensions = '2.2.0'
         legacy_support = '1.0.0'
         services_maps= '18.1.0'
