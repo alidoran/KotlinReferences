@@ -115,4 +115,5 @@
     <string name="api_response_after_ondestroyed">Api Response After OnDestroyed</string>
     <string name="first">first</string>
     <string name="first_catch">first/catch</string>
+    <string name="compose">Compose</string>
 </resources>

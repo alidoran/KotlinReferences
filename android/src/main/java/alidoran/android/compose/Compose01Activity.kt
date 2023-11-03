@@ -16,44 +16,46 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
+@Suppress("SameParameterValue")
 class Compose01Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            composContent()
+            ComposContent()
         }
     }
 
+
     @Composable
-    fun composContent() {
+    private fun ComposContent() {
         KotlinReferencesTheme {
             // A surface container using the 'background' color from the theme
             Surface(
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background
             ) {
-                layoutType()
+                LayoutType()
             }
         }
     }
 
     @Composable
-    fun layoutType() {
+    private fun LayoutType() {
         Column {
-            columnSample("column")
+            ColumnSample("column")
             Text("------------------")
-            rowSample("row")
+            RowSample("row")
             Text("------------------")
-            boxSample("box")
+            BoxSample("box")
             Text("------------------")
-            sizableView1()
+            SizableView1()
             Text("------------------")
-            sizableView2()
+            SizableView2()
         }
     }
 
     @Composable
-    fun columnSample(type: String) {
+    private fun ColumnSample(type: String) {
         Surface(color = MaterialTheme.colorScheme.error) {
             Column {
                 Text(text = "This is a ")
@@ -63,7 +65,7 @@ class Compose01Activity : ComponentActivity() {
     }
 
     @Composable
-    fun rowSample(type: String) {
+    private fun RowSample(type: String) {
         Surface(color = MaterialTheme.colorScheme.error) {
             Row {
                 Text(text = "This is a ")
@@ -73,7 +75,7 @@ class Compose01Activity : ComponentActivity() {
     }
 
     @Composable
-    fun boxSample(type: String) {
+    private fun BoxSample(type: String) {
         Surface(color = MaterialTheme.colorScheme.error) {
             Box {
                 Text(text = "This is a ")
@@ -83,7 +85,7 @@ class Compose01Activity : ComponentActivity() {
     }
 
     @Composable
-    fun sizableView1() {
+    private fun SizableView1() {
         Surface(
             color = MaterialTheme.colorScheme.error,
         ) {
@@ -104,7 +106,7 @@ class Compose01Activity : ComponentActivity() {
     }
 
     @Composable
-    fun sizableView2() {
+    private fun SizableView2() {
         Surface(
             color = MaterialTheme.colorScheme.error,
         ) {
@@ -126,9 +128,9 @@ class Compose01Activity : ComponentActivity() {
 
     @Preview(showBackground = true)
     @Composable
-    fun LayoutDefaultPreview() {
+    private fun LayoutDefaultPreview() {
         KotlinReferencesTheme {
-            composContent()
+            ComposContent()
         }
     }
 }

@@ -6,6 +6,7 @@ import alidoran.android.add_dynamic_view.DynamicViewActivity
 import alidoran.android.binding.DataBindingActivity
 import alidoran.android.binding.ViewBindingActivity
 import alidoran.android.bottom_sheet.BottomSheetActivity
+import alidoran.android.compose.ComposeLearnActivity
 import alidoran.android.databinding.ActivityAndroidBinding
 import alidoran.android.dialog.DialogActivity
 import alidoran.android.fragment.FragmentActivity
@@ -152,6 +153,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnWorker.setOnClickListener {
             val intent = Intent(this, WorkerActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnCompose.setOnClickListener {
+            val intent = Intent(this, ComposeLearnActivity::class.java)
             startActivity(intent)
         }
     }
