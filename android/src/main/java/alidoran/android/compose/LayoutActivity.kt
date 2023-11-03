@@ -1,3 +1,5 @@
+@file:Suppress("SameParameterValue")
+
 package alidoran.android.compose
 
 import alidoran.android.compose.ui.theme.KotlinReferencesTheme
@@ -18,40 +20,40 @@ class ComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            composContent()
+            ComposContent()
         }
     }
 }
 
 @Composable
-fun composContent() {
+private fun ComposContent() {
     KotlinReferencesTheme {
         // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            layoutType()
+            LayoutType()
         }
     }
 }
 
 @Composable
-fun layoutType() {
+private fun LayoutType() {
     Column {
-        column("column")
+        ColumnSample("column")
         Text("------------------")
-        row("row")
+        RowSample("row")
         Text("------------------")
-        box("box")
+        BoxSample("box")
         Text("------------------")
-        sizableView()
+        SizableView()
         Text("------------------")
     }
 }
 
 @Composable
-fun column(type: String) {
+private fun ColumnSample(type: String) {
     Surface(color = MaterialTheme.colorScheme.error) {
         Column {
             Text(text = "This is a ")
@@ -61,7 +63,7 @@ fun column(type: String) {
 }
 
 @Composable
-fun row(type: String) {
+private fun RowSample(type: String) {
     Surface(color = MaterialTheme.colorScheme.error) {
         Row {
             Text(text = "This is a ")
@@ -71,7 +73,7 @@ fun row(type: String) {
 }
 
 @Composable
-fun box(type: String) {
+private fun BoxSample(type: String) {
     Surface(color = MaterialTheme.colorScheme.error) {
         Box {
             Text(text = "This is a ")
@@ -81,7 +83,7 @@ fun box(type: String) {
 }
 
 @Composable
-fun sizableView() {
+fun SizableView() {
     Surface(
         color = MaterialTheme.colorScheme.error,
 
@@ -99,8 +101,8 @@ fun sizableView() {
 
 @Preview(showBackground = true)
 @Composable
-fun LayoutDefaultPreview() {
+private fun LayoutDefaultPreview() {
     KotlinReferencesTheme {
-        composContent()
+        ComposContent()
     }
 }

@@ -51,7 +51,7 @@ class ScreenOnOffService : Service() {
     private fun getChangedIconEveryTenSec(): Int {
         val sec = LocalDateTime.now().second
         return if ((sec / 10) % 2 == 0)
-            R.drawable.baseline_thumb_up_black_24dp
+            R.drawable.baseline_thumb_up_inverse_24dp
         else
             R.drawable.baseline_thumb_down_black_24dp
     }

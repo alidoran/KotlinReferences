@@ -11,37 +11,37 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
-class ComponentsActivity : ComponentActivity() {
+class MyComponentsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            componentContent()
+            ComponentContent()
         }
     }
 }
 
 @Composable
-fun componentContent(){
+private fun ComponentContent(){
     KotlinReferencesTheme {
         // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            Components("Android")
+            Components()
         }
     }
 }
 
 @Composable
-fun Components(name: String) {
+fun Components() {
     Column {
         ButtonComponent()
     }
 }
 
 @Composable
-fun ButtonComponent() {
+private fun ButtonComponent() {
     Column {
         Button(
             onClick = {
@@ -65,8 +65,8 @@ fun ButtonComponent() {
 
 @Preview(showBackground = true)
 @Composable
-fun ComponentDefaultPreview() {
+private fun ComponentDefaultPreview() {
     KotlinReferencesTheme {
-        Components("Android")
+        Components()
     }
 }

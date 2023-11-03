@@ -32,7 +32,7 @@ class ViewPagerSliderActivity : AppCompatActivity() {
         modelList.add(ViewPagerSliderModel(R.drawable.ic_launcher_background))
         modelList.add(ViewPagerSliderModel(R.drawable.baseline_thumb_down_black_24dp))
         modelList.add(ViewPagerSliderModel(R.drawable.ic_launcher_foreground))
-        modelList.add(ViewPagerSliderModel(R.drawable.baseline_thumb_up_black_24dp))
+        modelList.add(ViewPagerSliderModel(R.drawable.baseline_thumb_up_inverse_24dp))
     }
 
     private fun sliderItems() {
@@ -73,15 +73,15 @@ class ViewPagerSliderActivity : AppCompatActivity() {
 
     private fun getTabIcon(position: Int): Int {
         return when (position) {
-            0 -> R.drawable.baseline_thumb_up_black_24dp
+            0 -> R.drawable.baseline_thumb_up_inverse_24dp
             1 -> R.drawable.baseline_thumb_down_black_24dp
-            2 -> R.drawable.baseline_thumb_up_black_24dp
+            2 -> R.drawable.baseline_thumb_up_inverse_24dp
             3 -> R.drawable.baseline_thumb_down_black_24dp
-            else -> R.drawable.baseline_thumb_up_black_24dp
+            else -> R.drawable.baseline_thumb_up_inverse_24dp
         }
     }
 
-    private fun getTabTitle(position: Int): String? {
+    private fun getTabTitle(position: Int): String {
         return when (position) {
             0 -> "First one"
             1 -> "Second one"
