@@ -1,6 +1,6 @@
 package alidoran.android.compose
 
-import alidoran.android.compose.developer_tutorial.DeveloperAndroidActivity
+import alidoran.android.compose.developer_android_samples.DeveloperAndroidActivity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -39,7 +39,7 @@ class ComposeLearnActivity : ComponentActivity() {
                     )
                 )
             }) {
-                Text(text = "First till third")
+                Text(text = "developer.android")
             }
         }
     }

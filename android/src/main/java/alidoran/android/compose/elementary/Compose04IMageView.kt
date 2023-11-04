@@ -1,6 +1,6 @@
-package alidoran.android.compose
+package alidoran.android.compose.elementary
 
-import alidoran.android.compose.ui.ui.theme.KotlinReferencesTheme
+import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent

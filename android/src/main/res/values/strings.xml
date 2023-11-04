@@ -116,4 +116,10 @@
     <string name="first">first</string>
     <string name="first_catch">first/catch</string>
     <string name="compose">Compose</string>
+    <string name="title_activity_first_cource">FirstCourceActivity</string>
+    <string name="title_activity_first_course_animation">FirstCourseAnimationActivity</string>
+    <string name="title_activity_first_coursse">FirstCoursseActivity</string>
+    <string name="title_activity_scaffold">scaffoldActivity</string>
+    <string name="title_activity_codelab_basic_layout">CodelabBasicLayoutActivity</string>
+    <string name="search">Search</string>
 </resources>

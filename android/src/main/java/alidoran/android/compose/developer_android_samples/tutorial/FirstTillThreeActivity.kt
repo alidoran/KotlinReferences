@@ -1,7 +1,8 @@
-package alidoran.android.compose.developer_tutorial
+package alidoran.android.compose.developer_android_samples.tutorial
 
 import alidoran.android.R
-import alidoran.android.compose.ui.ui.theme.KotlinReferencesTheme
+import alidoran.android.compose.developer_android_samples.ComposeMessageModel
+import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
@@ -33,7 +34,7 @@ import androidx.compose.ui.unit.dp
 class FirstTillThreeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val msg = ComposeMessage("Ali", "Doran")
+        val msg = ComposeMessageModel("Ali", "Doran")
         setContent {
             Column {
                 MessageCard("AliDoran")
@@ -63,7 +64,7 @@ class FirstTillThreeActivity : ComponentActivity() {
 
     //Lesson 2
     @Composable
-    private fun MessageCardModel(msg: ComposeMessage) {
+    private fun MessageCardModel(msg: ComposeMessageModel) {
         Column {
             Text(text = "MessageCardModel:", color = MaterialTheme.colorScheme.inversePrimary)
             Text(text = msg.author)
@@ -73,7 +74,7 @@ class FirstTillThreeActivity : ComponentActivity() {
 
 
     @Composable
-    private fun ImageMessageCard(msg: ComposeMessage) {
+    private fun ImageMessageCard(msg: ComposeMessageModel) {
         Row {
             Image(
                 painter = painterResource(R.drawable.baseline_thumb_up_inverse_24dp),
@@ -90,7 +91,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ImageResizedMessageCard(msg: ComposeMessage) {
+    private fun ImageResizedMessageCard(msg: ComposeMessageModel) {
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
                 painter = painterResource(R.drawable.baseline_thumb_up_inverse_24dp),
@@ -119,7 +120,7 @@ class FirstTillThreeActivity : ComponentActivity() {
 //    Lesson 3
 
     @Composable
-    private fun ThemeMessageCard(msg: ComposeMessage) {
+    private fun ThemeMessageCard(msg: ComposeMessageModel) {
         KotlinReferencesTheme {
             Surface {
                 Column {
@@ -131,7 +132,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ColoredMessageCard(msg: ComposeMessage) {
+    private fun ColoredMessageCard(msg: ComposeMessageModel) {
         Text(text = "ColoredMessageCard:", color = MaterialTheme.colorScheme.inversePrimary)
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
@@ -158,7 +159,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun TypographyMessageCard(msg: ComposeMessage) {
+    private fun TypographyMessageCard(msg: ComposeMessageModel) {
         Text(text = "TypographyMessageCard:", color = MaterialTheme.colorScheme.inversePrimary)
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
@@ -189,7 +190,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ShapedMessageCard(msg: ComposeMessage) {
+    private fun ShapedMessageCard(msg: ComposeMessageModel) {
         Text(text = "ShapedMessageCard:", color = MaterialTheme.colorScheme.inversePrimary)
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
@@ -233,7 +234,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     )
     @Composable
     private fun PreviewHelloWorld() {
-        val msg = ComposeMessage("Ali", "Doran")
+        val msg = ComposeMessageModel("Ali", "Doran")
         Column {
             MessageCard("AliDoran")
             Divider()

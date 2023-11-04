@@ -1,4 +1,4 @@
-package alidoran.android.compose
+package alidoran.android.compose.elementary
 
 import alidoran.android.R
 import android.os.Bundle
