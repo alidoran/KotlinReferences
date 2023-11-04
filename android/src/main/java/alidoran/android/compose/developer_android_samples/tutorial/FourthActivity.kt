@@ -1,7 +1,9 @@
-package alidoran.android.compose.developer_tutorial
+package alidoran.android.compose.developer_android_samples.tutorial
 
 import android.os.Bundle
 import alidoran.android.R
+import alidoran.android.compose.developer_android_samples.ComposeMessageModel
+import alidoran.android.compose.developer_android_samples.generateComposeMessageList
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -42,7 +44,7 @@ class FourthActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun MessageCardSimple(msg: ComposeMessage) {
+    private fun MessageCardSimple(msg: ComposeMessageModel) {
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
                 painter = painterResource(R.drawable.baseline_thumb_up_inverse_24dp),
@@ -85,16 +87,16 @@ class FourthActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ConversationSimple(composeMessages: List<ComposeMessage>) {
+    private fun ConversationSimple(composeMessageModels: List<ComposeMessageModel>) {
         LazyColumn {
-            items(composeMessages) { message ->
+            items(composeMessageModels) { message ->
                 MessageCardSimple(message)
             }
         }
     }
 
     @Composable
-    private fun MessageCardAnimated(msg: ComposeMessage) {
+    private fun MessageCardAnimated(msg: ComposeMessageModel) {
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
                 painter = painterResource(R.drawable.baseline_thumb_up_inverse_24dp),
@@ -138,9 +140,9 @@ class FourthActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ConversationAnimated(composeMessages: List<ComposeMessage>) {
+    private fun ConversationAnimated(composeMessageModels: List<ComposeMessageModel>) {
         LazyColumn {
-            items(composeMessages) { message ->
+            items(composeMessageModels) { message ->
                 MessageCardAnimated(message)
             }
         }
@@ -153,12 +155,12 @@ class FourthActivity : ComponentActivity() {
                 modifier = Modifier.fillMaxHeight(0.5f)
             ){
                 Text(text = "Simple List")
-                ConversationSimple(generateSampleData())
+                ConversationSimple(generateComposeMessageList())
             }
             Column(
             ){
                 Text(text = "ConversationAnimated")
-                ConversationAnimated(generateSampleData())
+                ConversationAnimated(generateComposeMessageList())
             }
         }
     }
@@ -167,15 +169,5 @@ class FourthActivity : ComponentActivity() {
     @Composable
     private fun PreviewConversation() {
         AllConversations()
-    }
-
-    private fun generateSampleData(): List<ComposeMessage> {
-        val messageList = ArrayList<ComposeMessage>()
-        for (i in 1..20) {
-            messageList.add(ComposeMessage(
-                "FirstLine $i",
-                "SecondLine $i This is the Second long line to testing a compose list view that includes long data on each row"))
-        }
-        return messageList
     }
 }

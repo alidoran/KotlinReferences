@@ -1,4 +1,4 @@
-package alidoran.android.compose
+package alidoran.android.compose.elementary
 
 import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.os.Bundle
@@ -34,7 +34,7 @@ private fun ComponentContent(){
 }
 
 @Composable
-fun Components() {
+private fun Components() {
     Column {
         ButtonComponent()
     }

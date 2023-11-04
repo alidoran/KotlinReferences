@@ -1,4 +1,4 @@
-package alidoran.android.compose
+package alidoran.android.compose.elementary
 
 import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.os.Bundle
@@ -15,11 +15,11 @@ class Compose03Button : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            componentContent()
+            ComponentContent()
         }
     }
     @Composable
-    fun componentContent(){
+    fun ComponentContent(){
         KotlinReferencesTheme {
             // A surface container using the 'background' color from the theme
             Surface(

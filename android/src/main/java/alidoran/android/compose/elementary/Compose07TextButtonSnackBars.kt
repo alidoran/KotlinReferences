@@ -1,4 +1,4 @@
-package alidoran.android.compose
+package alidoran.android.compose.elementary
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -60,7 +60,7 @@ class Compose07TextButtonSnackBars : ComponentActivity() {
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 30.dp)
+                    .padding(it)
             ) {
                 TextField(value = textFieldState,
                     onValueChange = { textFieldState = it },

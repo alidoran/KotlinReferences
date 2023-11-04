@@ -1,6 +1,6 @@
 @file:Suppress("SameParameterValue")
 
-package alidoran.android.compose
+package alidoran.android.compose.elementary
 
 import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.os.Bundle
@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-class ComposeActivity : ComponentActivity() {
+class LayoutActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -83,7 +83,7 @@ private fun BoxSample(type: String) {
 }
 
 @Composable
-fun SizableView() {
+private fun SizableView() {
     Surface(
         color = MaterialTheme.colorScheme.error,
 

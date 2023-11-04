@@ -1,4 +1,6 @@
-package alidoran.android.compose
+@file:Suppress("UNUSED_VARIABLE")
+
+package alidoran.android.compose.elementary
 
 import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.os.Bundle
@@ -26,7 +28,7 @@ class FunctionActivity : ComponentActivity() {
 }
 
 @Composable
-fun FunctionContents() {
+private fun FunctionContents() {
 
     KotlinReferencesTheme {
         // A surface container using the 'background' color from the theme
@@ -40,14 +42,14 @@ fun FunctionContents() {
 }
 
 @Composable
-fun Functions() {
+private fun Functions() {
     Column {
         LoopInTheColumn()
     }
 }
 
 @Composable
-fun LoopInTheColumn() {
+private fun LoopInTheColumn() {
     val expanded = remember { mutableStateOf(false) }
     Surface(color = MaterialTheme.colorScheme.error) {
         Column {
@@ -55,13 +57,13 @@ fun LoopInTheColumn() {
                 Text("number = $i")
             }
             RememberValue()
-            expand()
+            Expand()
         }
     }
 }
 
 @Composable
-fun RememberValue() {
+private fun RememberValue() {
     val expanded = remember { mutableStateOf(false) }
     Button(
         onClick = {
@@ -73,7 +75,7 @@ fun RememberValue() {
 }
 
 @Composable
-fun expand() {
+private fun Expand() {
     Column {
         val expanded = remember { mutableStateOf(false) }
         val extraPadding = if (expanded.value) 48.dp else 0.dp
@@ -108,7 +110,7 @@ fun expand() {
 
 @Preview(showBackground = true)
 @Composable
-fun FunctionDefaultPreview() {
+private fun FunctionDefaultPreview() {
     KotlinReferencesTheme {
         Functions()
     }

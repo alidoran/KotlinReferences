@@ -1,4 +1,4 @@
-package alidoran.android.compose
+package alidoran.android.compose.elementary
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

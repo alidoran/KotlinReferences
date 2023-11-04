@@ -1,6 +1,6 @@
-package alidoran.android.compose
+package alidoran.android.compose.elementary
 
-import alidoran.android.compose.ui.ui.theme.KotlinReferencesTheme
+import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -38,21 +38,21 @@ class Compose02Modifier : ComponentActivity() {
         Column(
             Modifier.fillMaxSize()
         ) {
-            dynamicWidth()
+            DynamicWidth()
             Text(text = "--------------")
-            fixedWidth()
+            FixedWidth()
             Text(text = "--------------")
-            padding()
+            Padding()
             Text(text = "--------------")
-            border()
+            Border()
             Text(text = "--------------")
-            clickable()
+            Clickable()
         }
 
     }
 
     @Composable
-    private fun clickable() {
+    private fun Clickable() {
         Column(
             modifier = Modifier
                 .background(Color.Green)
@@ -64,7 +64,7 @@ class Compose02Modifier : ComponentActivity() {
     }
 
     @Composable
-    private fun padding() {
+    private fun Padding() {
         Column(
             modifier = Modifier
                 .padding(10.dp)
@@ -80,7 +80,7 @@ class Compose02Modifier : ComponentActivity() {
     }
 
     @Composable
-    private fun border() {
+    private fun Border() {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -99,7 +99,7 @@ class Compose02Modifier : ComponentActivity() {
     }
 
     @Composable
-    private fun dynamicWidth() {
+    private fun DynamicWidth() {
         Column(
             modifier = Modifier
                 .background(Color.Green)
@@ -111,7 +111,7 @@ class Compose02Modifier : ComponentActivity() {
     }
 
     @Composable
-    private fun fixedWidth() {
+    private fun FixedWidth() {
         Column(
             modifier = Modifier
                 .background(Color.Green)

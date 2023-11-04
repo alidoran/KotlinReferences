@@ -1,4 +1,4 @@
-package alidoran.android.compose
+package alidoran.android.compose.elementary
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -26,7 +26,7 @@ class Compose08List : ComponentActivity() {
         setContent {
 //            ListView()
 //            listViewAsRecycler()
-            listViewAsRecyclerIndex()
+            ListViewAsRecyclerIndex()
         }
     }
 
@@ -49,7 +49,7 @@ class Compose08List : ComponentActivity() {
     }
 
     @Composable
-    fun listViewAsRecycler() {
+    fun ListViewAsRecycler() {
         LazyColumn {
             items(5000) {
                 Text(
@@ -66,7 +66,7 @@ class Compose08List : ComponentActivity() {
     }
 
     @Composable
-    fun listViewAsRecyclerIndex() {
+    fun ListViewAsRecyclerIndex() {
         val list = ArrayList<String>()
         for (i in 0..5000) {
             list.add("Item $i")
@@ -92,6 +92,6 @@ class Compose08List : ComponentActivity() {
     @Preview
     @Composable
     fun LayoutDefaultPreview() {
-        listViewAsRecyclerIndex()
+        ListViewAsRecyclerIndex()
     }
 }
