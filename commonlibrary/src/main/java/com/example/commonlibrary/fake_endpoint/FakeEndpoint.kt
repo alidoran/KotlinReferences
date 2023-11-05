@@ -27,7 +27,7 @@ object FakeEndpoint {
         return flow { emit(listOf("1", "2", "3", "4")) }
     }
 
-    suspend fun fakeIntReapeatRequest(): Flow<Int> {
+    suspend fun fakeIntRepeatRequest(): Flow<Int> {
         delay(TimeUnit.SECONDS.toMillis(3))
         return flow {
             delay(TimeUnit.SECONDS.toMillis(3))

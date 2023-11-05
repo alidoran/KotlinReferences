@@ -29,6 +29,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.zip
 import kotlinx.coroutines.launch
 
+@Suppress("unused")
 class KotlinFlowActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityKotlinFlowBinding
@@ -150,7 +151,7 @@ class KotlinFlowActivity : AppCompatActivity() {
         }
     }
 
-    fun callPriority() {
+    private fun callPriority() {
         lifecycleScope.launch {
             FakeEndpoint.fakeStringRequest()
                 .onEach { Log.d("callPriority", "onEach") }
@@ -160,7 +161,7 @@ class KotlinFlowActivity : AppCompatActivity() {
         }
     }
 
-    private fun a() {
+    private fun zip() {
         lifecycleScope.launch {
             fakeStringListRequest().zip(fakeStringListRequest()) { i, s ->
             }
@@ -191,7 +192,7 @@ class KotlinFlowActivity : AppCompatActivity() {
     }
 
     private suspend fun first() {
-        val a = FakeEndpoint.fakeIntReapeatRequest().first()
+        val a = FakeEndpoint.fakeIntRepeatRequest().first()
         Log.d("single", "single: $a")
     }
 

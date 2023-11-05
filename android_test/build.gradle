@@ -56,7 +56,7 @@ android {
 }
 
 dependencies {
-
+    implementation project(":commonlibrary")
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "com.google.android.material:material:$material"
     implementation "androidx.test.ext:junit-ktx:$junitktx"

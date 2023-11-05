@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commonlibrary.fake_endpoint.FakeEndpoint.fakeCallOneToThreeApi
-import com.example.commonlibrary.fake_endpoint.FakeEndpoint.fakeIntReapeatRequest
+import com.example.commonlibrary.fake_endpoint.FakeEndpoint.fakeIntRepeatRequest
 import com.example.commonlibrary.fake_endpoint.FakeEndpoint.fakeStringLongDelayRequest
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -18,6 +18,7 @@ import kotlinx.coroutines.flow.transformWhile
 import kotlinx.coroutines.launch
 import javax.inject.Singleton
 
+@Suppress("unused", "UNUSED_VARIABLE")
 @Singleton
 class KotlinFlowViewModel : ViewModel() {
 
@@ -56,13 +57,13 @@ class KotlinFlowViewModel : ViewModel() {
     }
 
     suspend fun transform(): Flow<String> {
-        return fakeIntReapeatRequest().transform<Int, String> {
+        return fakeIntRepeatRequest().transform<Int, String> {
             emit(it.toString())
         }
     }
 
     suspend fun transformWhile() {
-        fakeIntReapeatRequest().transformWhile<Int, String> {
+        fakeIntRepeatRequest().transformWhile<Int, String> {
             //Do something and return true
             val a = it + 1 //save a on BG
             true
@@ -70,7 +71,7 @@ class KotlinFlowViewModel : ViewModel() {
     }
 
     suspend fun multiEmit(){
-        fakeIntReapeatRequest().collect{
+        fakeIntRepeatRequest().collect{
 
         }
     }

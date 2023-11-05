@@ -25,12 +25,13 @@ android {
 }
 
 dependencies {
+    implementation project(":commonlibrary")
     implementation "androidx.core:core-ktx:$core_ktx"
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "com.google.android.material:material:$material"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.4'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.7.4'
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation"
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test.ext:junit:$junitktx"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
