@@ -1,7 +1,7 @@
 package alidoran.android.compose.developer_android_samples.tutorial
 
 import alidoran.android.R
-import alidoran.android.compose.developer_android_samples.ComposeMessageModel
+
 import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
@@ -29,12 +29,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.commonlibrary.fake_endpoint.ListModel
 
 @Suppress("SameParameterValue")
 class FirstTillThreeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val msg = ComposeMessageModel("Ali", "Doran")
+        val msg = ListModel("Ali", "Doran")
         setContent {
             Column {
                 MessageCard("AliDoran")
@@ -64,17 +65,17 @@ class FirstTillThreeActivity : ComponentActivity() {
 
     //Lesson 2
     @Composable
-    private fun MessageCardModel(msg: ComposeMessageModel) {
+    private fun MessageCardModel(msg: ListModel) {
         Column {
             Text(text = "MessageCardModel:", color = MaterialTheme.colorScheme.inversePrimary)
-            Text(text = msg.author)
+            Text(text = msg.title)
             Text(text = msg.body)
         }
     }
 
 
     @Composable
-    private fun ImageMessageCard(msg: ComposeMessageModel) {
+    private fun ImageMessageCard(msg: ListModel) {
         Row {
             Image(
                 painter = painterResource(R.drawable.baseline_thumb_up_inverse_24dp),
@@ -83,7 +84,7 @@ class FirstTillThreeActivity : ComponentActivity() {
 
             Column {
                 Text(text = "ImageMessageCard:", color = MaterialTheme.colorScheme.inversePrimary)
-                Text(text = msg.author)
+                Text(text = msg.title)
                 Text(text = msg.body)
             }
 
@@ -91,7 +92,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ImageResizedMessageCard(msg: ComposeMessageModel) {
+    private fun ImageResizedMessageCard(msg: ListModel) {
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
                 painter = painterResource(R.drawable.baseline_thumb_up_inverse_24dp),
@@ -109,7 +110,7 @@ class FirstTillThreeActivity : ComponentActivity() {
 
             Column {
                 Text(text = "ImageResizedMessageCard:", color = MaterialTheme.colorScheme.inversePrimary)
-                Text(text = msg.author)
+                Text(text = msg.title)
                 // Add a vertical space between the author and message texts
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(text = msg.body)
@@ -120,7 +121,7 @@ class FirstTillThreeActivity : ComponentActivity() {
 //    Lesson 3
 
     @Composable
-    private fun ThemeMessageCard(msg: ComposeMessageModel) {
+    private fun ThemeMessageCard(msg: ListModel) {
         KotlinReferencesTheme {
             Surface {
                 Column {
@@ -132,7 +133,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ColoredMessageCard(msg: ComposeMessageModel) {
+    private fun ColoredMessageCard(msg: ListModel) {
         Text(text = "ColoredMessageCard:", color = MaterialTheme.colorScheme.inversePrimary)
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
@@ -148,7 +149,7 @@ class FirstTillThreeActivity : ComponentActivity() {
 
             Column {
                 Text(
-                    text = msg.author,
+                    text = msg.title,
                     color = MaterialTheme.colorScheme.inversePrimary
                 )
 
@@ -159,7 +160,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun TypographyMessageCard(msg: ComposeMessageModel) {
+    private fun TypographyMessageCard(msg: ListModel) {
         Text(text = "TypographyMessageCard:", color = MaterialTheme.colorScheme.inversePrimary)
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
@@ -174,7 +175,7 @@ class FirstTillThreeActivity : ComponentActivity() {
 
             Column {
                 Text(
-                    text = msg.author,
+                    text = msg.title,
                     color = MaterialTheme.colorScheme.secondary,
                     style = MaterialTheme.typography.titleSmall
                 )
@@ -190,7 +191,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ShapedMessageCard(msg: ComposeMessageModel) {
+    private fun ShapedMessageCard(msg: ListModel) {
         Text(text = "ShapedMessageCard:", color = MaterialTheme.colorScheme.inversePrimary)
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
@@ -205,7 +206,7 @@ class FirstTillThreeActivity : ComponentActivity() {
 
             Column {
                 Text(
-                    text = msg.author,
+                    text = msg.title,
                     color = MaterialTheme.colorScheme.secondary,
                     style = MaterialTheme.typography.titleSmall
                 )
@@ -234,7 +235,7 @@ class FirstTillThreeActivity : ComponentActivity() {
     )
     @Composable
     private fun PreviewHelloWorld() {
-        val msg = ComposeMessageModel("Ali", "Doran")
+        val msg = ListModel("Ali", "Doran")
         Column {
             MessageCard("AliDoran")
             Divider()

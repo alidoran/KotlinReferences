@@ -1,9 +1,11 @@
 package alidoran.android.compose.developer_android_samples
 
-import alidoran.android.compose.developer_android_samples.courses.CodeLabBasicLayoutActivity
-import alidoran.android.compose.developer_android_samples.courses.FirstCourseActivity
-import alidoran.android.compose.developer_android_samples.courses.FirstCourseAnimationActivity
-import alidoran.android.compose.developer_android_samples.courses.ScaffoldActivity
+import alidoran.android.compose.developer_android_samples.courses.c1.CodeLabBasicLayoutActivity
+import alidoran.android.compose.developer_android_samples.courses.c1.CounterComposeActivity
+import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseActivity
+import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseAnimationActivity
+import alidoran.android.compose.developer_android_samples.courses.c1.ScaffoldActivity
+import alidoran.android.compose.developer_android_samples.courses.c1.TaskListActivity
 import alidoran.android.compose.developer_android_samples.tutorial.FirstTillThreeActivity
 import alidoran.android.compose.developer_android_samples.tutorial.FourthActivity
 import android.os.Bundle
@@ -40,39 +42,36 @@ class DeveloperAndroidActivity : ComponentActivity() {
         ) {
             Button(onClick = {
                 startActivity(Intent(activity, FirstTillThreeActivity::class.java))
-            }) {
-                Text(text = "First till third tutorials")
-            }
+            }) { Text(text = "First till third tutorials") }
 
             Button(onClick = {
                 startActivity(Intent(activity, FourthActivity::class.java))
-            }) {
-                Text(text = "Fourth tutorial")
-            }
+            }) { Text(text = "Fourth tutorial") }
 
             Button(onClick = {
                 startActivity(Intent(activity, FirstCourseActivity::class.java))
-            }) {
-                Text(text = "First Course")
-            }
+            }) { Text(text = "First Course") }
 
             Button(onClick = {
                 startActivity(Intent(activity, FirstCourseAnimationActivity::class.java))
-            }) {
-                Text(text = "First Course animation Activity")
-            }
+            }) { Text(text = "First Course animation Activity") }
 
             Button(onClick = {
                 startActivity(Intent(activity, ScaffoldActivity::class.java))
-            }) {
-                Text(text = "Scaffold Activity")
-            }
+            }) { Text(text = "Scaffold Activity") }
 
             Button(onClick = {
                 startActivity(Intent(activity, CodeLabBasicLayoutActivity::class.java))
-            }) {
-                Text(text = "CodeLab basic Activity")
-            }
+            }) { Text(text = "CodeLab basic Activity") }
+
+            Button(onClick = {
+                startActivity(Intent(activity, CounterComposeActivity::class.java))
+            }) { Text(text = "Counter compose Activity") }
+
+            Button(onClick = {
+                startActivity(Intent(activity, TaskListActivity::class.java))
+            }) { Text(text = "TaskList Activity") }
+
         }
     }
 

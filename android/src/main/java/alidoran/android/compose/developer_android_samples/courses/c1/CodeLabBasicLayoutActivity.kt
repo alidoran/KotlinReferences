@@ -1,9 +1,8 @@
 @file:Suppress("SameParameterValue")
 
-package alidoran.android.compose.developer_android_samples.courses
+package alidoran.android.compose.developer_android_samples.courses.c1
 
 import alidoran.android.R
-import alidoran.android.compose.developer_android_samples.ComposePictureModel
 import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import alidoran.android.compose.ui.theme.Typography
 import android.os.Bundle
@@ -58,6 +57,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.commonlibrary.fake_endpoint.PictureModel
+import com.example.commonlibrary.fake_endpoint.generatePictureList
 
 
 class CodeLabBasicLayoutActivity : ComponentActivity() {
@@ -70,8 +71,8 @@ class CodeLabBasicLayoutActivity : ComponentActivity() {
 }
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
-    val listModel = generateComposePictureList(100)
+private fun HomeScreen(modifier: Modifier = Modifier) {
+    val listModel = generatePictureList(100)
     Column(
         modifier.verticalScroll(rememberScrollState())
     ) {
@@ -88,7 +89,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun HomeSection(
+private fun HomeSection(
     title: String,
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
@@ -193,7 +194,7 @@ private fun FavoriteCollectionCard(
 
 @Composable
 private fun AlignYourBodyRow(
-    composePictureList: List<ComposePictureModel>,
+    composePictureList: List<PictureModel>,
     modifier: Modifier = Modifier
 ) {
     LazyRow(
@@ -212,7 +213,7 @@ private fun AlignYourBodyRow(
 
 @Composable
 private fun FavoriteCollectionsGrid(
-    composePictureList: List<ComposePictureModel>,
+    composePictureList: List<PictureModel>,
     modifier: Modifier = Modifier
 ) {
     LazyHorizontalGrid(
@@ -230,19 +231,6 @@ private fun FavoriteCollectionsGrid(
             )
         }
     }
-}
-
-private fun generateComposePictureList(count: Int): List<ComposePictureModel> {
-    val messageList = ArrayList<ComposePictureModel>()
-    for (i in 1..count) {
-        messageList.add(
-            ComposePictureModel(
-                R.drawable.baseline_thumb_up_inverse_24dp,
-                "Title $i"
-            )
-        )
-    }
-    return messageList
 }
 
 @Composable
@@ -267,7 +255,7 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun MySootheAppPortrait() {
+private fun MySootheAppPortrait() {
     KotlinReferencesTheme {
         Scaffold(
             bottomBar = { SootheBottomNavigation() }
@@ -306,7 +294,7 @@ private fun SootheNavigationRail(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun MySootheAppLandscape() {
+private fun MySootheAppLandscape() {
     KotlinReferencesTheme {
         Surface(color = MaterialTheme.colorScheme.background) {
             Row {
@@ -318,14 +306,14 @@ fun MySootheAppLandscape() {
 }
 
 @Composable
-fun MySootheApp(isPortrait: Boolean) {
+private fun MySootheApp(isPortrait: Boolean) {
     if (isPortrait) MySootheAppPortrait()
     else MySootheAppLandscape()
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
 @Composable
-fun HomeSectionPreview() {
+private fun HomeSectionPreview() {
     KotlinReferencesTheme {
         MySootheApp(true)
     }

@@ -14,22 +14,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
-            android:name=".compose.developer_android_samples.courses.CodeLabBasicLayoutActivity"
+            android:name=".compose.developer_android_samples.courses.c2.DeepToLazyActivity"
+            android:exported="false"
+            android:label="@string/title_activity_deep_to_lazy"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.developer_android_samples.courses.c1.CustomAnnotationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_custom_annotation"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.developer_android_samples.courses.c1.TaskListActivity"
+            android:exported="false"
+            android:label="@string/title_activity_task_list"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.developer_android_samples.courses.c1.CounterComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_water_counter"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.developer_android_samples.courses.c1.CodeLabBasicLayoutActivity"
             android:exported="false"
             android:label="@string/title_activity_codelab_basic_layout"
             android:theme="@style/Theme.Android" />
         <activity
-            android:name=".compose.developer_android_samples.courses.ScaffoldActivity"
+            android:name=".compose.developer_android_samples.courses.c1.ScaffoldActivity"
             android:exported="false"
             android:label="@string/title_activity_scaffold"
             android:theme="@style/Theme.Android" />
         <activity
-            android:name=".compose.developer_android_samples.courses.FirstCourseAnimationActivity"
+            android:name=".compose.developer_android_samples.courses.c1.FirstCourseAnimationActivity"
             android:exported="false"
             android:label="@string/title_activity_first_course_animation"
             android:theme="@style/Theme.Android" />
         <activity
-            android:name=".compose.developer_android_samples.courses.FirstCourseActivity"
+            android:name=".compose.developer_android_samples.courses.c1.FirstCourseActivity"
             android:exported="false"
             android:label="@string/title_activity_first_cource"
             android:theme="@style/Theme.Android" />

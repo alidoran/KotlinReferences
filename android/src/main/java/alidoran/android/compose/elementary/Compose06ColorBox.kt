@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,25 +29,22 @@ class Compose06ColorBox : ComponentActivity() {
                         .fillMaxSize()
                 )
 
-                val color = remember {
-                    mutableStateOf(Color.Yellow)
-                }
+                var color by remember { mutableStateOf(Color.Yellow) }
                 ColorBox2(
                     Modifier
                         .weight(1f)
-                        .background(color.value)
-                        .fillMaxSize()){
-                            color.value = it
-                        }
+                        .background(color)
+                        .fillMaxSize()
+                ) {
+                    color = it
+                }
             }
         }
     }
 
     @Composable
     fun ColorBox1(modifier: Modifier = Modifier) {
-        val color = remember {
-            mutableStateOf(Color.Yellow)
-        }
+        val color = remember { mutableStateOf(Color.Yellow) }
 
         Box(modifier = modifier
             .background(color.value)

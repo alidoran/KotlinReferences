@@ -1,9 +1,7 @@
 @file:Suppress("SameParameterValue")
 
-package alidoran.android.compose.developer_android_samples.courses
+package alidoran.android.compose.developer_android_samples.courses.c1
 
-import alidoran.android.compose.developer_android_samples.ComposeMessageModel
-import alidoran.android.compose.developer_android_samples.generateComposeMessageList
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -24,6 +22,8 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import com.example.commonlibrary.fake_endpoint.ListModel
+import com.example.commonlibrary.fake_endpoint.generateMessageList
 
 class ScaffoldActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +40,7 @@ class ScaffoldActivity : ComponentActivity() {
 private fun ScaffoldLearn() {
     Scaffold(
         topBar = { TopAppbarSample(topAppBarText = "Top Doran Bar") },
-        content = { ContentSample(it, generateComposeMessageList()) },
+        content = { ContentSample(it, generateMessageList(100)) },
         bottomBar = { BottomAppbarSample(bottomAppBarText = "Bottom Ali Bar") }
     )
 }
@@ -70,7 +70,7 @@ private fun BottomAppbarSample(
 @Composable
 private fun ContentSample(
     contentPadding: PaddingValues = PaddingValues(),
-    composeList: List<ComposeMessageModel>
+    composeList: List<ListModel>
 ) {
     LazyColumn(
         Modifier
@@ -79,14 +79,14 @@ private fun ContentSample(
         contentPadding = contentPadding
     ) {
         items(composeList){
-            Text(text = it.author)
+            Text(text = it.title)
         }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun GreetingPreview() {
+private fun ContentSamplePreview() {
     KotlinReferencesTheme {
         ScaffoldLearn()
     }

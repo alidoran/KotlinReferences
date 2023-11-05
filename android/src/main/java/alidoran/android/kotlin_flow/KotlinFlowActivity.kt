@@ -192,7 +192,7 @@ class KotlinFlowActivity : AppCompatActivity() {
     }
 
     private suspend fun first() {
-        val a = FakeEndpoint.fakeIntRepeatRequest().first()
+        val a = FakeEndpoint.fakeIntRepeatRequest(3).first()
         Log.d("single", "single: $a")
     }
 

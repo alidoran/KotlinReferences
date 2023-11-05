@@ -8,7 +8,7 @@ android {
     compileSdk rootProject.compile_target_sdk
 
     defaultConfig {
-        minSdk 23
+        minSdk rootProject.compile_min_sdk
         targetSdk rootProject.compile_target_sdk
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"

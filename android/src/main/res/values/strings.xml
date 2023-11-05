@@ -122,4 +122,8 @@
     <string name="title_activity_scaffold">scaffoldActivity</string>
     <string name="title_activity_codelab_basic_layout">CodelabBasicLayoutActivity</string>
     <string name="search">Search</string>
+    <string name="title_activity_water_counter">WaterCounterActivity</string>
+    <string name="title_activity_task_list">TaskListActivity</string>
+    <string name="title_activity_custom_annotation">CustomAnnotationActivity</string>
+    <string name="title_activity_deep_to_lazy">DeepToLazyActivity</string>
 </resources>

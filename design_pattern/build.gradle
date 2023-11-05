@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "alidoran.design_pattern"
-        minSdk 21
+        minSdk rootProject.compile_min_sdk
         targetSdk rootProject.compile_target_sdk
         versionCode 1
         versionName "1.0"

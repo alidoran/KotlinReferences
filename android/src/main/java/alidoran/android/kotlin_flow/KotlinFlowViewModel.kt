@@ -57,13 +57,13 @@ class KotlinFlowViewModel : ViewModel() {
     }
 
     suspend fun transform(): Flow<String> {
-        return fakeIntRepeatRequest().transform<Int, String> {
+        return fakeIntRepeatRequest(3).transform<Int, String> {
             emit(it.toString())
         }
     }
 
     suspend fun transformWhile() {
-        fakeIntRepeatRequest().transformWhile<Int, String> {
+        fakeIntRepeatRequest(3).transformWhile<Int, String> {
             //Do something and return true
             val a = it + 1 //save a on BG
             true
@@ -71,7 +71,7 @@ class KotlinFlowViewModel : ViewModel() {
     }
 
     suspend fun multiEmit(){
-        fakeIntRepeatRequest().collect{
+        fakeIntRepeatRequest(3).collect{
 
         }
     }

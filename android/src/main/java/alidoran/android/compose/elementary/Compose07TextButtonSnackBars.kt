@@ -46,9 +46,7 @@ class Compose07TextButtonSnackBars : ComponentActivity() {
     @Composable
     fun ScaffoldShow() {
         val scaffoldState = rememberScaffoldState()
-        var textFieldState by remember {
-            mutableStateOf("")
-        }
+        var textFieldState by remember { mutableStateOf("") }
         val scope = rememberCoroutineScope()
 
         Scaffold(
@@ -65,7 +63,7 @@ class Compose07TextButtonSnackBars : ComponentActivity() {
                 TextField(value = textFieldState,
                     onValueChange = { textFieldState = it },
                     modifier = Modifier.fillMaxWidth(),
-                    label = { Text(text = "myLable")}
+                    label = { Text(text = "myLable") }
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Button(onClick = {

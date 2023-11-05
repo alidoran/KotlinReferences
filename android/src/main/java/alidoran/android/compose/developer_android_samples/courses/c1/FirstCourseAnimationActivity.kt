@@ -1,4 +1,4 @@
-package alidoran.android.compose.developer_android_samples.courses
+package alidoran.android.compose.developer_android_samples.courses.c1
 
 import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.os.Bundle

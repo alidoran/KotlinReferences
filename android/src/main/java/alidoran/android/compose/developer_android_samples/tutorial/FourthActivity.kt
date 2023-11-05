@@ -2,8 +2,6 @@ package alidoran.android.compose.developer_android_samples.tutorial
 
 import android.os.Bundle
 import alidoran.android.R
-import alidoran.android.compose.developer_android_samples.ComposeMessageModel
-import alidoran.android.compose.developer_android_samples.generateComposeMessageList
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -33,6 +31,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.foundation.layout.fillMaxHeight
+import com.example.commonlibrary.fake_endpoint.ListModel
+import com.example.commonlibrary.fake_endpoint.generateMessageList
 
 class FourthActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +44,7 @@ class FourthActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun MessageCardSimple(msg: ComposeMessageModel) {
+    private fun MessageCardSimple(msg: ListModel) {
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
                 painter = painterResource(R.drawable.baseline_thumb_up_inverse_24dp),
@@ -63,7 +63,7 @@ class FourthActivity : ComponentActivity() {
             // We toggle the isExpanded variable when we click on this Column
             Column(modifier = Modifier.clickable { isExpanded = !isExpanded }) {
                 Text(
-                    text = msg.author,
+                    text = msg.title,
                     color = MaterialTheme.colorScheme.secondary,
                     style = MaterialTheme.typography.titleSmall
                 )
@@ -87,16 +87,16 @@ class FourthActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ConversationSimple(composeMessageModels: List<ComposeMessageModel>) {
+    private fun ConversationSimple(ListModels: List<ListModel>) {
         LazyColumn {
-            items(composeMessageModels) { message ->
+            items(ListModels) { message ->
                 MessageCardSimple(message)
             }
         }
     }
 
     @Composable
-    private fun MessageCardAnimated(msg: ComposeMessageModel) {
+    private fun MessageCardAnimated(msg: ListModel) {
         Row(modifier = Modifier.padding(all = 8.dp)) {
             Image(
                 painter = painterResource(R.drawable.baseline_thumb_up_inverse_24dp),
@@ -115,7 +115,7 @@ class FourthActivity : ComponentActivity() {
             // We toggle the isExpanded variable when we click on this Column
             Column(modifier = Modifier.clickable { isExpanded = !isExpanded }) {
                 Text(
-                    text = msg.author,
+                    text = msg.title,
                     color = MaterialTheme.colorScheme.secondary,
                     style = MaterialTheme.typography.titleSmall
                 )
@@ -140,9 +140,9 @@ class FourthActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun ConversationAnimated(composeMessageModels: List<ComposeMessageModel>) {
+    private fun ConversationAnimated(ListModels: List<ListModel>) {
         LazyColumn {
-            items(composeMessageModels) { message ->
+            items(ListModels) { message ->
                 MessageCardAnimated(message)
             }
         }
@@ -155,12 +155,12 @@ class FourthActivity : ComponentActivity() {
                 modifier = Modifier.fillMaxHeight(0.5f)
             ){
                 Text(text = "Simple List")
-                ConversationSimple(generateComposeMessageList())
+                ConversationSimple(generateMessageList(100))
             }
             Column(
             ){
                 Text(text = "ConversationAnimated")
-                ConversationAnimated(generateComposeMessageList())
+                ConversationAnimated(generateMessageList(100))
             }
         }
     }

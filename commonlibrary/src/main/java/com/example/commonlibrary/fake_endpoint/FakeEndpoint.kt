@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.commonlibrary.fake_endpoint
 
 import kotlinx.coroutines.MainScope
@@ -27,15 +29,26 @@ object FakeEndpoint {
         return flow { emit(listOf("1", "2", "3", "4")) }
     }
 
-    suspend fun fakeIntRepeatRequest(): Flow<Int> {
+    suspend fun fakeIntRepeatRequest(count: Int): Flow<Int> {
+        var value = 0
         delay(TimeUnit.SECONDS.toMillis(3))
         return flow {
-            delay(TimeUnit.SECONDS.toMillis(3))
-            emit(1)
-            delay(TimeUnit.SECONDS.toMillis(3))
-            emit(2)
-            delay(TimeUnit.SECONDS.toMillis(3))
-            emit(3)
+            repeat(count) {
+                delay(TimeUnit.SECONDS.toMillis(3))
+                emit(value++)
+            }
+        }
+    }
+
+    suspend fun fakeChecklistRepeatRequest(count: Int): Flow<CheckListModel> {
+        var value = 0
+        delay(TimeUnit.SECONDS.toMillis(3))
+        return flow {
+            repeat(count) {
+                delay(TimeUnit.SECONDS.toMillis(3))
+                value++
+                emit(CheckListModel(value, "Title $value", value % 2 == 0))
+            }
         }
     }
 
@@ -82,7 +95,7 @@ object FakeEndpoint {
         return time
     }
 
-    fun longProcess():Int{
+    fun longProcess(): Int {
         var a = 3
         repeat(999999999) {
             a++
