@@ -10,10 +10,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import alidoran.android.compose.developer_android_samples.courses.c2.ui.theme.KotlinReferencesTheme
+import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -21,6 +21,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.getValue
@@ -52,7 +53,7 @@ class DeepToLazyActivity : ComponentActivity() {
 }
 
 @Composable
-fun DeepToLazy(modifier: Modifier = Modifier) {
+private fun DeepToLazy(modifier: Modifier = Modifier) {
     val state = rememberLazyListState()
     val coroutineScope = rememberCoroutineScope()
     var text by remember { mutableStateOf("Information Box") }
@@ -86,14 +87,14 @@ fun DeepToLazy(modifier: Modifier = Modifier) {
                     text = "The item info is: ${state.layoutInfo.visibleItemsInfo}"
                 },
                 onScrollItemThree = { coroutineScope.launch { state.scrollToItem(3) } },
-                onAnimatedScrollItemThree = {coroutineScope.launch { state.animateScrollToItem(3) }}
+                onAnimatedScrollItemThree = { coroutineScope.launch { state.animateScrollToItem(3) } }
             )
         }
     )
 }
 
 @Composable
-fun LazyDeep(state: LazyListState, modifier: Modifier = Modifier) {
+private fun LazyDeep(state: LazyListState, modifier: Modifier = Modifier) {
     val list = generateMessageList(100)
     LazyColumn(
         modifier = modifier,
@@ -106,12 +107,12 @@ fun LazyDeep(state: LazyListState, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ShowInformation(text: () -> String, modifier: Modifier = Modifier) {
+private fun ShowInformation(text: () -> String, modifier: Modifier = Modifier) {
     Text(modifier = modifier.padding(8.dp), text = text.invoke(), textAlign = TextAlign.Center)
 }
 
 @Composable
-fun ButtonsAct(
+private fun ButtonsAct(
     onFirstRow: () -> Unit,
     onFirstVisibleIcon: () -> Unit,
     onVisibleItemInfo: () -> Unit,
@@ -120,28 +121,24 @@ fun ButtonsAct(
     onAnimatedScrollItemThree: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(8.dp)
+    val state = rememberScrollState()
+    Row(
+        modifier = Modifier.horizontalScroll(state),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            Button(onClick = onFirstRow) { Text(text = "First row") }
-            Button(onClick = onFirstVisibleIcon) { Text(text = "First Visible Icon") }
-            Button(onClick = onVisibleItemInfo) { Text(text = "Item info") }
-        }
-        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            Button(onClick = onTotalItemCount) { Text(text = "Item count") }
-            Button(onClick = onScrollItemThree) { Text(text = "Jump to 3") }
-            Button(onClick = onAnimatedScrollItemThree) { Text(text = "Jump to 3 A") }
-        }
+        Button(onClick = onFirstRow) { Text(text = "First row") }
+        Button(onClick = onFirstVisibleIcon) { Text(text = "First Visible Icon") }
+        Button(onClick = onVisibleItemInfo) { Text(text = "Item info") }
+        Button(onClick = onTotalItemCount) { Text(text = "Item count") }
+        Button(onClick = onScrollItemThree) { Text(text = "Jump to 3") }
+        Button(onClick = onAnimatedScrollItemThree) { Text(text = "Jump to 3 A") }
     }
 }
 
 
 @Preview(showBackground = true)
 @Composable
-fun LazyDeepPreview() {
+private fun LazyDeepPreview() {
     KotlinReferencesTheme {
         DeepToLazy()
     }

@@ -6,6 +6,7 @@ import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourse
 import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseAnimationActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.ScaffoldActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.TaskListActivity
+import alidoran.android.compose.developer_android_samples.courses.c2.DeepToLazyActivity
 import alidoran.android.compose.developer_android_samples.tutorial.FirstTillThreeActivity
 import alidoran.android.compose.developer_android_samples.tutorial.FourthActivity
 import android.os.Bundle
@@ -72,6 +73,10 @@ class DeveloperAndroidActivity : ComponentActivity() {
                 startActivity(Intent(activity, TaskListActivity::class.java))
             }) { Text(text = "TaskList Activity") }
 
+
+            Button(onClick = {
+                startActivity(Intent(activity, DeepToLazyActivity::class.java))
+            }) { Text(text = "DeepToLazy Activity") }
         }
     }
 

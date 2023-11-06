@@ -14,6 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".compose.developer_android_samples.courses.c2.DeepToGridActivity"
+            android:exported="false"
+            android:label="@string/title_activity_deep_to_grid"
+            android:theme="@style/Theme.Android" />
+        <activity
             android:name=".compose.developer_android_samples.courses.c2.DeepToLazyActivity"
             android:exported="false"
             android:label="@string/title_activity_deep_to_lazy"
