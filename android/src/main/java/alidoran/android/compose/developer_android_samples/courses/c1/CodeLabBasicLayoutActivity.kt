@@ -46,7 +46,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -119,10 +118,6 @@ private fun SearchBar(
                 contentDescription = null
             )
         },
-        colors = TextFieldDefaults.colors(
-            unfocusedContainerColor = MaterialTheme.colorScheme.surface,
-            focusedContainerColor = MaterialTheme.colorScheme.surface
-        ),
         placeholder = {
             Text(stringResource(R.string.search))
         },

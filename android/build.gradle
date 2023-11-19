@@ -33,8 +33,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '17'
-
-
+        allWarningsAsErrors = false
+        freeCompilerArgs += [
+                '-opt-in=androidx.compose.material3.ExperimentalMaterial3Api'
+        ]
     }
 
     packagingOptions {
@@ -54,8 +56,9 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.6"
+        kotlinCompilerExtensionVersion = "1.5.4"
     }
+
     namespace 'alidoran.android'
 
     kotlinOptions {
@@ -73,31 +76,21 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:$support_v4"
     //firebase
     implementation platform("com.google.firebase:firebase-bom:$firebase_bom")
-    implementation "com.google.firebase:firebase-analytics-ktx:$analytics_ktx"
-    implementation "com.google.firebase:firebase-messaging:$firebase_messaging"
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation "com.google.firebase:firebase-messaging"
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
+    implementation "androidx.navigation:navigation-compose:$navigation"
+
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
-    implementation "androidx.compose.ui:ui:$compose"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose"
     implementation "androidx.activity:activity-compose:$activity_compose"
-    implementation "androidx.compose.material:material:$compose_material"
+
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.work:work-runtime-ktx:2.8.1'
-    implementation 'androidx.compose.ui:ui-graphics'
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
-    implementation platform('androidx.compose:compose-bom:2023.03.00')
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
     //test
     testImplementation "androidx.test.ext:junit-ktx:$junitktx"
     implementation "androidx.test:core-ktx:$test_core"
@@ -110,7 +103,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
     //paging
-    implementation "androidx.paging:paging-runtime-ktx:3.1.1"
+    implementation "androidx.paging:paging-runtime-ktx:$paging"
     implementation "androidx.recyclerview:recyclerview:$recyclerview"
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit2"
@@ -125,21 +118,17 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-process:$lifecycle"
     //endregion
     //compose
-    implementation "androidx.compose.material3:material3:$material3"
-    implementation "androidx.compose.material3:material3-window-size-class:$material3"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$junit4"
+    implementation platform('androidx.compose:compose-bom:2023.03.00')
     androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose"
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation "androidx.compose.material3:material3"
+    implementation "androidx.compose.material3:material3-window-size-class"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+    debugImplementation "androidx.compose.ui:ui-tooling"
+    debugImplementation "androidx.compose.ui:ui-test-manifest"
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    implementation "androidx.compose.material:material"
     //lottie player
     implementation("com.airbnb.android:lottie:$lottie") {
         exclude group: "com.android.support"

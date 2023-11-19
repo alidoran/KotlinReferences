@@ -43,9 +43,9 @@ android {
         viewBinding true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.6"
-    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion = "1.8.20"
+//    }
 
     testOptions {
         unitTests.all {
@@ -64,8 +64,6 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
     implementation "com.google.android.material:material:$material"
     implementation "androidx.work:work-runtime-ktx:$runtime_ktx"
-//    implementation "androidx.constraintlayout:constraintlayout-core:1.0.4"
-//    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
 
     implementation "com.google.android.gms:play-services-maps:$services_maps"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

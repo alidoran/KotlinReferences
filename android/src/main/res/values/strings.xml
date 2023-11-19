@@ -127,4 +127,13 @@
     <string name="title_activity_custom_annotation">CustomAnnotationActivity</string>
     <string name="title_activity_deep_to_lazy">DeepToLazyActivity</string>
     <string name="title_activity_deep_to_grid">DeepToGridActivity</string>
+    <string name="title_activity_m3_themes">M3ThemesActivity</string>
+    <string name="location">Location</string>
+    <string name="permission">Permission</string>
+    <string name="location_permission">Location Permission</string>
+    <string name="request_fine_permission">Request fine permission</string>
+    <string name="request_coarse_permission">Request coarse permission</string>
+    <string name="get_permission_status">Get permission status</string>
+    <string name="get_current_location">Get current location</string>
+    <string name="title_activity_advanced_compose">AdvancedComposeActivity</string>
 </resources>

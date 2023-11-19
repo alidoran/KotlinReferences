@@ -11,21 +11,20 @@ buildscript {
         reflect = '1.8.21'
         appcompat = '1.6.1'
         constraintlayout = '2.1.4'
-        material = '1.9.0'
+        material = '1.10.0'
         compose = '1.5.0'
         lifecycle = '2.6.1'
         navigation = '2.7.5'
         lifecycle_extensions = '2.2.0'
         legacy_support = '1.0.0'
         services_maps= '18.1.0'
-        coroutines = '1.6.3'
+        coroutines = '1.7.3'
         apollo = '3.3.2'
         play_services_auth = '20.5.0'
         lottie = "5.2.0"
         rxjava = '2.2.21'
         rxandroid = '2.1.1'
         pendo = '2.17.0.4509'
-        kotlin_android = '1.8.10'
         firebase_bom = '30.3.1'
         constraints = '2.1.4'
         vintage_engine = '5.9.0'
@@ -34,8 +33,8 @@ buildscript {
         compose = '1.4.3'
         compose_material = '1.4.3'
         activity_compose = '1.7.2'
-        recyclerview = '1.3.0'
-        material3 = '1.1.1'
+        recyclerview = '1.3.2'
+        material3 = '1.1.2'
         google_services = '4.3.14'
         lifecycle_viewmodel = '1.0.0-alpha03'
         //Test
@@ -68,6 +67,7 @@ buildscript {
 
         //UI
         glide = '4.14.2'
+        paging = '3.2.1'
 
         //FireBase
         firebase_messaging = '23.1.2'
@@ -76,12 +76,13 @@ buildscript {
         jackson = '2.13.3'
 
         //DB
-        room = '2.5.2'
-        kotlin_version = '1.9.10'
+        room = '2.6.0'
+        kotlin_version = '1.9.20'
+        agp_version = '8.1.3'
     }
     dependencies {
         classpath "com.google.gms:google-services:$google_services"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.6.0"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation"
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'
     }
     repositories {
@@ -90,9 +91,9 @@ buildscript {
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 plugins {
-    id 'com.android.application' version '8.1.1' apply false
+    id 'com.android.application' version '8.1.3' apply false
     id 'com.android.library' version '8.1.1' apply false
-    id 'org.jetbrains.kotlin.android' version "$kotlin_android" apply false
+    id 'org.jetbrains.kotlin.android' version "$kotlin_version" apply false
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
 }
 

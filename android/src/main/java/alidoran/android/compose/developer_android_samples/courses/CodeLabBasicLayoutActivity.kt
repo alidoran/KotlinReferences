@@ -47,7 +47,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -70,7 +69,7 @@ class CodeLabBasicLayoutActivity : ComponentActivity() {
 }
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
+private fun HomeScreen(modifier: Modifier = Modifier) {
     val listModel = generateComposePictureList(100)
     Column(
         modifier.verticalScroll(rememberScrollState())
@@ -88,7 +87,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun HomeSection(
+private fun HomeSection(
     title: String,
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
@@ -118,10 +117,6 @@ private fun SearchBar(
                 contentDescription = null
             )
         },
-        colors = TextFieldDefaults.colors(
-            unfocusedContainerColor = MaterialTheme.colorScheme.surface,
-            focusedContainerColor = MaterialTheme.colorScheme.surface
-        ),
         placeholder = {
             Text(stringResource(R.string.search))
         },
@@ -267,7 +262,7 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun MySootheAppPortrait() {
+private fun MySootheAppPortrait() {
     KotlinReferencesTheme {
         Scaffold(
             bottomBar = { SootheBottomNavigation() }
@@ -306,7 +301,7 @@ private fun SootheNavigationRail(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun MySootheAppLandscape() {
+private fun MySootheAppLandscape() {
     KotlinReferencesTheme {
         Surface(color = MaterialTheme.colorScheme.background) {
             Row {
@@ -318,14 +313,14 @@ fun MySootheAppLandscape() {
 }
 
 @Composable
-fun MySootheApp(isPortrait: Boolean) {
+private fun MySootheApp(isPortrait: Boolean) {
     if (isPortrait) MySootheAppPortrait()
     else MySootheAppLandscape()
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
 @Composable
-fun HomeSectionPreview() {
+private fun HomeSectionPreview() {
     KotlinReferencesTheme {
         MySootheApp(true)
     }

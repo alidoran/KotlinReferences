@@ -1,5 +1,6 @@
 package alidoran.android.compose.developer_android_samples
 
+import alidoran.android.compose.developer_android_samples.courses.advance.SimpleNavigation
 import alidoran.android.compose.developer_android_samples.courses.c1.CodeLabBasicLayoutActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.CounterComposeActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseActivity
@@ -73,10 +74,13 @@ class DeveloperAndroidActivity : ComponentActivity() {
                 startActivity(Intent(activity, TaskListActivity::class.java))
             }) { Text(text = "TaskList Activity") }
 
-
             Button(onClick = {
                 startActivity(Intent(activity, DeepToLazyActivity::class.java))
             }) { Text(text = "DeepToLazy Activity") }
+
+            Button(onClick = {
+                startActivity(Intent(activity, SimpleNavigation::class.java))
+            }) { Text(text = "Advanced Activity") }
         }
     }
 

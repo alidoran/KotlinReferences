@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".permissions.PermissionsActivity">
 
     <Button
@@ -11,5 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/overlay_permission" />
+
+    <Button
+        android:id="@+id/btn_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location_permission" />
 
 </LinearLayout>

@@ -12,11 +12,13 @@ import alidoran.android.dialog.DialogActivity
 import alidoran.android.fragment.FragmentActivity
 import alidoran.android.kotlin_flow.KotlinFlowActivity
 import alidoran.android.lifecycle.LifeCycleActivity
+import alidoran.android.location.LocationActivity
 import alidoran.android.mvi.basic_mvi.view.MviActivity
 import alidoran.android.mvp.MvpActivity
 import alidoran.android.mvvm_livedata.view.MvvmMainActivity
 import alidoran.android.navigation_safe_args.NavigationActivity
 import alidoran.android.paging_view.PagingRecyclerActivity
+import alidoran.android.permissions.PermissionsActivity
 import alidoran.android.recycler_view.RecyclerActivity
 import alidoran.android.room.activity.RoomActivity
 import alidoran.android.save_state_handle.SavedStateHandleActivity
@@ -158,6 +160,16 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnCompose.setOnClickListener {
             val intent = Intent(this, ComposeLearnActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnLocation.setOnClickListener {
+            val intent = Intent(this, LocationActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnPermission.setOnClickListener {
+            val intent = Intent(this, PermissionsActivity::class.java)
             startActivity(intent)
         }
     }
