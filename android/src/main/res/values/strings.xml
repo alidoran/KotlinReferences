@@ -136,4 +136,8 @@
     <string name="get_permission_status">Get permission status</string>
     <string name="get_current_location">Get current location</string>
     <string name="title_activity_advanced_compose">AdvancedComposeActivity</string>
+    <string name="title_activity_compose_vmactivity">ComposeVMActivity</string>
+    <string name="biometric_login">Biometric Login</string>
+    <string name="location_setting">Location setting</string>
+    <string name="phone_location_setting">Phone location Setting</string>
 </resources>

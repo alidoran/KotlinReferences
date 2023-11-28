@@ -14,6 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".biometric.BiometricActivity"
+            android:exported="false" />
+        <activity
+            android:name=".compose.advance.ComposeAdvanceActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_vmactivity"
+            android:theme="@style/Theme.Android" />
+        <activity
             android:name=".location.LocationActivity"
             android:exported="false" />
         <activity
@@ -41,19 +49,16 @@
             android:exported="false"
             android:label="@string/title_activity_task_list"
             android:theme="@style/Theme.Android" />
-
         <activity
             android:name=".compose.developer_android_samples.courses.c1.CounterComposeActivity"
             android:exported="false"
             android:label="@string/title_activity_water_counter"
             android:theme="@style/Theme.Android" />
-
         <activity
             android:name=".compose.developer_android_samples.courses.advance.SimpleNavigation"
             android:exported="false"
             android:label="@string/title_activity_advanced_compose"
             android:theme="@style/Theme.Android" />
-
         <activity
             android:name=".compose.developer_android_samples.courses.c1.CodeLabBasicLayoutActivity"
             android:exported="false"

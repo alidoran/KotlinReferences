@@ -31,14 +31,14 @@ class SimpleNavigation : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
-                ) { AdvanceCompose() }
+                ) { NavigationCompose() }
             }
         }
     }
 }
 
 @Composable
-private fun AdvanceCompose() {
+private fun NavigationCompose() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = ChooseScreen.FistScreen.name) {
         composable(ChooseScreen.FistScreen.name) {
@@ -53,7 +53,7 @@ private fun AdvanceCompose() {
 @Preview(showBackground = true)
 @Composable
 private fun AdvanceComposePreview() {
-    KotlinReferencesTheme { AdvanceCompose() }
+    KotlinReferencesTheme { NavigationCompose() }
 }
 
 private enum class ChooseScreen {

@@ -5,11 +5,13 @@ import alidoran.android.activity_result_launcher.ResultLauncherSourceActivity
 import alidoran.android.add_dynamic_view.DynamicViewActivity
 import alidoran.android.binding.DataBindingActivity
 import alidoran.android.binding.ViewBindingActivity
+import alidoran.android.biometric.BiometricActivity
 import alidoran.android.bottom_sheet.BottomSheetActivity
 import alidoran.android.compose.ComposeLearnActivity
 import alidoran.android.databinding.ActivityAndroidBinding
 import alidoran.android.dialog.DialogActivity
 import alidoran.android.fragment.FragmentActivity
+import alidoran.android.intents.IntentsActivity
 import alidoran.android.kotlin_flow.KotlinFlowActivity
 import alidoran.android.lifecycle.LifeCycleActivity
 import alidoran.android.location.LocationActivity
@@ -172,5 +174,16 @@ class AndroidActivity : AppCompatActivity() {
             val intent = Intent(this, PermissionsActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnBiometric.setOnClickListener {
+            val intent = Intent(this, BiometricActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnIntents.setOnClickListener {
+            val intent = Intent(this, IntentsActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

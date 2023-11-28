@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import alidoran.android.databinding.ActivityIntentsBinding
 import android.content.Intent
+import android.provider.Settings
 
+@Suppress("SameParameterValue")
 class IntentsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityIntentsBinding
@@ -21,9 +23,11 @@ class IntentsActivity : AppCompatActivity() {
         btnOsUpdate.setOnClickListener{
             startActivity(Intent("android.settings.SYSTEM_UPDATE_SETTINGS"))
         }
-
         btnSendEmail.setOnClickListener {
             sendEMail("Hello", "alidoran@gmail.com", "Hello World")
+        }
+        btnOpenPhoneLocationSetting.setOnClickListener{
+            startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
         }
     }
 
@@ -36,4 +40,5 @@ class IntentsActivity : AppCompatActivity() {
         intent.putExtra(Intent.EXTRA_TEXT, email)
         startActivity(intent)
     }
+
 }

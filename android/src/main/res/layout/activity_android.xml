@@ -178,5 +178,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/permission"/>
 
+            <Button
+                android:id="@+id/btn_biometric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/biometric_login"/>
+
         </LinearLayout>
     </ScrollView>

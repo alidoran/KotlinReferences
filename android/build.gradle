@@ -91,6 +91,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.work:work-runtime-ktx:2.8.1'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'androidx.biometric:biometric-ktx:1.1.0'
+    runtimeOnly("androidx.biometric:biometric-ktx:1.2.0-alpha05")
     //test
     testImplementation "androidx.test.ext:junit-ktx:$junitktx"
     implementation "androidx.test:core-ktx:$test_core"
@@ -116,19 +118,22 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-process:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle"
     //endregion
     //compose
     implementation platform('androidx.compose:compose-bom:2023.03.00')
-    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
     implementation 'androidx.compose.ui:ui-graphics'
     implementation "androidx.compose.material3:material3"
     implementation "androidx.compose.material3:material3-window-size-class"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
-    debugImplementation "androidx.compose.ui:ui-tooling"
-    debugImplementation "androidx.compose.ui:ui-test-manifest"
     implementation "androidx.compose.ui:ui"
     implementation "androidx.compose.ui:ui-tooling-preview"
     implementation "androidx.compose.material:material"
+    debugImplementation "androidx.compose.ui:ui-tooling"
+    debugImplementation "androidx.compose.ui:ui-test-manifest"
+    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+
+
     //lottie player
     implementation("com.airbnb.android:lottie:$lottie") {
         exclude group: "com.android.support"
