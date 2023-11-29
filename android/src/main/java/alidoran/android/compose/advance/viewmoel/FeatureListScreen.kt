@@ -31,6 +31,9 @@ fun FeatureListScreen(navigation: NavController) {
             Button(onClick = {navigation.navigate(ChooseScreen.StatefulComposable.name) }) {
                 Text(text = "StatefulComposable")
             }
+            Button(onClick = {navigation.navigate(ChooseScreen.DataSourceUserListScreen.name) }) {
+                Text(text = "DataSource")
+            }
         }
     }
 }
