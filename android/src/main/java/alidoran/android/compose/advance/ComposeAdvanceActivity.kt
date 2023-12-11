@@ -14,6 +14,11 @@ import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -47,21 +52,36 @@ class ComposeAdvanceActivity : ComponentActivity() {
 private fun NavigationCompose() {
     val navController = rememberNavController()
     val dataSource: UserDataSource = InMemoryUserDataSource()
-    NavHost(navController = navController, startDestination = ChooseScreen.FeatureListScreen.name) {
+    NavHost(
+        navController = navController,
+        startDestination = ChooseScreen.FeatureListScreen.name,
+        enterTransition = { EnterTransition.None },
+        exitTransition = { ExitTransition.None },
+        popEnterTransition = { EnterTransition.None },
+        popExitTransition = { ExitTransition.None },
+    ) {
         composable(ChooseScreen.FeatureListScreen.name) {
             FeatureListScreen(navigation = navController)
         }
         composable(ChooseScreen.ViewModelHoistingScreen.name) {
             ViewModelHoistingScreen(ComposeViewModel(), navigation = navController)
         }
-        composable(ChooseScreen.CoroutinesInCompose.name) {
-            CoroutinesOnCompose()
+        composable(ChooseScreen.CoroutinesInComposeScreen.name) {
+            CoroutinesOnComposeScreen()
         }
-        composable(ChooseScreen.StatefulComposable.name) {
+        composable(ChooseScreen.StatefulComposableScreen.name) {
             OuterComposableScreen(OuterViewModel(), InnerViewModel())
         }
         composable(ChooseScreen.DataSourceUserListScreen.name) {
             UserListDataSourceScreen(dataSource)
+        }
+        composable(ChooseScreen.PreviewsScreen.name) {
+            ComposeForPreviewScreen()
+        }
+        composable(
+            route = ChooseScreen.AnimationScreen.name,
+        ) {
+            AnimationComposeScreen(navController)
         }
     }
 }
@@ -69,7 +89,9 @@ private fun NavigationCompose() {
 enum class ChooseScreen {
     FeatureListScreen,
     ViewModelHoistingScreen,
-    CoroutinesInCompose,
-    StatefulComposable,
-    DataSourceUserListScreen
+    CoroutinesInComposeScreen,
+    StatefulComposableScreen,
+    DataSourceUserListScreen,
+    PreviewsScreen,
+    AnimationScreen,
 }

@@ -7,7 +7,7 @@ data class ComposePictureModel(@DrawableRes val image:Int, val title: String)
 
 fun generateComposeMessageList(): List<ComposeMessageModel> {
     val messageList = ArrayList<ComposeMessageModel>()
-    for (i in 1..100) {
+    for (i in 1..10) {
         messageList.add(
             ComposeMessageModel(
                 "FirstLine $i",

@@ -12,9 +12,9 @@
 
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>
-    <color name="md_red_100">#FFCDD2</color>
+    <color name="md_red_100">#FEFDFE</color>
     <color name="md_red_200">#EF9A9A</color>
-    <color name="md_red_300">#E57373</color>
+    <color name="md_red_300">#A2A0A2</color>
     <color name="md_red_400">#EF5350</color>
     <color name="md_red_500">#F44336</color>
     <color name="md_red_600">#E53935</color>

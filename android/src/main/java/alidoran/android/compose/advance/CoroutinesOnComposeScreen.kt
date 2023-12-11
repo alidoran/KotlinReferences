@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 @Composable
-fun CoroutinesOnCompose(modifier: Modifier = Modifier) {
+fun CoroutinesOnComposeScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
