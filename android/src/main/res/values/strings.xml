@@ -140,4 +140,7 @@
     <string name="biometric_login">Biometric Login</string>
     <string name="location_setting">Location setting</string>
     <string name="phone_location_setting">Phone location Setting</string>
+    <string name="telephony_manager">Telephony Manager</string>
+    <string name="net_state">Net state: </string>
+    <string name="internet">Internet</string>
 </resources>

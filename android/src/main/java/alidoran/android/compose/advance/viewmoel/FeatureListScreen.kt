@@ -40,6 +40,10 @@ fun FeatureListScreen(navigation: NavController) {
             Button(onClick = {navigation.navigate(ChooseScreen.AnimationScreen.name) }) {
                 Text(text = "AnimationScreen")
             }
+            Button(onClick = {navigation.navigate(ChooseScreen.NavigationScreen.name)
+            }) {
+                Text(text = "NavigationScreen")
+            }
         }
     }
 }

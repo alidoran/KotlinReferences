@@ -22,5 +22,4 @@ class MvvmMainActivity : AppCompatActivity() {
             mvvmModel -> binding.model = mvvmModel
         }
     }
-
 }

@@ -19,6 +19,7 @@ import alidoran.android.mvi.basic_mvi.view.MviActivity
 import alidoran.android.mvp.MvpActivity
 import alidoran.android.mvvm_livedata.view.MvvmMainActivity
 import alidoran.android.navigation_safe_args.NavigationActivity
+import alidoran.android.network.InternetActivity
 import alidoran.android.paging_view.PagingRecyclerActivity
 import alidoran.android.permissions.PermissionsActivity
 import alidoran.android.recycler_view.RecyclerActivity
@@ -185,5 +186,9 @@ class AndroidActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.btnInternet.setOnClickListener {
+            val intent = Intent(this, InternetActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

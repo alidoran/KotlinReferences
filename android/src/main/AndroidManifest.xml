@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".network.InternetActivity"
+            android:exported="false" />
+        <activity
             android:name=".biometric.BiometricActivity"
             android:exported="false" />
         <activity
