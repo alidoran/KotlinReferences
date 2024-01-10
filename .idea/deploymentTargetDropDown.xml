@@ -2,9 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="ComponentDefaultPreview">
-        <State />
-      </entry>
       <entry key="Projects.KotlinReferences.android">
         <State>
           <targetSelectedWithDropDown>
@@ -20,6 +17,12 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2023-12-14T08:46:26.580820800Z" />
         </State>
+      </entry>
+      <entry key="Projects.KotlinReferences.android_test">
+        <State />
+      </entry>
+      <entry key="android_test_junit_4">
+        <State />
       </entry>
     </value>
   </component>

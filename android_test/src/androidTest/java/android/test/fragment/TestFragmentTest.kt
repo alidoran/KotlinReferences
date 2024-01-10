@@ -1,6 +1,6 @@
 package android.test.fragment
 
-import android.test.fragment_test.MyFragment
+import android.test.fragment_test.TestFragment
 import android.test.R
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -16,8 +16,8 @@ import org.junit.runner.RunWith
 
 
 @RunWith(AndroidJUnit4::class)
-internal class MyFragmentTest: TestCase(){
-    private lateinit var scenario:FragmentScenario<MyFragment>
+internal class TestFragmentTest: TestCase(){
+    private lateinit var scenario:FragmentScenario<TestFragment>
 
     @Before
     fun setup(){

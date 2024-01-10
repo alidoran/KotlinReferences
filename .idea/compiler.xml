@@ -7,6 +7,7 @@
       <module name="design_pattern" target="17" />
       <module name="fundamental" target="17" />
       <module name="kotlin_base" target="17" />
+      <module name="KotlinReferences.android_test_junit_4" target="17" />
       <module name="KotlinReferences.commonclasses" target="17" />
       <module name="KotlinReferences.commonlibrary" target="17" />
       <module name="Projects.KotlinReferences.android" target="17" />

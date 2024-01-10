@@ -53,7 +53,4 @@ class ExecutionConditionTest {
     fun testEnabledIfEnvironmentVariable(){
         println("Enabled If Environment Variable")
     }
-
-
-
 }

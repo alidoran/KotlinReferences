@@ -18,9 +18,7 @@ class NamingTest {
 
     @DisplayName("This is a different name for show in stack")
     @Test
-    fun testDisplayName(){
-
-    }
+    fun testDisplayName(){}
 
 
 

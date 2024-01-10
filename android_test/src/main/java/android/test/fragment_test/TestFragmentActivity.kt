@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.test.databinding.ActivityFragmentBinding
 import androidx.appcompat.app.AppCompatActivity
 
-class FragmentActivity : AppCompatActivity() {
+class TestFragmentActivity : AppCompatActivity() {
 
-    private var fragment = MyFragment()
+    private var fragment = TestFragment()
     private lateinit var binding: ActivityFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +33,6 @@ class FragmentActivity : AppCompatActivity() {
     private fun closeFragment() {
         supportFragmentManager.beginTransaction().remove(binding.fragmentContainer.getFragment())
             .commit()
-        fragment = MyFragment()
+        fragment = TestFragment()
     }
 }

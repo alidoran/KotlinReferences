@@ -12,13 +12,17 @@ class TestAssertionMainMethod {
     @Test
     fun testCheckExceptionType() {
         // Be careful about inherits
-        assertThrows<NumberFormatException> { AssertionMainMethod().isTrue(2) }
+        assertThrows<NumberFormatException> {
+            AssertionMainMethod().isTrue(2)
+        }
     }
 
     @Test
     fun testCheckNotException() {
         // Be careful about inherits
-        assertDoesNotThrow { AssertionMainMethod().isTrue(1) }
+        assertDoesNotThrow {
+            AssertionMainMethod().isTrue(1)
+        }
     }
 
     @Test
@@ -26,7 +30,7 @@ class TestAssertionMainMethod {
         assertAll("a",
             { assertEquals("HelloWorld", "Hello" + "World") },
             { assertThrows<NumberFormatException> { AssertionMainMethod().isTrue(2) }},
-            {assertDoesNotThrow { AssertionMainMethod().isTrue(1) }},
+            { assertDoesNotThrow { AssertionMainMethod().isTrue(1) }},
             { assertTrue(AssertionMainMethod().isTrue(1))},
             { assertFalse(AssertionMainMethod().isTrue(0))},
         )
