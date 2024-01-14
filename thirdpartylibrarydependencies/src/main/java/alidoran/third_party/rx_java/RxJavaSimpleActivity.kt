@@ -1,18 +1,21 @@
 package alidoran.third_party.rx_java
 
+import alidoran.third_party.FakeRx3Api
 import android.os.Bundle
 import alidoran.third_party.databinding.ActivityRxJavaSimpleBinding
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.util.Log
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
-import io.reactivex.disposables.Disposable
+import io.reactivex.rxjava3.core.Completable
+import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
 class RxJavaSimpleActivity : Activity() {
 
-    private lateinit var disposable: Disposable
+    private lateinit var disposable: io.reactivex.disposables.Disposable
 
     private lateinit var binding: ActivityRxJavaSimpleBinding
 
@@ -23,6 +26,7 @@ class RxJavaSimpleActivity : Activity() {
 
         initEvent()
     }
+
 
     private fun initEvent() = with(binding) {
         btnJust.setOnClickListener {
@@ -35,9 +39,7 @@ class RxJavaSimpleActivity : Activity() {
         btnFlatMap.setOnClickListener { flatMapLearn() }
         btnDoOnNext.setOnClickListener { doOnNextLearn() }
         btnComposeLearn.setOnClickListener { composLearn() }
-        btnSingleTransform.setOnClickListener { val a = observableTransformer().apply(provideRxObservableFullLearn())
-
-
+        btnSingleTransform.setOnClickListener { observableTransformer().apply(provideRxObservableFullLearn())
         }
     }
 
@@ -144,4 +146,24 @@ class RxJavaSimpleActivity : Activity() {
             )
         ).delayEachLearn(5, TimeUnit.SECONDS)
     }
+
+    // This is an example for using RxJava3 Methods
+    // Don't care to the nested methods. Those only has been created for those
+    @Suppress
+    private fun uploadImageProcess() : Disposable =
+        FakeRx3Api.fakeUploadImage(true)
+            .doOnSubscribe{showLoading()}
+            .flatMap { resizeImage() }
+            .flatMapCompletable { uploadImage() }
+            .subscribe(::hideLoading)
+
+
+    private fun showLoading(){}
+    private fun resizeImage() = FakeRx3Api.fakeStringFlowable()
+    private fun uploadImage() = Completable.complete()
+    private fun hideLoading(){}
+
+
+
+
 }

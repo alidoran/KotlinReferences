@@ -149,12 +149,7 @@ dependencies {
     implementation 'com.github.trycourier:courier-android:2.0.2'
 
     //RxJava
-    implementation "io.reactivex.rxjava2:rxjava:2.2.21"
-
-    implementation "androidx.activity:activity-ktx:$activity_ktx"
-    implementation "io.github.nefilim.kjwt:kjwt-core:0.3.0"
-
-
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
 }
 
 apollo {
