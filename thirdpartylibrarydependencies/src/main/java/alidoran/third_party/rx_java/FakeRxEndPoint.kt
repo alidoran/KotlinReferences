@@ -1,7 +1,6 @@
 package alidoran.third_party.rx_java
 
 import io.reactivex.Completable
-import io.reactivex.Flowable
 import io.reactivex.Observable
 import kotlinx.coroutines.delay
 import java.util.concurrent.TimeUnit

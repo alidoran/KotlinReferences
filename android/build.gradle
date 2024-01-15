@@ -91,8 +91,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.work:work-runtime-ktx:2.8.1'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
-    implementation 'androidx.biometric:biometric-ktx:1.2.0-alpha05.0'
-    runtimeOnly("androidx.biometric:biometric-ktx:1.2.0-alpha05")
+    implementation "androidx.biometric:biometric-ktx:1.2.0-alpha05"
+//    runtimeOnly("androidx.biometric:biometric-ktx:1.1.0")
     //test
     testImplementation "androidx.test.ext:junit-ktx:$junitktx"
     implementation "androidx.test:core-ktx:$test_core"

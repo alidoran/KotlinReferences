@@ -122,4 +122,6 @@
     <string name="basic_auth_call">BasicAuth Call</string>
     <string name="no_auth">No Auth</string>
     <string name="retro_callback">Retro CallBack</string>
+    <string name="coroutine_start">Coroutine Start</string>
+    <string name="without_coroutine_start">Without Coroutine Start</string>
 </resources>

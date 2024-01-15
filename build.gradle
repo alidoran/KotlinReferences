@@ -60,7 +60,7 @@ buildscript {
         activity_ktx = '1.8.2'
 
         //DI
-        dagger = '2.45'
+        dagger = '2.50'
         hilt = '2.38.1'
         hilt_compiler = '1.0.0'
         hilt_android ='2.33-beta'

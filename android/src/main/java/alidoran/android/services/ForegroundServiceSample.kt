@@ -6,8 +6,10 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
 import android.content.Intent
+import android.os.Build
 import android.os.IBinder
 import android.util.Log
+import androidx.annotation.RequiresApi
 import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.concurrent.schedule
@@ -31,6 +33,7 @@ class ForegroundServiceSample : Service() {
         super.onDestroy()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
         printTimeSecondly()

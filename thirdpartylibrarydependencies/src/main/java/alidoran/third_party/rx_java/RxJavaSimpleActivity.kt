@@ -3,7 +3,6 @@ package alidoran.third_party.rx_java
 import alidoran.third_party.FakeRx3Api
 import android.os.Bundle
 import alidoran.third_party.databinding.ActivityRxJavaSimpleBinding
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.util.Log
 import io.reactivex.Observable
@@ -13,6 +12,7 @@ import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
+@Suppress("unused")
 class RxJavaSimpleActivity : Activity() {
 
     private lateinit var disposable: io.reactivex.disposables.Disposable
@@ -162,8 +162,4 @@ class RxJavaSimpleActivity : Activity() {
     private fun resizeImage() = FakeRx3Api.fakeStringFlowable()
     private fun uploadImage() = Completable.complete()
     private fun hideLoading(){}
-
-
-
-
 }

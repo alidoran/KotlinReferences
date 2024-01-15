@@ -52,5 +52,13 @@ class CoroutineActivity : AppCompatActivity() {
             val intent = Intent(this, EventBusActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnCoroutineStart.setOnClickListener{
+            CoroutinesBasic().withCoroutinesStart()
+        }
+
+        binding.btnWithoutCoroutineStart.setOnClickListener{
+            CoroutinesBasic().withoutCoroutinesStart()
+        }
     }
 }
