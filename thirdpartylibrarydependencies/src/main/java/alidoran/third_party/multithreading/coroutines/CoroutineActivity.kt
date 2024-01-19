@@ -60,5 +60,9 @@ class CoroutineActivity : AppCompatActivity() {
         binding.btnWithoutCoroutineStart.setOnClickListener{
             CoroutinesBasic().withoutCoroutinesStart()
         }
+
+        binding.btnCoroutinesIncludesResult.setOnClickListener{
+            CoroutinesBasic().coroutineIncludesResult()
+        }
     }
 }

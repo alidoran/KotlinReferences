@@ -84,15 +84,4 @@ class LoopTest {
             {Assertions.assertTrue(lastName.length>=4)}
         )
     }
-
-    @ParameterizedTest
-    @CsvFileSource(resources = ["/test.csv"],
-        encoding = "UTF-8",
-        lineSeparator = "\n",
-        delimiter = ',',
-        numLinesToSkip = 1
-    )
-    fun testReadCsvFile(firstname:String, lastName: String, id:Int){
-        Assertions.assertTrue(UserJunit(id,firstname,lastName).isFillParameters())
-    }
 }

@@ -124,4 +124,5 @@
     <string name="retro_callback">Retro CallBack</string>
     <string name="coroutine_start">Coroutine Start</string>
     <string name="without_coroutine_start">Without Coroutine Start</string>
+    <string name="coroutines_includes_result">Coroutines Includes Result</string>
 </resources>

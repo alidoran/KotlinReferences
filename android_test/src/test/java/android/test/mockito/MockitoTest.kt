@@ -1,7 +1,6 @@
 package android.test.mockito
 
 import android.test.mockito.simple_mockito.MockLearnByMockito
-import android.test.mockito.simple_mockito.MockitoEnums
 import android.test.mockito.simple_mockito.UserMockInterface
 import org.amshove.kluent.internal.assertEquals
 import org.junit.Assert

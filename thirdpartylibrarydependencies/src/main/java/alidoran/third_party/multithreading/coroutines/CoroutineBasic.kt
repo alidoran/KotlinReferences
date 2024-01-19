@@ -38,7 +38,20 @@ class CoroutinesBasic {
         delay(TimeUnit.SECONDS.toMillis(3))
         println("World")
     }
-//endregion
+
+
+    fun coroutineIncludesResult() {
+        runBlocking {
+            val suspendResult = suspendIncludesResult()
+            println("Hello $suspendResult")
+        }
+    }
+
+    private suspend fun suspendIncludesResult(): String {
+        delay(1000)
+        return "World"
+    }
+    //endregion
 
     //region coroutineScope
     suspend fun runCoroutineScope() =
@@ -78,7 +91,7 @@ class CoroutinesBasic {
         runCoroutineStart(job)
     }
 
-    fun runCoroutineStart(job: Job){
+    fun runCoroutineStart(job: Job) {
         GlobalScope.launch {
             delay(200)
             println("Coroutines Scope1")

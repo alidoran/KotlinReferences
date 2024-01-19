@@ -61,4 +61,10 @@
         android:layout_height="wrap_content"
         android:text="@string/without_coroutine_start"/>
 
+    <Button
+        android:id="@+id/btn_coroutines_includes_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/coroutines_includes_result"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>
