@@ -44,7 +44,7 @@ class LoopTest {
     @ParameterizedTest
     @ValueSource(strings = ["Ali", "Sattar"])
     fun testStringParameterized(name: String) {
-        assertEquals(UserJunit(1, name,"").nameToLowercase(), name.lowercase())
+        assertEquals(UserJunit(id = 1, name, lastName = "").nameToLowercase(), name.lowercase())
     }
 
     companion object {

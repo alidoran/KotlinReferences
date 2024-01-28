@@ -2,8 +2,6 @@ package android.test.junit5
 
 class UserJunit(var id: Int, private val firstName: String, private val lastName: String) {
 
-    var reputation: Int = 0
-
     fun changeReputation(amount: Int) {
         this.id = amount
     }
@@ -20,5 +18,4 @@ class UserJunit(var id: Int, private val firstName: String, private val lastName
     fun concatNameAndFamily(): String{
         return firstName + lastName
     }
-
 }

@@ -10,7 +10,7 @@ android {
         minSdk rootProject.compile_min_sdk
         targetSdk rootProject.compile_target_sdk
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -34,5 +34,5 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test.ext:junit:$junitktx"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+//    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }

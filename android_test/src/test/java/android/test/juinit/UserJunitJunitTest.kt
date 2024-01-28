@@ -16,7 +16,7 @@ internal class UserJunitJunitTest {
 
     @Test
     fun testChangeReputation() {
-        val user = UserJunit(0, "Ali", "Doran")
+        val user = UserJunit(id = 0, firstName = "Ali", lastName = "Doran")
         user.changeReputation(10)
         assertEquals(10, user.id)
     }
@@ -25,7 +25,7 @@ internal class UserJunitJunitTest {
     @CsvSource(
         "0 , '', 'Doran'",
         "0 , 'Ali', ''",
-        "'1840' , '',''"
+        "1840 , '',''"
     )
     fun testIsFillParameters(id: Int, firstName: String, lastName: String) {
         assertThrows(IllegalArgumentException::class.java) {
@@ -33,32 +33,30 @@ internal class UserJunitJunitTest {
         }
     }
 
-
     //First method
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     companion object {
         @JvmStatic
         @Suppress("unused")
         fun testFillParameterList() = listOf(
-            Arguments.of("0", "","Doran"),
-            Arguments.of("0", "Ali",""),
-            Arguments.of("1840", "","")
+            Arguments.of(0, "","Doran"),
+            Arguments.of(0, "Ali",""),
+            Arguments.of(1840, "","")
         )
 
         @ParameterizedTest
-        @MethodSource("fillParameterList")
+        @MethodSource("testFillParameterList")
         fun testIsFillParameters(id: Int, firstName: String, lastName: String) {
             assertThrows(IllegalArgumentException::class.java) {
                 UserJunit(id, firstName, lastName).isFillParameters()
             }
         }
-
     }
 
     //Second method
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     inner class FillTest{
-
         @Suppress("unused")
         fun testFillParameterList() = listOf(
             Arguments.of("1840", "", "Doran"),
@@ -67,7 +65,7 @@ internal class UserJunitJunitTest {
         )
 
         @ParameterizedTest
-        @MethodSource("fillParameterList")
+        @MethodSource("testFillParameterList")
         fun testIsFillParameters(id: Int, firstName: String, lastName:String) {
             assertThrows(IllegalArgumentException::class.java) {
                 UserJunit(id, firstName, lastName).isFillParameters()

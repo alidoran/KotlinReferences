@@ -57,6 +57,15 @@ class MockLearnTest {
     }
 
     @Test
+    fun mockObjectTestMockito2() {
+        Mockito.mockStatic(AddMockObject::class.java).use { m ->
+            m.`when`<Int> { AddMockObject.add(1, 2) }.thenReturn(5)
+            val result = AddMockObject.add(1, 2)
+            TestCase.assertEquals(5, result)
+        }
+    }
+
+    @Test
     fun mockCompanionObjectTestMockk() {
         mockkObject(MockLearn.Companion)
         every { staticObjectSample() } returns "Ali"

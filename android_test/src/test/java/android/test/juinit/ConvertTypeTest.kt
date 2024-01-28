@@ -2,7 +2,6 @@ package android.test.juinit
 
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
-import android.test.junit5.UserJunit
 import org.intellij.lang.annotations.Language
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.extension.ExtensionContext
@@ -25,42 +24,6 @@ class ConvertTypeTest {
     @ValueSource(strings = ["2019-02-14", "2019-01-01"])
     fun testArgumentConversionTwo(localDate: LocalDate) {
         println("parsed zone is: $localDate")
-    }
-
-    // TODO: Comment it for parse error. Correct it later
-//    @ParameterizedTest
-//    @CsvFileSource(
-//        resources = ["/test.csv"],
-//        numLinesToSkip = 1, delimiter = '9'
-//    )
-//    fun testReadCsvFileModelInternalConvertor(@ConvertWith(User2ConverterTest::class) user: UserJunit) {
-//    }
-
-//    class User2ConverterTest : SimpleArgumentConverter() {
-//        override fun convert(source: Any, targetType: Class<*>): Any {
-//            return UserJunit.parse(source.toString())
-//        }
-//
-//    }
-
-    @ParameterizedTest
-    @CsvFileSource(
-        resources = ["/test.csv"],
-        numLinesToSkip = 1,
-        delimiter = '9'
-    )
-    fun testReadCsvFileModelParseConvertor(userJUnit: UserJunit) {
-    }
-
-    @ParameterizedTest
-    @CsvSource(
-        delimiter = '9',
-        value = [
-            "Ali , Doran, 1",
-            "Roya , Darvishi, 2",
-            "Sattar, Khan, 3"]
-    )
-    fun testReadCsvFileModel(userJUnit: UserJunit) {
     }
 
     //region Annotation convertor test

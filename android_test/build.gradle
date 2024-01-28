@@ -82,22 +82,20 @@ dependencies {
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$junit_vintage"
     testImplementation "org.junit.jupiter:junit-jupiter:$junit_jupiter"
     testImplementation "androidx.test:core:$test_core"
-
     androidTestImplementation "org.junit.jupiter:junit-jupiter:$junit_jupiter"
-
+    androidTestImplementation 'androidx.test:rules:1.5.0'
 
 
     //Mock
-    testImplementation "org.mockito:mockito-core:$mockito_core"
-    testImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin"
-    testImplementation "io.mockk:mockk:1.12.4"
+    testImplementation "io.mockk:mockk:1.13.4"
     testImplementation "androidx.arch.core:core-testing:$core_testing"
-
-//espresso
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
-
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.4'
+    testImplementation "org.mockito:mockito-core:$mockito_core"
     testImplementation "org.mockito:mockito-inline:3.11.2"
+    androidTestImplementation "org.mockito:mockito-android:5.9.0"
+
+    //espresso
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.4'
 
     //Human readable
     testImplementation "org.hamcrest:hamcrest-all:$hamcrestVersion" //Suggested in the Google test course
@@ -115,6 +113,13 @@ dependencies {
     kaptTest 'com.google.dagger:hilt-compiler:2.50'
     androidTestImplementation  'com.google.dagger:hilt-android-testing:2.50'
     kaptAndroidTest 'com.google.dagger:hilt-compiler:2.50'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+
+    testImplementation 'org.powermock:powermock-module-junit4:1.7.3'
+
 
 }
 
