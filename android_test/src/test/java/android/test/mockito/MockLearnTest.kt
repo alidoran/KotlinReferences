@@ -3,7 +3,10 @@ package android.test.mockito
 import android.test.mockito.simple_mockito.AddMockObject
 import android.test.mockito.simple_mockito.MockLearn
 import android.test.mockito.simple_mockito.MockLearn.Companion.staticObjectSample
+import android.test.mockito.simple_mockito.MyObject
+import android.test.mockito.simple_mockito.MyObject.secondMethod
 import android.test.mockito.simple_mockito.UserMockInterface
+import android.test.mockito.simple_mockito.firstMethod
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkObject
@@ -13,6 +16,8 @@ import org.amshove.kluent.internal.assertEquals
 import org.junit.Assert
 import org.junit.Test
 import org.mockito.Mockito
+import org.mockito.kotlin.argumentCaptor
+
 
 class MockLearnTest {
     @Test
@@ -71,5 +76,26 @@ class MockLearnTest {
         every { staticObjectSample() } returns "Ali"
         val result = staticObjectSample()
         assertEquals("Ali", result)
+    }
+
+    @Test
+    fun mockArgumentCaptorTest() {
+        /*  Need the following dependency in Gradle
+            testImplementation "org.mockito.kotlin:mockito-kotlin:4.1.0"    */
+        val captor = argumentCaptor<Int>()
+        val mockClass = Mockito.mock(MockLearn::class.java)
+        Mockito.`when`(mockClass.randomNumberBounded(captor.capture())).thenReturn(1362)
+        val expectedResult = mockClass.randomNumberBounded(50)
+        assertEquals(50, captor.firstValue)
+        assertEquals(expectedResult, 1362)
+    }
+
+    @Test
+    fun testMethodInObject() {
+        val id = 1
+        Mockito.mockStatic(MyObject::class.java).use { theMock ->
+            firstMethod(id)
+            theMock.verify { secondMethod(id) }
+        }
     }
 }

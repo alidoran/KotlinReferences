@@ -1,0 +1,25 @@
+package alidoran.android.compose.themeCourse
+
+Source: https://developer.android.com/codelabs/jetpack-compose-theming
+
+Color schemes
+Set five key colors
+alidoran/android/compose/themeCourse/FiveColor.png
+• 3 Accent colors
+ ○ Primary key color
+ ○ Secondary key color
+ ○ Tertiary key color
+• 2 natural colors
+ ○ Natural key color
+ ○ Natural variant key color
+Each accent color (primary, secondary, and tertiary) is then provided in four compatible colors of
+different tones for pairing, defining emphasis, and visual expression.
+alidoran/android/compose/themeCourse/FourAccent.png
+
+neutral colors are also divided into four compatible tones used for surfaces and background
+alidoran/android/compose/themeCourse/Natural.png
+
+Material Theme Builder => https://m3.material.io/theme-builder#/custom
+
+
+
