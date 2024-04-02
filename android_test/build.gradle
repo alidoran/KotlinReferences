@@ -3,6 +3,32 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    id 'jacoco'
+}
+
+task jacocoReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
+    reports {
+        csv { enabled false }
+        xml { enabled false }
+        html {
+            enabled true
+            destination file("${buildDir}/coverage-report")
+        }
+    }
+
+    // Setup the .class, source, and execution directories
+    final fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', 'android/**/*.*']
+
+    // Include this if you use Kotlin
+    final kotlinTree = fileTree(dir: "${project.buildDir}/tmp/kotlin-classes/debug", excludes: fileFilter)
+    final javacTree = fileTree(dir: "${project.buildDir}/intermediates/javac/debug", excludes: fileFilter)
+    final mainSrc = "${project.projectDir}/src/main/java"
+
+    sourceDirectories.setFrom files([mainSrc])
+    classDirectories.setFrom files([kotlinTree, javacTree])
+    executionData.setFrom fileTree(dir: project.buildDir, includes: [
+            'jacoco/testDebugUnitTest.exec', 'outputs/code-coverage/connected/*coverage.ec'
+    ])
 }
 
 android {
@@ -22,7 +48,6 @@ android {
             excludes += ['META-INF/LICENSE.md', 'META-INF/LICENSE-notice.md']
         }
     }
-
 
     buildTypes {
         release {
@@ -120,8 +145,11 @@ dependencies {
 
 
     testImplementation 'org.powermock:powermock-module-junit4:1.7.3'
+}
 
-
+jacoco {
+    toolVersion = "0.8.11"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
 }
 
 kapt {

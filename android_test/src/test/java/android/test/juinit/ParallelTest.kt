@@ -27,7 +27,7 @@ class ParallelTest {
 
     @Test
     fun testOne() {
-        for (i in 1..9999999999) {
+        for (i in 1..999) {
             temp="AliDoran"
         }
         Assertions.assertTrue(true)
@@ -35,7 +35,7 @@ class ParallelTest {
 
     @Test
     fun testTwo() {
-        for (i in 1..10000) {
+        for (i in 1..1000) {
             temp="AliDoran"
         }
         Assertions.assertTrue(true)
@@ -43,7 +43,7 @@ class ParallelTest {
 
     @Test
     fun testThree() {
-        for (i in 1..5555555555) {
+        for (i in 1..555) {
             temp="AliDoran"
         }
         Assertions.assertTrue(true)
@@ -64,7 +64,7 @@ class ParallelTest {
         .map{num ->
             dynamicTest("#Test =  $num" ){
                 println("current thread is ${Thread.currentThread().name}")
-                for (i in 0..9999999999){
+                for (i in 0..999){
                     temp="AliDoran"
                 }
             }

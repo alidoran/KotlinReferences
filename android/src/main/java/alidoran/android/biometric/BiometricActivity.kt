@@ -8,6 +8,7 @@ import android.security.keystore.KeyProperties
 import android.widget.Toast
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import cloud.romhost.timetimberlib.MyTimber
 import java.security.KeyStore
 import java.util.concurrent.Executor
 import javax.crypto.Cipher
@@ -32,6 +33,7 @@ class BiometricActivity : AppCompatActivity() {
     }
 
     private fun initEvent(binding: ActivityBiometricBinding) {
+        MyTimber().showLog("a")
         binding.biometricLogin.setOnClickListener { simpleBiometric() }
         binding.credentialLogin.setOnClickListener { credentialsBiometric() }
     }

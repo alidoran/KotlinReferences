@@ -12,6 +12,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
         //Courier
         maven { url 'https://jitpack.io' }
     }

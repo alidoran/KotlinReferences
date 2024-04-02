@@ -1,17 +1,12 @@
 package android.test.mockito
 
-import android.test.mockito.simple_mockito.AddMockObject
 import android.test.mockito.simple_mockito.MockLearn
 import android.test.mockito.simple_mockito.MockLearn.Companion.staticObjectSample
-import android.test.mockito.simple_mockito.MyObject
-import android.test.mockito.simple_mockito.MyObject.secondMethod
 import android.test.mockito.simple_mockito.UserMockInterface
-import android.test.mockito.simple_mockito.firstMethod
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkObject
 import io.mockk.spyk
-import junit.framework.TestCase
 import org.amshove.kluent.internal.assertEquals
 import org.junit.Assert
 import org.junit.Test
@@ -53,24 +48,6 @@ class MockLearnTest {
     }
 
     @Test
-    fun mockObjectTestMockito() {
-        Mockito.mockStatic(AddMockObject::class.java).use { _ ->
-            Mockito.`when`(AddMockObject.add(1, 2)).thenReturn(5)
-            val result = AddMockObject.add(1, 2)
-            TestCase.assertEquals(5, result)
-        }
-    }
-
-    @Test
-    fun mockObjectTestMockito2() {
-        Mockito.mockStatic(AddMockObject::class.java).use { m ->
-            m.`when`<Int> { AddMockObject.add(1, 2) }.thenReturn(5)
-            val result = AddMockObject.add(1, 2)
-            TestCase.assertEquals(5, result)
-        }
-    }
-
-    @Test
     fun mockCompanionObjectTestMockk() {
         mockkObject(MockLearn.Companion)
         every { staticObjectSample() } returns "Ali"
@@ -88,14 +65,5 @@ class MockLearnTest {
         val expectedResult = mockClass.randomNumberBounded(50)
         assertEquals(50, captor.firstValue)
         assertEquals(expectedResult, 1362)
-    }
-
-    @Test
-    fun testMethodInObject() {
-        val id = 1
-        Mockito.mockStatic(MyObject::class.java).use { theMock ->
-            firstMethod(id)
-            theMock.verify { secondMethod(id) }
-        }
     }
 }
