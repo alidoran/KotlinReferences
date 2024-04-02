@@ -1,0 +1,14 @@
+✅ Sanaei (Farsi and Update)
+bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+
+🟢 Alireza0 (Farsi and Update)
+bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh)
+
+🔴 vaxilu (China)
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+
+🟡 FranzKafkaYu (English and Update)
+bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install_en.sh)
+
+🔵 Marzban (Single Port)
+https://github.com/
