@@ -92,6 +92,7 @@ dependencies {
     implementation 'androidx.work:work-runtime-ktx:2.8.1'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     implementation "androidx.biometric:biometric-ktx:1.2.0-alpha05"
+    implementation 'androidx.activity:activity:1.8.0'
 //    runtimeOnly("androidx.biometric:biometric-ktx:1.1.0")
     //test
     testImplementation "androidx.test.ext:junit-ktx:$junitktx"

@@ -19,7 +19,6 @@ import alidoran.android.mvi.basic_mvi.view.MviActivity
 import alidoran.android.mvp.MvpActivity
 import alidoran.android.mvvm_livedata.view.MvvmMainActivity
 import alidoran.android.navigation_safe_args.NavigationActivity
-import alidoran.android.network.InternetActivity
 import alidoran.android.paging_view.PagingRecyclerActivity
 import alidoran.android.permissions.PermissionsActivity
 import alidoran.android.recycler_view.RecyclerActivity
@@ -30,6 +29,7 @@ import alidoran.android.shared_preference.SharedPreferenceActivity
 import alidoran.android.socket.SocketActivity
 import alidoran.android.view_to_model.ViewToModelActivity
 import alidoran.android.viewpager2.slider.ViewPagerSliderActivity
+import alidoran.android.webview.webViewActivity
 import alidoran.android.worker.WorkerActivity
 import android.content.Intent
 import android.os.Bundle
@@ -186,8 +186,8 @@ class AndroidActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnInternet.setOnClickListener {
-            val intent = Intent(this, InternetActivity::class.java)
+        binding.btnWebview.setOnClickListener {
+            val intent = Intent(this, webViewActivity::class.java)
             startActivity(intent)
         }
     }

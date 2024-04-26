@@ -143,4 +143,5 @@
     <string name="telephony_manager">Telephony Manager</string>
     <string name="net_state">Net state: </string>
     <string name="internet">Internet</string>
+    <string name="webView">WebView</string>
 </resources>
