@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
     id 'kotlin-android'
     id("com.apollographql.apollo3").version("3.3.2")
     //FireBase
@@ -82,18 +82,18 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect:$reflect"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
     //Dagger
-    kapt "com.google.dagger:dagger-compiler:$dagger"
+    ksp "com.google.dagger:dagger-compiler:$dagger"
     implementation "com.google.dagger:dagger:$dagger"
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
-    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger"
-//    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:$dagger"
+    ksp "com.google.dagger:dagger-compiler:$dagger"
+    ksp "com.google.dagger:dagger-android-processor:$dagger"
+//    ksp "androidx.lifecycle:lifecycle-common-java8:$dagger"
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
     // Room components
     implementation "androidx.room:room-runtime:$room"
-    annotationProcessor "androidx.room:room-compiler:$room"
+    ksp "androidx.room:room-compiler:$room"
     androidTestImplementation "androidx.room:room-testing:$room"
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit2"

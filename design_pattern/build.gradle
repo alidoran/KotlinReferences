@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
 }
 android {
     compileSdk rootProject.compile_target_sdk
@@ -52,5 +51,4 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$vintage_engine"
     testImplementation "org.junit.jupiter:junit-jupiter:$junit_jupiter"
-
 }

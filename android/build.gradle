@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
+    // We need kapt for data binding
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
 }

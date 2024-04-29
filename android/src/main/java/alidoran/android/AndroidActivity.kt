@@ -29,7 +29,7 @@ import alidoran.android.shared_preference.SharedPreferenceActivity
 import alidoran.android.socket.SocketActivity
 import alidoran.android.view_to_model.ViewToModelActivity
 import alidoran.android.viewpager2.slider.ViewPagerSliderActivity
-import alidoran.android.webview.webViewActivity
+import alidoran.android.webview.WebviewActivity
 import alidoran.android.worker.WorkerActivity
 import android.content.Intent
 import android.os.Bundle
@@ -187,7 +187,7 @@ class AndroidActivity : AppCompatActivity() {
         }
 
         binding.btnWebview.setOnClickListener {
-            val intent = Intent(this, webViewActivity::class.java)
+            val intent = Intent(this, WebviewActivity::class.java)
             startActivity(intent)
         }
     }

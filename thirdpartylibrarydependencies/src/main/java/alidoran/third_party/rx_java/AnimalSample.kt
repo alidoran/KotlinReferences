@@ -23,7 +23,7 @@ class AnimalSample {
 
     fun listObservableError(){
         Observable.just("Apple", "Orange", "Banana")
-            .map({ input -> throw RuntimeException() } )
+            .map { _ -> throw RuntimeException() }
             .subscribe(
                 { value -> println("Received: $value") }, // onNext
                 { error -> println("Error: Handle Error = $error") },    // onError
