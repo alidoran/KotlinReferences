@@ -144,4 +144,7 @@
     <string name="net_state">Net state: </string>
     <string name="internet">Internet</string>
     <string name="webView">WebView</string>
+    <string name="show_on_webview">ShowOnWebView</string>
+    <string name="show_on_activity">Show On Activity</string>
+    <string name="load_from_html_screen">Load From HTML Screen</string>
 </resources>

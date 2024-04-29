@@ -34,6 +34,5 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test.ext:junit:$junitktx"
-    implementation("androidx.webkit:webkit:1.8.0")
 //    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
