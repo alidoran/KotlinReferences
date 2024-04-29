@@ -34,8 +34,10 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/load_from_html_screen"/>
 
-
-
-
-
+    <Button
+        android:id="@+id/btn_get_javascript_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Get JavaScript Result"/>
 </LinearLayout>
