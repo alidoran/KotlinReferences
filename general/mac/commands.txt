@@ -1,0 +1,8 @@
+Sudo command -> admin
+sudo chmod -R 755 /mnt -> Add read/write for a dorectory and it's subdirectories
+touch ~/.zshrx -> make local zshrc
+/etc/zshrc OR /etc/zsh/zshrc -> Global zshrc address
+nano ~/.zshrc -> edit file
+export ANDROID_SDK_HOME=/path/to/.android -> define path environment
+source ~/.zshrc -> Run a changed source file again
+echo $ANDROID_SDK_HOME -> Show the value of a environment variable
