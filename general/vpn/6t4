@@ -1,0 +1,56 @@
+Iran Server:
+
+apt update && apt upgrade -y
+sudo modprobe ip_gre
+lsmod | grep gre
+
+//install Iptables
+https://github.com/azavaxhuman/IPTABLE-Tunnel-multi-port
+
+//edit rc.local
+nano /etc/rc.local
+################
+sudo ip -6 tunnel add gre1 mode ip6gre local [--IPV6_LOCAL(IR)--] remote [--IPV6_US--] ttl 255
+sudo ip addr add 10.0.0.2/30 dev gre1
+sudo ip link set gre1 up
+
+iptables -t nat -A POSTROUTING -s 10.0.0.0/30 ! -o gre+ -j SNAT --to-source [--IPV4_LOCAL(IR)--]
+exit 0
+################
+chmod +x /etc/rc.local
+bash /etc/rc.local
+
+
+-------------------
+US Server
+
+apt update && apt upgrade -y
+sudo modprobe ip_gre
+lsmod | grep gre
+
+nano /etc/rc.local
+###########
+sudo ip -6 tunnel add gre1 mode ip6gre local [--IPV6_LOCAL--] remote [--IPV6_Remote--] ttl 255
+sudo ip addr add 10.0.0.1/30 dev gre1
+sudo ip link set gre1 up
+
+sudo echo '100 GRE' >> /etc/iproute2/rt_tables
+sudo ip rule add from 10.0.0.0/30 table GRE
+sudo ip route add default via 10.0.0.2 table GRE
+
+ 
+#If you wand add new Tunnel
+
+sudo ip -6 tunnel add gre2 mode ip6gre local [--IPV6_LOCAL--] remote [--IPV6_Remote--] ttl 255
+sudo ip addr add 10.0.1.1/30 dev gre2
+sudo ip link set gre2 up
+
+sudo echo '101 GRE2' >> /etc/iproute2/rt_tables
+sudo ip rule add from 10.0.1.0/30 table GRE2
+sudo ip route add default via 10.0.1.2 table GRE2
+#If you wand add new Tunnel
+
+exit 0
+#########
+chmod +x /etc/rc.local
+bash /etc/rc.local
