@@ -1,0 +1,34 @@
+How does Charles Proxy work with mobile devices?
+
+Installation
+Go to Charles Proxy Download page and follow instructions to download and install it on your computer.
+
+Configuring Charles Proxy and your mobile device
+1. Configure Charles Proxy
+After opening Charles Proxy go ahead and disable Windows Proxy / MacOS Proxy / Mozilla Firefox Proxy (they are enabled by default) as this will just generate extra data that is not needed when you are testing through a mobile device. Also, no need to install the Firefox plugin.
+
+2. Get proxy port number
+In the taskbar click "Proxy settings" and make a note of the proxy port number "8888".
+
+3. Get the local IP address in the network
+Click on Help > Local IP address and you'll see an IP address that is usually formatted as 192.168.x.x or 10.0.x.x
+
+4. Add proxy server settings to your Android device
+    a) Go to “Settings”
+    b) Go to “Wifi”
+    c) Long tap to a current wifi network
+    d) Click the “modify network” option
+    e) Click “show advanced options”
+    f) Under “Proxy” change to option to “Manual”
+    g) Set phone so all internet traffic on the mobile device runs through the PC by entering “Proxy hostname” (IP address from point 3) and “Proxy port” (8888)
+    h) Click “Connect/Save”
+
+5. Install SSL certificates on your mobile device
+To install Charles root certificate on Android device open https://chls.pro/ssl in your mobile browser and download the cert.
+
+6. Collecting Logs
+a) Clear the current session in Charles by clicking on the Broom Icon
+
+b) if not currently active - Start Recording - by activating the Record icon
+
+If the icon is red, a recording is active and calls will be captured. If you are finished with the session, you can end it from there. 
