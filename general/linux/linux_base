@@ -4,3 +4,5 @@ sudo su root -> root(admin) access
 sudo passwd -> change user password
 reboot -> reset system
 touch xx -> create a file by xx name
+ssh-keygen -R x.x.x.x -> Remove the last SSH credentials
+ssh root@x.x.x.x -> Connect to SSH    
