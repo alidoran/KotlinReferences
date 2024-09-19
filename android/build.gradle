@@ -66,6 +66,17 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildTypes {
+        release {
+            minifyEnabled true  // Enables R8
+            shrinkResources true // Removes unused resources
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false  // No R8 for debug builds
+        }
+    }
 }
 
 dependencies {
@@ -138,6 +149,9 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4"
 
     implementation("androidx.webkit:webkit:1.8.0")
+    implementation(project(":android:features")) {
+        exclude group: 'alidoran.android.navigation_safe_args', module: 'NavFragment04Args'
+    }
 
 
     //lottie player

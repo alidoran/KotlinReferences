@@ -10,7 +10,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.consumeAsFlow
+import kotlinx.coroutines.flow.last
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class MviVm : ViewModel(), MviModel<UserState, MviIntent> {
@@ -18,6 +23,10 @@ class MviVm : ViewModel(), MviModel<UserState, MviIntent> {
     private val _state = MutableLiveData<UserState>().apply { value = UserState.IsIdle }
     override val state: LiveData<UserState>
         get() = _state
+
+    private val _stateFlow = MutableStateFlow<UserState>(UserState.IsIdle)
+    override val stateFlow: StateFlow<UserState>
+        get() = _stateFlow
 
     init {
         handlerIntent()
@@ -39,12 +48,23 @@ class MviVm : ViewModel(), MviModel<UserState, MviIntent> {
         }
     }
 
+    private fun callApiStateFlow() {
+        _stateFlow.update { UserState.ShowLoading }
+        viewModelScope.launch(Dispatchers.IO) {
+            _stateFlow.update {
+                val list = FakeEndpoint.fakeMviModelListRequest()
+                UserState.CallStateFlowApi(list)
+            }
+        }
+    }
+
     private fun handlerIntent() {
         viewModelScope.launch {
             intents.consumeAsFlow().collect { mviIntent ->
                 when (mviIntent) {
                     MviIntent.FetchUserMvi -> callApi()
                     MviIntent.FetchUserMviFlow -> callFlowApi()
+                    MviIntent.FetchUserMviStateFlow -> callApiStateFlow()
                     else -> {_state.postValue(UserState.HideLoading)}
                 }
             }

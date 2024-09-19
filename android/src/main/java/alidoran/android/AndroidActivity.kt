@@ -32,7 +32,9 @@ import alidoran.android.viewpager2.slider.ViewPagerSliderActivity
 import alidoran.android.webview.WebviewActivity
 import alidoran.android.worker.WorkerActivity
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
 class AndroidActivity : AppCompatActivity() {
@@ -40,6 +42,7 @@ class AndroidActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityAndroidBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        installerName()
 
         binding.btnMainRecycler.setOnClickListener {
             val intent = Intent(this, RecyclerActivity::class.java)
@@ -190,5 +193,19 @@ class AndroidActivity : AppCompatActivity() {
             val intent = Intent(this, WebviewActivity::class.java)
             startActivity(intent)
         }
+    }
+    private fun installerName() {
+        val installerName = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            val init = this.packageManager.getInstallSourceInfo(this.packageName).installingPackageName
+            Log.d("TAG", "installerName1: $init ")
+            val init2 = this.packageManager.getInstallSourceInfo(this.packageName).initiatingPackageSigningInfo
+            Log.d("TAG", "installerName2: $init2 ")
+            this.packageManager.getInstallSourceInfo(this.packageName).installingPackageName
+        } else {
+            @Suppress("DEPRECATION")
+            this.packageManager.getInstallerPackageName(this.packageName)
+        }
+
+        Log.d("TAG", "installerName3: $installerName ")
     }
 }

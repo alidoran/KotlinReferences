@@ -9,8 +9,11 @@ import alidoran.android.mvi.basic_mvi.viewstate.UserState
 import alidoran.android.mvi.basic_mvi.viewmodel.MviVm
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.compose.runtime.collectAsState
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.observeOn
 import kotlinx.coroutines.launch
 
 class MviActivity : AppCompatActivity(), MviView<UserState> {
@@ -27,6 +30,12 @@ class MviActivity : AppCompatActivity(), MviView<UserState> {
             render(it)
         }
 
+        lifecycleScope.launch {
+            mViewModel.stateFlow.collect {
+                render(it)
+            }
+        }
+
         binding.btnMvi.setOnClickListener {
             lifecycleScope.launch {
                 mViewModel.intents.send(MviIntent.FetchUserMvi)
@@ -36,6 +45,12 @@ class MviActivity : AppCompatActivity(), MviView<UserState> {
         binding.btnMviFlow.setOnClickListener {
             lifecycleScope.launch {
                 mViewModel.intents.send(MviIntent.FetchUserMviFlow)
+            }
+        }
+
+        binding.btnMviStateFlow.setOnClickListener {
+            lifecycleScope.launch {
+                mViewModel.intents.send(MviIntent.FetchUserMviStateFlow)
             }
         }
     }
@@ -50,6 +65,11 @@ class MviActivity : AppCompatActivity(), MviView<UserState> {
             is UserState.CallFlowApi -> {
                 binding.progressMvi.isVisible = false
                 Log.d("CallFlowApi Response", "render: ${state.list.size}")
+            }
+
+            is UserState.CallStateFlowApi -> {
+                binding.progressMvi.isVisible = false
+                Log.d("CallStateFlowApi Response", "render: ${state.list.size}")
             }
 
             is UserState.ShowLoading ->
