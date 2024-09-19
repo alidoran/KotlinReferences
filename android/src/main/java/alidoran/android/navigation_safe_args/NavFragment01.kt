@@ -47,6 +47,18 @@ class NavFragment01 : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.btnNextPage3.setOnClickListener{
+            val amount = binding.edtMyArgumentView.text.toString()
+            val action = NavFragment01Directions.actionNavFragment01ToNavFragment03(amount)
+            findNavController().navigate(action)
+        }
+
+        binding.btnNextPage4.setOnClickListener{
+            val amount = binding.edtMyArgumentView.text.toString()
+            val action = NavFragment01Directions.actionNavFragment01ToNavFragment04(amount)
+            findNavController().navigate(action)
+        }
+
         //region livedata back result
         findNavController().currentBackStackEntry
             ?.savedStateHandle

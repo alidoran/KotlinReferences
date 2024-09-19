@@ -16,7 +16,15 @@
         android:id="@+id/btn_coroutine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/coroutine"/>
+        android:text="@string/coroutine"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/CustomTextView"
+        android:text="12354687"
+        />
 
     <Button
         android:id="@+id/btn_retrofit"

@@ -147,4 +147,7 @@
     <string name="show_on_webview">ShowOnWebView</string>
     <string name="show_on_activity">Show On Activity</string>
     <string name="load_from_html_screen">Load From HTML Screen</string>
+    <string name="call_api_stateflow">Call API StateFlow</string>
+    <string name="to_page_3">To page 3</string>
+    <string name="to_page_4">To page 4</string>
 </resources>

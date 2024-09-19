@@ -1,19 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
     app:startDestination="@id/navFragment01">
-    <fragment
-        android:id="@+id/navFragment02"
-        android:name="alidoran.android.navigation_safe_args.NavFragment02"
-        android:label="fragment_nav02"
-        tools:layout="@layout/fragment_nav02" >
-        <argument
-            android:name="my_arg"
-            android:defaultValue="Ali"
-            app:nullable="true" />
-    </fragment>
+
     <fragment
         android:id="@+id/navFragment01"
         android:name="alidoran.android.navigation_safe_args.NavFragment01"
@@ -28,6 +18,42 @@
                 android:defaultValue="@null"
                 app:nullable="true" />
         </action>
-
+        <action
+            android:id="@+id/action_navFragment01_to_navFragment03"
+            app:destination="@id/my_nav_feature" >
+            <argument
+                android:name="my_arg"
+                app:argType="string"
+                android:defaultValue="@null"
+                app:nullable="true" />
+        </action>
+        <!-- Define a global action to navigate to navFragment04 -->
+        <action
+            android:id="@+id/action_navFragment01_to_navFragment04"
+            app:destination="@id/navFragment04" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navFragment02"
+        android:name="alidoran.android.navigation_safe_args.NavFragment02"
+        android:label="fragment_nav02"
+        tools:layout="@layout/fragment_nav02" >
+        <argument
+            android:name="my_arg"
+            android:defaultValue="Ali"
+            app:nullable="true" />
+    </fragment>
+
+    <!-- Global destination declaration for navFragment04 -->
+    <fragment
+        android:id="@+id/navFragment04"
+        android:name="alidoran.android.navigation_safe_args.NavFragment04"
+        android:label="fragment_nav04"
+        tools:layout="@layout/fragment_nav04">
+        <argument
+            android:name="my_arg"
+            android:defaultValue="Ali"
+            app:nullable="true" />
+    </fragment>
+
 </navigation>

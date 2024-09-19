@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomTextView">
+        <item name="android:paddingBottom">32dp</item>
+        <item name="android:maxLength">0</item>
+    </style>
+</resources>
