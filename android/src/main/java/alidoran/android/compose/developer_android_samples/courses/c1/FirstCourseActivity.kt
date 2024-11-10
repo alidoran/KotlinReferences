@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -37,15 +38,13 @@ class FirstCourseActivity : ComponentActivity() {
 
 @Composable
 private fun MyApp(modifier: Modifier = Modifier) {
-
-//    var shouldShowOnboarding by remember { mutableStateOf(true) }
     var shouldShowOnboarding by rememberSaveable { mutableStateOf(true) }
 
     Surface(modifier) {
         if (shouldShowOnboarding) {
             OnboardingScreen(onContinueClicked = { shouldShowOnboarding = false })
         } else {
-            Greetings()
+            ItemList()
         }
     }
 }
@@ -72,14 +71,19 @@ private fun OnboardingScreen(
 }
 
 @Composable
-private fun Greetings(
+private fun ItemList(
     modifier: Modifier = Modifier,
     names: List<String> = listOf("World", "Compose")
 ) {
     Column(modifier = modifier.padding(vertical = 4.dp)) {
+        Text(text = "Item rememberSaveable")
         for (name in names) {
-            Greeting(name = name)
+            ItemRememberSaveable(name = name)
         }
+        Text(
+            modifier = Modifier.padding(top = 5.dp),
+            text = "Item Saveable")
+        ItemRemember()
     }
 }
 
@@ -92,10 +96,8 @@ private fun OnboardingPreview() {
 }
 
 @Composable
-private fun Greeting(name: String) {
-
+private fun ItemRememberSaveable(name: String) {
 //    rememberSaveable able to save state even after rotation or theme change
-//    val expanded = remember { mutableStateOf(false) }
     val expanded = rememberSaveable { mutableStateOf(false) }
 
     val extraPadding = if (expanded.value) 48.dp else 0.dp
@@ -121,11 +123,39 @@ private fun Greeting(name: String) {
     }
 }
 
+@Composable
+private fun ItemRemember() {
+//    The remember doesn't able to save state even after rotation or theme change
+    val expanded = remember { mutableStateOf(false) }
+
+    val extraPadding = if (expanded.value) 48.dp else 0.dp
+
+    Surface(
+        color = MaterialTheme.colorScheme.primary,
+        modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
+    ) {
+        Row(modifier = Modifier.padding(24.dp)) {
+            Column(modifier = Modifier
+                .weight(1f)
+                .padding(bottom = extraPadding)
+            ) {
+                Text(text = "Hello, ")
+                Text(text = "World")
+            }
+            ElevatedButton(
+                onClick = { expanded.value = !expanded.value }
+            ) {
+                Text(if (expanded.value) "Show less" else "Show more")
+            }
+        }
+    }
+}
+
 @Preview(showBackground = true, widthDp = 320)
 @Composable
 private fun DefaultPreview() {
     KotlinReferencesTheme {
-        Greetings()
+        ItemList()
     }
 }
 
