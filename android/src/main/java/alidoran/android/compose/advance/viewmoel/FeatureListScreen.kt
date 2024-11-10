@@ -28,9 +28,6 @@ fun FeatureListScreen(navigation: NavController) {
             Button(onClick = {navigation.navigate(ChooseScreen.CoroutinesInComposeScreen.name) }) {
                 Text(text = "CoroutinesOnCompose")
             }
-            Button(onClick = {navigation.navigate(ChooseScreen.StatefulComposableScreen.name) }) {
-                Text(text = "StatefulComposable")
-            }
             Button(onClick = {navigation.navigate(ChooseScreen.DataSourceUserListScreen.name) }) {
                 Text(text = "DataSource")
             }

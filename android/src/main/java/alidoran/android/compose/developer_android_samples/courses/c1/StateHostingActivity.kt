@@ -15,17 +15,20 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 
-class CounterComposeActivity : ComponentActivity() {
+class StateHostingActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            var statelessValue by rememberSaveable { mutableIntStateOf(0) }
             KotlinReferencesTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -33,8 +36,11 @@ class CounterComposeActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Column {
-                        StateHoistingCounter()
                         StatefulCounter()
+                        StatelessCounter(
+                            statelessValue,
+                            { statelessValue++ }
+                        )
                     }
                 }
             }
@@ -43,37 +49,33 @@ class CounterComposeActivity : ComponentActivity() {
 }
 
 @Composable
-private fun StateHoistingCounter(modifier: Modifier = Modifier) {
+private fun StatefulCounter(
+    modifier: Modifier = Modifier,
+    viewModel: StateHostingViewModel = viewModel()
+) {
+    /* This code should use by the commented part on ViewModel
+    val counter by rememberSaveable { viewModel.counter }  */
+    val counter by viewModel.counter.collectAsState()
     Column(
         modifier = modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-//        1- var counter = 0
-//        Not-Work/We have to use mutableState
-//        2- var counter = mutableListOf(0)
-//        Not-Work/The counter back to zero after each recomposition
-//        3- var counter = remember { mutableListOf(0)}
-//        Work/The counter will reset after rotation or change theme to the dark mode
-//        4- var counter = rememberSaveable { mutableListOf(0) }
-//          Work perfect
-        var counter by rememberSaveable { mutableStateOf(0) }
-        Text(text = "The StateHoisting counter number is $counter")
+        Text(text = "The Stateful counter number is  $counter that shows by the Stateful")
         Button(
-            onClick = { counter++ },
+            onClick = { viewModel.increment() },
             enabled = counter < 10,
-            modifier = Modifier.padding(top = 8.dp)
+            modifier = Modifier.padding(top = 8.dp),
         ) { Text(text = "Add One") }
     }
 }
 
 @Composable
-private fun StatefulCounter(modifier: Modifier = Modifier) {
-    var counter by rememberSaveable { mutableStateOf(0) }
-    StatelessCounter(counter, onIncrement = { counter++ }, modifier)
-}
-
-@Composable
-private fun StatelessCounter(counter: Int, onIncrement: () -> Unit, modifier: Modifier = Modifier) {
+private fun StatelessCounter(
+    counter: Int,
+    onIncrement: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    // Stateless Counter must be store in ViewModel
     Column(
         modifier = modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -92,8 +94,11 @@ private fun StatelessCounter(counter: Int, onIncrement: () -> Unit, modifier: Mo
 private fun StatelessCounterPreview() {
     KotlinReferencesTheme {
         Column {
-            StateHoistingCounter()
             StatefulCounter()
+            StatelessCounter(
+                0,
+                {}
+            )
         }
     }
 }

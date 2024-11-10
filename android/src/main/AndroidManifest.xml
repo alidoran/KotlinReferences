@@ -57,7 +57,7 @@
             android:label="@string/title_activity_task_list"
             android:theme="@style/Theme.Android" />
         <activity
-            android:name=".compose.developer_android_samples.courses.c1.CounterComposeActivity"
+            android:name=".compose.developer_android_samples.courses.c1.StateHostingActivity"
             android:exported="false"
             android:label="@string/title_activity_water_counter"
             android:theme="@style/Theme.Android" />

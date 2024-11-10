@@ -2,7 +2,7 @@ package alidoran.android.compose.developer_android_samples
 
 import alidoran.android.compose.developer_android_samples.courses.advance.SimpleNavigation
 import alidoran.android.compose.developer_android_samples.courses.c1.CodeLabBasicLayoutActivity
-import alidoran.android.compose.developer_android_samples.courses.c1.CounterComposeActivity
+import alidoran.android.compose.developer_android_samples.courses.c1.StateHostingActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseAnimationActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.ScaffoldActivity
@@ -67,8 +67,8 @@ class DeveloperAndroidActivity : ComponentActivity() {
             }) { Text(text = "CodeLab basic Activity") }
 
             Button(onClick = {
-                startActivity(Intent(activity, CounterComposeActivity::class.java))
-            }) { Text(text = "Counter compose Activity") }
+                startActivity(Intent(activity, StateHostingActivity::class.java))
+            }) { Text(text = "State Hosting Activity") }
 
             Button(onClick = {
                 startActivity(Intent(activity, TaskListActivity::class.java))

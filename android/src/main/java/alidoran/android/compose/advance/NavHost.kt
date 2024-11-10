@@ -3,9 +3,6 @@ package alidoran.android.compose.advance
 import alidoran.android.compose.advance.datasource.InMemoryUserDataSource
 import alidoran.android.compose.advance.datasource.UserDataSource
 import alidoran.android.compose.advance.datasource.UserListDataSourceScreen
-import alidoran.android.compose.advance.stateful_composable.InnerViewModel
-import alidoran.android.compose.advance.stateful_composable.OuterComposableScreen
-import alidoran.android.compose.advance.stateful_composable.OuterViewModel
 import alidoran.android.compose.advance.viewmoel.ComposeViewModel
 import alidoran.android.compose.advance.viewmoel.FeatureListScreen
 import alidoran.android.compose.advance.viewmoel.NavigationScreen
@@ -36,9 +33,6 @@ fun ProjectNavHost() {
             ViewModelHoistingScreen(ComposeViewModel(), navigation = navController)
         }
         composable(ChooseScreen.CoroutinesInComposeScreen.name) { CoroutinesOnComposeScreen() }
-        composable(ChooseScreen.StatefulComposableScreen.name) {
-            OuterComposableScreen(OuterViewModel(), InnerViewModel())
-        }
         composable(ChooseScreen.DataSourceUserListScreen.name) { UserListDataSourceScreen(dataSource) }
         composable(ChooseScreen.PreviewsScreen.name) { ComposeForPreviewScreen() }
         composable(ChooseScreen.AnimationScreen.name) { AnimationComposeScreen(navController) }
@@ -53,7 +47,6 @@ enum class ChooseScreen {
     FeatureListScreen,
     ViewModelHoistingScreen,
     CoroutinesInComposeScreen,
-    StatefulComposableScreen,
     DataSourceUserListScreen,
     PreviewsScreen,
     AnimationScreen,
