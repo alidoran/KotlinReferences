@@ -24,6 +24,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
+/*
+Usage of State Hosting table:
+_____________________________________________________________________________________
+| Solution             | Responsibilities                                           |
+| Composables          | Simple UI-elements state management                        |
+| State holder         | Complex UI-elements state management                       |
+| ViewModel            | State holder for accessing business logic + screen state   |
+_____________________________________________________________________________________
+*/
 class StateHostingActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +63,7 @@ private fun StatefulCounter(
     viewModel: StateHostingViewModel = viewModel()
 ) {
     /* This code should use by the commented part on ViewModel
-    val counter by rememberSaveable { viewModel.counter }  */
+    val counter by viewModel.counter  */
     val counter by viewModel.counter.collectAsState()
     Column(
         modifier = modifier.fillMaxWidth(),

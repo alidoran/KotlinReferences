@@ -13,7 +13,7 @@ class StateHostingViewModel: ViewModel() {
     }
 
     /*
-    val counter by rememberSaveable { viewModel.counter }
+    val counter by viewModel.counter
     The following code is using if we want to use the above code on UI:
 
     private val _counter = mutableIntStateOf(0)
