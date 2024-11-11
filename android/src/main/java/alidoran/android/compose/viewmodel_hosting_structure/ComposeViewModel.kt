@@ -1,4 +1,4 @@
-package alidoran.android.compose.advance.viewmoel
+package alidoran.android.compose.viewmodel_hosting_structure
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,4 +1,4 @@
-package alidoran.android.compose.developer_android_samples.courses.c1
+package alidoran.android.compose.state_hosting
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

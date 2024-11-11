@@ -1,6 +1,5 @@
-package alidoran.android.compose.advance.viewmoel
+package alidoran.android.compose.advance
 
-import alidoran.android.compose.advance.ChooseScreen
 import alidoran.android.compose.ui.theme.KotlinReferencesTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,9 +21,6 @@ fun FeatureListScreen(navigation: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Button(onClick = { navigation.navigate(ChooseScreen.ViewModelHoistingScreen.name) }) {
-                Text(text = "ViewModel hoisting State")
-            }
             Button(onClick = {navigation.navigate(ChooseScreen.CoroutinesInComposeScreen.name) }) {
                 Text(text = "CoroutinesOnCompose")
             }
@@ -36,10 +32,6 @@ fun FeatureListScreen(navigation: NavController) {
             }
             Button(onClick = {navigation.navigate(ChooseScreen.AnimationScreen.name) }) {
                 Text(text = "AnimationScreen")
-            }
-            Button(onClick = {navigation.navigate(ChooseScreen.NavigationScreen.name)
-            }) {
-                Text(text = "NavigationScreen")
             }
         }
     }

@@ -1,8 +1,6 @@
 package alidoran.android.compose.developer_android_samples
 
-import alidoran.android.compose.developer_android_samples.courses.advance.SimpleNavigation
 import alidoran.android.compose.developer_android_samples.courses.c1.CodeLabBasicLayoutActivity
-import alidoran.android.compose.developer_android_samples.courses.c1.StateHostingActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseAnimationActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.ScaffoldActivity
@@ -66,9 +64,6 @@ class DeveloperAndroidActivity : ComponentActivity() {
                 startActivity(Intent(activity, CodeLabBasicLayoutActivity::class.java))
             }) { Text(text = "CodeLab basic Activity") }
 
-            Button(onClick = {
-                startActivity(Intent(activity, StateHostingActivity::class.java))
-            }) { Text(text = "State Hosting Activity") }
 
             Button(onClick = {
                 startActivity(Intent(activity, TaskListActivity::class.java))
@@ -78,9 +73,6 @@ class DeveloperAndroidActivity : ComponentActivity() {
                 startActivity(Intent(activity, DeepToLazyActivity::class.java))
             }) { Text(text = "DeepToLazy Activity") }
 
-            Button(onClick = {
-                startActivity(Intent(activity, SimpleNavigation::class.java))
-            }) { Text(text = "Advanced Activity") }
         }
     }
 

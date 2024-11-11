@@ -2,6 +2,9 @@ package alidoran.android.compose
 
 import alidoran.android.compose.developer_android_samples.DeveloperAndroidActivity
 import alidoran.android.compose.advance.ComposeAdvanceActivity
+import alidoran.android.compose.navigation.ComposeNavigationActivity
+import alidoran.android.compose.state_hosting.StateHostingActivity
+import alidoran.android.compose.viewmodel_hosting_structure.ViewModelHoistingActivity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -39,6 +42,19 @@ class ComposeLearnActivity : ComponentActivity() {
             Button(onClick = {
                 startActivity(Intent(this@ComposeLearnActivity, ComposeAdvanceActivity::class.java))
             }) { Text(text = "Advanced Compose") }
+
+            Button(onClick = {
+                startActivity(Intent(this@ComposeLearnActivity, ComposeNavigationActivity::class.java))
+            }) { Text(text = "Compose Navigation Activity") }
+
+            Button(onClick = {
+                startActivity(Intent(this@ComposeLearnActivity, StateHostingActivity::class.java))
+            }) { Text(text = "State Hosting Activity") }
+
+            Button(onClick = {
+                startActivity(Intent(this@ComposeLearnActivity, ViewModelHoistingActivity::class.java))
+            }) { Text(text = "viewmodel Hosting structure Activity") }
+
         }
     }
 }

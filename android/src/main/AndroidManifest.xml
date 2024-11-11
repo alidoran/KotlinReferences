@@ -57,12 +57,12 @@
             android:label="@string/title_activity_task_list"
             android:theme="@style/Theme.Android" />
         <activity
-            android:name=".compose.developer_android_samples.courses.c1.StateHostingActivity"
+            android:name=".compose.state_hosting.StateHostingActivity"
             android:exported="false"
             android:label="@string/title_activity_water_counter"
             android:theme="@style/Theme.Android" />
         <activity
-            android:name=".compose.developer_android_samples.courses.advance.SimpleNavigation"
+            android:name=".compose.navigation.ComposeNavigationActivity"
             android:exported="false"
             android:label="@string/title_activity_advanced_compose"
             android:theme="@style/Theme.Android" />
@@ -131,6 +131,11 @@
             android:name=".compose.elementary.Compose01Activity"
             android:exported="false"
             android:label="@string/title_activity_compose"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.viewmodel_hosting_structure.ViewModelHoistingActivity"
+            android:exported="false"
+            android:label="ViewModel Hoisting Structure"
             android:theme="@style/Theme.Android" />
         <activity
             android:name=".compose.elementary.Compose02Modifier"
