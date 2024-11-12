@@ -1,7 +1,6 @@
-package alidoran.android.navigation_safe_args
+package navigation_safe_args
 
-import alidoran.feature.R
-import alidoran.feature.databinding.FragmentNav03Binding
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +9,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import ir.dorantech.feature.R
+import ir.dorantech.feature.databinding.FragmentNav03Binding
 
 class NavFragment04 : Fragment() {
 

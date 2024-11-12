@@ -47,7 +47,7 @@
     <!-- Global destination declaration for navFragment04 -->
     <fragment
         android:id="@+id/navFragment04"
-        android:name="alidoran.android.navigation_safe_args.NavFragment04"
+        android:name="navigation_safe_args.NavFragment04"
         android:label="fragment_nav04"
         tools:layout="@layout/fragment_nav04">
         <argument

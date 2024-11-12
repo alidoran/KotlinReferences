@@ -23,19 +23,10 @@ android {
         jvmTarget = '17'
     }
 
-    testOptions {
-        unitTests.all {
-            useJUnitPlatform()
-            systemProperty "junit.jupiter.testinstance.lifecycle.default", "per_method"
-            //Test default instance will be changed by this line
-            systemProperty "junit.jupiter.execution.parallel.enabled", "true"
-        }
-    }
-
     buildFeatures {
         viewBinding true
     }
-    namespace 'alidoran.feature'
+    namespace 'ir.dorantech.feature'
 }
 
 dependencies {
