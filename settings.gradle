@@ -19,9 +19,11 @@ dependencyResolutionManagement {
 }
 include ':kotlin_base'
 include ':fundamental'
-include ':android'
 include ':thirdpartylibrarydependencies'
 include ':design_pattern'
 include ':android_test'
 include ':commonlibrary'
-include ':android:features'
+include ':android'
+include ':android:app'
+include ':android:feature1'
+include ':android:feature2'
