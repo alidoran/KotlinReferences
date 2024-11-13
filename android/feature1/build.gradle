@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'org.jetbrains.kotlin.plugin.compose' version '2.0.21'
 }
 android {
     compileSdk rootProject.compile_target_sdk
@@ -9,8 +10,6 @@ android {
     defaultConfig {
         minSdk rootProject.compile_min_sdk
         targetSdk rootProject.compile_target_sdk
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -32,4 +31,7 @@ android {
 dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.8.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.8.3'
+    implementation platform('androidx.compose:compose-bom:2024.10.01')
+    implementation "androidx.compose.material3:material3"
+    implementation "androidx.compose.ui:ui"
 }

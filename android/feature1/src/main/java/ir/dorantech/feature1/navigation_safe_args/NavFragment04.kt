@@ -1,4 +1,5 @@
-package navigation_safe_args
+package ir.dorantech.feature1.navigation_safe_args
+
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +12,7 @@ import androidx.navigation.fragment.navArgs
 import ir.dorantech.feature.R
 import ir.dorantech.feature.databinding.FragmentNav03Binding
 
-class NavFragment03 : Fragment() {
+class NavFragment04 : Fragment() {
 
     private var _binding : FragmentNav03Binding? = null
     private val binding

@@ -11,9 +11,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.getValue
@@ -26,6 +26,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import ir.dorantech.feature1.compose_navigation.Feature1ComposeScreen
 
 class ComposeNavigationActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +79,12 @@ private fun NavigationCompose() {
                 text = backStackEntry.arguments?.getString("text").orEmpty()
             )
         }
+        composable("Feature1ComposeScreen/{text}") { backStackEntry ->
+            Feature1ComposeScreen(
+                navigation = navController,
+                text = backStackEntry.arguments?.getString("text").orEmpty()
+            )
+        }
     }
 }
 
@@ -117,6 +124,9 @@ private fun FistComposableScreen(navigation: NavController) {
                 Text(text = "Go to previous page")
             }
             Button(onClick = { navigation.navigate("ThirdScreen/$text") }) {
+                Text(text = "Go to third screen and pass text")
+            }
+            Button(onClick = { navigation.navigate("Feature1ComposeScreen/$text") }) {
                 Text(text = "Go to third screen and pass text")
             }
         }
