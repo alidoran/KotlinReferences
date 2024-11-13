@@ -73,13 +73,13 @@ private fun NavigationCompose() {
         composable(ChooseScreen.SecondScreen.name) {
             SecondComposableScreen(navigation = navController)
         }
-        composable("ThirdScreen/{text}") { backStackEntry ->
+        composable("${ChooseScreen.ThirdScreen}.name/{text}") { backStackEntry ->
             ThirdComposableScreen(
                 navigation = navController,
                 text = backStackEntry.arguments?.getString("text").orEmpty()
             )
         }
-        composable("Feature1ComposeScreen/{text}") { backStackEntry ->
+        composable("{ChooseScreen.Feature1ComposeScreen.name}/{text}") { backStackEntry ->
             Feature1ComposeScreen(
                 navigation = navController,
                 text = backStackEntry.arguments?.getString("text").orEmpty()
@@ -97,6 +97,9 @@ private fun AdvanceComposePreview() {
 private enum class ChooseScreen {
     FistScreen,
     SecondScreen,
+    ThirdScreen,
+    Feature1ComposeScreen,
+    Feature2ComposeScreen,
 }
 
 @Composable
@@ -123,11 +126,11 @@ private fun FistComposableScreen(navigation: NavController) {
             Button(onClick = { navigation.popBackStack() }) {
                 Text(text = "Go to previous page")
             }
-            Button(onClick = { navigation.navigate("ThirdScreen/$text") }) {
+            Button(onClick = { navigation.navigate("${ChooseScreen.ThirdScreen.name}/$text") }) {
                 Text(text = "Go to third screen and pass text")
             }
-            Button(onClick = { navigation.navigate("Feature1ComposeScreen/$text") }) {
-                Text(text = "Go to third screen and pass text")
+            Button(onClick = { navigation.navigate("${ChooseScreen.Feature1ComposeScreen.name}/$text") }) {
+                Text(text = "Go to Feature1 Screen and pass text")
             }
         }
     }
