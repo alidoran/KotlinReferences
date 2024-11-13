@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Android"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".compose.navigation.p2_clean_multi_module.ComposeNavigationCleanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".compose.navigation.p3_best_approach_multi_module.ComposeNavigationBestActivity"
+            android:exported="false" />
+        <activity
             android:name=".webview.WebviewActivity"
             android:exported="false" />
         <activity
@@ -62,7 +68,7 @@
             android:label="@string/title_activity_water_counter"
             android:theme="@style/Theme.Android" />
         <activity
-            android:name=".compose.navigation.ComposeNavigationActivity"
+            android:name=".compose.navigation.p1_basic.ComposeNavigationActivity"
             android:exported="false"
             android:label="@string/title_activity_advanced_compose"
             android:theme="@style/Theme.Android" />

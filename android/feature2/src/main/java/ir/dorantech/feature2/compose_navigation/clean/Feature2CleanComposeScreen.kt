@@ -1,4 +1,4 @@
-package ir.dorantech.feature1.compose_navigation
+package ir.dorantech.feature2.compose_navigation.clean
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 
 @Composable
-fun Feature1ComposeScreen(navigation: NavController, text: String) {
+fun Feature2CleanComposeScreen(navController: NavController, text: String) {
     Column(
         Modifier
             .fillMaxSize()
@@ -21,10 +21,8 @@ fun Feature1ComposeScreen(navigation: NavController, text: String) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = text
-        )
-        Button(onClick = { navigation.popBackStack() }) {
+        Text(text = text)
+        Button(onClick = { navController.popBackStack() }) {
             Text(text = "Go to previous page")
         }
     }
