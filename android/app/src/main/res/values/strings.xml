@@ -51,7 +51,6 @@
     <string name="news_details">News details</string>
     <string name="image">Image</string>
     <string name="id">ID</string>
-    <string name="graphql">GraphQL</string>
     <string name="paging">Paging</string>
     <string name="viewpager_slider">ViewPager slider</string>
     <string name="fragment">Fragment</string>

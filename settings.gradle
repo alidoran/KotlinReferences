@@ -15,6 +15,9 @@ dependencyResolutionManagement {
         mavenLocal()
         //Courier
         maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://software.mobile.pendo.io/artifactory/androidx-release'
+        }
     }
 }
 include ':kotlin_base'
