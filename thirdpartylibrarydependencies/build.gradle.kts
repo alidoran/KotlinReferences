@@ -64,19 +64,18 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
 
     // Dagger
-    ksp("com.google.dagger:dagger-compiler:${libs.versions.dagger.get()}")
+    ksp(libs.dagger.compiler)
     implementation(libs.dagger)
-    ksp("com.google.dagger:dagger-compiler:${libs.versions.dagger.get()}")
-    ksp("com.google.dagger:dagger-android-processor:${libs.versions.dagger.get()}")
+    ksp(libs.dagger.processor)
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${libs.versions.coroutines.get()}")
+    implementation(libs.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
     // Room components
     implementation(libs.androidx.room.runtime)
-    ksp("androidx.room:room-compiler:${libs.versions.room.get()}")
+    ksp(libs.room.compiler)
     androidTestImplementation(libs.androidx.room.testing)
 
     // Retrofit
@@ -93,10 +92,10 @@ dependencies {
     // Mockito
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.kotlin)
-    testImplementation("io.mockk:mockk:${libs.versions.mockk.get()}")
+    testImplementation(libs.mockk)
 
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:${libs.versions.firebaseBom.get()}"))
+    implementation(platform(libs.firebase.bom))
     implementation(libs.play.services.auth)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.messaging.ktx)
