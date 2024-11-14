@@ -1,0 +1,92 @@
+[versions]
+# Core dependencies
+compileTargetSdk = "35"
+compileMinSdk = "26"
+analytics = "4.11.3"
+android = "1.10.0"
+apolloRuntime = "3.3.2"
+appcompat = "1.6.1"
+camerax = "1.2.3"
+constraintlayout = "2.1.4"
+coreKtx = "1.12.0"
+courierAndroid = "2.0.2"
+dagger = "2.50"
+espressoCore = "3.5.1"
+firebaseAnalyticsKtx = "21.3.0"
+junit = "4.13.2"
+junitExt = "1.1.5"
+junitJupiter = "5.9.0"
+kotlinReflect = "1.8.22"
+kotlinStdlib = "2.0.21"
+coroutines = "1.7.3"
+lifecycleExtensions = "2.2.0"
+lifecycleRuntimeKtx = "2.6.2"
+lifecycleViewmodelKtx = "2.6.2"
+material = "1.10.0"
+mockitoCore = "4.8.0"
+mockitoKotlin = "4.1.0"
+navigationFragmentKtx = "2.7.5"
+playServicesAuth = "20.5.0"
+playServicesMaps = "18.1.0"
+retrofit = "2.9.0"
+room = "2.6.0"
+rxandroid = "2.1.1"
+rxjava = "3.1.5"
+rxjavaVersion = "2.2.21"
+swiperefreshlayout = "1.2.0-alpha01"
+workRuntimeKtx = "2.8.1"
+junitVintage = "5.8.2"
+mockk = "1.13.4"
+firebaseBom = "30.3.1"
+lottie = "5.2.0"
+
+
+[libraries]
+adapter-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
+android = { module = "com.segment.analytics.kotlin:android", version.ref = "android" }
+analytics = { module = "com.segment.analytics.android:analytics", version.ref = "analytics" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
+androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "camerax" }
+androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "camerax" }
+androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camerax" }
+androidx-camera-video = { module = "androidx.camera:camera-video", version.ref = "camerax" }
+androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "camerax" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycleExtensions" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel-ktx-v262 = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
+apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apolloRuntime" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
+courier-android = { module = "com.github.trycourier:courier-android", version.ref = "courierAndroid" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "firebaseAnalyticsKtx" }
+firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
+firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx" }
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junitJupiter" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinReflect" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroid" }
+rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
+rxjava2-rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjavaVersion" }
+junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junitVintage" }
+
+

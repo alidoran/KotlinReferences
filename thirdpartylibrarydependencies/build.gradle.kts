@@ -11,12 +11,11 @@ plugins {
 }
 
 android {
-    compileSdk = rootProject.ext["compile_target_sdk"] as Int
+    compileSdk = libs.versions.compileTargetSdk.get().toInt()
 
     defaultConfig {
         applicationId = "alidoran.third_party"
-        minSdk = rootProject.ext["compile_min_sdk"] as Int
-        targetSdk = rootProject.ext["compile_target_sdk"] as Int
+        minSdk = libs.versions.compileMinSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -41,110 +40,97 @@ android {
     buildFeatures {
         viewBinding = true
     }
-
-    testOptions {
-        unitTests.all {
-//            useJUnitPlatform()
-//            systemProperty("junit.jupiter.testinstance.lifecycle.default", "per_method")
-//            systemProperty("junit.jupiter.execution.parallel.enabled", "true")
-        }
-    }
-
     namespace = "alidoran.third_party"
 }
 
 dependencies {
     implementation(project(":commonlibrary"))
-    implementation("androidx.core:core-ktx:${rootProject.ext["core_ktx"]}")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
-    implementation("com.google.android.material:material:${rootProject.ext["material"]}")
-    implementation("androidx.work:work-runtime-ktx:${rootProject.ext["runtime_ktx"]}")
+    implementation(libs.core.ktx)
+    implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.material)
+    implementation(libs.androidx.work.runtime.ktx)
 
-    implementation("com.google.android.gms:play-services-maps:${rootProject.ext["services_maps"]}")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.ext["kotlin_version"]}")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    implementation(libs.play.services.maps)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.kotlin.stdlib)
 
-    testImplementation("junit:junit:${rootProject.ext["junit"]}")
-    androidTestImplementation("androidx.test.ext:junit:${rootProject.ext["junitktx"]}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${rootProject.ext["espresso"]}")
-    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:${rootProject.ext["junit_vintage"]}")
-    testImplementation("org.junit.jupiter:junit-jupiter:${rootProject.ext["junit_jupiter"]}")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:${rootProject.ext["reflect"]}")
-    implementation("androidx.navigation:navigation-fragment-ktx:${rootProject.ext["navigation"]}")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    testRuntimeOnly(libs.junit.vintage.engine)
+    testImplementation(libs.junit.jupiter)
+    implementation(libs.kotlin.reflect)
+    implementation(libs.androidx.navigation.fragment.ktx)
 
     // Dagger
-    ksp("com.google.dagger:dagger-compiler:${rootProject.ext["dagger"]}")
-    implementation("com.google.dagger:dagger:${rootProject.ext["dagger"]}")
-    ksp("com.google.dagger:dagger-compiler:${rootProject.ext["dagger"]}")
-    ksp("com.google.dagger:dagger-android-processor:${rootProject.ext["dagger"]}")
+    ksp("com.google.dagger:dagger-compiler:${libs.versions.dagger.get()}")
+    implementation(libs.dagger)
+    ksp("com.google.dagger:dagger-compiler:${libs.versions.dagger.get()}")
+    ksp("com.google.dagger:dagger-android-processor:${libs.versions.dagger.get()}")
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.ext["coroutines"]}")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.ext["coroutines"]}")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext["lifecycle"]}")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${libs.versions.coroutines.get()}")
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
     // Room components
-    implementation("androidx.room:room-runtime:${rootProject.ext["room"]}")
-    ksp("androidx.room:room-compiler:${rootProject.ext["room"]}")
-    androidTestImplementation("androidx.room:room-testing:${rootProject.ext["room"]}")
+    implementation(libs.androidx.room.runtime)
+    ksp("androidx.room:room-compiler:${libs.versions.room.get()}")
+    androidTestImplementation(libs.androidx.room.testing)
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:${rootProject.ext["retrofit2"]}")
-    implementation("com.squareup.retrofit2:converter-gson:${rootProject.ext["retrofit2"]}")
-    implementation("com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext["retrofit2"]}")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.adapter.rxjava2)
 
     // GraphQL converter
-    implementation("com.squareup.retrofit2:converter-scalars:${rootProject.ext["retrofit2"]}")
+    implementation(libs.converter.scalars)
 
     // Apollo
-    implementation("com.apollographql.apollo3:apollo-runtime:3.3.2")
+    implementation(libs.apollo.runtime)
 
     // Mockito
-    testImplementation("org.mockito:mockito-core:${rootProject.ext["mockito_core"]}")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:${rootProject.ext["mockito_kotlin"]}")
-    testImplementation("io.mockk:mockk:${rootProject.ext["mockk"]}")
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation("io.mockk:mockk:${libs.versions.mockk.get()}")
 
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:${rootProject.ext["firebase_bom"]}"))
-    implementation("com.google.android.gms:play-services-auth:${rootProject.ext["play_services_auth"]}")
-    implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-messaging-ktx")
-    implementation("com.google.firebase:firebase-crashlytics")
-    implementation("com.google.firebase:firebase-analytics-ktx:${rootProject.ext["analytics_ktx"]}")
+    implementation(platform("com.google.firebase:firebase-bom:${libs.versions.firebaseBom.get()}"))
+    implementation(libs.play.services.auth)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.messaging.ktx)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.analytics.ktx)
 
     // Lifecycle
-    implementation("androidx.lifecycle:lifecycle-extensions:${rootProject.ext["lifecycle_extensions"]}")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext["lifecycle"]}")
+    implementation(libs.androidx.lifecycle.extensions)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx.v262)
 
     // Lottie player
-    implementation("com.airbnb.android:lottie:${rootProject.ext["lottie"]}") {
+    implementation("com.airbnb.android:lottie:${libs.versions.lottie.get()}") {
         exclude(group = "com.android.support")
     }
 
     // Segment
-    implementation("com.segment.analytics.android:analytics:${rootProject.ext["analytics"]}")
-    implementation("com.segment.analytics.kotlin:android:1.10.0")
+    implementation(libs.analytics)
+    implementation(libs.android)
 
     // CameraX
-    val cameraxVersion = "1.2.3"
-    implementation("androidx.camera:camera-core:${cameraxVersion}")
-    implementation("androidx.camera:camera-camera2:${cameraxVersion}")
-    implementation("androidx.camera:camera-lifecycle:${cameraxVersion}")
-    implementation("androidx.camera:camera-video:${cameraxVersion}")
-    implementation("androidx.camera:camera-view:${cameraxVersion}")
-    implementation("androidx.camera:camera-extensions:${cameraxVersion}")
+    implementation(libs.androidx.camera.core)
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.video)
+    implementation(libs.androidx.camera.view)
+    implementation(libs.androidx.camera.extensions)
 
     // Courier
-    implementation("com.github.trycourier:courier-android:2.0.2")
+    implementation(libs.courier.android)
 
     // RxJava
-    implementation("io.reactivex.rxjava3:rxjava:${rootProject.ext["rxjava3"]}")
-    implementation("io.reactivex.rxjava2:rxjava:${rootProject.ext["rxjava2"]}")
-    implementation("io.reactivex.rxjava2:rxandroid:${rootProject.ext["rxandroid"]}")
+    implementation(libs.rxjava)
+    implementation(libs.rxjava2.rxjava)
+    implementation(libs.rxandroid)
 }
 
 apollo {
