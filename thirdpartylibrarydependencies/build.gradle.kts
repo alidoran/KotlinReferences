@@ -44,92 +44,66 @@ android {
 }
 
 dependencies {
-    implementation(project(":commonlibrary"))
-    implementation(libs.core.ktx)
-    implementation(libs.androidx.swiperefreshlayout)
-    implementation(libs.material)
-    implementation(libs.androidx.work.runtime.ktx)
-
-    implementation(libs.play.services.maps)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.kotlin.stdlib)
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    testRuntimeOnly(libs.junit.vintage.engine)
-    testImplementation(libs.junit.jupiter)
-    implementation(libs.kotlin.reflect)
-    implementation(libs.androidx.navigation.fragment.ktx)
-
-    // Dagger
-    ksp(libs.dagger.compiler)
-    implementation(libs.dagger)
-    ksp(libs.dagger.processor)
-
-    // Coroutines
-    implementation(libs.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-
-    // Room components
-    implementation(libs.androidx.room.runtime)
-    ksp(libs.room.compiler)
+    androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.room.testing)
 
-    // Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.adapter.rxjava2)
-
-    // GraphQL converter
-    implementation(libs.converter.scalars)
-
-    // Apollo
-    implementation(libs.apollo.runtime)
-
-    // Mockito
-    testImplementation(libs.mockito.core)
-    testImplementation(libs.mockito.kotlin)
-    testImplementation(libs.mockk)
-
-    // Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.play.services.auth)
-    implementation(libs.firebase.auth.ktx)
-    implementation(libs.firebase.messaging.ktx)
-    implementation(libs.firebase.crashlytics)
-    implementation(libs.firebase.analytics.ktx)
-
-    // Lifecycle
-    implementation(libs.androidx.lifecycle.extensions)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx.v262)
-
-    // Lottie player
     implementation("com.airbnb.android:lottie:${libs.versions.lottie.get()}") {
         exclude(group = "com.android.support")
     }
-
-    // Segment
+    implementation(libs.adapter.rxjava2)
     implementation(libs.analytics)
     implementation(libs.android)
-
-    // CameraX
-    implementation(libs.androidx.camera.core)
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.camera.camera2)
+    implementation(libs.androidx.camera.core)
+    implementation(libs.androidx.camera.extensions)
     implementation(libs.androidx.camera.lifecycle)
     implementation(libs.androidx.camera.video)
     implementation(libs.androidx.camera.view)
-    implementation(libs.androidx.camera.extensions)
-
-    // Courier
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.lifecycle.extensions)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx.v262)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.apollo.runtime)
+    implementation(libs.converter.gson)
+    implementation(libs.converter.scalars)
+    implementation(libs.core.ktx)
+    implementation(libs.coroutines.core)
     implementation(libs.courier.android)
-
-    // RxJava
+    implementation(libs.dagger)
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.messaging.ktx)
+    implementation(libs.kotlin.reflect)
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.material)
+    implementation(libs.play.services.auth)
+    implementation(libs.play.services.maps)
+    implementation(libs.retrofit)
+    implementation(libs.rxandroid)
     implementation(libs.rxjava)
     implementation(libs.rxjava2.rxjava)
-    implementation(libs.rxandroid)
+    implementation(platform(libs.firebase.bom))
+
+    implementation(project(":commonlibrary"))
+
+    ksp(libs.dagger.compiler)
+    ksp(libs.dagger.processor)
+    ksp(libs.room.compiler)
+    
+    testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.mockk)
+    testRuntimeOnly(libs.junit.vintage.engine)
 }
 
 apollo {

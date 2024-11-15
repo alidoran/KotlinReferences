@@ -7,12 +7,10 @@ plugins {
 }
 
 android {
-    compileSdk = rootProject.extra["compile_target_sdk"] as Int
+    compileSdk = libs.versions.compileTargetSdk.get().toInt()
 
     defaultConfig {
-        minSdk = rootProject.extra["compile_min_sdk"] as Int
-        targetSdk = rootProject.extra["compile_target_sdk"] as Int
-
+        minSdk = libs.versions.compileMinSdk.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -33,12 +31,13 @@ android {
 }
 
 dependencies {
-    implementation("androidx.navigation:navigation-fragment-ktx:2.8.3")
-    implementation("androidx.navigation:navigation-ui-ktx:2.8.3")
-    implementation(platform("androidx.compose:compose-bom:2024.10.01"))
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.navigation:navigation-compose:${rootProject.extra["navigation"]}")
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.ui)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(platform(libs.androidx.compose.bom))
+
     implementation(project(":android:core:navigation"))
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
 }

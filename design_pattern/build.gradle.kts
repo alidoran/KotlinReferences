@@ -4,12 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk = rootProject.extra["compile_target_sdk"] as Int
+    compileSdk = libs.versions.compileTargetSdk.get().toInt()
 
     defaultConfig {
         applicationId = "alidoran.design_pattern"
-        minSdk = rootProject.extra["compile_min_sdk"] as Int
-        targetSdk = rootProject.extra["compile_target_sdk"] as Int
+        minSdk = libs.versions.compileMinSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -25,6 +24,7 @@ android {
         jvmTarget = "17"
     }
 
+    @Suppress("UnstableApiUsage")
     testOptions {
         unitTests.isIncludeAndroidResources = true
     }
@@ -43,17 +43,19 @@ android {
 }
 
 dependencies {
-    implementation(project(":commonlibrary"))
-    implementation("androidx.core:core-ktx:${rootProject.ext["core_ktx"]}")
-    implementation("androidx.appcompat:appcompat:${rootProject.ext["appcompat"]}")
-    implementation("com.google.android.material:material:${rootProject.ext["material"]}")
-    implementation("androidx.constraintlayout:constraintlayout-core:1.0.4")
-    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.ext["kotlin_version"]}")
-    testImplementation("junit:junit:${rootProject.ext["junit"]}")
-    androidTestImplementation("androidx.test.ext:junit:${rootProject.ext["junitktx"]}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${rootProject.ext["espresso"]}")
-    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:${rootProject.ext["vintage_engine"]}")
-    testImplementation("org.junit.jupiter:junit-jupiter:${rootProject.ext["junit_jupiter"]}")
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.junit)
 
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout.compose)
+    implementation(libs.androidx.constraintlayout.core)
+    implementation(libs.core.ktx)
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.material)
+
+    implementation(project(":commonlibrary"))
+
+    testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
+    testRuntimeOnly(libs.junit.vintage.engine)
 }

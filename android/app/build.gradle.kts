@@ -72,90 +72,68 @@ android {
 }
 
 dependencies {
-    implementation(project(":commonlibrary"))
-    implementation(libs.core.ktx)
-    implementation(libs.androidx.fragment.ktx)
-    implementation(libs.material)
-    implementation(libs.androidx.constraintlayout.core)
-    implementation(libs.androidx.constraintlayout.compose)
-    implementation(libs.androidx.legacy.support.v4)
-
-    // Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics.ktx)
-    implementation(libs.firebase.messaging)
-
-    // Navigation
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
-    implementation(libs.androidx.navigation.compose)
-
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.kotlin.stdlib)
-    implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.play.services.location)
-    implementation(libs.androidx.biometric.ktx)
-    implementation(libs.androidx.activity.ktx)
-
-    // Test
-    testImplementation(libs.androidx.junit.ktx)
-    implementation(libs.androidx.core.ktx)
-    androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    // Room
-    implementation(libs.androidx.room.ktx)
+    androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.room.testing)
-
-    // Coroutines
-    implementation(libs.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
-
-    // Paging
-    implementation(libs.androidx.paging.runtime.ktx)
-    implementation(libs.androidx.recyclerview)
-
-    // Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-
-    // Glide
-    implementation(libs.glide)
-
-    // ViewModel (Lifecycle)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx.v262)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.common.java8)
-    implementation(libs.androidx.lifecycle.process)
-    implementation(libs.androidx.lifecycle.compose)
-
-    // Compose
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.material3)
-    implementation(libs.androidx.material3.window.size)
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material)
-    implementation(libs.timetimberlib)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
 
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.androidx.webkit)
+    debugImplementation(libs.androidx.ui.test.manifest)
+    debugImplementation(libs.androidx.ui.tooling)
 
-    implementation(project(":android:feature1"))
-    implementation(project(":android:feature2"))
-    implementation(project(":android:core:navigation"))
-
-    // Lottie player
-    implementation("com.airbnb.android:lottie:${rootProject.ext["lottie"]}") {
+    implementation("com.airbnb.android:lottie:${libs.versions.lottie.get()}") {
         exclude(group = "com.android.support")
     }
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.biometric.ktx)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.constraintlayout.compose)
+    implementation(libs.androidx.constraintlayout.core)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.common.java8)
+    implementation(libs.androidx.lifecycle.compose)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.process)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx.v262)
+    implementation(libs.androidx.material)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.material3.window.size)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.paging.runtime.ktx)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.webkit)
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.converter.gson)
+    implementation(libs.core.ktx)
+    implementation(libs.coroutines.core)
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.messaging)
+    implementation(libs.glide)
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.material)
+    implementation(libs.play.services.location)
+    implementation(libs.retrofit)
+    implementation(libs.timetimberlib)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(platform(libs.firebase.bom))
+
+    implementation(project(":android:core:navigation"))
+    implementation(project(":android:feature1"))
+    implementation(project(":android:feature2"))
+    implementation(project(":commonlibrary"))
+
+    testImplementation(libs.androidx.junit.ktx)
 }

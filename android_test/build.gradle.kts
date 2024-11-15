@@ -1,5 +1,3 @@
-import org.gradle.internal.classpath.Instrumented.systemProperty
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -38,12 +36,11 @@ tasks.register<JacocoReport>("jacocoReport") {
 }
 
 android {
-    compileSdk = rootProject.extra["compile_target_sdk"] as Int
+    compileSdk = libs.versions.compileTargetSdk.get().toInt()
 
     defaultConfig {
         applicationId = "android.test"
-        minSdk = rootProject.extra["compile_min_sdk"] as Int
-        targetSdk = rootProject.extra["compile_target_sdk"] as Int
+        minSdk = libs.versions.compileMinSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -93,63 +90,52 @@ android {
 
 dependencies {
     dependencies {
-        implementation(project(":commonlibrary"))
-        implementation("androidx.appcompat:appcompat:${rootProject.ext["appcompat"]}")
-        implementation("com.google.android.material:material:${rootProject.ext["material"]}")
-        implementation("androidx.test.ext:junit-ktx:${rootProject.ext["junitktx"]}")
-        implementation("androidx.constraintlayout:constraintlayout-core:1.0.4")
-        implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
-        implementation("androidx.test:monitor:${rootProject.ext["test_monitor"]}")
-        implementation("androidx.activity:activity-ktx:${rootProject.ext["activity_ktx"]}")
-        implementation("androidx.fragment:fragment-ktx:${rootProject.ext["fragment_ktx"]}")
-        implementation("androidx.test:runner:${rootProject.ext["test_runner"]}")
-        implementation("androidx.databinding:databinding-runtime:${rootProject.ext["databinding_runtime"]}")
-        implementation("androidx.core:core-ktx:${rootProject.ext["core_ktx"]}")
-        implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.ext["kotlin_version"]}")
-
+        androidTestImplementation(libs.androidx.espresso.core)
+        androidTestImplementation(libs.androidx.rules)
+        androidTestImplementation(libs.hilt.android.testing)
+        androidTestImplementation(libs.junit.jupiter)
+        androidTestImplementation(libs.mockito.android)
         androidTestImplementation(project(":android_test"))
-        debugImplementation("androidx.fragment:fragment-testing:${rootProject.ext["fragment_ktx"]}")
+        debugImplementation(libs.androidx.fragment.testing)
+        implementation(libs.androidx.activity.ktx)
+        implementation(libs.androidx.appcompat)
+        implementation(libs.androidx.constraintlayout.compose)
+        implementation(libs.androidx.constraintlayout.core)
+        implementation(libs.androidx.databinding.runtime)
+        implementation(libs.androidx.fragment.ktx)
+        implementation(libs.androidx.junit.ktx)
+        implementation(libs.androidx.monitor)
+        implementation(libs.androidx.runner)
+        implementation(libs.core.ktx)
+        implementation(libs.hilt.android)
+        implementation(libs.jackson.databind)
+        implementation(libs.kotlin.stdlib)
+        implementation(libs.material)
 
-        testImplementation("junit:junit:${rootProject.ext["junit"]}")
-        testRuntimeOnly("org.junit.vintage:junit-vintage-engine:${rootProject.ext["junit_vintage"]}")
-        testImplementation("org.junit.jupiter:junit-jupiter:${rootProject.ext["junit_jupiter"]}")
-        testImplementation("androidx.test:core:${rootProject.ext["test_core"]}")
-        androidTestImplementation("org.junit.jupiter:junit-jupiter:${rootProject.ext["junit_jupiter"]}")
-        androidTestImplementation("androidx.test:rules:1.5.0")
+        implementation(project(":commonlibrary"))
 
-        // Mocking libraries
-        testImplementation("io.mockk:mockk:1.13.4")
-        testImplementation("androidx.arch.core:core-testing:${rootProject.ext["core_testing"]}")
-        testImplementation("org.mockito:mockito-core:${rootProject.ext["mockito_core"]}")
-        testImplementation("org.mockito:mockito-inline:3.11.2")
-        androidTestImplementation("org.mockito:mockito-android:5.9.0")
-        testImplementation("org.mockito.kotlin:mockito-kotlin:4.1.0")
+        ksp(libs.hilt.compiler)
+        kspAndroidTest(libs.hilt.compiler)
+        kspTest(libs.hilt.compiler)
 
-        // Espresso for UI testing
-        androidTestImplementation("androidx.test.espresso:espresso-core:${rootProject.ext["espresso"]}")
-        implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4")
+        testImplementation(libs.androidx.core.ktx)
+        testImplementation(libs.androidx.core.testing)
+        testImplementation(libs.hamcrest.all)
+        testImplementation(libs.hilt.android.testing)
+        testImplementation(libs.junit)
+        testImplementation(libs.junit.jupiter)
+        testImplementation(libs.junit.jupiter.api)
+        testImplementation(libs.junit.jupiter.engine)
+        testImplementation(libs.kluent)
+        testImplementation(libs.kotlinx.coroutines.test)
+        testImplementation(libs.mockito.core)
+        testImplementation(libs.mockito.inline)
+        testImplementation(libs.mockito.kotlin)
+        testImplementation(libs.mockk)
+        testImplementation(libs.powermock.module.junit4)
+        testImplementation(libs.robolectric)
 
-        // Human-readable assertions
-        testImplementation("org.hamcrest:hamcrest-all:${rootProject.ext["hamcrest"]}")
-        testImplementation("org.amshove.kluent:kluent:${rootProject.ext["kluent"]}")
-
-        // Robolectric for unit tests
-        testImplementation("org.robolectric:robolectric:${rootProject.ext["robolectric"]}")
-
-        testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
-
-        // Hilt
-        implementation("com.google.dagger:hilt-android:2.50")
-        ksp("com.google.dagger:hilt-compiler:2.50")
-        testImplementation("com.google.dagger:hilt-android-testing:2.50")
-        kspTest("com.google.dagger:hilt-compiler:2.50")
-        androidTestImplementation("com.google.dagger:hilt-android-testing:2.50")
-        kspAndroidTest("com.google.dagger:hilt-compiler:2.50")
-
-        testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
-        testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")
-
-        testImplementation("org.powermock:powermock-module-junit4:1.7.3")
+        testRuntimeOnly(libs.junit.vintage.engine)
     }
 }
 

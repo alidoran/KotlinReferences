@@ -6,10 +6,10 @@ plugins {
 
 android {
     namespace = "ir.dorantech.navigation"
-    compileSdk = 34
+    compileSdk = libs.versions.compileTargetSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 26
+        minSdk = libs.versions.compileMinSdk.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -35,6 +35,6 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.15.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation(libs.core.ktx)
+    implementation(libs.kotlinx.serialization.json)
 }

@@ -1,5 +1,4 @@
 [versions]
-# Core dependencies
 activityCompose = "1.8.2"
 activityKtx = "1.8.0"
 analytics = "4.11.3"
@@ -8,6 +7,8 @@ apolloRuntime = "3.3.2"
 appcompat = "1.6.1"
 biometricKtx = "1.2.0-alpha05"
 camerax = "1.2.3"
+compileMinSdk = "26"
+compileTargetSdk = "35"
 composeBom = "2024.10.01"
 composeLifecycle = "2.6.1"
 constraintlayout = "2.1.4"
@@ -15,24 +16,37 @@ constraintlayoutCompose = "1.0.1"
 constraintlayoutCore = "1.0.4"
 coreKtx = "1.12.0"
 coreKtxTest = "1.5.0"
-courierAndroid = "2.0.2"
+coreTesting = "2.2.0"
 coroutines = "1.7.3"
 coroutinesCore = "1.7.3"
-compileMinSdk = "26"
-compileTargetSdk = "35"
+courierAndroid = "2.0.2"
 dagger = "2.50"
+databindingRuntime = "8.2.0"
 espressoCore = "3.5.1"
 firebaseAnalyticsKtx = "21.3.0"
 firebaseBom = "30.3.1"
+firebaseCrashlyticsGradle = "2.9.9"
 fragmentKtx = "1.6.2"
 glide = "4.14.2"
+googleServices = "4.3.14"
+hamcrestAll = "1.3"
+hiltAndroid = "2.50"
+hiltAndroidGradlePlugin = "2.50"
+hiltAndroidTesting = "2.50"
+hiltCompiler = "2.50"
+jacksonDatabind = "2.13.4"
 junit = "4.13.2"
 junitExt = "1.1.5"
 junitJupiter = "5.9.0"
+junitJupiterApi = "5.9.0"
+junitJupiterEngine = "5.9.0"
 junitKtx = "1.1.5"
 junitVintage = "5.8.2"
+kluent = "1.68"
+kotlinGradlePlugin = "2.0.21"
 kotlinReflect = "1.8.22"
 kotlinStdlib = "2.0.21"
+kotlinxCoroutinesTest = "1.6.4"
 kotlinxSerializationJson = "1.7.3"
 legacySupportV4 = "1.0.0"
 lifecycleExtensions = "2.2.0"
@@ -41,18 +55,27 @@ lifecycleRuntimeKtx = "2.6.2"
 lifecycleViewmodelKtx = "2.6.2"
 lottie = "5.2.0"
 material = "1.10.0"
+mockitoAndroid = "5.9.0"
 mockitoCore = "4.8.0"
+mockitoInline = "3.11.2"
 mockitoKotlin = "4.1.0"
 mockk = "1.13.4"
+monitor = "1.6.1"
 navigationFragmentKtx = "2.7.5"
+navigationSafeArgsGradlePlugin = "2.7.5"
 navigationUiKtx = "2.8.3"
+navigationUiKtxVersion = "2.7.5"
+orgJacocoCore = "0.8.10"
 pagingRuntimeKtx = "3.2.1"
 playServicesAuth = "20.5.0"
 playServicesLocation = "21.0.1"
 playServicesMaps = "18.1.0"
+powermockModuleJunit4 = "1.7.3"
 recyclerview = "1.3.2"
 retrofit = "2.9.0"
+robolectric = "4.11.1"
 room = "2.6.0"
+runner = "1.5.2"
 rxandroid = "2.1.1"
 rxjava = "3.1.5"
 rxjava2 = "2.2.21"
@@ -64,8 +87,8 @@ workRuntimeKtx = "2.8.1"
 
 [libraries]
 adapter-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
-android = { module = "com.segment.analytics.kotlin:android", version.ref = "android" }
 analytics = { module = "com.segment.analytics.android:analytics", version.ref = "analytics" }
+android = { module = "com.segment.analytics.kotlin:android", version.ref = "android" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -81,11 +104,16 @@ androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayo
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 androidx-constraintlayout-core = { module = "androidx.constraintlayout:constraintlayout-core", version.ref = "constraintlayoutCore" }
 androidx-core-ktx = { module = "androidx.test:core-ktx", version.ref = "coreKtxTest" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
+androidx-databinding-runtime = { module = "androidx.databinding:databinding-runtime", version.ref = "databindingRuntime" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
+androidx-fragment-testing = { module = "androidx.fragment:fragment-testing", version.ref = "fragmentKtx" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
 androidx-junit-ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "junitKtx" }
 androidx-legacy-support-v4 = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacySupportV4" }
 androidx-lifecycle-common-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycleLivedataKtx" }
+androidx-lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "composeLifecycle" }
 androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycleExtensions" }
 androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycleLivedataKtx" }
@@ -94,14 +122,20 @@ androidx-lifecycle-viewmodel-ktx-v262 = { module = "androidx.lifecycle:lifecycle
 androidx-material = { module = "androidx.compose.material:material" }
 androidx-material3 = { module = "androidx.compose.material3:material3" }
 androidx-material3-window-size = { module = "androidx.compose.material3:material3-window-size-class" }
+androidx-monitor = { module = "androidx.test:monitor", version.ref = "monitor" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationUiKtx" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-safe-args-gradle-plugin = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigationSafeArgsGradlePlugin" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-navigation-ui-ktx-v275 = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtxVersion" }
 androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "pagingRuntimeKtx" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
+androidx-rules = { module = "androidx.test:rules", version.ref = "coreKtxTest" }
+androidx-runner = { module = "androidx.test:runner", version.ref = "runner" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
 androidx-ui = { module = "androidx.compose.ui:ui" }
 androidx-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
 androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
@@ -109,43 +143,58 @@ androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 androidx-webkit = { module = "androidx.webkit:webkit", version.ref = "webkit" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
 apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apolloRuntime" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesCore" }
 courier-android = { module = "com.github.trycourier:courier-android", version.ref = "courierAndroid" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+dagger-processor = { module = "com.google.dagger:dagger-android-processor", version.ref = "dagger" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "firebaseAnalyticsKtx" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
+firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsGradle" }
 firebase-messaging = { module = "com.google.firebase:firebase-messaging" }
 firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+hamcrest-all = { module = "org.hamcrest:hamcrest-all", version.ref = "hamcrestAll" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
+hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hiltAndroidTesting" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompiler" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jacksonDatabind" }
 junit = { module = "junit:junit", version.ref = "junit" }
-androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
-androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
-androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junitJupiter" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junitJupiterApi" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitJupiterEngine" }
+junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junitVintage" }
+kluent = { module = "org.amshove.kluent:kluent", version.ref = "kluent" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinReflect" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
-mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockitoAndroid" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
+mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoInline" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+org-jacoco-core = { module = "org.jacoco:org.jacoco.core", version.ref = "orgJacocoCore" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+powermock-module-junit4 = { module = "org.powermock:powermock-module-junit4", version.ref = "powermockModuleJunit4" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroid" }
 rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
 rxjava2-rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava2" }
-junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junitVintage" }
 timetimberlib = { module = "cloud.romhost.timetimberlib:timetimberlib", version.ref = "timetimberlib" }
-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesCore" }
-androidx-lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "composeLifecycle" }
-dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
-dagger-processor = { module = "com.google.dagger:dagger-android-processor", version.ref = "dagger" }
-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
