@@ -39,16 +39,10 @@
             android:text="@string/next_page"/>
 
         <Button
-            android:id="@+id/btn_next_page3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/to_page_3"/>
-
-        <Button
             android:id="@+id/btn_next_page4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/to_page_4"/>
+            android:text="@string/go_to_another_module_fragment"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

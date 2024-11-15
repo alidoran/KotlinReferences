@@ -18,15 +18,6 @@
                 android:defaultValue="@null"
                 app:nullable="true" />
         </action>
-        <action
-            android:id="@+id/action_navFragment01_to_navFragment03"
-            app:destination="@id/my_nav_feature" >
-            <argument
-                android:name="my_arg"
-                app:argType="string"
-                android:defaultValue="@null"
-                app:nullable="true" />
-        </action>
         <!-- Define a global action to navigate to navFragment04 -->
         <action
             android:id="@+id/action_navFragment01_to_navFragment04"
