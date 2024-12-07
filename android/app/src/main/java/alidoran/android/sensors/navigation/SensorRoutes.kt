@@ -7,4 +7,6 @@ sealed interface SensorRoutes {
     data object SensorsHome: SensorRoutes
     @Serializable
     data object StepCount: SensorRoutes
+    @Serializable
+    data object RecordingApi: SensorRoutes
 }

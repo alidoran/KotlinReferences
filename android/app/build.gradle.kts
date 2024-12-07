@@ -130,6 +130,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.material)
+    implementation(libs.play.services.fitness)
     implementation(libs.play.services.location)
     implementation(libs.retrofit)
     implementation(libs.timetimberlib)

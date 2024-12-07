@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun SensorsHomeScreen(
     onStepCounterSensorClick: () -> Unit,
+    onRecordingApiClick: () -> Unit,
     modifier: Modifier = Modifier,
 ){
     Column(
@@ -23,6 +24,9 @@ fun SensorsHomeScreen(
         Button(onClick = onStepCounterSensorClick) {
             Text("StepCounterSensor")
         }
+        Button(onClick = onRecordingApiClick) {
+            Text("RecordingApi")
+        }
     }
 }
 
@@ -31,5 +35,6 @@ fun SensorsHomeScreen(
 fun SensorsHomeScreenPreview() {
     SensorsHomeScreen(
         onStepCounterSensorClick = {},
+        onRecordingApiClick = {},
     )
 }
