@@ -69,9 +69,16 @@ android {
             isMinifyEnabled = false
         }
     }
+    kotlin {
+        jvmToolchain(17)
+        compilerOptions {
+            freeCompilerArgs.add("-Xcontext-receivers")
+        }
+    }
 }
 
 dependencies {
+    implementation(libs.androidx.activity)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.room.testing)
@@ -102,7 +109,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx.v262)
     implementation(libs.androidx.material)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.material3.window.size)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)

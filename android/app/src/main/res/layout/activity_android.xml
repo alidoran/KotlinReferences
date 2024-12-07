@@ -195,5 +195,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/webView"/>
+
+            <Button
+                android:id="@+id/btn_sensors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sensors"/>
         </LinearLayout>
     </ScrollView>

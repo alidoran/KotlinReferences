@@ -24,6 +24,7 @@ import alidoran.android.permissions.PermissionsActivity
 import alidoran.android.recycler_view.RecyclerActivity
 import alidoran.android.room.activity.RoomActivity
 import alidoran.android.save_state_handle.SavedStateHandleActivity
+import alidoran.android.sensors.ui.SensorsActivity
 import alidoran.android.services.ServicesActivity
 import alidoran.android.shared_preference.SharedPreferenceActivity
 import alidoran.android.socket.SocketActivity
@@ -191,6 +192,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnWebview.setOnClickListener {
             val intent = Intent(this, WebviewActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnSensors.setOnClickListener {
+            val intent = Intent(this, SensorsActivity::class.java)
             startActivity(intent)
         }
     }

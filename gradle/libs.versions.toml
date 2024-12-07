@@ -55,6 +55,7 @@ lifecycleRuntimeKtx = "2.6.2"
 lifecycleViewmodelKtx = "2.6.2"
 lottie = "5.2.0"
 material = "1.10.0"
+material3 = "1.3.1"
 mockitoAndroid = "5.9.0"
 mockitoCore = "4.8.0"
 mockitoInline = "3.11.2"
@@ -83,6 +84,8 @@ swiperefreshlayout = "1.2.0-alpha01"
 timetimberlib = "1.11"
 webkit = "1.8.0"
 workRuntimeKtx = "2.8.1"
+activity = "1.9.3"
+kotlin = "2.0.21"
 
 
 [libraries]
@@ -120,8 +123,7 @@ androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", 
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-lifecycle-viewmodel-ktx-v262 = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-material = { module = "androidx.compose.material:material" }
-androidx-material3 = { module = "androidx.compose.material3:material3" }
-androidx-material3-window-size = { module = "androidx.compose.material3:material3-window-size-class" }
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 androidx-monitor = { module = "androidx.test:monitor", version.ref = "monitor" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationUiKtx" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
@@ -198,3 +200,7 @@ rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroi
 rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
 rxjava2-rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava2" }
 timetimberlib = { module = "cloud.romhost.timetimberlib:timetimberlib", version.ref = "timetimberlib" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+[plugins]
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

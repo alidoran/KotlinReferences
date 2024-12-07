@@ -150,4 +150,6 @@
     <string name="to_page_3">To page 3</string>
     <string name="to_page_4">To page 4</string>
     <string name="go_to_another_module_fragment">Go to another module fragment</string>
+    <string name="sensors">Sensors</string>
+    <string name="title_activity_sensors">SensorsActivity</string>
 </resources>
