@@ -1,0 +1,102 @@
+webhook:
+VPS:
+cd /path/to/your/webhook-server
+git clone https://github.com/alidoran/ServerReferences.git
+cd ServerReferences
+sudo apt update
+sudo apt install nodejs npm
+sudo npm install -g pm2
+npm install express body-parser
+nano server.js ->
+
+const http = require('http');
+const { exec } = require('child_process');
+
+const server = http.createServer((req, res) => {
+  console.log('Received request:', req.method);  // Log method (should be POST)
+
+  if (req.method === 'POST') {
+    let body = '';
+
+    req.on('data', chunk => {
+      body += chunk;
+    });
+
+    req.on('end', () => {
+      console.log('Received body:', body);  // Log the body received from the request
+
+      try {
+        const payload = JSON.parse(body);
+        console.log('Parsed payload:', payload);  // Log the parsed payload
+
+        if (payload.ref === 'refs/heads/main') {
+          console.log('Main branch push detected');
+
+          // Ensure paths and commands are fully qualified
+          exec('cd /root/ServerReferences && /usr/bin/git pull && /usr/bin/npm install && /usr/local/bin/pm2 restart webhook_listener', (err, stdout, stderr) => {
+            if (err) {
+              console.error('Exec error:', stderr);  // Log exec error
+              res.statusCode = 500;
+              res.end(`Error: ${stderr}`);
+              return;
+            }
+            console.log('Deployment completed:', stdout);  // Log successful deployment
+            res.statusCode = 200;
+            res.end(`Deployment completed: ${stdout}`);
+          });
+        } else {
+          console.log('Not a main branch push');
+          res.statusCode = 200;
+          res.end('Not a main branch push.');
+        }
+      } catch (error) {
+        console.error('Error parsing payload:', error);  // Log parsing error
+        res.statusCode = 400;
+        res.end('Invalid JSON');
+      }
+    });
+  } else {
+    res.statusCode = 405;
+    res.end('Method Not Allowed');
+  }
+});
+// Listen on both IPv4 and IPv6 (dual-stack support)
+server.listen(8080, '0.0.0.0', () => {
+  console.log('Listening for webhooks on port 8080 (IPv4 and IPv6)...');
+});
+
+cntl X
+pm2 start server.js
+pm2 status
+sudo apt install nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo systemctl status nginx
+sudo ufw allow 'Nginx Full'
+sudo nano /etc/nginx/sites-available/default
+// Add the following block to forward requests to the webhook handler: ->
+server {
+    listen 8080;
+    server_name your_server_domain_or_IP;
+
+    location /github-webhook {
+        proxy_pass http://localhost:3000/github-webhook;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+cntl X
+sudo nginx -t
+sudo systemctl reload nginx
+
+GitHub:
+Go to your GitHub repository (ServerReferences) settings.
+Under Webhooks, click Add webhook.
+Set the Payload URL to: ->
+http://your_server_domain_or_IP:8081/github-webhook
+Set Content type to -> application/json.
+Select the events you want (e.g., "push").
+Click Add webhook to save.
