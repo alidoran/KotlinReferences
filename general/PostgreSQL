@@ -1,0 +1,52 @@
+Install Homebrew:
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+Install PostgreSQL:
+brew install postgresql
+Start PostgreSQL service:
+brew services start postgresql
+Verify installation:
+psql --version
+Access the PostgreSQL shell:
+psql postgres
+Add PostgreSQL binaries to your PATH:
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+source ~/.zshrc
+--------
+To stop the PostgreSQL service:
+brew services stop postgresql
+To restart the service:
+brew services restart postgresql
+--------
+Check if PostgreSQL is running:
+brew services list
+If PostgreSQL is not running, start it:
+brew services start postgresql
+Initialize the database cluster (if needed):
+initdb /usr/local/var/postgres
+psql postgres
+--------
+Create a new user:
+CREATE USER myuser WITH PASSWORD 'mypassword';
+Create a new database:
+CREATE DATABASE mydb;
+Grant privileges:
+GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
+Connect to the database:
+psql -U myuser -d mydb
+Delete the user:
+DROP ROLE username;
+
+--------
+List all databases:
+\l
+Connect to a database:
+\c mydb
+List all tables in the current database:
+\dt
+Exit the psql shell:
+\q
+List all users (also called roles in PostgreSQL):
+\du
+To Switch Between Databases
+\c my_database_name
+\c template1 user
