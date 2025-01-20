@@ -138,3 +138,9 @@ sudo systemctl disable <service_name>
 
 sudo lsof -i :8082
 sudo kill -9 32485
+
+SSL:
+sudo apt install certbot
+sudo certbot certonly --nginx -d dorantech.ir -d www.dorantech.ir
+Generate certificate by TXT DNS instead of port80
+sudo certbot -d dorantech.ir -d www.dorantech.ir --manual --preferred-challenges dns-01 certonly
