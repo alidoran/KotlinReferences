@@ -1,8 +1,0 @@
-nano /YY/XX-> open file XX file in YY folder
-rm xx -> remove xx file
-sudo su root -> root(admin) access
-sudo passwd -> change user password
-reboot -> reset system
-touch xx -> create a file by xx name
-ssh-keygen -R x.x.x.x -> Remove the last SSH credentials
-ssh root@x.x.x.x -> Connect to SSH    
