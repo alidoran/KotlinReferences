@@ -279,7 +279,7 @@
             android:name=".bottom_sheet.BottomSheetActivity"
             android:exported="false" />
         <activity
-            android:name=".Backlight_light_change.BackLightChangeActivity"
+            android:name=".backlight_light_change.BackLightChangeActivity"
             android:exported="false" />
         <activity
             android:name=".lifecycle.LifeCycleActivity"

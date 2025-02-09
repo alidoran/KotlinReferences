@@ -14,7 +14,7 @@ Manifest
 <service android:name=".services.BackgroundServiceSample"/>
  */
 
-class BackgroundServiceSample:Service() {
+class BackgroundServiceSample : Service() {
     private var stopTimer = false
 
     override fun onBind(p0: Intent?): IBinder? {
@@ -31,12 +31,12 @@ class BackgroundServiceSample:Service() {
         return super.onStartCommand(intent, flags, startId)
     }
 
-    private fun printTimeSecondly(){
+    private fun printTimeSecondly() {
         if (!stopTimer)
-        Timer().schedule(TimeUnit.SECONDS.toMillis(1)){
-            Log.d("Background service", ("AliDoranTime = ${Calendar.getInstance().time}"))
-            printTimeSecondly()
-        }
+            Timer().schedule(TimeUnit.SECONDS.toMillis(1)) {
+                Log.d("Background service", ("AliDoranTime = ${Calendar.getInstance().time}"))
+                printTimeSecondly()
+            }
     }
 }
 

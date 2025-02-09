@@ -1,4 +1,4 @@
-package alidoran.android.Backlight_light_change
+package alidoran.android.backlight_light_change
 
 import alidoran.android.R
 import android.os.Bundle
