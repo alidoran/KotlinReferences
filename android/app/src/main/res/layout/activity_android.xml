@@ -201,5 +201,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sensors"/>
+
+            <Button
+                android:id="@+id/btn_data_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/data_store"/>
         </LinearLayout>
     </ScrollView>

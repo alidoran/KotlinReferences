@@ -136,6 +136,7 @@ dependencies {
     implementation(libs.timetimberlib)
     implementation(platform(libs.androidx.compose.bom))
     implementation(platform(libs.firebase.bom))
+    implementation(libs.androidx.datastore.preferences)
 
     implementation(project(":android:core:navigation"))
     implementation(project(":android:feature1"))

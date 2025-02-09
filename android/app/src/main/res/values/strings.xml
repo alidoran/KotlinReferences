@@ -152,4 +152,8 @@
     <string name="go_to_another_module_fragment">Go to another module fragment</string>
     <string name="sensors">Sensors</string>
     <string name="title_activity_sensors">SensorsActivity</string>
+    <string name="data_store">Data Store</string>
+    <string name="save_sample_txt">Save Sample Text</string>
+    <string name="load_sample_txt">Load Sample Text</string>
+    <string name="enter_a_text_here">Enter a Text here</string>
 </resources>

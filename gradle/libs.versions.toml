@@ -22,6 +22,7 @@ coroutinesCore = "1.7.3"
 courierAndroid = "2.0.2"
 dagger = "2.50"
 databindingRuntime = "8.2.0"
+datastorePreferences = "1.1.2"
 espressoCore = "3.5.1"
 firebaseAnalyticsKtx = "21.3.0"
 firebaseBom = "30.3.1"
@@ -110,6 +111,7 @@ androidx-constraintlayout-core = { module = "androidx.constraintlayout:constrain
 androidx-core-ktx = { module = "androidx.test:core-ktx", version.ref = "coreKtxTest" }
 androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
 androidx-databinding-runtime = { module = "androidx.databinding:databinding-runtime", version.ref = "databindingRuntime" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-fragment-testing = { module = "androidx.fragment:fragment-testing", version.ref = "fragmentKtx" }

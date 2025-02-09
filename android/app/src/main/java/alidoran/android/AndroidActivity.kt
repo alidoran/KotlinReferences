@@ -8,6 +8,7 @@ import alidoran.android.binding.ViewBindingActivity
 import alidoran.android.biometric.BiometricActivity
 import alidoran.android.bottom_sheet.BottomSheetActivity
 import alidoran.android.compose.ComposeLearnActivity
+import alidoran.android.data_store.DataStoreActivity
 import alidoran.android.databinding.ActivityAndroidBinding
 import alidoran.android.dialog.DialogActivity
 import alidoran.android.fragment.FragmentActivity
@@ -197,6 +198,11 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnSensors.setOnClickListener {
             val intent = Intent(this, SensorsActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnDataStore.setOnClickListener {
+            val intent = Intent(this, DataStoreActivity::class.java)
             startActivity(intent)
         }
     }
