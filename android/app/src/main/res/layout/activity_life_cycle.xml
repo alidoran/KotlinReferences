@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_margin="8dp"
-    tools:context="android.lifecycle.LifeCycleActivity">
+    tools:context="alidoran.android.lifecycle.LifeCycleActivity">
 
     <Button
         android:id="@+id/btn_lifecycle_fragment_start"

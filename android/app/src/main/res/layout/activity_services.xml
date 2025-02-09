@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="android.services.ServicesActivity">
+    tools:context="alidoran.android.services.ServicesActivity">
 
     <TextView
         android:id="@+id/txt_background_services_status"

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="android.binding.ViewBindingActivity">
+    tools:context="alidoran.android.binding.ViewBindingActivity">
 
     <TextView
         android:id="@+id/txt_view_binding"

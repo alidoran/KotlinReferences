@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="android.Backlight_light_change.BackLightChangeActivity">
+    tools:context="alidoran.android.backlight_light_change.BackLightChangeActivity">
 
     <SeekBar
         android:id="@+id/seekBar_backlight_change"

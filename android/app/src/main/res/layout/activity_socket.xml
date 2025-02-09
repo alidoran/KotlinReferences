@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="android.socket.SocketActivity">
+    tools:context="alidoran.android.socket.SocketActivity">
 
     <Button
         android:id="@+id/btn_send_data_to_server"

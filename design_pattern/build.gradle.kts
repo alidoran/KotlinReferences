@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -7,11 +7,8 @@ android {
     compileSdk = libs.versions.compileTargetSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "alidoran.design_pattern"
+        namespace = "alidoran.design_pattern"
         minSdk = libs.versions.compileMinSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

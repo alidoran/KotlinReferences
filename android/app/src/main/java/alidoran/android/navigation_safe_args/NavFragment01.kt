@@ -48,9 +48,10 @@ class NavFragment01 : Fragment() {
         }
 
         binding.btnNextPage4.setOnClickListener{
-            val amount = binding.edtMyArgumentView.text.toString()
-            val action = NavFragment01Directions.actionNavFragment01ToNavFragment04(amount)
-            findNavController().navigate(action)
+// Commented: error in build workflow
+//            val amount = binding.edtMyArgumentView.text.toString()
+//            val action = NavFragment01Directions.actionNavFragment01ToNavFragment04(amount)
+//            findNavController().navigate(action)
         }
 
         //region livedata back result

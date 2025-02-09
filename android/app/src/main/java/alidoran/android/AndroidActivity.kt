@@ -1,6 +1,6 @@
 package alidoran.android
 
-import alidoran.android.Backlight_light_change.BackLightChangeActivity
+import alidoran.android.backlight_light_change.BackLightChangeActivity
 import alidoran.android.activity_result_launcher.ResultLauncherSourceActivity
 import alidoran.android.add_dynamic_view.DynamicViewActivity
 import alidoran.android.binding.DataBindingActivity
