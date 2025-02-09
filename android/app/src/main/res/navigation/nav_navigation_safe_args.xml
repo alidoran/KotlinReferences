@@ -18,10 +18,10 @@
                 android:defaultValue="@null"
                 app:nullable="true" />
         </action>
-        <!-- Define a global action to navigate to navFragment04 -->
-        <action
-            android:id="@+id/action_navFragment01_to_navFragment04"
-            app:destination="@id/navFragment04" />
+        <!-- Define a global action to navigate to navFragment04 (Commented: error in workflow)-->
+<!--        <action-->
+<!--            android:id="@+id/action_navFragment01_to_navFragment04"-->
+<!--            app:destination="@id/navFragment04" />-->
     </fragment>
 
     <fragment
@@ -35,16 +35,16 @@
             app:nullable="true" />
     </fragment>
 
-    <!-- Global destination declaration for navFragment04 -->
-    <fragment
-        android:id="@+id/navFragment04"
-        android:name="ir.dorantech.feature1.navigation_safe_args.NavFragment04"
-        android:label="fragment_nav04"
-        tools:layout="@layout/fragment_nav04">
-        <argument
-            android:name="my_arg"
-            android:defaultValue="Ali"
-            app:nullable="true" />
-    </fragment>
+    <!-- Global destination declaration for navFragment04 (Commented: Error in workflow build)-->
+<!--    <fragment-->
+<!--        android:id="@+id/navFragment04"-->
+<!--        android:name="ir.dorantech.feature1.navigation_safe_args.NavFragment04"-->
+<!--        android:label="fragment_nav04"-->
+<!--        tools:layout="@layout/fragment_nav04">-->
+<!--        <argument-->
+<!--            android:name="my_arg"-->
+<!--            android:defaultValue="Ali"-->
+<!--            app:nullable="true" />-->
+<!--    </fragment>-->
 
 </navigation>
