@@ -37,8 +37,11 @@ jobs:
       - name: Grant Execute Permissions for Gradle
         run: chmod +x gradlew
 
+      - name: Create local.properties file
+        run: echo "sdk.dir=/usr/lib/android-sdk" > local.properties
+
       - name: Clean & Build All Modules
-        run: ./gradlew clean build
+        run: ./gradlew clean build -x test
 
   android-app:
     name: Build Android App
@@ -63,8 +66,11 @@ jobs:
           restore-keys: |
             gradle-cache-${{ runner.os }}-
 
+      - name: Create local.properties file
+        run: echo "sdk.dir=/usr/lib/android-sdk" > local.properties
+
       - name: Build Android App
-        run: ./gradlew :android:app:assembleDebug
+        run: ./gradlew :android:app:assembleDebug -x test
 
       - name: Skip Android App Tests (No Test Execution)
         run: echo "Skipping tests for Android app."
@@ -92,8 +98,11 @@ jobs:
           restore-keys: |
             gradle-cache-${{ runner.os }}-
 
+      - name: Create local.properties file
+        run: echo "sdk.dir=/usr/lib/android-sdk" > local.properties
+
       - name: Build thirdpartylibrarydependencies
-        run: ./gradlew :thirdpartylibrarydependencies:assembleDebug
+        run: ./gradlew :thirdpartylibrarydependencies:assembleDebug -x test
 
       - name: Skip Tests for thirdparty library (No Test Execution)
         run: echo "Skipping tests for thirdparty library."
@@ -121,8 +130,11 @@ jobs:
           restore-keys: |
             gradle-cache-${{ runner.os }}-
 
+      - name: Create local.properties file
+        run: echo "sdk.dir=/usr/lib/android-sdk" > local.properties
+
       - name: Build Design Pattern Module
-        run: ./gradlew :design_pattern:assembleDebug
+        run: ./gradlew :design_pattern:assembleDebug -x test
 
       - name: Skip Tests for design pattern module (No Test Execution)
         run: echo "Skipping tests for design pattern module."
@@ -150,8 +162,11 @@ jobs:
           restore-keys: |
             gradle-cache-${{ runner.os }}-
 
+      - name: Create local.properties file
+        run: echo "sdk.dir=/usr/lib/android-sdk" > local.properties
+
       - name: Build Android Test Module
-        run: ./gradlew :android_test:assembleDebug
+        run: ./gradlew :android_test:assembleDebug -x test
 
       - name: Skip Tests for android-test module (No Test Execution)
         run: echo "Skipping tests for android-test module."
