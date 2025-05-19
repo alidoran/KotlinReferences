@@ -156,4 +156,9 @@
     <string name="save_sample_txt">Save Sample Text</string>
     <string name="load_sample_txt">Load Sample Text</string>
     <string name="enter_a_text_here">Enter a Text here</string>
+    <string name="title_activity_canvas">canvasActivity</string>
+    <string name="canvas">Canvas</string>
+    <string name="loading">loading</string>
+    <string name="title_activity_loading">LoadingActivity</string>
+    <string name="title_activity_dispather_touch_listener">DispatherTouchListener</string>
 </resources>

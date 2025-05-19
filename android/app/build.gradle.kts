@@ -1,11 +1,11 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
-    id("kotlin-kapt")
-    id("androidx.navigation.safeargs.kotlin")
-    id("org.jetbrains.kotlin.plugin.compose") version "2.0.21"
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.20"
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.safe.args)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -137,7 +137,6 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(platform(libs.firebase.bom))
     implementation(libs.androidx.datastore.preferences)
-
     implementation(project(":android:core:navigation"))
     implementation(project(":android:feature1"))
     implementation(project(":android:feature2"))

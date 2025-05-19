@@ -1,6 +1,8 @@
 package alidoran.android.compose.developer_android_samples
 
 import alidoran.android.compose.developer_android_samples.courses.c1.CodeLabBasicLayoutActivity
+import alidoran.android.compose.developer_android_samples.courses.c1.DispatcherConnectionActivity
+import alidoran.android.compose.developer_android_samples.courses.c1.DispatcherTouchListener
 import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.FirstCourseAnimationActivity
 import alidoran.android.compose.developer_android_samples.courses.c1.ScaffoldActivity
@@ -15,8 +17,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
-import androidx.compose.material.Text
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -72,6 +74,20 @@ class DeveloperAndroidActivity : ComponentActivity() {
             Button(onClick = {
                 startActivity(Intent(activity, DeepToLazyActivity::class.java))
             }) { Text(text = "DeepToLazy Activity") }
+
+            Button(onClick = {
+                startActivity(Intent(activity, DispatcherConnectionActivity::class.java))
+            }
+            ) {
+                Text(text = "DispatcherConnection Activity")
+            }
+
+            Button(onClick = {
+                startActivity(Intent(activity, DispatcherTouchListener::class.java))
+            }
+            ) {
+                Text(text = "DispatcherTouchListener Activity")
+            }
 
         }
     }
