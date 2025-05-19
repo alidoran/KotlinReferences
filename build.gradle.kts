@@ -11,10 +11,9 @@ buildscript {
 
 plugins {
     id("com.android.library") version "8.7.2" apply false
-    id("org.jetbrains.kotlin.android") version "2.0.21" apply false
+    id("org.jetbrains.kotlin.android") version "2.1.20" apply false
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1" apply false
-    id("com.google.devtools.ksp") version "2.0.21-1.0.27" apply false
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.20"
+    alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.compose) apply false
 }
 

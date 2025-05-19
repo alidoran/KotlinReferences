@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -17,7 +17,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".compose.developer_android_samples.courses.c1.DispatcherTouchListener"
+            android:exported="false"
+            android:label="@string/title_activity_dispather_touch_listener"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".loading.LoadingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_loading"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".compose.developer_android_samples.courses.c1.DispatcherConnectionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_loading"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".canvas.CanvasActivity"
+            android:exported="false"
+            android:label="@string/title_activity_canvas"
+            android:theme="@style/Theme.Android"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".data_store.DataStoreActivity"
             android:exported="false" />
@@ -265,7 +286,7 @@
         <!-- </receiver> &lt;!&ndash; Activities &ndash;&gt; -->
         <activity
             android:name=".AndroidActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -300,7 +321,7 @@
             android:authorities="${applicationId}.fileprovider"
             android:enabled="true"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_path" />

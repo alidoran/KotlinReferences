@@ -4,13 +4,13 @@ activityKtx = "1.8.0"
 analytics = "4.11.3"
 android = "1.10.0"
 apolloRuntime = "3.3.2"
-appcompat = "1.6.1"
-biometricKtx = "1.2.0-alpha05"
-camerax = "1.2.3"
+appcompat = "1.7.0"
+biometricKtx = "1.1.0"
+camerax = "1.4.2"
 compileMinSdk = "26"
 compileTargetSdk = "35"
-composeBom = "2024.10.01"
-composeLifecycle = "2.6.1"
+composeBom = "2025.05.00"
+composeLifecycle = "2.9.0"
 constraintlayout = "2.1.4"
 constraintlayoutCompose = "1.0.1"
 constraintlayoutCore = "1.0.4"
@@ -20,7 +20,7 @@ coreTesting = "2.2.0"
 coroutines = "1.7.3"
 coroutinesCore = "1.7.3"
 courierAndroid = "2.0.2"
-dagger = "2.50"
+dagger = "2.52"
 databindingRuntime = "8.2.0"
 datastorePreferences = "1.1.2"
 espressoCore = "3.5.1"
@@ -31,8 +31,8 @@ fragmentKtx = "1.6.2"
 glide = "4.14.2"
 googleServices = "4.3.14"
 hamcrestAll = "1.3"
-hiltAndroid = "2.50"
-hiltAndroidGradlePlugin = "2.50"
+hiltAndroid = "2.52"
+hiltAndroidGradlePlugin = "2.52"
 hiltAndroidTesting = "2.50"
 hiltCompiler = "2.50"
 jacksonDatabind = "2.13.4"
@@ -44,11 +44,11 @@ junitJupiterEngine = "5.9.0"
 junitKtx = "1.1.5"
 junitVintage = "5.8.2"
 kluent = "1.68"
-kotlinGradlePlugin = "2.0.21"
+kotlinGradlePlugin = "2.1.21"
 kotlinReflect = "1.8.22"
-kotlinStdlib = "2.0.21"
+kotlinStdlib = "2.1.21"
 kotlinxCoroutinesTest = "1.6.4"
-kotlinxSerializationJson = "1.7.3"
+kotlinxSerializationJson = "1.8.0"
 legacySupportV4 = "1.0.0"
 lifecycleExtensions = "2.2.0"
 lifecycleLivedataKtx = "2.8.3"
@@ -87,8 +87,9 @@ timetimberlib = "1.11"
 webkit = "1.8.0"
 workRuntimeKtx = "2.8.1"
 activity = "1.9.3"
-kotlin = "2.0.21"
-
+kotlin = "2.1.20"
+compose = "1.6.0"
+lifecycle = "2.6.1"
 
 [libraries]
 adapter-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
@@ -97,7 +98,7 @@ android = { module = "com.segment.analytics.kotlin:android", version.ref = "andr
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-androidx-biometric-ktx = { module = "androidx.biometric:biometric-ktx", version.ref = "biometricKtx" }
+androidx-biometric-ktx = { module = "androidx.biometric:biometric", version.ref = "biometricKtx" }
 androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
 androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "camerax" }
 androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "camerax" }
@@ -205,6 +206,18 @@ rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
 rxjava2-rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava2" }
 timetimberlib = { module = "cloud.romhost.timetimberlib:timetimberlib", version.ref = "timetimberlib" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+
+
 [plugins]
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-application = { id = "com.android.application" }
+kotlin-android = { id = "org.jetbrains.kotlin.android" }
+android-library = { id = "com.android.library" }
+ksp = { id = "com.google.devtools.ksp", version = "2.1.21-2.0.1" }
+kotlin-kapt = { id = "kotlin-kapt" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+safe-args = { id = "androidx.navigation.safeargs.kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android"}

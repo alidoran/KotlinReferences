@@ -7,6 +7,7 @@ import alidoran.android.binding.DataBindingActivity
 import alidoran.android.binding.ViewBindingActivity
 import alidoran.android.biometric.BiometricActivity
 import alidoran.android.bottom_sheet.BottomSheetActivity
+import alidoran.android.canvas.CanvasActivity
 import alidoran.android.compose.ComposeLearnActivity
 import alidoran.android.data_store.DataStoreActivity
 import alidoran.android.databinding.ActivityAndroidBinding
@@ -15,6 +16,7 @@ import alidoran.android.fragment.FragmentActivity
 import alidoran.android.intents.IntentsActivity
 import alidoran.android.kotlin_flow.KotlinFlowActivity
 import alidoran.android.lifecycle.LifeCycleActivity
+import alidoran.android.loading.LoadingActivity
 import alidoran.android.location.LocationActivity
 import alidoran.android.mvi.basic_mvi.view.MviActivity
 import alidoran.android.mvp.MvpActivity
@@ -203,6 +205,16 @@ class AndroidActivity : AppCompatActivity() {
 
         binding.btnDataStore.setOnClickListener {
             val intent = Intent(this, DataStoreActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnCanvas.setOnClickListener {
+            val intent = Intent(this, CanvasActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnLoading.setOnClickListener {
+            val intent = Intent(this, LoadingActivity::class.java)
             startActivity(intent)
         }
     }

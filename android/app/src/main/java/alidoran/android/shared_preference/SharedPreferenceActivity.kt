@@ -1,6 +1,7 @@
 package alidoran.android.shared_preference
 
 import alidoran.android.databinding.ActivitySharedPreferenceBinding
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
@@ -24,4 +25,8 @@ class SharedPreferenceActivity : AppCompatActivity() {
                 sharedPreferences.getString("mPreferenceFieldName" , "")
         }
     }
+}
+
+fun a(sharedPreferences: SharedPreferences){
+
 }
